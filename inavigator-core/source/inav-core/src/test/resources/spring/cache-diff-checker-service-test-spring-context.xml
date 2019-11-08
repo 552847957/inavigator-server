@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="config-service-test-spring-context.xml"/>
+    <import resource="sql-public-service-test-spring-context.xml"/>
+
+    <bean name="servletContextMockFactoryBean" class="ru.sberbank.syncserver2.service.core.MockServletContextFactory" scope="prototype"/>
+    <bean name="dataSourceMockFactoryBean" class="ru.sberbank.syncserver2.service.core.MockDataSourceFactory" scope="prototype"/>
+
+    <bean name="fileCacheTestBean" class="ru.sberbank.syncserver2.service.file.cache.FileCache">
+    </bean>
+    <bean name="spyFileCacheTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="fileCacheTestBean"/>
+    </bean>
+
+    <bean name="dataPowerServiceTestBean" class="ru.sberbank.syncserver2.service.sql.DataPowerService">
+        <property name="serviceContainer" ref="serviceContainerMockBean"/>
+        <property name="dataPowerURL1" value="http://127.0.0.1:48655"/>
+        <property name="dataPowerURL2" value="http://127.0.0.1:48655"/>
+        <property name="overrideService1" value="finik1-new"/>
+        <property name="overrideService2" value="finik2-new"/>
+        <property name="overrideProvider" value="DISPATCHER"/>
+        <property name="conversion" value="CONVERT_TO_NEW_SIGMA"/>
+    </bean>
+    <bean name="spyDataPowerServiceTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="dataPowerServiceTestBean"/>
+    </bean>
+
+    <bean name="cacheDiffCheckerTestBean" class="ru.sberbank.syncserver2.service.file.diff.CacheDiffChecker">
+        <property name="fileCacheBean" value="changesetFileCache"/>
+    </bean>
+    <bean name="spyCacheDiffCheckerTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="cacheDiffCheckerTestBean"/>
+    </bean>
+
+    <bean name="configLoaderTestBean" class="ru.sberbank.syncserver2.service.core.config.MSSQLConfigLoader">
+    </bean>
+    <bean name="spyConfigLoaderTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="configLoaderTestBean"/>
+    </bean>
+
+    <bean name="serviceManagerTestBean" class="ru.sberbank.syncserver2.service.core.ServiceManager" init-method="getInstance">
+        <property name="configSource" ref="dataSourceMockFactoryBean"/>
+        <property name="servletContext" ref="servletContextMockFactoryBean"/>
+        <property name="configLoader" ref="spyConfigLoaderTestBean"/>
+    </bean>
+    <bean name="spyServiceManagerTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="serviceManagerTestBean"/>
+    </bean>
+
+</beans>

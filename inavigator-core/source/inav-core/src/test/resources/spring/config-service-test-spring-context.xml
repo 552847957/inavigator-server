@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="junit-test-spring-context.xml"/>
+
+    <bean name="configServiceTestJdbcAnswer" class="ru.sberbank.syncserver2.service.config.ConfigAnswer"/>
+    <bean name="configServiceJdbcTemplateMockFactoryBean" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg name="classToMock" value="org.springframework.jdbc.core.JdbcTemplate"/>
+        <constructor-arg name="defaultAnswer" ref="configServiceTestJdbcAnswer"/>
+    </bean>
+    <bean name="serviceManagerMockFactoryBean" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg name="classToMock" value="ru.sberbank.syncserver2.service.core.ServiceManager"/>
+        <constructor-arg name="defaultAnswer" ref="configSourceTestBeanAnswer"/>
+        <property name="configSource" ref="dataSourceMockFactoryBean"/>
+        <property name="configLoader" ref="configLoaderMockFactoryBean"/>
+    </bean>
+    <bean name="configServiceTestBeanAnswer" class="ru.sberbank.syncserver2.service.config.BeanAnswer"/>
+    <bean name="containerConfigMockFactoryBean" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg name="classToMock" value="ru.sberbank.syncserver2.service.core.config.Bean"/>
+        <constructor-arg name="defaultAnswer" ref="configServiceTestBeanAnswer"/>
+    </bean>
+    <bean name="serviceContainerMockFactoryBean" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg name="classToMock" value="ru.sberbank.syncserver2.service.config.ConfigService"/>
+    </bean>
+    <bean name="serviceContainerMockBean" class="ru.sberbank.syncserver2.service.core.ServiceContainer"
+          factory-bean="serviceContainerMockFactoryBean" scope="prototype">
+        <constructor-arg name="containerConfig" ref="containerConfigMockFactoryBean"/>
+        <constructor-arg name="folder" value="some-folder"/>
+        <constructor-arg name="serviceManager" ref="serviceManagerMockFactoryBean"/>
+    </bean>
+    <bean name="configServiceTestBean" class="ru.sberbank.syncserver2.service.config.ConfigService">
+        <property name="serviceContainer" ref="serviceContainerMockBean"/>
+    </bean>
+
+    <bean name="dbLogServiceBean" class="ru.sberbank.syncserver2.service.log.DbLogService"/>
+    <bean name="clusterManagerServiceTestBean" class="ru.sberbank.syncserver2.service.generator.ClusterManager">
+        <property name="dbLogger" ref="dbLogService"/>
+    </bean>
+    <bean name="spyClusterManagerServiceTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="clusterManagerServiceTestBean"/>
+    </bean>
+    <bean name="dbLogService" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="dbLogServiceBean"/>
+    </bean>
+
+</beans>

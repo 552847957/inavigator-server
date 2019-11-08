@@ -1,0 +1,311 @@
+<html>
+<head><title>IExpressionVisualDef</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IExpressionVisualDef</h1><br/>
+Chart expression visual formatting descriptor object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>BckAsBar</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Contains ShowAsBar setting for combo when in bar/line mode and the same for line/bar when in combo mode. This
+        property is automatically switched with IExpressionVisual.ShowAsBar when going between line/bar and combo and
+        vice versa<p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BckAsLine</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Contains ShowAsLine setting for combo when in bar/line mode and the same for line/bar when in combo mode. This
+        property is automatically switched with IExpressionVisual.ShowAsLine when going between line/bar and combo and
+        vice versa<p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BckAsSymbol</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Contains ShowAsSymbol setting for combo when in bar/line mode and the same for line/bar when in combo mode. This
+        property is automatically switched with IExpressionVisual.ShowAsSymbol when going between line/bar and combo and
+        vice versa<p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BorderWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Width of border around bars. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Width of border around bars in pixels</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CellVariations</b></font> (<a href="IArrayOfCellVariationDef.htm">IArrayOfCellVariationDef</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Expression cell formatting data for straight and pivot table. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ColWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Column width. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExpressionTypes</b></font> (<a href="IArrayOfExpressionType.htm">IArrayOfExpressionType</a>, <i>objectref.</i>)
+<dl>
+    <dd>Array of trend line types to show in line/bar/combo chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExpType</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Type of expression. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Expression type<br/>0 = Undefined<br/>1 = Base expression<br/>2 = Help expression<br/>3 = Stock expression<br/>4
+        = Stock low <br/>5 = Stock high <br/>6 = Stock open <br/>7 = Stock close <br/>8 = Error above<br/>9 = Error
+        below<br/>10 = Error symmetric<br/>11 = Color<br/>12 = Text color<br/>13 = Text format</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeSettings</b></font> (<a href="IGaugeSettingsDef.htm">IGaugeSettingsDef</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Settings for gauge in table expression column. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Gauge setting definitions</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ImageRepresentation</b></font> (<a
+        href="ICellImageRepresentation.htm">ICellImageRepresentation</a>, <i>objectref.</i>)
+<dl>
+    <dd>Settings for image in table expression column. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell image settings object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Invisible</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if expression should be plotted invisible (take up space but without being drawn). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Label</b></font> (<a href="IStringExpr.htm">IStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Label for expression. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LabelAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Alignment for label. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Alignment for label<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LabelVerticalAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Vertical alignment for label. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical alignment for label<br/>0 = top<br/>4 = center<br/>8 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LineMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Sets the line mode in the display options of a chart's expression. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0 = Normal<br/>1 = Smooth<br/>2 = Plateau leading<br/>3 = Plateau center<br/>4 = Plateau trailing</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Alignment for numeric values in table charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Alignment for numeric values in table charts<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumberPresentation</b></font> (<a href="IFieldAttributes.htm">IFieldAttributes</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Number format settings for expression. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumbersOnBars</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if expression result should be shown as numbers on data point. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrimaryAxis</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if left or bottom axis to be used for expression. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Searchable</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if expression column searchable in straight table. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowAsBar</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if expression is to be plotted as bar. This property is automatically switched with
+        IExpressionVisual.BckAsBar when going between line/bar and combo and vice versa<p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowAsLine</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if expression is to be plotted as line. This property is automatically switched with
+        IExpressionVisual.BckAsLine when going between line/bar and combo and vice versa<p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowAsPopup</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if expression is to be included in hover pop-ups. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowAsSymbol</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if expression is to be plotted as symbol. This property is automatically switched with
+        IExpressionVisual.BckAsSymbol when going between line/bar and combo and vice versa<p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowAsTextInChart</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if expression is to be plotted as text in chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowAsTextOnAxis</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if expression is to be plotted as text on axis. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowExpressionLabel</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if expression label should be plotted in legend for single dimension bar/line/combo charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SymbolMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Sets the symbol mode in the display options of a chart's expression. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0 = Auto<br/>1 = Circles<br/>2 = Dots<br/>3 = Squares<br/>5 = Squares filled <br/>6 = Triangles up<br/>7 =
+        Triangles down<br/>8 = Diamonds<br/>9 = Plus<br/>10 = Cross</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Alignment for text values in table charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Alignment for text values in table charts<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>VerticalAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>vertical alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical alignment<br/>0 = top<br/>4 = center<br/>8 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>VisualCues</b></font> (<a href="IVisualCuesDef.htm">IVisualCuesDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Visual cues for expression. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

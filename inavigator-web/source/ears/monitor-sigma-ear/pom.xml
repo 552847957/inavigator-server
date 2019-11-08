@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>ru.sberbank.inavigator</groupId>
+        <artifactId>ears</artifactId>
+        <version>${release_number}</version>
+    </parent>
+
+    <groupId>ru.sberbank.inavigator</groupId>
+    <artifactId>monitor-sigma-ear</artifactId>
+    <packaging>ear</packaging>
+    <name>monitor-sigma-ear</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <version>1.4</version>
+                    <modules>
+                        <webModule>
+                            <groupId>ru.sberbank.inavigator</groupId>
+                            <artifactId>monitor-sigma</artifactId>
+                            <bundleFileName>monitor-sigma.war</bundleFileName>
+                            <contextRoot>/monitor-sigma</contextRoot>
+                        </webModule>
+                    </modules>
+                    <displayName>monitor-sigma-ear</displayName>
+                    <!-- If I want maven to generate the application.xml, set this to true -->
+                    <generateApplicationXml>true</generateApplicationXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+        <finalName>monitor-sigma-ear</finalName>
+    </build>
+
+    <!-- Define the versions of your ear components here -->
+    <dependencies>
+        <dependency>
+            <groupId>ru.sberbank.inavigator</groupId>
+            <artifactId>monitor-sigma</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+</project>

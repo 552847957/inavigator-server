@@ -1,0 +1,332 @@
+<html>
+<head><title>ISliderLayout</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>ISliderLayout</h1><br/>
+Slider/calendar object layout definition object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>BkgMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Background mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Not used</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CalendarShowDayNames</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if day names to be shown in calendar input control. Not supported in QV 7.52!<p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CalendarShowWeekNumbers</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if week numbers to be shown in calendar input control. Not supported in QV 7.52!<p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FixedRange</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for fixed range slider. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Frame</b></font> (<a href="IFrame.htm">IFrame</a>, <i>objectref.</i>)
+<dl>
+    <dd>Sheet object frame rendering information. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>InputStyle</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Slider/calendar object input style. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Slider/calendar object input style<br/>0 = slider<br/>1 = calendar</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LabelOrientation</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Slider label orientation. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Label Orientation<br/>0 = Horizontal<br/>1 = Vertical</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LeftBtnColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Left scroll button color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Max</b></font> (<a href="IValueExpr.htm">IValueExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Max value for slider/calendar object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Max value expression object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Min</b></font> (<a href="IValueExpr.htm">IValueExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Min value for slider/calendar object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Min value expression object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumberOfMajorTicks</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Number of major tick units. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumberOfMinorTicks</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Number of minor tick units per major unit. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumberOfTickLabels</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Number of labels. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumberPresentation</b></font> (<a href="IFieldAttributes.htm">IFieldAttributes</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Slider scale number format. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ReadOnly</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd><p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RightBtnColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Right scroll button color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScaleBkgAlpha</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Scale background alpha factor. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Scale background opacity (0-255)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScaleBkgColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Scale background color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionRange</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Single/multi mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Type of slider/calendar object range<br/>0 = Single value<br/>1 = Multi value</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowPopupValues</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if pop-up labels to be shown. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowScrollButtons</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if scroll buttons to be showm. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowTickMarks</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if tick marks to be shown. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowTickMarkValues</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if tick marek labels to be shown. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SliderAlpha</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Slider/calendar object background opacity. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Slider/calendar object background opacity (0-255)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SliderColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Slider/calendar object background color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SliderStyle</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Slider/calendar object style. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Slider Style<br/>0 = Arrows<br/>1 = Scroll bar</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SoftLock</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if selections via slider/calendar object to override locked field. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Step</b></font> (<a href="IValueExpr.htm">IValueExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Static step value. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Static step expression object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ThumbColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Color of thumb tack. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TickMarkAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Tick mark alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Alignment<br/>0 = left<br/>1 = center (default)<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TickMarkColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Tick mark color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TickMarkPosition</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Tick mark position. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Not used</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseStaticStep</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if static step to be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ValueMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Value mode (discrete/continouos). <p/></dd>
+</dl>
+<dl>
+    <dd><code>Value mode<br/>0 = discrete<br/>1 = continuous/numeric</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Vertical</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for vertical slider. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

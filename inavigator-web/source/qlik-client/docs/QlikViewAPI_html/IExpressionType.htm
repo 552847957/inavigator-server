@@ -1,0 +1,53 @@
+<html>
+<head><title>IExpressionType</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IExpressionType</h1><br/>
+Expression display options object (trendlines etc.)<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>DisplayEquation</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if trend line equations to be displayed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DisplayR2</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if trend line R2 coefficient to be displayed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Order</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Order of polynomial trendline. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Order of polynomial trendline <br/>(only used for IExpressionType.Type=1)<br/>0 = mean<br/>1 = linear<br/>2
+        = 2nd degree fit<br/>3 = 3rd degree fit<br/>4 = 4th degree fit</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Type</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Type of expression result to show. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Type of trendline<br/>1 = polynomial <br/>2 = exponential</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

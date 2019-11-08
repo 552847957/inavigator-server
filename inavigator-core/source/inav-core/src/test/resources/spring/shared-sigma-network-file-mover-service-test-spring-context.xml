@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="cache-diff-checker-service-test-spring-context.xml"/>
+
+    <bean name="databaseFileListerTestBean" class="ru.sberbank.syncserver2.service.file.cache.list.DatabaseFileLister">
+    </bean>
+    <bean name="spyDatabaseFileListerTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="databaseFileListerTestBean"/>
+    </bean>
+
+    <bean name="dataPowerNotificationLogger" class="ru.sberbank.syncserver2.service.monitor.DataPowerNotificationLogger">
+        <property name="dataPowerBeanCode" value="spyDataPowerServiceTestBean"/>
+    </bean>
+    <bean name="spyDataPowerNotificationLogger" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="dataPowerNotificationLogger"/>
+    </bean>
+
+    <bean name="sharedSigmaNetworkFileMoverTestBean" class="ru.sberbank.syncserver2.service.file.transport.SharedSigmaNetworkFileMover">
+        <property name="networkSourceFolder" value="test/tmp/directory/SharedSigmaNetworkFileMoverTest/networkSourceFolder/"/> 	<!--The folder at file transporter with files copied from Sigma-->
+        <property name="localTempFolder" value="test/tmp/directory/SharedSigmaNetworkFileMoverTest/localTempFolder/"/> 	<!--The folder at local disk used for temporary storage while moving file from file transporter to local disk-->
+        <property name="localDestFolder" value="test/tmp/directory/SharedSigmaNetworkFileMoverTest/localDestFolder/"/>	<!--After file is fully copied and MD5 is verified, file is copied to this folder-->
+        <property name="networkSharedFolder" value="test/tmp/directory/SharedSigmaNetworkFileMoverTest/networkSharedFolder/"/>	<!--Before moving file to a local disk, file is moved to this folder at file transporter. It is required to prevent overwriting of file by next update from Alpha-->
+        <property name="staticSharedHosts" value="localhost"/>	<!--The list of hosts the file should be delivered to. It is possible to use this param of FileLister defined in sharedHostsListerCode-->
+        <property name="sharedHostsListerCode" value="changesetDatabaseFileLister"/>	<!--The link to file lister service. It is required to identify the hosts the file should be moved to. This param could be undefined and staticSharedHosts could be defined-->
+        <property name="debugModeWithSMSOnDelivery" value="false"/>	<!--This parameter could be used for debugging only-->
+    </bean>
+    <bean name="spySharedSigmaNetworkFileMoverTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="sharedSigmaNetworkFileMoverTestBean"/>
+    </bean>
+
+</beans>

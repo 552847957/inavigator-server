@@ -1,0 +1,1450 @@
+DASHBOARD_1
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;5&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_2
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;371&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20161231&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;6&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_3
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;9&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_4
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;372&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20161231&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;6&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_5
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;1252&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20161231&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;10&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_6
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;9&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_7
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;9&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_8
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;9&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20161231&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_9
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;371&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;6&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_10
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;371&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;6&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_11
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;372&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;6&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_12
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;372&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;6&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_13
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;1252&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;10&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_14
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;1252&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;10&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_15
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;372&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;6&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_16
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;1252&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;10&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_17
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;371&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;6&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_18
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;5&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;2016-06-30&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;646&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_19
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;226&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;646&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_20
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;1124&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;646&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;8&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_21
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;1124&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;646&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;8&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_22
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;1124&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20161231&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;646&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;8&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_23
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;226&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;646&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_24
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;226&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20161231&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;646&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_25
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;226&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;646&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_26
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.GET_COMMENT_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDepartmentID&quot; value=&quot;355050&quot; /&gt;&lt;param name=&quot;nDataPointID&quot; value=&quot;556&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;nPokID&quot; value=&quot;14390&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_27
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_CARD_DETAIL_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;nMeasID&quot; value=&quot;7&quot; /&gt;&lt;param name=&quot;nPokID&quot; value=&quot;14390&quot; /&gt;&lt;param name=&quot;nCardID&quot; value=&quot;555&quot; /&gt;&lt;param name=&quot;nDepartmentID&quot; value=&quot;355050&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nDataPointID&quot; value=&quot;556&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_28
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_FA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDepartmentID&quot; value=&quot;355050&quot; /&gt;&lt;param name=&quot;nMeasID&quot; value=&quot;7&quot; /&gt;&lt;param name=&quot;nDataPointID&quot; value=&quot;556&quot; /&gt;&lt;param name=&quot;nPokID&quot; value=&quot;14390&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_29
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.COMMENT_SET_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;action&quot; value=&quot;ChangeStatus&quot; /&gt;&lt;param name=&quot;nDepartmentID&quot; value=&quot;355050&quot; /&gt;&lt;param name=&quot;nDataPointID&quot; value=&quot;556&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;nPokID&quot; value=&quot;14390&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_30
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_FA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDepartmentID&quot; value=&quot;355050&quot; /&gt;&lt;param name=&quot;nMeasID&quot; value=&quot;7&quot; /&gt;&lt;param name=&quot;nDataPointID&quot; value=&quot;556&quot; /&gt;&lt;param name=&quot;prevValue&quot; value=&quot;16.4944&quot; /&gt;&lt;param name=&quot;naprID&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;history&quot; value=&quot;-1_14390_355050_556_7_10.0245_&quot; /&gt;&lt;param name=&quot;nPokID&quot; value=&quot;14183&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;mainDepartmentID&quot; value=&quot;355050&quot; /&gt;&lt;param name=&quot;mainDataPointID&quot; value=&quot;556&quot; /&gt;&lt;param name=&quot;mainDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;mainPokID&quot; value=&quot;14390&quot; /&gt;&lt;param name=&quot;mainDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_31
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_FA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDepartmentID&quot; value=&quot;355050&quot; /&gt;&lt;param name=&quot;nMeasID&quot; value=&quot;7&quot; /&gt;&lt;param name=&quot;nDataPointID&quot; value=&quot;556&quot; /&gt;&lt;param name=&quot;nPokID&quot; value=&quot;14390&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;idFATypeRate&quot; value=&quot;4&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_32
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.INDICATOR_DESCRIPTION_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nIndicatorID&quot; value=&quot;14485&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+DASHBOARD_33
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SEARCH_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;SearchString&quot; value=&quot;Сагада&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+------------------------
+COMMENTS_1
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;226&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;646&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_2
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.PERSONAL_CARD_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;646&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_3
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.RESOURCE_IMAGE_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nResourceID&quot; value=&quot;1052&quot; /&gt;&lt;param name=&quot;nResolution&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="fileID" Type="BLOB"/>
+		<Field Name="binFile" Type="BLOB"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_4
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;226&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;646&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_5
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.PUSH_NOTIFICATION_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;Top&quot; value=&quot;&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_6
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.PUSH_NOTIFICATION_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;Top&quot; value=&quot;&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_7
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.GET_COMMENT_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;SystemMsg&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_8
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.GET_COMMENT_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;SystemMsg&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_9
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.PUSH_NOTIFICATION_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;Top&quot; value=&quot;&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_10
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.COMMENT_SET_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;action&quot; value=&quot;ChangeStatus&quot; /&gt;&lt;param name=&quot;SystemMsg&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_11
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.GET_COMMENT_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDepartmentID&quot; value=&quot;355050&quot; /&gt;&lt;param name=&quot;nDataPointID&quot; value=&quot;575&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;nPokID&quot; value=&quot;14587&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_12
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_CARD_DETAIL_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;nMeasID&quot; value=&quot;0&quot; /&gt;&lt;param name=&quot;nPokID&quot; value=&quot;14587&quot; /&gt;&lt;param name=&quot;nDepartmentID&quot; value=&quot;355050&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160630&quot; /&gt;&lt;param name=&quot;nDataPointID&quot; value=&quot;575&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+COMMENTS_13
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.EMPLOYEE_LIST_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_1
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.COMMENT_NO_READ_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_2
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.ENTERPOINT_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nEnterpointID&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_3
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.LAST_DATE_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_4
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;199&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_5
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;199&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nDepartamentID&quot; value=&quot;0&quot; /&gt;&lt;param name=&quot;nTreeOldWay&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_6
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;7&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_7
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;10&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_8
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;10&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_9
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;11&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_10
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;12&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_11
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;212&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_12
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;213&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_13
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;11&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_14
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;12&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_15
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;212&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_16
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;213&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nOrganizationPositionID&quot; value=&quot;644&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;3&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_17
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;6&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_18
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashBoardID&quot; value=&quot;6&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_19
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashBoardID&quot; value=&quot;6&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_20
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;242&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_21
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashBoardID&quot; value=&quot;242&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_22
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.DASHBOARD_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nDashBoardID&quot; value=&quot;242&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="XML" Type="STRING"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>
+-----------------
+OFFICIAL_INFO_23
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAV_2_0.REPORT_DATA_SUBST</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>STRING</type>
+			<value>&lt;params&gt;&lt;param name=&quot;nReportDocumentID&quot; value=&quot;108&quot; /&gt;&lt;param name=&quot;PartNumber&quot; value=&quot;1&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.sbt@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+		</argument>
+	</arguments>
+	<Fields>
+		<Field Name="binFile" Type="BLOB"/>
+		<Field Name="PartCount" Type="NUMBER"/>
+	</Fields>
+	<TextSubstitutes>
+		<TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+	</TextSubstitutes>
+	<provider>DATAPOWER</provider>
+	<service>@service@</service>
+</request>

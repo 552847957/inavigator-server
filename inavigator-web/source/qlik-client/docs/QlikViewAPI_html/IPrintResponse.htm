@@ -1,0 +1,35 @@
+<html>
+<head><title>IPrintResponse</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IPrintResponse</h1><br/>
+<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>ErrorCode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Returns print error codes. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0=Print Successful<br/>1=Printer not found<br/>2=Printer empty printjob<br/>3=Printer unknown error<br/>4=Printer
+        printjob not found error<br/>5=Last print error code</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>URL</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Returns URL of the print job. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

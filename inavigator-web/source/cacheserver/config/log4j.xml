@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="SPRING_FILE" class="org.apache.log4j.RollingFileAppender">
+        <param name="MaxBackupIndex" value="5" />
+        <param name="MaxFileSize" value="100MB" />
+        <param name="File" value="logs/inavigator_syncserver_spring.log"/>
+        <param name="Threshold" value="DEBUG"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%t] %-5p %C{1} - %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="DEBUG_FILE" class="org.apache.log4j.RollingFileAppender">
+        <param name="MaxBackupIndex" value="5" />
+        <param name="MaxFileSize" value="100MB" />
+        <param name="File" value="logs/inavigator_syncserver_debug.log"/>
+        <param name="Threshold" value="DEBUG"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%t] %-5p %C{1} - %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="TRACE_SYNCSERVER_ONLINE_SQL" class="org.apache.log4j.RollingFileAppender">
+        <param name="MaxBackupIndex" value="5" />
+        <param name="MaxFileSize" value="100MB" />
+        <param name="File" value="logs/trace_syncserver_online_sql.log"/>
+        <param name="Threshold" value="TRACE"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%t] %-5p %C{1} - %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="INFO_FILE" class="org.apache.log4j.RollingFileAppender">
+        <param name="MaxBackupIndex" value="5" />
+        <param name="MaxFileSize" value="100MB" />
+        <param name="File" value="logs/inavigator_syncserver_info.log"/>
+        <param name="Threshold" value="INFO"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%t] %-5p %C{1} - %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <param name="Threshold" value="DEBUG"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%t] %-5p %C{1} - %m%n" />
+        </layout>
+    </appender>
+
+    <root>
+        <level value="debug"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="DEBUG_FILE"/>
+        <appender-ref ref="INFO_FILE"/>
+    </root>
+
+    <logger name="org.apache">
+        <level value="info"/>
+    </logger>
+
+    <logger name="org.springframework">
+        <level value="info"/>
+    </logger>
+
+    <logger name="ru.sberbank.syncserver2.service.log.DataPowerLogService" additivity="false">
+        <level value="info"/>
+    </logger>
+
+    <logger name="ru.sberbank">
+        <level value="debug"/>
+    </logger>
+
+    <logger name="trace.syncserver.online.sql" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="TRACE_SYNCSERVER_ONLINE_SQL"/>
+    </logger>
+
+</log4j:configuration>

@@ -1,0 +1,138 @@
+.menuIconIncidents {
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-incident-normal.png);
+}
+
+.menuIconIncidentsHL {
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-incident-active.png);
+}
+
+.menuIconAvailability {
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-availability-normal.png);
+}
+
+.menuIconAvailabilityHL{
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-availability-active.png)
+}
+
+.menuIconPerformance{
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-productivity-normal.png);
+}
+
+.menuIconPerformanceHL {
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-productivity-active.png)
+}
+
+.menuIconPerformanceCentr{
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-centralized-normal.png);
+}
+
+.menuIconPerformanceCentrHL {
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-centralized-active.png)
+}
+
+.menuIconCriticalITServices{
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-critical-normal.png);
+}
+
+.menuIconCriticalITServicesHL{
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-critical-active.png)
+}
+
+.menuIconIPad{
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-ipad-normal.png);
+}
+
+.menuIconIPadHL{
+    width: 84px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(../images/simple/m-ipad-active.png)
+}
+
+.menuIconKBO {
+    width: 84px;
+    height: 80px;
+    display: block;
+    cursor: hand;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='crop', src='../images/simple/m-kbo-normal.png');
+}
+
+.menuIconKBOHL {
+    width: 84px;
+    height: 80px;
+    display: block;
+    cursor: hand;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='crop', src='../images/simple/m-kbo-active.png');
+}
+
+.menuIconOptions{
+    width: 48px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background: url('../images/simple/m-settings-normal.png') center top no-repeat;
+}
+
+.menuIconOptionsHL{
+    width: 48px;
+    height: 80px;
+    display: block;
+    background-repeat: no-repeat;
+    background: url('../images/simple/m-settings-active.png') center top no-repeat;
+}
+
+A.logout {
+    width: 22px;
+    height: 80px;
+    display: block;
+    background: url('../images/simple/m-exit-normal.png') center top no-repeat;
+}
+
+A.logout:hover {
+    background-image: url('../images/simple/m-exit-mouseover.png');
+}

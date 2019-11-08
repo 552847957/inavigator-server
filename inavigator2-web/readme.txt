@@ -1,0 +1,1 @@
+Эта директория заполняется pipeline-ом из jenkins артифактами из проекта inavigator2-web

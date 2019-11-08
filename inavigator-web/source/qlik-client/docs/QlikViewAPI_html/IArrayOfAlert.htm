@@ -1,0 +1,96 @@
+<html>
+<head><title>IArrayOfAlert</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IArrayOfAlert</h1><br/>
+Array of alert definition objects<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Method Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<h3>Add</h3>
+<pre> <b>Add</b>()</pre>
+<dl>
+    <dd>Adds an element to array. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;create&nbsp;new&nbsp;alert<br/>set&nbsp;docprop&nbsp;=&nbsp;ActiveDocument.GetProperties<br/>set&nbsp;al&nbsp;=&nbsp;docprop.Alerts<br/>al.Add<br/>no&nbsp;=&nbsp;al.Count-1<br/>al.Item(no).Action.Id&nbsp;=&nbsp;"AL03"<br/>al.Item(no).Action.Message.v&nbsp;=&nbsp;"Hello&nbsp;world!"<br/>al.Item(no).Comment&nbsp;=&nbsp;"New&nbsp;alert"<br/>al.Item(no).Condition.AllClear&nbsp;&nbsp;=&nbsp;false<br/>al.Item(no).Condition.BookmarkId&nbsp;&nbsp;=&nbsp;"BM01"<br/>al.Item(no).Condition.Condition.v&nbsp;&nbsp;=&nbsp;"sum(Sales)>Sum(Budget)"<br/>al.Item(no).Enabled&nbsp;=&nbsp;true<br/>al.Item(no).Triggers.Interactive&nbsp;=&nbsp;true<br/>al.Item(no).Triggers.OnPostReload&nbsp;=&nbsp;true<br/>ActiveDocument.SetProperties&nbsp;docprop<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveAt</h3>
+<pre> <b>RemoveAt</b>(Integer Index)</pre>
+<dl>
+    <dd>Removes an item from array. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Index</code></b> (Integer) : Index of item to remove (0 based)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;remove&nbsp;first&nbsp;alert&nbsp;in&nbsp;document<br/>set&nbsp;docprop&nbsp;=&nbsp;ActiveDocument.GetProperties<br/>set&nbsp;al&nbsp;=&nbsp;docprop.Alerts<br/>al.RemoveAt(0)<br/>ActiveDocument.SetProperties&nbsp;docprop<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>Count</b></font> (Integer, <i>read-only</i>)
+<dl>
+    <dd>Returns number of elements in array. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Item</b></font> (<a href="IAlert.htm">IAlert</a>, <i>objectref.</i>)
+<dl>
+    <dd>Returns alert definition object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Alert definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

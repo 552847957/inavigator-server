@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="config-service-test-spring-context.xml"/>
+
+    <bean name="onlineRequestQlikSenseExecutorTestBean" class="ru.sberbank.syncserver2.service.sql.OnlineRequestQlikSenseExecutor">
+        <property name="serverHost" value="sbt-csit-011.ca.sbrf.ru"/>
+        <property name="serverPort" value="4747"/>
+        <property name="serverContext" value="/app"/>
+        <property name="certificateDir" value="classpath:sertificates"/>
+        <property name="rootCertificateFileName" value="root.pem"/>
+        <property name="clientCertificateFileName" value="client.pem"/>
+        <property name="clientKeyPathFileName" value="client_key_8.pem"/>
+        <property name="clientKeyPassword" value=""/>
+        <property name="user" value="sbt-biryukov-s"/>
+        <property name="domain" value="ALPHA"/>
+        <property name="maxTotal" value="8"/>
+        <property name="maxIdle" value="8"/>
+        <property name="minIdle" value="0"/>
+    </bean>
+
+</beans>

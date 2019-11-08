@@ -1,0 +1,8 @@
+<configuration>
+	<modules>
+		<systemModule code="LOGS" title="Логи" className="ru.sberbank.adminconsole.gui.modules.LogsModule"/>
+		<systemModule code="SERVICES" title="Сервисы" className="ru.sberbank.adminconsole.gui.modules.ServicesModule"/>
+		<systemModule code="SETTINGS" title="Настройки" className="ru.sberbank.adminconsole.gui.modules.SettingsModule"/>
+		<systemModule code="EMPLOYEE" title="Администраторы" className="ru.sberbank.adminconsole.gui.modules.EmployeeModule"/>
+	</modules>
+</configuration>

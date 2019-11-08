@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/mvc
+                        http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                        http://www.springframework.org/schema/util
+                        http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+    <context:component-scan base-package="ru.sberbank.syncserver2"/>
+
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <bean class="org.springframework.http.MediaType">
+                            <constructor-arg index="0" value="*" />
+                            <constructor-arg index="1" value="*" />
+                            <constructor-arg index="2" value="UTF-8" />
+                        </bean>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <mvc:resources mapping="/css/**" location="/css/,classpath:/META-INF/resources/css/"/>
+    <mvc:resources mapping="/images/**" location="/images/,classpath:/META-INF/resources/images/"/>
+    <mvc:resources mapping="/js/**" location="/js/,classpath:/META-INF/resources/js/"/>
+    <mvc:resources mapping="/script/**" location="/script/,classpath:/META-INF/resources/script/"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/views/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="contentType"><value>text/html;charset=windows-1251</value></property>
+         <property name="order" value="0" />
+    </bean>
+
+    <bean id="employeeValidator" class="ru.sberbank.syncserver2.gui.web.EmployeeValidator">
+        <property name="database"><ref bean="database" /></property>
+    </bean>
+
+    <bean id="employeeController" class="ru.sberbank.syncserver2.gui.web.EmployeeController">
+        <property name="commandClass"><value>ru.sberbank.syncserver2.gui.data.Employee</value></property>
+        <property name="database"><ref bean="database" /></property>
+        <property name="validator"><ref bean="employeeValidator"/></property>
+    </bean>
+
+    <bean id="serviceAdminController2" class="ru.sberbank.syncserver2.gui.web.ServiceAdminController">
+        <property name="commandClass"><value>java.lang.String</value></property>
+        <property name="database"><ref bean="database" /></property>
+    </bean>
+
+    <bean id="systemInfoController" class="ru.sberbank.syncserver2.gui.web.SystemInfoController">
+        <property name="commandClass"><value>java.lang.String</value></property>
+        <property name="database"><ref bean="database" /></property>
+    </bean>
+
+    <bean id="logController" class="ru.sberbank.syncserver2.gui.web.LogController">
+        <property name="commandClass"><value>java.lang.String</value></property>
+        <property name="database"><ref bean="database" /></property>
+    </bean>
+
+    <bean id="generatorController" class="ru.sberbank.syncserver2.gui.web.GeneratorController">
+        <property name="commandClass"><value>java.lang.String</value></property>
+        <property name="database"><ref bean="database" /></property>
+    </bean>
+
+    <bean id="propertyController" class="ru.sberbank.syncserver2.gui.web.PropertyController">
+        <property name="commandClass"><value>ru.sberbank.syncserver2.gui.data.SyncConfig</value></property>
+        <property name="database"><ref bean="database" /></property>
+    </bean>
+
+    <bean id="clientPropertyController" class="ru.sberbank.syncserver2.gui.web.ClientPropertyController">
+        <property name="commandClass"><value>java.lang.String</value></property>
+        <property name="database"><ref bean="database" /></property>
+    </bean>
+
+    <bean id="adminAuthController"
+          class="ru.sberbank.syncserver2.gui.web.AuthController">
+        <property name="loginPage">
+            <value>../views/login</value>
+        </property>
+        <property name="database">
+            <ref bean="database" />
+        </property>
+    </bean>
+
+    <bean id="pushNotificationController"
+          class="ru.sberbank.syncserver2.gui.web.PushNotificationController">
+        <property name="commandClass"><value>java.lang.String</value></property>
+    </bean>
+
+    <bean id="commonPasswordController"
+          class="ru.sberbank.syncserver2.gui.web.PasswordController">
+        <property name="database">
+            <ref bean="database" />
+        </property>
+        <property name="commandClass">
+            <value>java.lang.String</value>
+        </property>
+    </bean>
+
+    <bean id="changePasswordController" class="ru.sberbank.syncserver2.gui.web.ChangePasswordController">
+        <property name="commandClass"><value>java.lang.String</value></property>
+        <property name="database"><ref bean="database" /></property>
+    </bean>
+        
+    <bean id="auditController" class="ru.sberbank.syncserver2.gui.web.AuditController">
+        <property name="commandClass"><value>java.lang.String</value></property>
+        <property name="database"><ref bean="database" /></property>
+    </bean>    
+
+    <bean id="authUrlMapping"
+          class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="*.auth.gui">adminAuthController</prop>
+                <prop key="*.password.gui">commonPasswordController</prop>
+                <prop key="welcome.public.gui">commonPasswordController</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="adminUrlMapping"
+          class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="adminAuthController" />
+            </list>
+        </property>
+        <property name="mappings">
+            <props>
+                <prop key="*.employee.gui"  > employeeController      	</prop>
+                <prop key="*.services.gui"  > serviceAdminController2  </prop>
+                <prop key="*.systeminfo.gui"> systemInfoController     </prop>
+                <prop key="*.properties.gui"> propertyController       </prop>
+                <prop key="*.clientproperties.gui"> clientPropertyController       </prop>
+                <prop key="*.logs.gui"		 > logController			</prop>
+                <prop key="*.changepassword.gui"> changePasswordController</prop>
+                <prop key="*.generator.gui"> generatorController </prop>
+                <prop key="*.push.gui"> pushNotificationController </prop>
+                <prop key="**/push/**"> pushNotificationController </prop>
+                <prop key="*.audit.gui"> auditController </prop>
+            </props>
+        </property>
+    </bean>
+
+
+</beans:beans>

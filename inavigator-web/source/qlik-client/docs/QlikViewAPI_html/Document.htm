@@ -1,0 +1,4323 @@
+<html>
+<head><title>Document</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>Document</h1><br/>
+The QlikView document as read from a qvw or qva file<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Method Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<h3>Activate</h3>
+<pre> <b>Activate</b>()</pre>
+<dl>
+    <dd>Makes the document the active document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;Visual&nbsp;Basic<br/>set&nbsp;QvDoc1&nbsp;=&nbsp;GetObject("c:\windows\desktop\test1.qvw")<br/>set&nbsp;QvDoc2&nbsp;=&nbsp;GetObject("c:\windows\desktop\test2.qvw")<br/>QvDoc1.Activate<br/><br/>rem&nbsp;VBScript<br/>set&nbsp;App&nbsp;=&nbsp;ActiveDocument.GetApplication<br/>rem&nbsp;open&nbsp;new&nbsp;document&nbsp;and&nbsp;activate&nbsp;it<br/>set&nbsp;newdoc&nbsp;=&nbsp;App.OpenDoc("C:\MyDoc.qvw","","")<br/>'back&nbsp;to&nbsp;ActiveDocument&nbsp;(=&nbsp;document&nbsp;running&nbsp;macro)&nbsp;<br/>ActiveDocument.Activate&nbsp;<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ActivateSheet</h3>
+<pre><a href="Sheet.htm">Sheet</a> <b>ActivateSheet</b>(String SheetNameOrNumber)</pre>
+<dl>
+    <dd>Activates sheet by number. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SheetNameOrNumber</code></b> (String) : Number of sheet in order from left to right (0 based)
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Sheet returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ActivateSheet&nbsp;1<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ActivateSheetById</h3>
+<pre><a href="Sheet.htm">Sheet</a> <b>ActivateSheetById</b>(String SheetId)</pre>
+<dl>
+    <dd>Activates sheet by sheet ID. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SheetId</code></b> (String) : Sheet ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Sheet returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ActivateSheetByID&nbsp;"SH01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ActiveSheet</h3>
+<pre><a href="Sheet.htm">Sheet</a> <b>ActiveSheet</b>()</pre>
+<dl>
+    <dd>Returns the active sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>Rem&nbsp;minimize&nbsp;all&nbsp;active&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;active&nbsp;sheet&nbsp;<br/>set&nbsp;s=ActiveDocument.ActiveSheet<br/>objs=s.GetActiveSheetObjects<br/>for&nbsp;i=lbound(objs)&nbsp;to&nbsp;ubound(objs)<br/>&nbsp;&nbsp;&nbsp;&nbsp;objs(i).Minimize<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddDocReport</h3>
+<pre>String <b>AddDocReport</b>(IReport Report)</pre>
+<dl>
+    <dd>Adds a document report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Report</code></b> (<a href="IReport.htm">IReport</a>) : Document report object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>New report ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;rep&nbsp;=&nbsp;ActiveDocument.GetApplication.CreateEmptyReport<br/>&nbsp;rep.Name&nbsp;=&nbsp;"MyNewReport"<br/>&nbsp;rep.Comment&nbsp;=&nbsp;"Sample&nbsp;report"<br/>&nbsp;rep.Pages.Add<br/>&nbsp;rep.Pages.Item(0).Landscape&nbsp;=&nbsp;true<br/>&nbsp;rep.Pages.Item(0).PageMode&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'single&nbsp;paper&nbsp;page<br/>&nbsp;rep.Pages.Item(0).Items.Add<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).ObjectId&nbsp;=&nbsp;"CH21"<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Top&nbsp;=&nbsp;0&nbsp;&nbsp;'top<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Left&nbsp;=&nbsp;0&nbsp;&nbsp;'left<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Height&nbsp;=&nbsp;0.5&nbsp;'half&nbsp;paper&nbsp;height<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Width&nbsp;=&nbsp;0.5&nbsp;'half&nbsp;paper&nbsp;width<br/>&nbsp;ActiveDocument.AddDocReport&nbsp;rep<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddUserReport</h3>
+<pre>String <b>AddUserReport</b>(IReport Report)</pre>
+<dl>
+    <dd>Adds a user report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Report</code></b> (<a href="IReport.htm">IReport</a>) : Document report object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>New report ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;rep&nbsp;=&nbsp;ActiveDocument.GetApplication.CreateEmptyReport<br/>&nbsp;rep.Name&nbsp;=&nbsp;"MyNewReport"<br/>&nbsp;rep.Comment&nbsp;=&nbsp;"Sample&nbsp;report"<br/>&nbsp;rep.Pages.Add<br/>&nbsp;rep.Pages.Item(0).Landscape&nbsp;=&nbsp;true<br/>&nbsp;rep.Pages.Item(0).PageMode&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'single&nbsp;paper&nbsp;page<br/>&nbsp;rep.Pages.Item(0).Items.Add<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).ObjectId&nbsp;=&nbsp;"CH21"<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Top&nbsp;=&nbsp;0&nbsp;&nbsp;'top<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Left&nbsp;=&nbsp;0&nbsp;&nbsp;'left<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Height&nbsp;=&nbsp;0.5&nbsp;'half&nbsp;paper&nbsp;height<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Width&nbsp;=&nbsp;0.5&nbsp;'half&nbsp;paper&nbsp;width<br/>&nbsp;ActiveDocument.AddUserReport&nbsp;rep<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ApplyTheme</h3>
+<pre> <b>ApplyTheme</b>(String FileName)</pre>
+<dl>
+    <dd>Applies a theme to the document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : Theme file name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ApplyTheme&nbsp;"A:\Forest.qvt"&nbsp;<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Back</h3>
+<pre> <b>Back</b>()</pre>
+<dl>
+    <dd>Undoes last logical operation. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Back<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>BackCount</h3>
+<pre>Integer <b>BackCount</b>()</pre>
+<dl>
+    <dd>Returns the number of entries on the Back (logical undo) stack. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>NrOfLogicalUndoSteps&nbsp;=&nbsp;ActiveDocument.BackCount<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CheckAlert</h3>
+<pre><a href="Ireturn%20object%20for%20Doc.CheckAlertAndReturnAction_OBSOLETE()%20and%20Doc.CheckAlert().htm">Ireturn object for Doc.CheckAlertAndReturnAction_OBSOLETE() and Doc.CheckAlert()</a> <b>CheckAlert</b>(IAlert Alert, IArrayOfBookmark Bookmark)</pre>
+<dl>
+    <dd>Checks an alert. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Alert</code></b> (<a href="IAlert.htm">IAlert</a>) : Alert definition object</dd>
+            <dd><b><code>Bookmark</code></b> (<a href="IArrayOfBookmark.htm">IArrayOfBookmark</a>) : Array of bookmark
+                definition objects
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Alert check returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;albm&nbsp;=&nbsp;ActiveDocument.GetAlertAndBookmark("AL01")<br/>set&nbsp;alertstatus&nbsp;=&nbsp;ActiveDocument.CheckAlert(albm.Alert,&nbsp;albm.Bookmark)<br/>if&nbsp;alertstatus.Default&nbsp;then&nbsp;<br/>&nbsp;&nbsp;&nbsp;msgbox("Alert&nbsp;fired")<br/>else<br/>&nbsp;&nbsp;&nbsp;msgbox("Alert&nbsp;not&nbsp;fired")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Clear</h3>
+<pre> <b>Clear</b>()</pre>
+<dl>
+    <dd><p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ClearAll</h3>
+<pre> <b>ClearAll</b>(Boolean LockedAlso)</pre>
+<dl>
+    <dd>Clears selections in all fields. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>LockedAlso</code></b> (Boolean) : True if also locked fields are to be cleared</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ClearAll&nbsp;false&nbsp;<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ClearBackForward</h3>
+<pre> <b>ClearBackForward</b>()</pre>
+<dl>
+    <dd>Clears the back/forward (logical undo/redo) stack. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ClearBackForward<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ClearCache</h3>
+<pre> <b>ClearCache</b>()</pre>
+<dl>
+    <dd>Clears object cache. For debug use only!!<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.01</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ClearCache<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ClearDocBookmarks</h3>
+<pre> <b>ClearDocBookmarks</b>()</pre>
+<dl>
+    <dd>Clears document bookmarks. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ClearDocBookmarks<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ClearDocReports</h3>
+<pre> <b>ClearDocReports</b>()</pre>
+<dl>
+    <dd>Clears all document reports. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ClearDocReports<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ClearUserReports</h3>
+<pre> <b>ClearUserReports</b>()</pre>
+<dl>
+    <dd>Clears user document reports. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ClearUserReports<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CloseDoc</h3>
+<pre> <b>CloseDoc</b>()</pre>
+<dl>
+    <dd>Close the QV document. NOTE! This method MUST NOT be used on ActiveDocument in VBScript<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;App&nbsp;=&nbsp;ActiveDocument.GetApplication<br/>Rem&nbsp;**&nbsp;open&nbsp;new&nbsp;document&nbsp;and&nbsp;activate&nbsp;it&nbsp;**<br/>set&nbsp;newdoc&nbsp;=&nbsp;App.OpenDoc("C:\MyDoc.qvw","","")<br/>Rem&nbsp;**&nbsp;back&nbsp;to&nbsp;ActiveDocument&nbsp;(=&nbsp;document&nbsp;running&nbsp;macro)&nbsp;**&nbsp;<br/>ActiveDocument.Activate&nbsp;&nbsp;<br/>Rem&nbsp;**&nbsp;close&nbsp;new&nbsp;document&nbsp;again&nbsp;**<br/>newdoc.CloseDoc<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyCurrentSelectionsToClipboard</h3>
+<pre> <b>CopyCurrentSelectionsToClipboard</b>()</pre>
+<dl>
+    <dd>Copies current selection stamp to clipboard. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;copy&nbsp;selection&nbsp;stamp&nbsp;of&nbsp;active&nbsp;document&nbsp;**<br/>ActiveDocument.CopyCurrentSelectionsToClipboard<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateDocBookmark</h3>
+<pre> <b>CreateDocBookmark</b>(Boolean Additive, String Name, String Id, short Type, Boolean ExcludeSelections, Boolean LayoutState, Boolean Hide, Boolean ShowPopupInfo, String InfoMsg, Boolean InputFieldValuesFlag)</pre>
+<dl>
+    <dd>Creates new document bookmark. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Additive</code></b> (Boolean) : true if bookmark to be applied on top of current selections
+            </dd>
+            <dd><b><code>Name</code></b> (String) : Name of bookmark</dd>
+            <dd><b><code>Id</code></b> (String) : Bookmark ID</dd>
+            <dd><b><code>Type</code></b> (short) : 0 = Normal<br/>1 = Shared<br/>2 = Temporary</dd>
+            <dd><b><code>ExcludeSelections</code></b> (Boolean) :</dd>
+            <dd><b><code>LayoutState</code></b> (Boolean) :</dd>
+            <dd><b><code>Hide</code></b> (Boolean) :</dd>
+            <dd><b><code>ShowPopupInfo</code></b> (Boolean) :</dd>
+            <dd><b><code>InfoMsg</code></b> (String) :</dd>
+            <dd><b><code>InputFieldValuesFlag</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.CreateDocBookmark&nbsp;false,&nbsp;"MyBookmark"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateGroup</h3>
+<pre><a href="Group.htm">Group</a> <b>CreateGroup</b>(String Name)</pre>
+<dl>
+    <dd>Creates a new group. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Name of new group</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>New group returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>Set&nbsp;gr&nbsp;=&nbsp;ActiveDocument.CreateGroup("TimeLine")<br/>gr.AddField&nbsp;"Year"<br/>gr.AddField&nbsp;"Quarter"<br/>gr.AddField&nbsp;"Month"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateSheet</h3>
+<pre><a href="Sheet.htm">Sheet</a> <b>CreateSheet</b>()</pre>
+<dl>
+    <dd>Creates a new sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;newsheet=ActiveDocument.CreateSheet<br/>set&nbsp;sp=newsheet.GetProperties<br/>sp.Name="abc"<br/>newsheet.setProperties&nbsp;sp<br/>newsheet.Activate<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateUserBookmark</h3>
+<pre> <b>CreateUserBookmark</b>(String Name, Boolean layoutState, Boolean additive, Boolean showPopupInfo, String InfoMessage, Boolean ExcludeSelections, Boolean InputFieldValuesFlag)</pre>
+<dl>
+    <dd>Creates new user bookmark. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Name of bookmark</dd>
+            <dd><b><code>layoutState</code></b> (Boolean) : True if layout state is included</dd>
+            <dd><b><code>additive</code></b> (Boolean) : True if bookmark to be applied on top of current selections
+            </dd>
+            <dd><b><code>showPopupInfo</code></b> (Boolean) : True if pop-up message is shown</dd>
+            <dd><b><code>InfoMessage</code></b> (String) : Bookmark info as text</dd>
+            <dd><b><code>ExcludeSelections</code></b> (Boolean) : True if selections are excluded from bookmark</dd>
+            <dd><b><code>InputFieldValuesFlag</code></b> (Boolean) : True if input field values are included</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.CreateUserBookmark&nbsp;"MyBookmark"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateVariable</h3>
+<pre>Boolean <b>CreateVariable</b>(String Name)</pre>
+<dl>
+    <dd>Creates a new variable. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Name of new variable</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True returned if operation succesful</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.CreateVariable&nbsp;"MyVar"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogAlerts</h3>
+<pre> <b>DialogAlerts</b>()</pre>
+<dl>
+    <dd>Opens the Alerts dialog. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.50</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.DialogAlerts<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogEditModule</h3>
+<pre> <b>DialogEditModule</b>()</pre>
+<dl>
+    <dd>Opens Edit Module dialog. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;will&nbsp;not&nbsp;work&nbsp;from&nbsp;VBScript&nbsp;in&nbsp;document&nbsp;module&nbsp;**<br/>ActiveDocument.DialogEditModule<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogEditScript</h3>
+<pre> <b>DialogEditScript</b>()</pre>
+<dl>
+    <dd>Launches the Edit Script dialog. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.DialogEditScript<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogMoreBookmarks</h3>
+<pre> <b>DialogMoreBookmarks</b>()</pre>
+<dl>
+    <dd>Opens More Bookmarks dialog. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.DialogMoreBookmarks<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogProperties</h3>
+<pre>Boolean <b>DialogProperties</b>(Integer Page)</pre>
+<dl>
+    <dd>Opens Document Properties dialog. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Page</code></b> (Integer) : Property dialog page (0 based). -1 opens on last used page.</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.DialogProperties&nbsp;3<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogReports</h3>
+<pre> <b>DialogReports</b>()</pre>
+<dl>
+    <dd>Opens the Reports dialog. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.50</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.DialogReports<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DoReload</h3>
+<pre>Boolean <b>DoReload</b>(Integer Mode, Boolean Partial, Boolean Debug)</pre>
+<dl>
+    <dd>Executes the script. This is a more modern version of the old Reload member. The old Reload will continue to
+        work for most applications.<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Mode</code></b> (Integer) : Error handling mode<br/>0 = Default<br/>1 = Attempt recovery on all
+                errors<br/>2 = Fail on all errors
+            </dd>
+            <dd><b><code>Partial</code></b> (Boolean) : True for partial reload</dd>
+            <dd><b><code>Debug</code></b> (Boolean) : True if debug breakpoints to be honored</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True returned if reload finished successfully</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.20</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.DoReload&nbsp;2,false,false<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DynamicUpdateCommand</h3>
+<pre><a href="Ireturn%20object%20for%20Doc.DynamicUpdateCommand().htm">Ireturn object for Doc.DynamicUpdateCommand()</a> <b>DynamicUpdateCommand</b>(String Statements)</pre>
+<dl>
+    <dd>Executes in-memory transactions. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Statements</code></b> (String) : sql statement</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>Rem&nbsp;Dynamic&nbsp;Data&nbsp;Update<br/><br/>sub&nbsp;Update<br/>&nbsp;&nbsp;SET&nbsp;Result&nbsp;=&nbsp;ActiveDocument.DynamicUpdateCommand&nbsp;("UPDATE&nbsp;*&nbsp;SET&nbsp;Discount&nbsp;=&nbsp;if(Discount&nbsp;>=&nbsp;35,&nbsp;0,&nbsp;if&nbsp;(City='Stockholm',&nbsp;Discount&nbsp;+&nbsp;5,&nbsp;Discount&nbsp;+&nbsp;2))&nbsp;WHERE&nbsp;Country&nbsp;=&nbsp;'SE'")<br/>&nbsp;&nbsp;if&nbsp;Result&nbsp;=&nbsp;false&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox&nbsp;Result.ErrorMessage<br/>&nbsp;&nbsp;end&nbsp;if&nbsp;&nbsp;<br/>end&nbsp;sub<br/><br/>sub&nbsp;Insert<br/>&nbsp;&nbsp;SET&nbsp;Result&nbsp;=&nbsp;ActiveDocument.DynamicUpdateCommand&nbsp;("INSERT&nbsp;INTO&nbsp;*&nbsp;(Country,&nbsp;City)&nbsp;VALUES&nbsp;(DK,&nbsp;Copenhagen),&nbsp;(NO,&nbsp;Oslo)")<br/>&nbsp;&nbsp;if&nbsp;Result&nbsp;=&nbsp;false&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox&nbsp;Result.ErrorMessage<br/>&nbsp;&nbsp;end&nbsp;if&nbsp;&nbsp;<br/>end&nbsp;sub<br/><br/>sub&nbsp;Delete<br/>&nbsp;&nbsp;SET&nbsp;Result&nbsp;=&nbsp;ActiveDocument.DynamicUpdateCommand&nbsp;("DELETE&nbsp;FROM&nbsp;CITY&nbsp;WHERE&nbsp;IsNull&nbsp;(Discount)")<br/>&nbsp;&nbsp;if&nbsp;Result&nbsp;=&nbsp;false&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox&nbsp;Result.ErrorMessage<br/>&nbsp;&nbsp;end&nbsp;if&nbsp;&nbsp;<br/>end&nbsp;sub</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Evaluate</h3>
+<pre>String <b>Evaluate</b>(String Expression)</pre>
+<dl>
+    <dd>Evaluates a general QlikView expression and returns result as a string value. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Expression</code></b> (String) : QlikView expression to be evaluated</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>String result of evaluated QlikView expression</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(activedocument.Evaluate("only(Class)&left('abc',2)"))<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>EvaluateEx</h3>
+<pre><a href="IFieldValue.htm">IFieldValue</a> <b>EvaluateEx</b>(String Expression)</pre>
+<dl>
+    <dd>Evaluates a general QlikView expression and returns result as a dual value. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Expression</code></b> (String) : QlikView expression to be evaluated</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Result of evaluated QlikView expression as dual</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(activedocument.Evaluate("only(Class)&left('abc',2)")).Text<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportBookmarks</h3>
+<pre>Integer <b>ExportBookmarks</b>(String FileName)</pre>
+<dl>
+    <dd>Exports all bokkmarks to file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Number of bookmarks exported</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ExportBookmarks&nbsp;"test.qbm"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportLayoutFile</h3>
+<pre> <b>ExportLayoutFile</b>(String FileName, String CovertScriptPassword, String ModulePassword)</pre>
+<dl>
+    <dd>Exports layout information to xml. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+            <dd><b><code>CovertScriptPassword</code></b> (String) : Hidden Script password</dd>
+            <dd><b><code>ModulePassword</code></b> (String) : Macro module password</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ExportLayoutFile&nbsp;"c:\AppLayout.xml"</code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportSheetLayoutFile</h3>
+<pre> <b>ExportSheetLayoutFile</b>(String FileName, String SheetId)</pre>
+<dl>
+    <dd>Exports sheet layout information to XML. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+            <dd><b><code>SheetId</code></b> (String) : Sheet ID of target sheet</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ExportSheetLayoutFile&nbsp;"c:\FirstSheetLayout.xml",&nbsp;"SH01"</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportUserBookmarks</h3>
+<pre>Integer <b>ExportUserBookmarks</b>(String FileName)</pre>
+<dl>
+    <dd>Exports user bookmarks. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Number of bookmarks exported</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.50</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ExportUserBookmarks&nbsp;"test.qbm"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Fields</h3>
+<pre><a href="Field.htm">Field</a> <b>Fields</b>(String Name)</pre>
+<dl>
+    <dd>Returns the fields in the document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Field name</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class Field returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.Fields("Member")<br/>msgbox(fld.GetCardinal)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>FireQvEvent</h3>
+<pre> <b>FireQvEvent</b>(String EventCategory, String EventSource)</pre>
+<dl>
+    <dd>Fires a QlikView event. Only meaningful in connection with QlikView OCX integration.. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>EventCategory</code></b> (String) : Value to be passed to EventCategory property of QV OCX
+                (valid only within OnQvEvent event context). Could be e.g. $User or $Button
+            </dd>
+            <dd><b><code>EventSource</code></b> (String) : Value to be passed to EventSource property of QV OCX (valid
+                only within OnQvEvent event context). Could be e.g. BU01 or SH01
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.52</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.FireQvEvent&nbsp;"$button","BU01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>FireQvUserEvent</h3>
+<pre> <b>FireQvUserEvent</b>(String EventSource)</pre>
+<dl>
+    <dd>Fires a QlikView event with EventCategory=$User. Only meaningful in connection with QlikView OCX integration..
+        <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>EventSource</code></b> (String) : Value to be passed to EventSource property of QV OCX (valid
+                only within OnQvEvent event context). Could be e.g. BU01 or SH01
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.52</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.FireQvUserEvent&nbsp;"SH01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Forward</h3>
+<pre> <b>Forward</b>()</pre>
+<dl>
+    <dd>Redoes the last undone logical operation. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Forward<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ForwardCount</h3>
+<pre>Integer <b>ForwardCount</b>()</pre>
+<dl>
+    <dd>Returns the number of entries on the Forward (logical redo) stack. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>NrOfLogicalRedoSteps&nbsp;=&nbsp;ActiveDocument.ForwardCount<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetAlert</h3>
+<pre><a href="Ireturn%20object%20for%20Doc.GetAlert().htm">Ireturn object for Doc.GetAlert()</a> <b>GetAlert</b>(String Id)</pre>
+<dl>
+    <dd>Returns alert. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : Alert ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Alert returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>if&nbsp;ActiveDocument.GetAlert("AL01").Default&nbsp;=&nbsp;true&nbsp;then&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox("alert&nbsp;exists")<br/>else<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox("alert&nbsp;does&nbsp;not&nbsp;exist")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetAlertAndBookmark</h3>
+<pre><a href="Ireturn%20object%20for%20Doc.GetAlertAndBookmark().htm">Ireturn object for Doc.GetAlertAndBookmark()</a> <b>GetAlertAndBookmark</b>(String Id)</pre>
+<dl>
+    <dd>Returns an alert and its associated bookmarks. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : Alert ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Alert with bookmark</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;albm&nbsp;=&nbsp;ActiveDocument.GetAlertAndBookmark("AL01")<br/>set&nbsp;alertstatus&nbsp;=&nbsp;ActiveDocument.CheckAlert(albm.Alert,&nbsp;albm.Bookmark)<br/>if&nbsp;alertstatus.Default&nbsp;then&nbsp;<br/>&nbsp;&nbsp;&nbsp;msgbox("Alert&nbsp;fired")<br/>else<br/>&nbsp;&nbsp;&nbsp;msgbox("Alert&nbsp;not&nbsp;fired")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetAlertList</h3>
+<pre>Variant (Array of String) <b>GetAlertList</b>(short Mode, short Event)</pre>
+<dl>
+    <dd>Returns a list of alerts. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Mode</code></b> (short) : Alert mode<br/>0 = batch mode<br/>1 = interactive</dd>
+            <dd><b><code>Event</code></b> (short) : Alert trigger event<br/>0 = all<br/>1 = OnOpen<br/>2 =
+                OnPostReduce<br/>3 = OnPostReload
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Array of alerts</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;get&nbsp;list&nbsp;of&nbsp;batch&nbsp;alerts&nbsp;OnPostReload<br/>alerts&nbsp;=&nbsp;ActiveDocument.GetAlertList&nbsp;0,3<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetApplication</h3>
+<pre><a href="Application.htm">Application</a> <b>GetApplication</b>()</pre>
+<dl>
+    <dd>Returns a reference to the QlikView program. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>Cp&nbsp;=&nbsp;ActiveDocument.GetApplication.GetUserPreferences.ConfirmPurge&nbsp;<br/>if&nbsp;Cp=false&nbsp;then&nbsp;msgbox("Warning!&nbsp;No&nbsp;Reduce&nbsp;Data&nbsp;confirmation!")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetBookmark</h3>
+<pre><a href="Ireturn%20object%20for%20Doc.GetBookmark().htm">Ireturn object for Doc.GetBookmark()</a> <b>GetBookmark</b>(String Id)</pre>
+<dl>
+    <dd>Returns a bookmark. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : Bookmark ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Bookmark returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;bm&nbsp;=&nbsp;ActiveDocument.GetBookmark("BM01")<br/>if&nbsp;bm.Default&nbsp;=&nbsp;true&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;flditems&nbsp;=&nbsp;bm.Bookmark.FieldItems<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;flditems.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox(flditems.Item(i).IsLocked)<br/>&nbsp;&nbsp;&nbsp;&nbsp;next<br/>else<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox("Bookmark&nbsp;does&nbsp;not&nbsp;exist")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCurrentModuleSecurity</h3>
+<pre>Integer <b>GetCurrentModuleSecurity</b>()</pre>
+<dl>
+    <dd>Returns current script module security level. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>ms&nbsp;=&nbsp;ActiveDocument.GetCurrentModuleSecurity<br/>if&nbsp;ms&nbsp;=&nbsp;2&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox("System&nbsp;access&nbsp;allowed")<br/>end&nbsp;if</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCurrentSelections</h3>
+<pre><a href="Ireturn%20object%20for%20Doc.GetCurrentSelections().htm">Ireturn object for Doc.GetCurrentSelections()</a> <b>GetCurrentSelections</b>()</pre>
+<dl>
+    <dd>Returns the current selections. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;x&nbsp;=&nbsp;ActiveDocument.GetCurrentSelections<br/>s&nbsp;=&nbsp;x.Selections<br/>v&nbsp;=&nbsp;x.VarId<br/>for&nbsp;i&nbsp;=&nbsp;lbound(s)&nbsp;to&nbsp;ubound(s)<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox&nbsp;v(i)&"&nbsp;=&nbsp;"&s(i)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetDocBookmarkNames</h3>
+<pre>Variant (Array of String) <b>GetDocBookmarkNames</b>()</pre>
+<dl>
+    <dd>Returns names of document bookmarks. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;recall&nbsp;first&nbsp;document&nbsp;bookmark<br/>bookmarks&nbsp;=&nbsp;ActiveDocument.GetDocBookmarkNames<br/>bm&nbsp;=&nbsp;bookmarks(0)<br/>ActiveDocument.RecallDocBookmark&nbsp;bm<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetDocReport</h3>
+<pre><a href="IReport.htm">IReport</a> <b>GetDocReport</b>(String Id)</pre>
+<dl>
+    <dd>Returns a named document report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : Document report ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Document report object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;rep&nbsp;=&nbsp;ActiveDocument.GetDocReport("RP01")<br/>msgbox(rep.LastPaperHeightMM)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetDocReportInfo</h3>
+<pre><a href="IArrayOfReportInfo.htm">IArrayOfReportInfo</a> <b>GetDocReportInfo</b>()</pre>
+<dl>
+    <dd>Returns a document report information object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;ri&nbsp;=&nbsp;ActiveDocument.GetDocReportInfo<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;ri.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;r&nbsp;=&nbsp;ri.Item(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(r.Id)<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(r.Name)<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(r.PageCount)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetDocReports</h3>
+<pre><a href="IArrayOfReport.htm">IArrayOfReport</a> <b>GetDocReports</b>()</pre>
+<dl>
+    <dd>Returns all document reports in document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;reps&nbsp;=&nbsp;ActiveDocument.GetDocReports<br/>msgbox(reps.Count)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetField</h3>
+<pre><a href="Field.htm">Field</a> <b>GetField</b>(String FieldName)</pre>
+<dl>
+    <dd>Returns a specified field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FieldName</code></b> (String) : Field name</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class Field returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Member")<br/>msgbox(fld.GetCardinal)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetFieldCount</h3>
+<pre>Integer <b>GetFieldCount</b>()</pre>
+<dl>
+    <dd>Returns number of fields. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetFieldCount)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetFieldDescription</h3>
+<pre><a href="IFieldDescription.htm">IFieldDescription</a> <b>GetFieldDescription</b>(String FieldName)</pre>
+<dl>
+    <dd>Returns field description for a field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FieldName</code></b> (String) : Name of field</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Field description object returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fdesc&nbsp;=&nbsp;ActiveDocument.GetFieldDescription("Class")<br/>if&nbsp;fdesc.IsHidden&nbsp;then&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox(fdesc.Name&nbsp;&&nbsp;"&nbsp;is&nbsp;hidden")<br/>else&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox(fdesc.Name&nbsp;&&nbsp;"&nbsp;is&nbsp;not&nbsp;hidden")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetFieldDescriptions</h3>
+<pre><a href="IArrayOfFieldDescription.htm">IArrayOfFieldDescription</a> <b>GetFieldDescriptions</b>()</pre>
+<dl>
+    <dd>Returns an array of field descriptions. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>Rem&nbsp;**&nbsp;Show&nbsp;name&nbsp;of&nbsp;all&nbsp;non-system&nbsp;fields&nbsp;in&nbsp;document&nbsp;**<br/>set&nbsp;flds&nbsp;=&nbsp;ActiveDocument.GetFieldDescriptions<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;flds.count&nbsp;-&nbsp;1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;fld&nbsp;=&nbsp;flds.item(i)&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;fld.IsSystem&nbsp;then&nbsp;msgbox(fld.Name)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetGroup</h3>
+<pre><a href="Group.htm">Group</a> <b>GetGroup</b>(String Name)</pre>
+<dl>
+    <dd>Returns a specified group. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Name of group</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Group returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;gd&nbsp;=&nbsp;ActiveDocument.GetGroup("MyGroup").GetDescription<br/>msgbox(gd.IsCyclic)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetGroupDescription</h3>
+<pre><a href="IGroupDescription.htm">IGroupDescription</a> <b>GetGroupDescription</b>(String GroupName)</pre>
+<dl>
+    <dd>Returns group description for a specified group. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>GroupName</code></b> (String) : Name of group</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Group description returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;gd&nbsp;=ActiveDocument.GetGroupDescription("MyGroup")<br/>msgbox(gd.IsCyclic)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetGroups</h3>
+<pre>Variant (Array of Group) <b>GetGroups</b>()</pre>
+<dl>
+    <dd>Returns an array of all field groups in document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>groups=ActiveDocument.GetGroups<br/>groups(0).AddField&nbsp;"Account"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetLayout</h3>
+<pre><a href="IDocLayout.htm">IDocLayout</a> <b>GetLayout</b>()</pre>
+<dl>
+    <dd>Returns document layout information. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetLayout.Access)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetLayoutRedoCount</h3>
+<pre>Integer <b>GetLayoutRedoCount</b>()</pre>
+<dl>
+    <dd>Returns number of items in layout redo buffer. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetLayoutRedoCount)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetLayoutUndoCount</h3>
+<pre>Integer <b>GetLayoutUndoCount</b>()</pre>
+<dl>
+    <dd>Returns number of items in layout undo buffer. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetLayoutUndoCount)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetLocaleInfo</h3>
+<pre><a href="ILocaleInfo.htm">ILocaleInfo</a> <b>GetLocaleInfo</b>()</pre>
+<dl>
+    <dd>Returns locale info for document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetLocaleInfo.DecimalSep)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetLooselyCoupledVector</h3>
+<pre>Variant (Array of Byte) <b>GetLooselyCoupledVector</b>()</pre>
+<dl>
+    <dd>Returns a vector of loosely coupled state flags, one element for each table in document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;set&nbsp;table&nbsp;MyTable&nbsp;as&nbsp;loosely&nbsp;coupled<br/>tnr&nbsp;=&nbsp;ActiveDocument.GetTableNumber("MyTable")<br/>lcv&nbsp;=&nbsp;ActiveDocument.GetLooselyCoupledVector<br/>lcv&nbsp;(tnr)&nbsp;=&nbsp;true<br/>ActiveDocument.SetLooselyCoupledVector&nbsp;lcv<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetModified</h3>
+<pre>Boolean <b>GetModified</b>()</pre>
+<dl>
+    <dd>Returns the document modified flag. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>if&nbsp;ActiveDocument.GetModified&nbsp;then&nbsp;msgbox("Document&nbsp;changed")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetPalette</h3>
+<pre><a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a> <b>GetPalette</b>()</pre>
+<dl>
+    <dd>Returns document default chart color map. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;set&nbsp;doc&nbsp;default&nbsp;color&nbsp;map&nbsp;as&nbsp;sheet&nbsp;default<br/>set&nbsp;cm&nbsp;=&nbsp;ActiveDocument.GetPalette<br/>ActiveDocument.ActiveSheet.SetPalette&nbsp;cm<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetPathName</h3>
+<pre>String <b>GetPathName</b>()</pre>
+<dl>
+    <dd>Returns full path of document file. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;show&nbsp;path&nbsp;of&nbsp;active&nbsp;document&nbsp;**<br/>msgbox(ActiveDocument.GetPathName)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetProperties</h3>
+<pre><a href="IDocumentProperties.htm">IDocumentProperties</a> <b>GetProperties</b>()</pre>
+<dl>
+    <dd>Returns the document properties. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>temp=ActiveDocument.GetProperties.UserPermissions.EditScript<br/>if&nbsp;not&nbsp;temp&nbsp;then&nbsp;msgbox("Script&nbsp;protected")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetRemoteLoginName</h3>
+<pre>String <b>GetRemoteLoginName</b>()</pre>
+<dl>
+    <dd>Returns authenticated client NT name if it exists (remote documents only). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>name&nbsp;=&nbsp;ActiveDocument.GetRemoteLoginName<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetReport</h3>
+<pre><a href="IReport.htm">IReport</a> <b>GetReport</b>(String Id)</pre>
+<dl>
+    <dd>Returns a report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : Report ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Report object returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;rep&nbsp;=&nbsp;ActiveDocument.GetReport("RP01")<br/>msgbox(rep.LastPaperHeightMM)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetSheet</h3>
+<pre><a href="Sheet.htm">Sheet</a> <b>GetSheet</b>(String SheetNameOrNumber)</pre>
+<dl>
+    <dd>Returns a specified sheet. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SheetNameOrNumber</code></b> (String) : Sheet name or internal number of sheet (0 based)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class Sheet returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;ss=&nbsp;ActiveDocument.GetSheet(0)<br/>msgbox(ss.GetProperties.Name)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetSheetById</h3>
+<pre><a href="Sheet.htm">Sheet</a> <b>GetSheetById</b>(String SheetId)</pre>
+<dl>
+    <dd>Returns a sheet referenced by it's unique ID. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SheetId</code></b> (String) : Unique sheet ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Sheet returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetByID("SH03").Activate<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetSheetObject</h3>
+<pre><a href="SheetObject.htm">SheetObject</a> <b>GetSheetObject</b>(String ObjectId)</pre>
+<dl>
+    <dd>Returns a sheet object referenced by it's unique ID. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>ObjectId</code></b> (String) : Sheet object unique ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Sheet object returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;minimize&nbsp;list&nbsp;box&nbsp;by&nbsp;ID&nbsp;**<br/>ActiveDocument.GetSheetObject("CH06").Minimize<br/><br/>rem&nbsp;**&nbsp;Change&nbsp;unique&nbsp;ID&nbsp;of&nbsp;list&nbsp;box&nbsp;**<br/>set&nbsp;LB&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB06")<br/>set&nbsp;box=LB.GetProperties<br/>box.Layout.Frame.ObjectId&nbsp;=&nbsp;"Listbox6"<br/>LB.SetProperties&nbsp;box</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetSortCriteriaFor</h3>
+<pre><a href="ISortCriteria.htm">ISortCriteria</a> <b>GetSortCriteriaFor</b>(IFieldDefEx FieldDef)</pre>
+<dl>
+    <dd>Returns dsort criteria for a specified field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FieldDef</code></b> (<a href="IFieldDefEx.htm">IFieldDefEx</a>) : Field definition object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Sort criteria returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;get&nbsp;underlying&nbsp;sort&nbsp;criteria&nbsp;for&nbsp;field&nbsp;in&nbsp;list&nbsp;box<br/>set&nbsp;fd&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01").GetProperties.Def<br/>sc&nbsp;=&nbsp;ActiveDocument.GetSortCriteriaFor(fd)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetTableCount</h3>
+<pre>Integer <b>GetTableCount</b>()</pre>
+<dl>
+    <dd>Returns the number of logical tables in the document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;show&nbsp;number&nbsp;of&nbsp;logical&nbsp;tables&nbsp;in&nbsp;document&nbsp;**<br/>msgbox(ActiveDocument.GetTableCount)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetTableName</h3>
+<pre>String <b>GetTableName</b>(Integer Number)</pre>
+<dl>
+    <dd>Returns the name of a numbered logical table in the document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Number</code></b> (Integer) : Logical table number (0 based)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns the name of a numbered logical table in the document</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;show&nbsp;name&nbsp;of&nbsp;third&nbsp;logical&nbsp;table&nbsp;in&nbsp;document&nbsp;**<br/>name&nbsp;=&nbsp;ActiveDocument.GetTableName(3)<br/>msgbox(name)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetTableNumber</h3>
+<pre>Integer <b>GetTableNumber</b>(String Name)</pre>
+<dl>
+    <dd>Returns the number of a named logical table in the document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Logical table name</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns the number of a named logical table in the document</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;set&nbsp;table&nbsp;MyTable&nbsp;as&nbsp;loosely&nbsp;coupled<br/>tnr&nbsp;=&nbsp;ActiveDocument.GetTableNumber("MyTable")<br/>lcv&nbsp;=&nbsp;ActiveDocument.GetLooselyCoupledVector<br/>lcv&nbsp;(tnr)&nbsp;=&nbsp;true<br/>ActiveDocument.SetLooselyCoupledVector&nbsp;lcv<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetUserBookmarkNames</h3>
+<pre>Variant (Array of String) <b>GetUserBookmarkNames</b>()</pre>
+<dl>
+    <dd>Returns names of user bookmarks. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;recall&nbsp;first&nbsp;user&nbsp;bookmark<br/>bookmarks&nbsp;=&nbsp;ActiveDocument.GetUserBookmarkNames<br/>bm&nbsp;=&nbsp;bookmarks(0)<br/>ActiveDocument.RecallUserBookmark&nbsp;bm<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetUserPermissions</h3>
+<pre><a href="IDocumentUserPermissions.htm">IDocumentUserPermissions</a> <b>GetUserPermissions</b>()</pre>
+<dl>
+    <dd>Returns user permissions for document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>temp=ActiveDocument.GetUserPermissions.AddSheet<br/>if&nbsp;temp&nbsp;then&nbsp;msgbox("New&nbsp;sheets&nbsp;may&nbsp;be&nbsp;added")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetUserReport</h3>
+<pre><a href="IReport.htm">IReport</a> <b>GetUserReport</b>(String Id)</pre>
+<dl>
+    <dd>Returns a named user report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : User report ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Document report object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;rep&nbsp;=&nbsp;ActiveDocument.GetUserReport("RP01")<br/>msgbox(rep.LastPaperHeightMM)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetUserReportInfo</h3>
+<pre><a href="IArrayOfReportInfo.htm">IArrayOfReportInfo</a> <b>GetUserReportInfo</b>()</pre>
+<dl>
+    <dd>Returns a user report information object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;ri&nbsp;=&nbsp;ActiveDocument.GetUserReportInfo<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;ri.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;r&nbsp;=&nbsp;ri.Item(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(r.Id)<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(r.Name)<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(r.PageCount)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetUserReports</h3>
+<pre><a href="IArrayOfReport.htm">IArrayOfReport</a> <b>GetUserReports</b>()</pre>
+<dl>
+    <dd>Returns all user reports in document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;reps&nbsp;=&nbsp;ActiveDocument.GetUserReports<br/>msgbox(reps.Count)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetVariable</h3>
+<pre><a href="Variable.htm">Variable</a> <b>GetVariable</b>(String Name)</pre>
+<dl>
+    <dd>Returns a QlikView variable. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Name or number of variable</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Variable returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;v&nbsp;=&nbsp;ActiveDocument.GetVariable("Variable1")<br/>v.SetContent&nbsp;"123",true<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetVariableDescriptions</h3>
+<pre><a href="IArrayOfVariableDescription.htm">IArrayOfVariableDescription</a> <b>GetVariableDescriptions</b>()</pre>
+<dl>
+    <dd>Returns an array of variable descriptions. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;Show&nbsp;name&nbsp;of&nbsp;all&nbsp;variables&nbsp;in&nbsp;document&nbsp;**<br/>set&nbsp;vars&nbsp;=&nbsp;ActiveDocument.GetVariableDescriptions<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;vars.Count&nbsp;-&nbsp;1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;v&nbsp;=&nbsp;vars.Item(i)&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(v.Name)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>HasTableOriginOfFields</h3>
+<pre>Boolean <b>HasTableOriginOfFields</b>()</pre>
+<dl>
+    <dd>Returns true if script updated in QV 5.03 or later. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.HasTableOriginOfFields)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ImportBookmarks</h3>
+<pre>Integer <b>ImportBookmarks</b>(String FileName, short MergeMode)</pre>
+<dl>
+    <dd>Imports bookmarks from file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+            <dd><b><code>MergeMode</code></b> (short) : Handling of duplicates<br/>0 = Use most recent<br/>1 = Use
+                current<br/>2 = Use Import file<br/>3 = Use all
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Number of bookmarks imported</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ImportBookmarks&nbsp;"test.qbm",&nbsp;0<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ImportLayoutFile</h3>
+<pre> <b>ImportLayoutFile</b>(String FileName)</pre>
+<dl>
+    <dd>Imports a QlikView layout file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ImportLayoutFile&nbsp;"AppLayout.xml"</code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ImportSheetLayoutFile</h3>
+<pre> <b>ImportSheetLayoutFile</b>(String FileName)</pre>
+<dl>
+    <dd>Imports a QlikView sheet layout file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ImportSheetLayoutFile&nbsp;"c:\FirstSheetLayout.xml"</code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>LayoutRedo</h3>
+<pre> <b>LayoutRedo</b>()</pre>
+<dl>
+    <dd>Redoes previously undone layout change. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.LayoutRedo<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>LayoutUndo</h3>
+<pre> <b>LayoutUndo</b>()</pre>
+<dl>
+    <dd>Undoes last layout change. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.LayoutUndo<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>LockAll</h3>
+<pre> <b>LockAll</b>()</pre>
+<dl>
+    <dd>Locks all selections in the document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.LockAll<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>MultipleFieldSearch</h3>
+<pre><a href="IArrayOfPerFieldSearchResult.htm">IArrayOfPerFieldSearchResult</a> <b>MultipleFieldSearch</b>(Variant (Array of String) FieldNames, Variant (Array of String) ExcludedFieldNames, String SearchMask, Boolean IncludeExcluded, Integer CollapseLimit, short SearchMode)</pre>
+<dl>
+    <dd>Performs a search in a number of specified fields. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FieldNames</code></b> (Variant (Array of String)) : Field names in the multiple search as
+                strings
+            </dd>
+            <dd><b><code>ExcludedFieldNames</code></b> (Variant (Array of String)) : String to be searched</dd>
+            <dd><b><code>SearchMask</code></b> (String) : True if excluded values are to be included in search</dd>
+            <dd><b><code>IncludeExcluded</code></b> (Boolean) : Maximum number of values to be returned per field</dd>
+            <dd><b><code>CollapseLimit</code></b> (Integer) :</dd>
+            <dd><b><code>SearchMode</code></b> (short) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>Rem&nbsp;Returns&nbsp;the&nbsp;hits&nbsp;in&nbsp;fields&nbsp;used&nbsp;in&nbsp;the&nbsp;Multiple&nbsp;Field&nbsp;Search<br/>dim&nbsp;FieldNames<br/>FieldNames=Array("Customer",&nbsp;"Sales&nbsp;Rep")<br/>Set&nbsp;Result=ActiveDocument.MultipleFieldSearch(FieldNames,&nbsp;"br*",&nbsp;true,&nbsp;8)<br/>for&nbsp;i=0&nbsp;to&nbsp;Result.Count-1<br/>&nbsp;msgbox&nbsp;"FieldName:&nbsp;"&nbsp;&&nbsp;Result(i).FieldName&nbsp;&&nbsp;chr(13)&nbsp;&_<br/>&nbsp;"No&nbsp;of&nbsp;Hits:"&nbsp;&&nbsp;Result(i).TotalNoOfHits&nbsp;&&nbsp;chr(13)&nbsp;&_<br/>&nbsp;"Expanded:&nbsp;"&nbsp;&&nbsp;Result(i).Expanded<br/>&nbsp;FieldHits=Result(i).Hits<br/>&nbsp;for&nbsp;j=lbound(FieldHits)&nbsp;to&nbsp;ubound(FieldHits)<br/>&nbsp;&nbsp;msgbox&nbsp;FieldHits(j)<br/>&nbsp;next<br/>next</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Name</h3>
+<pre>String <b>Name</b>()</pre>
+<dl>
+    <dd>Returns document title (Window title) if it exists else the document's filename without path. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;show&nbsp;name&nbsp;of&nbsp;active&nbsp;document&nbsp;**<br/>msgbox(ActiveDocument.Name)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>NextTab</h3>
+<pre> <b>NextTab</b>()</pre>
+<dl>
+    <dd>Activates next sheet tab (one step to the right). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.20</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.NextTab<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>NoOfSheets</h3>
+<pre>Integer <b>NoOfSheets</b>()</pre>
+<dl>
+    <dd>Returns the total number of sheets in the document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;ActiveDocument.NoOfSheets&nbsp;-&nbsp;1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;ss=&nbsp;ActiveDocument.GetSheet(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(ss.GetProperties.Name)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PartialReload</h3>
+<pre> <b>PartialReload</b>(Integer Mode)</pre>
+<dl>
+    <dd>Performs a partial reload. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Mode</code></b> (Integer) : Error handling mode<br/>0 = Default<br/>1 = Attempt recovery on all
+                errors<br/>2 = Fail on all errors
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.PartialReload<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PerformAlertAction</h3>
+<pre> <b>PerformAlertAction</b>(IAlertAction Action)</pre>
+<dl>
+    <dd>Performs an alert action. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Action</code></b> (<a href="IAlertAction.htm">IAlertAction</a>) : Alert action definition
+                object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;albm&nbsp;=&nbsp;ActiveDocument.GetAlertAndBookmark("AL01")<br/>set&nbsp;alertstatus&nbsp;=&nbsp;ActiveDocument.CheckAlert(albm.Alert,&nbsp;albm.Bookmark)<br/>if&nbsp;alertstatus.Default&nbsp;then&nbsp;<br/>&nbsp;&nbsp;&nbsp;set&nbsp;act&nbsp;=&nbsp;alertstatus.Action<br/>&nbsp;&nbsp;&nbsp;ActiveDocument.PerformAlertAction&nbsp;act<br/>else<br/>&nbsp;&nbsp;&nbsp;msgbox("Alert&nbsp;not&nbsp;fired")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PlaySound</h3>
+<pre> <b>PlaySound</b>(String file)</pre>
+<dl>
+    <dd>Plays a sound. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>file</code></b> (String) : Sound file name</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.PlaySound&nbsp;"C:\MySound.wav"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrevTab</h3>
+<pre> <b>PrevTab</b>()</pre>
+<dl>
+    <dd>Activates previous sheet tab (one step to the left). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.20</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.PrevTab<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintAllSheets</h3>
+<pre> <b>PrintAllSheets</b>(Boolean DrawBackground)</pre>
+<dl>
+    <dd>Prints all sheets in document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>DrawBackground</code></b> (Boolean) : True if background to be printed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;print&nbsp;all&nbsp;sheets&nbsp;without&nbsp;background&nbsp;**<br/>ActiveDocument.PrintAllSheets&nbsp;false<br/><br/>rem&nbsp;**&nbsp;print&nbsp;all&nbsp;sheets&nbsp;with&nbsp;background&nbsp;**<br/>ActiveDocument.PrintAllSheets&nbsp;true<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintDocReport</h3>
+<pre> <b>PrintDocReport</b>(String Id, String PrinterName, Boolean ShowPrinterDlg)</pre>
+<dl>
+    <dd>Prints document report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : Report ID</dd>
+            <dd><b><code>PrinterName</code></b> (String) :</dd>
+            <dd><b><code>ShowPrinterDlg</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.PrintDocReport&nbsp;"RP01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintReport</h3>
+<pre> <b>PrintReport</b>(String Id, String PrinterName, Boolean ShowPrinterDlg)</pre>
+<dl>
+    <dd>Prints a report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : Report ID</dd>
+            <dd><b><code>PrinterName</code></b> (String) :</dd>
+            <dd><b><code>ShowPrinterDlg</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.PrintReport&nbsp;"RP01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintReportEx</h3>
+<pre><a href="IPrintResponse.htm">IPrintResponse</a> <b>PrintReportEx</b>(String ReportId)</pre>
+<dl>
+    <dd>Prints a report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>ReportId</code></b> (String) : Report Id as string</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.PrintReportEx&nbsp;"RP01"</code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintUserReport</h3>
+<pre> <b>PrintUserReport</b>(String Id, String PrinterName, Boolean ShowPrinterDlg)</pre>
+<dl>
+    <dd>Prints a user report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : Report ID</dd>
+            <dd><b><code>PrinterName</code></b> (String) :</dd>
+            <dd><b><code>ShowPrinterDlg</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.PrintUserReport&nbsp;"RP01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RecallDocBookmark</h3>
+<pre> <b>RecallDocBookmark</b>(String Name)</pre>
+<dl>
+    <dd>Recalls document bookmark. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Name of bookmark</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RecallDocBookmark&nbsp;"MyBookmark"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RecallDocBookmarkById</h3>
+<pre> <b>RecallDocBookmarkById</b>(String BookmarkId)</pre>
+<dl>
+    <dd>Recalls a bookmark referenced by it's unique ID. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>BookmarkId</code></b> (String) : Bookmark ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RecallDocBookmarkByID&nbsp;"BM01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RecallUserBookmark</h3>
+<pre> <b>RecallUserBookmark</b>(String Name)</pre>
+<dl>
+    <dd>Recalls a user bookmark. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Name of bookmark</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RecallUserBookmark&nbsp;"MyBookmark"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ReduceData</h3>
+<pre> <b>ReduceData</b>(Boolean Confirm, Variant (Array of String) DropFieldNames)</pre>
+<dl>
+    <dd>Reduces data based on current selections. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Confirm</code></b> (Boolean) : True if confirmation dialog is to be shown</dd>
+            <dd><b><code>DropFieldNames</code></b> (Variant (Array of String)) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ReduceData<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Reload</h3>
+<pre> <b>Reload</b>(Integer Mode)</pre>
+<dl>
+    <dd>Performs a script execution. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Mode</code></b> (Integer) : Error handling mode<br/>0 = Default<br/>1 = Attempt recovery on all
+                errors<br/>2 = Fail on all errors
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Reload<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ReloadEx</h3>
+<pre>Integer <b>ReloadEx</b>(Integer Mode, Integer ControlProgress)</pre>
+<dl>
+    <dd>Performs a script execution ScriptErrorCount returned). <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Mode</code></b> (Integer) : Script error mode to be used (supersedes script setting)</dd>
+            <dd><b><code>ControlProgress</code></b> (Integer) : Progress dialog mode<br/>0 = use default<br/>1 =
+                suppress<br/>2 = show always
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>ScriptErrorCount returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ReloadEx&nbsp;2,1<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveAllData</h3>
+<pre> <b>RemoveAllData</b>(Boolean Confirm)</pre>
+<dl>
+    <dd>Removes all field values in document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Confirm</code></b> (Boolean) : True if confirmation dialog is to be displayed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;purge&nbsp;all&nbsp;data&nbsp;in&nbsp;active&nbsp;document&nbsp;**<br/>ActiveDocument.RemoveAllData<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveBookmarkById</h3>
+<pre> <b>RemoveBookmarkById</b>(String Id)</pre>
+<dl>
+    <dd>Removes a bookmark by its ID. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : ID of bookmark to be deleted</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RemoveBookmarkById&nbsp;"BM01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveDocBookmark</h3>
+<pre> <b>RemoveDocBookmark</b>(String Name)</pre>
+<dl>
+    <dd>Removes document bookmark. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Name of bookmark</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RemoveDocBookmark&nbsp;"MyBookmark"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveDocReport</h3>
+<pre> <b>RemoveDocReport</b>(String Id)</pre>
+<dl>
+    <dd>Removes a document report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : ID of document report to be deleted</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RemoveDocReport&nbsp;"RP01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveGroup</h3>
+<pre> <b>RemoveGroup</b>(String index)</pre>
+<dl>
+    <dd>Removes a group. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>index</code></b> (String) : Number of group</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Number of groups left</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RemoveGroup&nbsp;"MyGroup"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveReport</h3>
+<pre> <b>RemoveReport</b>(String Id)</pre>
+<dl>
+    <dd>Removes a report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : ID of report to be deleted</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RemoveReport&nbsp;"RP01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveSheet</h3>
+<pre>Integer <b>RemoveSheet</b>(String SheetNameOrNumber)</pre>
+<dl>
+    <dd>Removes a specified sheet from the document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SheetNameOrNumber</code></b> (String) : Sheet number (0 based)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Number of remaining sheets in document returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RemoveSheet&nbsp;1<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveSheetById</h3>
+<pre>Integer <b>RemoveSheetById</b>(String SheetId)</pre>
+<dl>
+    <dd>Removes a sheet by its ID. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SheetId</code></b> (String) : Sheet ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Number of remaining sheets returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RemoveSheetByID&nbsp;"SH01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveUserBookmark</h3>
+<pre> <b>RemoveUserBookmark</b>(String Name)</pre>
+<dl>
+    <dd>Removes a user bookmark by name. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Name of bookmark</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.20</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RemoveUserBookmark&nbsp;"MyBookmark"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveUserReport</h3>
+<pre> <b>RemoveUserReport</b>(String Id)</pre>
+<dl>
+    <dd>Removes a user report. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Id</code></b> (String) : ID of user report to be deleted</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RemoveUserReport&nbsp;"RP01"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveVariable</h3>
+<pre>Boolean <b>RemoveVariable</b>(String Name)</pre>
+<dl>
+    <dd>Removes a variable. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Name of variable to be deleted</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True returned if operation succesful</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.RemoveVariable&nbsp;"xyz"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ResetClearState</h3>
+<pre> <b>ResetClearState</b>()</pre>
+<dl>
+    <dd>Resets the clear state. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ResetClearState</code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ResetObjectIDs</h3>
+<pre> <b>ResetObjectIDs</b>()</pre>
+<dl>
+    <dd>Resets all Ids in document. DANGEROUS!. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ResetObjectIDs<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Save</h3>
+<pre> <b>Save</b>()</pre>
+<dl>
+    <dd>Saves document under its current name. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Save<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SaveAs</h3>
+<pre> <b>SaveAs</b>(String FileName, Byte Format)</pre>
+<dl>
+    <dd>Saves document under a specified name. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+            <dd><b><code>Format</code></b> (Byte) : QlikView file format<br/>1 = 3.01/3.02<br/>2 = 3.1 <br/>3 =
+                3.15<br/>4 = 4.0<br/>5 = 5.0
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.SaveAs&nbsp;"C:\Mydoc.qvw"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SaveMemoryStatistics</h3>
+<pre> <b>SaveMemoryStatistics</b>(String FileName)</pre>
+<dl>
+    <dd>Saves document memory statistics to separated text file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.SaveMemoryStatistics&nbsp;"C:\Mydoc.tab"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ScrambleField</h3>
+<pre> <b>ScrambleField</b>(String FieldName, Boolean AlphaNum)</pre>
+<dl>
+    <dd>Scrambles a specified field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FieldName</code></b> (String) : Name of field to scramble</dd>
+            <dd><b><code>AlphaNum</code></b> (Boolean) : Should be false</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ScrambleField&nbsp;"Name",false<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetBookmarkAsClearState</h3>
+<pre> <b>SetBookmarkAsClearState</b>(String BookmarkId)</pre>
+<dl>
+    <dd>Sets a specified bookmark as clear state. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>BookmarkId</code></b> (String) : Bookmark Id</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.SetBookmarkAsClearState&nbsp;"BM01"</code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetClearState</h3>
+<pre> <b>SetClearState</b>()</pre>
+<dl>
+    <dd>Sets current selections as clear state. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.SetClearState</code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetCurrentModuleSecurity</h3>
+<pre>Boolean <b>SetCurrentModuleSecurity</b>(Integer SecurityLevel)</pre>
+<dl>
+    <dd>Sets current script module security level. This method is not available from the QVW module (VBScript). Can only
+        be accessed from external application.<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SecurityLevel</code></b> (Integer) : New script module security level<br/>0 = Dont run at
+                all<br/>1 = Run safe<br/>2 = Run with system access
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True returned if operation succesful</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;will&nbsp;not&nbsp;work&nbsp;from&nbsp;VBScript&nbsp;in&nbsp;document&nbsp;module&nbsp;**<br/>set&nbsp;mydoc&nbsp;=&nbsp;GetObject("C:\MyDoc.qvw")<br/>mydoc.SetCurrentModuleSecurity&nbsp;2<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetDocBookmarkId</h3>
+<pre>Boolean <b>SetDocBookmarkId</b>(String OldId, String NewId)</pre>
+<dl>
+    <dd>Sets document bookmark ID. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>OldId</code></b> (String) : Old bookmark ID</dd>
+            <dd><b><code>NewId</code></b> (String) : New bookmark ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True returned if operation successful</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.SetDocBookmarkId&nbsp;"BM01","MyBookmarkId"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetErrorMessages</h3>
+<pre> <b>SetErrorMessages</b>(Variant (Array of String) Messages)</pre>
+<dl>
+    <dd>Sets custom error messages for all calculated objects in document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Messages</code></b> (Variant (Array of String)) : Array of error messages</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;change&nbsp;default&nbsp;error&nbsp;message&nbsp;in&nbsp;all&nbsp;calc.&nbsp;objects&nbsp;**<br/>dim&nbsp;x(5)<br/>x(0)="my&nbsp;message"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'override&nbsp;for&nbsp;default<br/>ActiveDocument.SetErrorMessages&nbsp;x<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetLooselyCoupledVector</h3>
+<pre>Boolean <b>SetLooselyCoupledVector</b>(Variant (Array of Byte) v)</pre>
+<dl>
+    <dd>Sets a vector of loosely coupled state flags, one element for each table in document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>v</code></b> (Variant (Array of Byte)) : Vector of loosely coupled state flags, one element for
+                each table in document (0 based)
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if the operation succeede. False if additional table(s) set as discoupled.</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;set&nbsp;table&nbsp;MyTable&nbsp;as&nbsp;loosely&nbsp;coupled<br/>tnr&nbsp;=&nbsp;ActiveDocument.GetTableNumber("MyTable")<br/>lcv&nbsp;=&nbsp;ActiveDocument.GetLooselyCoupledVector<br/>lcv&nbsp;(tnr)&nbsp;=&nbsp;true<br/>ActiveDocument.SetLooselyCoupledVector&nbsp;lcv<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetModified</h3>
+<pre> <b>SetModified</b>(Boolean Modified)</pre>
+<dl>
+    <dd>Sets the document modified flag. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Modified</code></b> (Boolean) : set to true if Save warning should be given on Closing the
+                document
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.SetModified&nbsp;true<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetOpeningPicture</h3>
+<pre>Boolean <b>SetOpeningPicture</b>(String Path)</pre>
+<dl>
+    <dd>Sets a document opening picture from file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : Path to the file containing the picture bitmap. Invalid path clears
+                the opening picture
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if new picture was set</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;set&nbsp;opening&nbsp;picture&nbsp;for&nbsp;document&nbsp;**<br/>status&nbsp;=&nbsp;ActiveDocument.SetOpeningPicture&nbsp;("C:\MyBmp.bmp")<br/>if&nbsp;status&nbsp;=&nbsp;true&nbsp;then&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox("new&nbsp;opening&nbsp;picture&nbsp;set")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetOpeningSound</h3>
+<pre>Boolean <b>SetOpeningSound</b>(String Path)</pre>
+<dl>
+    <dd>Sets a document opening sound from file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : Path to the file containing the sound. Invalid path clears the
+                opening sound
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if new sound was set</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;set&nbsp;opening&nbsp;sound&nbsp;for&nbsp;document&nbsp;**<br/>status&nbsp;=&nbsp;ActiveDocument.SetOpeningSound&nbsp;("C:\MySound.wav")<br/>if&nbsp;status&nbsp;=&nbsp;true&nbsp;then&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox("new&nbsp;opening&nbsp;sound&nbsp;set")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetPalette</h3>
+<pre> <b>SetPalette</b>(IArrayOfColorAreaDef Pal)</pre>
+<dl>
+    <dd>Sets document default chart color map. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Pal</code></b> (<a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a>) : Array of colors
+                as RGB in three least significant bytes (compatible with VB RGB function)
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;set&nbsp;sheet&nbsp;default&nbsp;color&nbsp;map&nbsp;as&nbsp;doc&nbsp;default<br/>set&nbsp;cm&nbsp;=&nbsp;ActiveDocument.ActiveSheet.GetPalette<br/>ActiveDocument.SetPalette&nbsp;cm<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetProperties</h3>
+<pre> <b>SetProperties</b>(IDocumentProperties Properties)</pre>
+<dl>
+    <dd>Sets the document properties. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Properties</code></b> (<a href="IDocumentProperties.htm">IDocumentProperties</a>) : Object of
+                class IDocumentProperties returned (referred to as Application properties in UI)
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;docprop&nbsp;=&nbsp;ActiveDocument.GetProperties<br/>docprop.WindowTitle&nbsp;=&nbsp;"abc"<br/>ActiveDocument.SetProperties&nbsp;docprop<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetTabOrder</h3>
+<pre> <b>SetTabOrder</b>(Variant (Array of String) SheetIds)</pre>
+<dl>
+    <dd>Sets tab order. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SheetIds</code></b> (Variant (Array of String)) : Array of sheet Ids</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>dim&nbsp;x(2)<br/>x(0)&nbsp;=&nbsp;"SH03"<br/>x(1)&nbsp;=&nbsp;"SH02"<br/>x(2)&nbsp;=&nbsp;"SH01"<br/>ActiveDocument.SetTabOrder&nbsp;x<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetWallpaper</h3>
+<pre>Boolean <b>SetWallpaper</b>(String Path, Integer ShowMode)</pre>
+<dl>
+    <dd>Sets a document wallpaper from file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : Path to the file containing the wallpaper bitmap. Invalid path
+                clears the wallpaper
+            </dd>
+            <dd><b><code>ShowMode</code></b> (Integer) : 0 = centered<br/>1 = tiled<br/>2 = no wallpaper</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if new picture was set</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;set&nbsp;tiled&nbsp;wallpaper&nbsp;in&nbsp;entire&nbsp;document&nbsp;**<br/>status&nbsp;=&nbsp;ActiveDocument.SetWallPaper&nbsp;("C:\MyBmp.bmp"&nbsp;,&nbsp;1)<br/>if&nbsp;status&nbsp;=&nbsp;true&nbsp;then&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox("new&nbsp;wallpaper&nbsp;set")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SheetHeight</h3>
+<pre>Integer <b>SheetHeight</b>()</pre>
+<dl>
+    <dd>Returns the current sheet height in pixels. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;show&nbsp;current&nbsp;sheet&nbsp;height&nbsp;**<br/>msgbox(ActiveDocument.SheetHeight)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Sheets</h3>
+<pre><a href="Sheet.htm">Sheet</a> <b>Sheets</b>(String SheetNameOrNumber)</pre>
+<dl>
+    <dd>Returns a specified sheets in the document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SheetNameOrNumber</code></b> (String) : Sheet title or Sheet number (0 based)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class Sheet returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Sheets(0).Activate<br/>ActiveDocument.Sheets("Market").Activate<br/>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateLineChart<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SheetWidth</h3>
+<pre>Integer <b>SheetWidth</b>()</pre>
+<dl>
+    <dd>Returns the current sheet width in pixels. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;show&nbsp;current&nbsp;sheet&nbsp;width&nbsp;**<br/>msgbox(ActiveDocument.SheetWidth)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowPopup</h3>
+<pre> <b>ShowPopup</b>(String Text, Integer Timeout, Integer BkgColorIdx, Integer TxtColorIdx, Integer IconIdx)</pre>
+<dl>
+    <dd>Displays a pop-up message. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Text</code></b> (String) : Pop-up text</dd>
+            <dd><b><code>Timeout</code></b> (Integer) : Time-out in milliseconds</dd>
+            <dd><b><code>BkgColorIdx</code></b> (Integer) : Pop-up background color (index)<br/>0 = yellow<br/>1 = white<br/>2
+                = gray<br/>3 = blue<br/>4 = pink
+            </dd>
+            <dd><b><code>TxtColorIdx</code></b> (Integer) : Pop-up text color (index)<br/>0 = black<br/>1 = white</dd>
+            <dd><b><code>IconIdx</code></b> (Integer) : Pop-up icon (index)<br/>0 = no icon<br/>1 = info<br/>2 =
+                questionmark<br/>3 = warning<br/>4 = error
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ShowPopup&nbsp;"Hi&nbsp;there",&nbsp;2000<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowSystemFields</h3>
+<pre>Boolean <b>ShowSystemFields</b>()</pre>
+<dl>
+    <dd>Returns status of the ShowSystemFields flag. ShowSystemVariables in QV 4.0x<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>if&nbsp;ActiveDocument.ShowSystemFields&nbsp;then&nbsp;msgbox("visible!")<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowSystemVariables</h3>
+<pre>Boolean <b>ShowSystemVariables</b>()</pre>
+<dl>
+    <dd>Returns status of the ShowSystemVariables flag. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>if&nbsp;ActiveDocument.ShowSystemVariables&nbsp;then&nbsp;msgbox("visible!")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>UnlockAll</h3>
+<pre> <b>UnlockAll</b>()</pre>
+<dl>
+    <dd>Unlocks all selections in the document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.UnlockAll<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Variables</h3>
+<pre><a href="Variable.htm">Variable</a> <b>Variables</b>(String Name)</pre>
+<dl>
+    <dd>Returns the variables in the document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Name of variable</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns the variables in the document</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;v&nbsp;=&nbsp;ActiveDocument.Variables("Variable1")<br/>v.SetContent&nbsp;"123",true<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+</body>
+</html>

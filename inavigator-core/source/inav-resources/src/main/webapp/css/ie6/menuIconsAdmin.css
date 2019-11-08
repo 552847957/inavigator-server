@@ -1,0 +1,51 @@
+.transparent {
+    behavior: url("../script/pngbehavior.htc");
+}
+
+.menuIconEmployee {
+    width: 84px;
+    height: 80px;
+    display: block;
+    cursor: hand;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='crop', src='../images/admin/simple/m-people-normal.png');
+}
+
+.menuIconEmployeeHL {
+    width: 84px;
+    height: 80px;
+    display: block;
+    cursor: hand;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='crop', src='../images/admin/simple/m-people-active.png');
+}
+
+.menuIconDatabase {
+    width: 84px;
+    height: 80px;
+    display: block;
+    cursor: hand;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='crop', src='../images/admin/simple/m-server-normal.png');
+}
+
+.menuIconDatabaseHL {
+    width: 84px;
+    height: 80px;
+    display: block;
+    cursor: hand;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='crop', src='../images/admin/simple/m-server-active.png');
+}
+
+.menuIconPasswordChange {
+    width: 84px;
+    height: 80px;
+    display: block;
+    cursor: hand;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='crop', src='../images/admin/simple/m-key-normal.png');
+}
+
+.menuIconPasswordChangeHL {
+    width: 84px;
+    height: 80px;
+    display: block;
+    cursor: hand;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='crop', src='../images/admin/simple/m-key-active.png');
+}

@@ -1,0 +1,32 @@
+testQuerySelect1
+350
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+    <stored-procedure>SELECT 1</stored-procedure>
+   <arguments/>
+    <provider>DATAPOWER</provider>
+   <service>@service@</service>
+</request>
+----------
+getDashBoardData
+15000
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+ <stored-procedure>INAV_2_0.DASHBOARD_DATA_SUBST</stored-procedure>
+ <arguments>
+  <argument>
+   <index>1</index>
+   <type>STRING</type>
+   <value>&lt;params&gt;&lt;param name=&quot;nDashboardID&quot; value=&quot;1252&quot; /&gt;&lt;param name=&quot;nDynamicType&quot; value=&quot;2&quot; /&gt;&lt;param name=&quot;dtDate&quot; value=&quot;20160331&quot; /&gt;&lt;param name=&quot;nDepartmentID&quot; value=&quot;0&quot; /&gt;&lt;param name=&quot;nDashBoardType&quot; value=&quot;10&quot; /&gt;&lt;param name=&quot;Email&quot; value=&quot;inavdev.SBT@sberbank.ru&quot; /&gt;&lt;/params&gt;</value>
+  </argument>
+ </arguments>
+ <Fields>
+  <Field Name="XML" Type="STRING"/>
+ </Fields>
+ <TextSubstitutes>
+  <TextSubstitute substituteCode="INAV_2_0.DB_MAIN" substituteVarName="INAV_2_0_DB"/>
+ </TextSubstitutes>
+ <provider>DATAPOWER</provider>
+ <service>@service@</service>
+</request>
+

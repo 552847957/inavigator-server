@@ -1,0 +1,44 @@
+<html>
+<head><title>ICellImageRepresentation</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>ICellImageRepresentation</h1><br/>
+Cell image settings definition object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>CellImageStyle</b></font> (<a href="ICellImageStyle.htm">ICellImageStyle</a>, <i>objectref.</i>)
+<dl>
+    <dd>Cell image style. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell image settings object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FallBack</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Info to be shown if image to be shown is unavailable. <p/></dd>
+</dl>
+<dl>
+    <dd><code>What to be shown if image is unavailable<br/>0 = show text<br/>1 = leave cell blank</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Presentation</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Cell contents mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell contents mode<br/>0 = Text<br/>1 = Interpret value as image<br/>2 = Info as image<br/>3 = Circular
+        gauge<br/>4 = Linear gauge<br/>5 = Traffic light gauge<br/>6 = LED gauge</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

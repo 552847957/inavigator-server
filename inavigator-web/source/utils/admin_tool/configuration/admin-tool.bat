@@ -1,0 +1,1 @@
+java -Duser.timezone=GMT+3 -jar admin-tool.jar

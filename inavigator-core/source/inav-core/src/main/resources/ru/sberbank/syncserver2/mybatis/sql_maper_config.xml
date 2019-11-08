@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="cacheEnabled" value="false"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias type="ru.sberbank.syncserver2.mybatis.domain.QlikViewConectionProperties" alias="QlikViewConectionProperties"/>
+        <typeAlias type="ru.sberbank.syncserver2.mybatis.domain.QlikViewObjectId" alias="QlikViewObjectId"/>
+  </typeAliases>
+
+<!--
+    <typeHandlers>
+        <typeHandler
+                javaType="java.util.Date"
+                handler="ru.protek.eima.DAO.typehandlers.DateTypeHandlerCallback"
+                jdbcType="TIMESTAMP"/>
+        <typeHandler
+                javaType="java.util.Date"
+                handler="ru.protek.eima.DAO.typehandlers.DateTypeHandlerCallback"
+                jdbcType="TIMESTAMP"/>
+        <typeHandler
+                javaType="javax.xml.datatype.XMLGregorianCalendar"
+                handler="ru.protek.eima.DAO.typehandlers.XMLGregorianCalendarTypeHandlerCallback"
+                jdbcType="TIMESTAMP"/>
+        <typeHandler
+                javaType="java.util.Date"
+                handler="ru.protek.eima.DAO.typehandlers.DateStrTypeHandlerCallback"
+                jdbcType="VARCHAR"/>
+        <typeHandler
+                javaType="java.sql.Blob"
+                handler="ru.protek.eima.DAO.typehandlers.BlobTypeHandlerCallback"
+                jdbcType="BLOB"/>
+        <typeHandler
+                javaType="java.lang.String"
+                handler="ru.protek.eima.DAO.typehandlers.StrToBlobTypeHandlerCallback"
+                jdbcType="BLOB"/>
+        <typeHandler
+                javaType="byte[]"
+                handler="ru.protek.eima.DAO.typehandlers.ByteArrayTypeHandler"
+                jdbcType="BLOB"/>
+        <typeHandler
+                javaType="java.lang.Boolean"
+                handler="ru.protek.eima.DAO.typehandlers.TFTypeHandlerCallback"
+                jdbcType="VARCHAR"/>
+        <typeHandler
+                javaType="java.lang.Boolean"
+                handler="ru.protek.eima.DAO.typehandlers.TrueFalseTypeHandlerCallback"
+                jdbcType="VARCHAR"/>
+        <typeHandler
+                javaType="java.lang.Boolean"
+                handler="ru.protek.eima.DAO.typehandlers.BooleanNumberTypeHandlerCallback"
+                jdbcType="NUMERIC"/>
+    </typeHandlers>
+-->
+
+    <!--<environments default="">-->
+    <!--<environment id="">-->
+    <!--<transactionManager type="MANAGED"> <property name="closeConnection" value="false"/> </transactionManager>-->
+    <!--<dataSource type=""></dataSource>-->
+    <!--</environment>-->
+    <!--</environments>-->
+
+    <mappers>
+        <mapper resource="ru/sberbank/syncserver2/mybatis/bdNavigator.xml"/>
+    </mappers>
+
+</configuration>

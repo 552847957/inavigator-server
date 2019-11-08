@@ -1,0 +1,176 @@
+<html>
+<head><title>ITextObjectLayout</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>ITextObjectLayout</h1><br/>
+Text object layout description object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>ActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Reference to actions defined in a Text object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action types enumerated as follows:<br/>Info=0<br/>Sql=1<br/>Lock All=2<br/>Unlock All=3<br/>Clear
+        All=4<br/>Clear All Incl Locked=5<br/>Back=6<br/>Forward=7<br/>File Close=8<br/>Next Tab=9<br/>Prev Tab=10<br/>Export=11<br/>Launch=12<br/>Macro=13<br/>Recall
+        Bookmark=14<br/>Replace Bookmark=15<br/>Create Bookmark=16<br/>Print Report=17<br/>Activate Sheet=18<br/>Print
+        Sheet=19<br/>Print Object=20<br/>Restore Object=21<br/>Minimize Object=22<br/>Maximize Object=23<br/>Activate
+        Object=24<br/>Select Excluded=25<br/>Clear Other Fields=26<br/>Select Possible=27<br/>Lock=28<br/>Unlock=29<br/>Pareto
+        Select=30<br/>Set Value=31<br/>Field Select=32<br/>Field Toggleselect=33<br/>Open Url=34<br/>Document
+        Chain=35<br/>Eov=36</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowHorizontalScrollBar</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Property currently not used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowVerticalScrollBar</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if vertical scrollbar should be used for long texts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgAlpha</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Alpha-factor (opacity) of sheet object background. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Background opacity (0-255)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Background color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Background color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgImageSettings</b></font> (<a href="IImagePresentation.htm">IImagePresentation</a>, <i>objectref.</i>)
+<dl>
+    <dd>Image formatting settings for sheet object background. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Image settings definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Background mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Background mode<br/>0 = system<br/>1 = color (default)<br/>2 = bitmap</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BottomMargin</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Margin between text and bottom border of text object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Margin between text and bottom border of text object in pixels</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Frame</b></font> (<a href="IFrame.htm">IFrame</a>, <i>objectref.</i>)
+<dl>
+    <dd>Sheet object frame rendering information. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ImageRepresentation</b></font> (<a
+        href="ICellImageRepresentation.htm">ICellImageRepresentation</a>, <i>objectref.</i>)
+<dl>
+    <dd>Text interpretation mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell image settings object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LeftMargin</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Margin between text and bottom left of text object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Margin between text and bottom left of text object in pixels</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RightMargin</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Margin between text and right border of text object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Margin between text and right border of text object in pixels</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Text</b></font> (<a href="IStringExpr.htm">IStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Text object text definition. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Text object text expression</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextAdjustHorizontal</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Horizontal text alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Horizontal text alignment<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextAdjustVertical</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Vertical text alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical text alignment<br/>0 = top<br/>4 = center<br/>8 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Text color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Text color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TopMargin</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Margin between text and top border of text object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Margin between text and top border of text object in pixels</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

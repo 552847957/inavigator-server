@@ -1,0 +1,33 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ru.sberbank.inavigator</groupId>
+		<artifactId>web-common</artifactId>
+		<version>${release_number}</version>
+	</parent>
+	<artifactId>web-resources</artifactId>
+	<version>${release_number}</version>
+	<name>web-resources</name>
+	<packaging>war</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>		
+		
+		<dependency>
+			<groupId>ru.sberbank.inavigator</groupId>
+			<artifactId>inav-resources</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>		
+
+	</dependencies>		
+
+</project>

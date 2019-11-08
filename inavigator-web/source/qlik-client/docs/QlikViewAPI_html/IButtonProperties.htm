@@ -1,0 +1,170 @@
+<html>
+<head><title>IButtonProperties</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IButtonProperties</h1><br/>
+Button properties object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>ActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Reference to actions defined in a button. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action types enumerated as follows:<br/>Info=0<br/>Sql=1<br/>Lock All=2<br/>Unlock All=3<br/>Clear
+        All=4<br/>Clear All Incl Locked=5<br/>Back=6<br/>Forward=7<br/>File Close=8<br/>Next Tab=9<br/>Prev Tab=10<br/>Export=11<br/>Launch=12<br/>Macro=13<br/>Recall
+        Bookmark=14<br/>Replace Bookmark=15<br/>Create Bookmark=16<br/>Print Report=17<br/>Activate Sheet=18<br/>Print
+        Sheet=19<br/>Print Object=20<br/>Restore Object=21<br/>Minimize Object=22<br/>Maximize Object=23<br/>Activate
+        Object=24<br/>Select Excluded=25<br/>Clear Other Fields=26<br/>Select Possible=27<br/>Lock=28<br/>Unlock=29<br/>Pareto
+        Select=30<br/>Set Value=31<br/>Field Select=32<br/>Field Toggleselect=33<br/>Open Url=34<br/>Document
+        Chain=35<br/>Eov=36</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgAlpha</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Button background opacity. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Button background opacity (0-255)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Button background color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Button background color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgImageSettings</b></font> (<a href="IImagePresentation.htm">IImagePresentation</a>, <i>objectref.</i>)
+<dl>
+    <dd>Button background image settings. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Image presentation settings object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BtnStyle</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Button style. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Button style<br/>0 = System<br/>1 = Plain<br/>2 = Combined image<br/>3 = Single image<br/>4 =
+        Aqua<br/></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EnableCondition</b></font> (<a href="IValueExpr.htm">IValueExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Logical condition which if false disables otherwise enabled button. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ErrorMessageOverrides</b></font> (<a href="IArrayOfStringExpr.htm">IArrayOfStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Error message overrides for button. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of error messages</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Frame</b></font> (<a href="IFrame.htm">IFrame</a>, <i>objectref.</i>)
+<dl>
+    <dd>Sheet object frame rendering information. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrintSettings</b></font> (<a href="IPrinterOptions.htm">IPrinterOptions</a>, <i>objectref.</i>)
+<dl>
+    <dd>Print settings for button. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Print settings object for button</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShortcutFunction</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Shortcut function. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Shortcut function<br/>0 = Show info<br/>1 = Show all pictures<br/>2 = Lock selections<br/>3 = Unlock all
+        locked selections<br/>4 = Clear all selections excluding locked<br/>5 = Clear all selections including
+        locked<br/>6 = Undo last logical operation<br/>7 = Redo last undone logical operation<br/>8 = Close active
+        QlikView document<br/>9 = Activate next sheet<br/>10 = Activate previous sheet</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Text</b></font> (<a href="IStringExpr.htm">IStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Text on button. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextAdjustHorizontal</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Button text horizontal alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Horizontal text alignment<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextAdjustVertical</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Button text vertical alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical text alignment<br/>0 = top<br/>4 = center<br/>8 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Button text color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Button text color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UserSized</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if the button has been sized by user. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UsesText</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if the button text is used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

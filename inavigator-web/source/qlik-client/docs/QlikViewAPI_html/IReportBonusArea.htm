@@ -1,0 +1,72 @@
+<html>
+<head><title>IReportBonusArea</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IReportBonusArea</h1><br/>
+Report bonus area definition object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>Height</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Height of intro or appendix area in multi paper page. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Fraction of available paper height (printable area excluding header and footer). Must be number between 0
+        and 1.</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Items</b></font> (<a href="IArrayOfReportItem.htm">IArrayOfReportItem</a>, <i>objectref.</i>)
+<dl>
+    <dd>Print items in intro or appendix area. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of report print items</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OffsetToMain</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Margin to main multi paper print area. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Fraction of available paper height (printable area excluding header and footer). Must be number between 0
+        and 1.</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnFirstPage</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if intro or appendix area to be printed on first paper of multi paper page. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnLastPage</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if intro or appendix area to be printed on last paper of multi paper page. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnMiddlePages</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if intro or appendix area to be printed on intermediate papers of multi paper page. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

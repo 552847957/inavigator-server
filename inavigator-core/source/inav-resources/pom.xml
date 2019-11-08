@@ -1,0 +1,22 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ru.sberbank.inavigator</groupId>
+		<artifactId>inav</artifactId>
+		<version>${release_number}</version>
+	</parent>
+	<artifactId>inav-resources</artifactId>
+	<version>${release_number}</version>
+	<name>inav-resources</name>
+	<packaging>war</packaging>
+
+	<build>
+		<plugins>
+			  <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+			  </plugin>
+		</plugins>
+	</build>
+
+</project>

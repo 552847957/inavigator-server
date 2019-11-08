@@ -1,0 +1,1663 @@
+<html>
+<head><title>Field</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>Field</h1><br/>
+The QlikView data field<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Method Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<h3>CanLock</h3>
+<pre>Boolean <b>CanLock</b>()</pre>
+<dl>
+    <dd>True if field can be locked. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>temp=ActiveDocument.Fields("Membership").CanLock<br/>if&nbsp;temp&nbsp;then&nbsp;msgbox("Can&nbsp;be&nbsp;locked")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CanUnlock</h3>
+<pre>Boolean <b>CanUnlock</b>()</pre>
+<dl>
+    <dd>True if field can be unlocked. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>temp=ActiveDocument.Fields("Membership").CanUnlock<br/>if&nbsp;temp&nbsp;then&nbsp;msgbox("Can&nbsp;be&nbsp;unlocked")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Clear</h3>
+<pre>Boolean <b>Clear</b>()</pre>
+<dl>
+    <dd>Clears the field from selections. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Fields("Class").Clear<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ClearAllButThis</h3>
+<pre>Boolean <b>ClearAllButThis</b>(Boolean SoftLock)</pre>
+<dl>
+    <dd>Selects possible values and clears all other fields. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Fields("Class").ClearAllButThis<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DistributeInputFieldValue</h3>
+<pre> <b>DistributeInputFieldValue</b>(Variant (Array of Integer) Elements, String Value, IInputDistribution Dist)</pre>
+<dl>
+    <dd>Distributes input field value change. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Elements</code></b> (Variant (Array of Integer)) : Element indices</dd>
+            <dd><b><code>Value</code></b> (String) : New value</dd>
+            <dd><b><code>Dist</code></b> (<a href="IInputDistribution.htm">IInputDistribution</a>) : Input field
+                distribution definition object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld&nbsp;=&nbsp;ActiveDocument.Fields("Budget")<br/>dim&nbsp;x(3)<br/>x(0)&nbsp;=&nbsp;0<br/>x(1)&nbsp;=&nbsp;1<br/>x(2)&nbsp;=&nbsp;2<br/>rem&nbsp;the&nbsp;object&nbsp;distdef&nbsp;must&nbsp;be&nbsp;of&nbsp;type&nbsp;IInputDistribution<br/>distdef.DistributionMode&nbsp;=&nbsp;0&nbsp;&nbsp;'&nbsp;spread&nbsp;equally<br/>distdef.AffectMode&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&nbsp;no&nbsp;compensation<br/>fld.DistributeInputFieldValue&nbsp;x,&nbsp;"999"&nbsp;,&nbsp;distdef<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetAlternativeValues</h3>
+<pre><a href="IArrayOfFieldValue.htm">IArrayOfFieldValue</a> <b>GetAlternativeValues</b>(Integer MaxNoOfValues, Boolean UseDefaultSortOrder)</pre>
+<dl>
+    <dd>Returns all alternative values in the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MaxNoOfValues</code></b> (Integer) : Maximum number of values to be returned. Default is 100.
+                If more values than limit exists, the method returns null.
+            </dd>
+            <dd><b><code>UseDefaultSortOrder</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class IArrayOfFieldValue returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;val=ActiveDocument.Fields("Month").GetAlternativeValues<br/>for&nbsp;i=0&nbsp;to&nbsp;val.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(val.Item(i).Text)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetAndMode</h3>
+<pre>Boolean <b>GetAndMode</b>()</pre>
+<dl>
+    <dd>Returns AND-mode status of the field. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>temp=ActiveDocument.Fields("Membership").GetAndMode<br/>if&nbsp;temp&nbsp;then&nbsp;msgbox("And&nbsp;mode")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCardinal</h3>
+<pre>Integer <b>GetCardinal</b>()</pre>
+<dl>
+    <dd>Returns the number of field values in the field. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Member")<br/>msgbox("The&nbsp;field&nbsp;has&nbsp;"&&nbsp;fld.GetCardinal&nbsp;&"&nbsp;values")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetDefaultSortCriteria</h3>
+<pre><a href="ISortCriteria.htm">ISortCriteria</a> <b>GetDefaultSortCriteria</b>()</pre>
+<dl>
+    <dd>Returns default sort criteria for the field. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Member")<br/>set&nbsp;fldsrt&nbsp;=&nbsp;fld.GetDefaultSortCriteria&nbsp;<br/>fldsrt.SortByAscii&nbsp;=&nbsp;true<br/>fldsrt.SortByExpression&nbsp;=&nbsp;false<br/>fldsrt.SortByFrequency&nbsp;=&nbsp;true<br/>fldsrt.SortByLoadOrder&nbsp;=&nbsp;false<br/>fldsrt.SortByNumeric&nbsp;=&nbsp;false<br/>fldsrt.SortByState&nbsp;=&nbsp;true<br/>fld.SetDefaultSortCriteria&nbsp;fldsrt<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetDescription</h3>
+<pre><a href="IFieldDescription.htm">IFieldDescription</a> <b>GetDescription</b>()</pre>
+<dl>
+    <dd>Returns field description. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.Fields("Class").GetDescription.Cardinal)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetDeselectedValues</h3>
+<pre><a href="IArrayOfFieldValue.htm">IArrayOfFieldValue</a> <b>GetDeselectedValues</b>(Integer MaxNoOfValues, Boolean UseDefaultSortOrder)</pre>
+<dl>
+    <dd>Returns all deselected values in the field (AND-mode only). <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MaxNoOfValues</code></b> (Integer) : Maximum number of values to be returned. Default is 100.
+                If more values than limit exists, the method returns null.
+            </dd>
+            <dd><b><code>UseDefaultSortOrder</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class IArrayOfFieldValue returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;val=ActiveDocument.Fields("Month").GetDeselectedValues<br/>for&nbsp;i=0&nbsp;to&nbsp;val.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(val.Item(i).Text)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetExcludedValues</h3>
+<pre><a href="IArrayOfFieldValue.htm">IArrayOfFieldValue</a> <b>GetExcludedValues</b>(Integer MaxNoOfValues, Boolean UseDefaultSortOrder)</pre>
+<dl>
+    <dd>Returns all excluded values in the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MaxNoOfValues</code></b> (Integer) : Maximum number of values to be returned. Default is 100.
+                If more values than limit exists, the method returns null.
+            </dd>
+            <dd><b><code>UseDefaultSortOrder</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class IArrayOfFieldValue returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;val=ActiveDocument.Fields("Month").GetExcludedValues<br/>for&nbsp;i=0&nbsp;to&nbsp;val.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(val.Item(i).Text)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetFieldFlags</h3>
+<pre><a href="IFieldFlags.htm">IFieldFlags</a> <b>GetFieldFlags</b>(Boolean SupressOnlyAndHasInfo)</pre>
+<dl>
+    <dd>Returns status flags for the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SupressOnlyAndHasInfo</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class IFieldFlags returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;LB&nbsp;=&nbsp;ActiveDocument.GetSheetObjects("LB01")<br/>set&nbsp;boxfield=LB.GetField<br/>if&nbsp;boxfield.GetFieldFlags.HasSelection&nbsp;then&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox("Selections&nbsp;in&nbsp;list&nbsp;box&nbsp;LB01")<br/>else&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox("No&nbsp;selections&nbsp;in&nbsp;list&nbsp;box&nbsp;LB01")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetFractile</h3>
+<pre>String <b>GetFractile</b>(Double FractileValue)</pre>
+<dl>
+    <dd>Returns a fractile value based on a given fractile. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FractileValue</code></b> (Double) : Fractile as real number between 0 and 1</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>String representation of fractile field value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;fld&nbsp;=&nbsp;ActiveDocument.Fields("Sales")<br/>s&nbsp;=&nbsp;fld.GetFractile(0.5)<br/>msgbox("The&nbsp;median&nbsp;for&nbsp;Sales&nbsp;is&nbsp;"&nbsp;&&nbsp;s)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetGrandMemberValue</h3>
+<pre>Double <b>GetGrandMemberValue</b>(Byte MemberId)</pre>
+<dl>
+    <dd>Returns a selected aggregate with the ALL qualifier for the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MemberId</code></b> (Byte) : Type of aggregate to calculate<br/>0 = SUM<br/>1 = MIN <br/>2 =
+                MAX<br/>3 = MEAN<br/>4 = STD DEV<br/>5 = SKEWNESS<br/>6 = KURTOSIS<br/>7 = N<br/>8 = NULL COUNT<br/>9 =
+                BAD<br/>10 = COUNT<br/>12 = MISSING COUNT
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Calculated aggregate</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>meanvalue&nbsp;=&nbsp;ActiveDocument.Fields("Amount").GetGrandMemberValue(3)&nbsp;&nbsp;&nbsp;&nbsp;'average<br/>msgbox(meanvalue)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetHighestFrequency</h3>
+<pre>__int64 <b>GetHighestFrequency</b>()</pre>
+<dl>
+    <dd>Returns the highest frequency among the field values in the field (disregarding selections). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Date")<br/>msgbox("The&nbsp;highest&nbsp;frequency&nbsp;is&nbsp;"&&nbsp;fld.GetHighestFrequency&nbsp;)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetInfoPaths</h3>
+<pre>Variant (Array of String) <b>GetInfoPaths</b>(Boolean ValueName)</pre>
+<dl>
+    <dd>Returns info paths. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>ValueName</code></b> (Boolean) : True if info is connected via the 'qmem://
+                <fieldname>/
+                    <fieldvalue>' syntax rather than the 'qmem://
+                        <fieldname>/
+                            <fieldId>' syntax
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Array of info paths</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;f&nbsp;=&nbsp;ActiveDocument.GetField&nbsp;("Customer")<br/>ipaths&nbsp;=&nbsp;f.GetInfoPaths(true)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetLocked</h3>
+<pre>Boolean <b>GetLocked</b>()</pre>
+<dl>
+    <dd>Returns true if field is locked else false. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>temp=ActiveDocument.Fields("Member").GetLocked<br/>if&nbsp;temp&nbsp;then&nbsp;msgbox("Locked!")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetLongest</h3>
+<pre>String <b>GetLongest</b>(IFieldAttributes Attr, IBaseFont Font)</pre>
+<dl>
+    <dd>Returns the longest string in the field based on a given font. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Attr</code></b> (<a href="IFieldAttributes.htm">IFieldAttributes</a>) :</dd>
+            <dd><b><code>Font</code></b> (<a href="IBaseFont.htm">IBaseFont</a>) : Font object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns the longest string in the field based on a given font (and number format).</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld&nbsp;=&nbsp;ActiveDocument.Fields("Member")<br/>set&nbsp;stdfont&nbsp;=&nbsp;ActiveDocument.GetApplication.GetUserPreferences.Qfont<br/>set&nbsp;fattr&nbsp;=&nbsp;fld.GetProperties.NumberPresentation<br/>s&nbsp;=&nbsp;fld.GetLongest(fattr,stdfont)<br/>msgbox("The&nbsp;longest&nbsp;string&nbsp;is&nbsp;"&nbsp;&&nbsp;s)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetLowestFrequency</h3>
+<pre>__int64 <b>GetLowestFrequency</b>()</pre>
+<dl>
+    <dd>Returns the lowest frequency among the field values in the field (disregarding selections). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Date")<br/>msgbox("The&nbsp;highest&nbsp;frequency&nbsp;is&nbsp;"&&nbsp;fld.GetLowestFrequency&nbsp;)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetMember</h3>
+<pre>String <b>GetMember</b>(Byte MemberId)</pre>
+<dl>
+    <dd>Returns a specified statistical member function. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MemberId</code></b> (Byte) : Internal number of statistical member<br/>0 = Sum<br/>1 = Min<br/>2
+                = Max<br/>3 = Mean<br/>4 = StdDev<br/>5 = Skewness<br/>6 = Kurtosis<br/>7 = TotalCount<br/>8 = NullCount<br/>9
+                = TextCount<br/>10 = NumericCount<br/>11 = Only<br/>12 = MissingCount<br/>13 = GrandTotalSum
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Statistical value as string</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Member")<br/>msgbox("The&nbsp;field&nbsp;has&nbsp;"&&nbsp;fld.GetMember(7)&nbsp;&"&nbsp;values")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetMemberErr</h3>
+<pre>String <b>GetMemberErr</b>(Byte MemberId)</pre>
+<dl>
+    <dd>Returns standard error for a specified statistical member function. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MemberId</code></b> (Byte) : Internal number of statistical member<br/>0 = Sum<br/>1 = Min<br/>2
+                = Max<br/>3 = Mean<br/>4 = StdDev<br/>5 = Skewness<br/>6 = Kurtosis<br/>7 = TotalCount<br/>8 = NullCount<br/>9
+                = TextCount<br/>10 = NumericCount<br/>11 = Only<br/>12 = MissingCount<br/>13 = GrandTotalSum
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Standard error as string</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Member")<br/>msgbox("The&nbsp;average&nbsp;standard&nbsp;error&nbsp;is&nbsp;"&&nbsp;fld.GetMemberErr(3)&nbsp;)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetMemberValue</h3>
+<pre>Double <b>GetMemberValue</b>(Byte MemberId)</pre>
+<dl>
+    <dd>Returns a selected aggregate for the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MemberId</code></b> (Byte) : Type of aggregate to calculate<br/>0 = SUM<br/>1 = MIN <br/>2 =
+                MAX<br/>3 = MEAN<br/>4 = STD DEV<br/>5 = SKEWNESS<br/>6 = KURTOSIS<br/>7 = N<br/>8 = NULL COUNT<br/>9 =
+                BAD<br/>10 = COUNT<br/>11 = ONLY VALUE<br/>12 = MISSING COUNT<br/>13 = GRAND<br/>14 = MIN_STRING<br/>15
+                = MAX_STRING<br/>16 = ONLY_TEXT <br/>17 = MODE_TEXT <br/>19 = MSTDERR<br/>20 = SSTDERR<br/>21 =
+                FIRST_VALUE<br/>22 = LAST_VALUE
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Calculated aggregate</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>meanvalue&nbsp;=&nbsp;ActiveDocument.Fields("Amount").GetMemberValue(3)&nbsp;&nbsp;&nbsp;'average<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetNoValues</h3>
+<pre><a href="IArrayOfFieldValue.htm">IArrayOfFieldValue</a> <b>GetNoValues</b>()</pre>
+<dl>
+    <dd>Returns an empty object of type IArrayOfFieldValue. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;select&nbsp;two&nbsp;non-consecutive&nbsp;field&nbsp;values&nbsp;in&nbsp;field&nbsp;**<br/>set&nbsp;f&nbsp;=&nbsp;ActiveDocument.Fields("Class")<br/>set&nbsp;fv&nbsp;=&nbsp;f.GetNoValues&nbsp;&nbsp;'empty&nbsp;array<br/>fv.Add<br/>fv.Add<br/>fv(0).Text&nbsp;=&nbsp;"Group"<br/>fv(0).IsNumeric&nbsp;=&nbsp;false<br/>fv(1).Text&nbsp;=&nbsp;"Field"<br/>fv(1).IsNumeric&nbsp;=&nbsp;false<br/>f.SelectValues&nbsp;fv<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetOptionalValues</h3>
+<pre><a href="IArrayOfFieldValue.htm">IArrayOfFieldValue</a> <b>GetOptionalValues</b>(Integer MaxNoOfValues, Boolean UseDefaultSortOrder)</pre>
+<dl>
+    <dd>Returns all optional values in the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MaxNoOfValues</code></b> (Integer) : Maximum number of values to be returned. Default is 100.
+                If more values than limit exists, the method returns null.
+            </dd>
+            <dd><b><code>UseDefaultSortOrder</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class IArrayOfFieldValue returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;val=ActiveDocument.Fields("Month").GetOptionalValues<br/>for&nbsp;i=0&nbsp;to&nbsp;val.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(val.Item(i).Text)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetPossibleValues</h3>
+<pre><a href="IArrayOfFieldValue.htm">IArrayOfFieldValue</a> <b>GetPossibleValues</b>(Integer MaxNoOfValues, Boolean UseDefaultSortOrder)</pre>
+<dl>
+    <dd>Returns all possible values in the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MaxNoOfValues</code></b> (Integer) : Maximum number of values to be returned. Default is 100.
+                If more values than limit exists, the method returns null.
+            </dd>
+            <dd><b><code>UseDefaultSortOrder</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class IArrayOfFieldValue returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;val=ActiveDocument.Fields("Month").GetPossibleValues<br/>for&nbsp;i=0&nbsp;to&nbsp;val.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(val.Item(i).Text)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetProperties</h3>
+<pre><a href="IFieldProperties.htm">IFieldProperties</a> <b>GetProperties</b>()</pre>
+<dl>
+    <dd>Returns field properties. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;fld=ActiveDocument.Fields("Member")<br/>set&nbsp;fprop&nbsp;=&nbsp;fld.GetProperties<br/>fprop.ShowAlternatives&nbsp;=&nbsp;true<br/>fld.SetProperties&nbsp;fprop<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetSelectedValues</h3>
+<pre><a href="IArrayOfFieldValue.htm">IArrayOfFieldValue</a> <b>GetSelectedValues</b>(Integer MaxNoOfValues, Boolean UseDefaultSortOrder)</pre>
+<dl>
+    <dd>Returns all selected values in the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MaxNoOfValues</code></b> (Integer) : Maximum number of values to be returned. Default is 100.
+                If more values than limit exists, the method returns null.
+            </dd>
+            <dd><b><code>UseDefaultSortOrder</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class IArrayOfFieldValue returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>sub&nbsp;LogFunktion<br/>&nbsp;&nbsp;&nbsp;'This&nbsp;routine&nbsp;logs&nbsp;selection&nbsp;to&nbsp;a&nbsp;text&nbsp;file<br/>&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;set&nbsp;fso&nbsp;=&nbsp;CreateObject("Scripting.FileSystemObject")<br/>&nbsp;&nbsp;&nbsp;set&nbsp;mypath&nbsp;=&nbsp;ActiveDocument.GetProperties<br/>&nbsp;&nbsp;&nbsp;directory&nbsp;=&nbsp;mypath.MyWorkingDirectory&nbsp;<br/>&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;On&nbsp;Error&nbsp;Resume&nbsp;Next<br/>&nbsp;&nbsp;&nbsp;'&nbsp;See&nbsp;if&nbsp;file&nbsp;already&nbsp;exists.<br/>&nbsp;&nbsp;&nbsp;Set&nbsp;filFile&nbsp;=&nbsp;fso.GetFile(directory&nbsp;&&nbsp;"log.txt")<br/>&nbsp;&nbsp;&nbsp;'&nbsp;If&nbsp;not,&nbsp;then&nbsp;create&nbsp;it.<br/>&nbsp;&nbsp;&nbsp;If&nbsp;Err&nbsp;<>&nbsp;0&nbsp;Then<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;filFile&nbsp;=&nbsp;fso.CreateTextFile(directory&nbsp;&&nbsp;"log.txt")<br/>&nbsp;&nbsp;&nbsp;End&nbsp;If<br/><br/>&nbsp;&nbsp;&nbsp;Set&nbsp;txsStream&nbsp;=&nbsp;filFile.OpenAsTextStream(8)&nbsp;'For&nbsp;Appending<br/>&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;set&nbsp;doc&nbsp;=&nbsp;ActiveDocument<br/>&nbsp;&nbsp;&nbsp;set&nbsp;mySelections&nbsp;=&nbsp;doc.fields("Field").GetSelectedValues<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;mySelections.Count&nbsp;-&nbsp;1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txsStream.WriteLine&nbsp;Now&nbsp;&&nbsp;"&nbsp;"&nbsp;&&nbsp;mySelections.Item(i).text<br/>&nbsp;&nbsp;&nbsp;next<br/>&nbsp;&nbsp;&nbsp;txsStream.WriteBlankLines&nbsp;1<br/>&nbsp;&nbsp;&nbsp;txsStream.Close<br/><br/>&nbsp;end&nbsp;sub<br/><br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetSemantic</h3>
+<pre>Boolean <b>GetSemantic</b>()</pre>
+<dl>
+    <dd>Returns true if field is semantic. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Member")<br/>if&nbsp;fld.GetSemantic&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox("The&nbsp;field&nbsp;is&nbsp;semantic")<br/>else<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox("The&nbsp;field&nbsp;is&nbsp;not&nbsp;semantic")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetTotalFrequency</h3>
+<pre>__int64 <b>GetTotalFrequency</b>()</pre>
+<dl>
+    <dd>Returns the total frequency of the field (disregarding selections). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Member")<br/>msgbox("The&nbsp;highest&nbsp;frequency&nbsp;is&nbsp;"&&nbsp;fld.GetTotalFrequency&nbsp;)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetValueCount</h3>
+<pre>Integer <b>GetValueCount</b>(short State)</pre>
+<dl>
+    <dd>Returns the number of values for a specified logical state. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>State</code></b> (short) : State is represented by an integer as follows: 1-selected,
+                2-optional, 3-deselected, 4-alternative, 5-excluded
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Number of field values in field with the specified state</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Member")<br/>msgbox("The&nbsp;field&nbsp;has&nbsp;"&&nbsp;fld.GetValueCount(1)&nbsp;&"&nbsp;selected&nbsp;values")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>HasInfo</h3>
+<pre>Boolean <b>HasInfo</b>()</pre>
+<dl>
+    <dd>Returns true if the field currently has valid external info. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("VerID")<br/>if&nbsp;fld.HasInfo&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox("Info&nbsp;string&nbsp;=&nbsp;"&nbsp;&&nbsp;fld.GetInfo.Info.InfoString)<br/>else<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox("The&nbsp;field&nbsp;currently&nbsp;has&nbsp;no&nbsp;info")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Lock</h3>
+<pre>Boolean <b>Lock</b>()</pre>
+<dl>
+    <dd>Locks the selections in the field. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Fields("Class").Lock<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Name</h3>
+<pre>String <b>Name</b>()</pre>
+<dl>
+    <dd>Returns the field name as a string. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField(7)<br/>msgbox(fld.Name)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ParetoSelect</h3>
+<pre> <b>ParetoSelect</b>(String Expression, Double Percentage, Boolean SelectComplement)</pre>
+<dl>
+    <dd>Makes pareto selection in field based on expression. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Expression</code></b> (String) : Expression by which to sort the field values</dd>
+            <dd><b><code>Percentage</code></b> (Double) : Percentage of field values that should be selected after
+                sorting by Expression (default is 80)
+            </dd>
+            <dd><b><code>SelectComplement</code></b> (Boolean) : True if complement values are to be selected</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;f&nbsp;=&nbsp;ActiveDocument.GetField&nbsp;("Customer")<br/>f.ParetoSelect&nbsp;"Sum&nbsp;(Sales)"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ResetInputFieldValues</h3>
+<pre> <b>ResetInputFieldValues</b>(short ResetMode, Variant (Array of Integer) Elements)</pre>
+<dl>
+    <dd>Resets input field values. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>ResetMode</code></b> (short) : Reset mode<br/>0 = Reset all values<br/>1 = Reset posible values<br/>2
+                = Reset single value
+            </dd>
+            <dd><b><code>Elements</code></b> (Variant (Array of Integer)) : Element indices</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>dim&nbsp;x(1)<br/>x(0)&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;'&nbsp;element&nbsp;to&nbsp;reset<br/>set&nbsp;fld&nbsp;=&nbsp;ActiveDocument.Fields("Budget")<br/>fld.ResetInputFieldValues&nbsp;2,&nbsp;x<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SearchFor</h3>
+<pre>Variant (Array of Integer) <b>SearchFor</b>(String Match, Boolean IncludeExcluded, Integer MaxNoOfMatches)</pre>
+<dl>
+    <dd>Returns an array of elements matching a string search criteria. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Match</code></b> (String) : String to search for</dd>
+            <dd><b><code>IncludeExcluded</code></b> (Boolean) : True if excluded field values should be included in the
+                search
+            </dd>
+            <dd><b><code>MaxNoOfMatches</code></b> (Integer) : Maximum number of values to be returned. Default is 100.
+                If more values than limit exists, the method returns null.
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Internal element numbers</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>x&nbsp;=&nbsp;ActiveDocument.Fields("Month").SearchFor("September",true,100)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Select</h3>
+<pre>Boolean <b>Select</b>(String Match, Boolean SoftLock, Integer ExcludedValuesMode)</pre>
+<dl>
+    <dd>Selects field values matching a search string. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Match</code></b> (String) : String to search for. May contain wildcards or numeric search
+                criteria. The exact string representation has precedence over wildcard interpretations.
+            </dd>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+            <dd><b><code>ExcludedValuesMode</code></b> (Integer) : Include excluded values in search<br/>0 =
+                Default<br/>1 = Yes<br/>2 = No
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Fields("Month").Select&nbsp;"September"<br/><br/>ActiveDocument.Fields("Month").Select&nbsp;"J*"<br/><br/>ActiveDocument.Fields("Sales").Select&nbsp;">1500"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SelectAll</h3>
+<pre>Boolean <b>SelectAll</b>(Boolean SoftLock)</pre>
+<dl>
+    <dd>Selects all values in the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Fields("Month").SelectAll<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SelectAndValues</h3>
+<pre>Boolean <b>SelectAndValues</b>(IArrayOfFieldValue FieldValues, IArrayOfFieldValue FieldNotValues, Boolean SoftLock)</pre>
+<dl>
+    <dd>AND/NOT-selects values from an IArrayOfFieldValue in a Field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FieldValues</code></b> (<a href="IArrayOfFieldValue.htm">IArrayOfFieldValue</a>) : Array
+                containing values to AND-select
+            </dd>
+            <dd><b><code>FieldNotValues</code></b> (<a href="IArrayOfFieldValue.htm">IArrayOfFieldValue</a>) : Array
+                containing values to NOT-select
+            </dd>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;Select&nbsp;members&nbsp;of&nbsp;EU&nbsp;and&nbsp;NATO&nbsp;not&nbsp;in&nbsp;G-7&nbsp;(AND-box)&nbsp;**<br/>set&nbsp;f&nbsp;=&nbsp;ActiveDocument.Fields("Membership")<br/>set&nbsp;fv&nbsp;=&nbsp;f.GetNoValues&nbsp;&nbsp;'empty&nbsp;array<br/>fv.Add<br/>fv.Add<br/>fv(0).Text&nbsp;=&nbsp;"EU"<br/>fv(0).IsNumeric&nbsp;=&nbsp;false<br/>fv(1).Text&nbsp;=&nbsp;"NATO"<br/>fv(1).IsNumeric&nbsp;=&nbsp;false<br/>set&nbsp;fvnot&nbsp;=&nbsp;f.GetNoValues&nbsp;&nbsp;'empty&nbsp;array<br/>fvnot.Add<br/>fvnot(0).Text&nbsp;=&nbsp;"G-7"<br/>fvnot(0).IsNumeric&nbsp;=&nbsp;false<br/>f.SelectAndValues&nbsp;fv,&nbsp;fvnot<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SelectExcluded</h3>
+<pre>Boolean <b>SelectExcluded</b>(Boolean SoftLock)</pre>
+<dl>
+    <dd>Selects all excluded values in the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Fields("Month").SelectExcluded<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SelectPossible</h3>
+<pre>Boolean <b>SelectPossible</b>(Boolean SoftLock)</pre>
+<dl>
+    <dd>Selects all possible values in the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Fields("Month").SelectPossible<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SelectValues</h3>
+<pre>Boolean <b>SelectValues</b>(IArrayOfFieldValue FieldValues, Boolean ToggleMode, Boolean SoftLock)</pre>
+<dl>
+    <dd>Selects values from an IArrayOfFieldValue in a Field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FieldValues</code></b> (<a href="IArrayOfFieldValue.htm">IArrayOfFieldValue</a>) : Array
+                containing values to select
+            </dd>
+            <dd><b><code>ToggleMode</code></b> (Boolean) : True for toggle selection</dd>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;cancel&nbsp;selection&nbsp;of&nbsp;first&nbsp;selected&nbsp;value&nbsp;**<br/>set&nbsp;f&nbsp;=&nbsp;ActiveDocument.Fields("Class")<br/>set&nbsp;fv&nbsp;=&nbsp;f.GetSelectedValues&nbsp;&nbsp;<br/>fv.RemoveAt&nbsp;0<br/>f.SelectValues&nbsp;fv<br/><br/>rem&nbsp;**&nbsp;select&nbsp;two&nbsp;non-consecutive&nbsp;field&nbsp;values&nbsp;in&nbsp;field&nbsp;**<br/>set&nbsp;f&nbsp;=&nbsp;ActiveDocument.Fields("Class")<br/>set&nbsp;fv&nbsp;=&nbsp;f.GetNoValues&nbsp;&nbsp;'empty&nbsp;array<br/>fv.Add<br/>fv.Add<br/>fv(0).Text&nbsp;=&nbsp;"Group"<br/>fv(0).IsNumeric&nbsp;=&nbsp;false<br/>fv(1).Text&nbsp;=&nbsp;"Field"<br/>fv(1).IsNumeric&nbsp;=&nbsp;false<br/>f.SelectValues&nbsp;fv<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ServerSideExport</h3>
+<pre> <b>ServerSideExport</b>(String Path, String Separator, Integer CodePage, Boolean Append)</pre>
+<dl>
+    <dd>Exports possible field values to file from QlikWebServer. Works also in standard QV and is then equal to
+        Exporting the contents of a listbox displaying the field.<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : File name with path</dd>
+            <dd><b><code>Separator</code></b> (String) : Separator to be used between values in record</dd>
+            <dd><b><code>CodePage</code></b> (Integer) : Codepage number, e.g. :<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001
+                = UTF-8
+            </dd>
+            <dd><b><code>Append</code></b> (Boolean) : True if export to be appended to existing file</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;f&nbsp;=&nbsp;ActiveDocument.GetField("Customer")<br/>f.ServerSideExport&nbsp;"C:\test.skv"&nbsp;,&nbsp;";"&nbsp;,&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'ANSI<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ServerSideExportEx</h3>
+<pre> <b>ServerSideExportEx</b>(String Path, String Separator, Integer Mode, Integer CodePage, Boolean Append)</pre>
+<dl>
+    <dd>Exports contents for field to file in QlikView Server. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : File name with path</dd>
+            <dd><b><code>Separator</code></b> (String) : Separator to be used between values in record</dd>
+            <dd><b><code>Mode</code></b> (Integer) : 0=HTML<br/>1=Text<br/>2=Bitmap<br/>3=XML<br/>4=QVD<br/>5=BIFF</dd>
+            <dd><b><code>CodePage</code></b> (Integer) : Codepage number, e.g. :<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001
+                = UTF-8
+            </dd>
+            <dd><b><code>Append</code></b> (Boolean) : True if export to be appended to existing file</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;f&nbsp;=&nbsp;ActiveDocument.GetField("Customer")<br/>f.ServerSideExportEx&nbsp;"C:\test.xml"&nbsp;,&nbsp;";"&nbsp;,&nbsp;3&nbsp;'0=HTML,&nbsp;1=Text,&nbsp;2=Bitmap,&nbsp;3=XML,&nbsp;4=QVD,&nbsp;5=BIFF</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetDefaultSortCriteria</h3>
+<pre> <b>SetDefaultSortCriteria</b>(ISortCriteria SortCriteria)</pre>
+<dl>
+    <dd>Sets the default sort criteria for the field. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SortCriteria</code></b> (<a href="ISortCriteria.htm">ISortCriteria</a>) : Sort criteria
+                description object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Member")<br/>set&nbsp;fldsrt&nbsp;=&nbsp;fld.GetDefaultSortCriteria&nbsp;<br/>fldsrt.SortByAscii&nbsp;=&nbsp;true<br/>fldsrt.SortByExpression&nbsp;=&nbsp;false<br/>fldsrt.SortByFrequency&nbsp;=&nbsp;true<br/>fldsrt.SortByLoadOrder&nbsp;=&nbsp;false<br/>fldsrt.SortByNumeric&nbsp;=&nbsp;false<br/>fldsrt.SortByState&nbsp;=&nbsp;true<br/>fld.SetDefaultSortCriteria&nbsp;fldsrt<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetInputFieldValue</h3>
+<pre> <b>SetInputFieldValue</b>(Integer offset, String Value)</pre>
+<dl>
+    <dd>Sets an individual input field value. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>offset</code></b> (Integer) : Offset to start of field (0 based)</dd>
+            <dd><b><code>Value</code></b> (String) : New value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld&nbsp;=&nbsp;ActiveDocument.Fields("Budget")<br/>fld.SetInputFieldValue&nbsp;0,&nbsp;"999"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetProperties</h3>
+<pre> <b>SetProperties</b>(IFieldProperties Properties)</pre>
+<dl>
+    <dd>Sets the field properties. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Properties</code></b> (<a href="IFieldProperties.htm">IFieldProperties</a>) : Field properties
+                object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;fld=ActiveDocument.GetField("Member")<br/>set&nbsp;fprop&nbsp;=&nbsp;fld.GetProperties<br/>fprop.ShowAlternatives&nbsp;=&nbsp;true<br/>fld.SetProperties&nbsp;fprop<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetRawInputFieldVector</h3>
+<pre> <b>SetRawInputFieldVector</b>(Integer offset, IArrayOfFieldValue Values)</pre>
+<dl>
+    <dd>Sets an array of input field values. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>offset</code></b> (Integer) : Offset to start of field (0 based)</dd>
+            <dd><b><code>Values</code></b> (<a href="IArrayOfFieldValue.htm">IArrayOfFieldValue</a>) : Array of field
+                values
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;f&nbsp;=&nbsp;ActiveDocument.Fields("Budget")<br/>set&nbsp;fv&nbsp;=&nbsp;f.GetNoValues&nbsp;&nbsp;'empty&nbsp;array<br/>fv.Add<br/>fv.Add<br/>fv(0).Number&nbsp;=&nbsp;11<br/>fv(0).IsNumeric&nbsp;=&nbsp;true<br/>fv(1).Number&nbsp;=&nbsp;44<br/>fv(1).IsNumeric&nbsp;=&nbsp;true<br/>f.SetRawInputFieldVector&nbsp;0,&nbsp;fv<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ToggleSelect</h3>
+<pre>Boolean <b>ToggleSelect</b>(String Match, Boolean SoftLock, Integer ExcludedValuesMode)</pre>
+<dl>
+    <dd>Toggle selects field values matching a search string. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Match</code></b> (String) : String to search for. May contain wildcards or numeric search
+                criteria. The exact string representation has precedence over wildcard interpretations. Toggle selects
+                already selected values
+            </dd>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+            <dd><b><code>ExcludedValuesMode</code></b> (Integer) : Include excluded values in search<br/>0 =
+                Default<br/>1 = Yes<br/>2 = No
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Fields("Month").Select&nbsp;">4"<br/>ActiveDocument.Fields("Month").ToggleSelect&nbsp;"<8"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>TopSelect</h3>
+<pre> <b>TopSelect</b>(String Expression, Integer SelectCount, Boolean SelectBottom)</pre>
+<dl>
+    <dd>Makes top/bottom selection in field based on expression. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Expression</code></b> (String) : Expression by which to sort the field values</dd>
+            <dd><b><code>SelectCount</code></b> (Integer) : Number of field values that should be selected after sorting
+                by Expression
+            </dd>
+            <dd><b><code>SelectBottom</code></b> (Boolean) : True if bottom values are to be selected</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;f&nbsp;=&nbsp;ActiveDocument.GetField&nbsp;("Customer")<br/>&nbsp;f.TopSelect&nbsp;"Sum&nbsp;(Sales)",&nbsp;5<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Unlock</h3>
+<pre>Boolean <b>Unlock</b>()</pre>
+<dl>
+    <dd>Unlocks the selections in the field. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Fields("Class").Unlock<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<html>
+<head><title>IDocumentUserPermissions</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IDocumentUserPermissions</h1><br/>
+Document user permissions definition object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>AccessAppProperties</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether a user logged in as USER is permitted to access the Application Properties dialog. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if a user logged in as USER is permitted to access the Application Properties dialog</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AccessTabRowProperties</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether tabrow properties can be modified in the document<br/>. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if tabrow properties can be modified in the document else false</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AddSheet</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether Add Sheet is permitted for the document.. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if Add Sheet permitted in document else false</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AdminSecurityOverride</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether Admin overrides all security settings. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if Admin overrides all security settings</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowExport</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether export operations are permitted from the document.. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if export operations are permitted from the document.</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowPrintAnyway</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>True if printing is to be allowed when export is prohibited. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DisplayHiddenProgress</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>True if progress window should be shown when executing hidden script. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EditModule</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether Edit Module is permitted for the document.. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if Edit Module permitted in document else false</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EditScript</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether Edit Script is permitted for the document.. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if Edit Script permitted in document else false</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>InhibitUserReload</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether Reload is permitted when logged in on USER access level. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if Reload should be permitted when logged in on USER access level</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MacroOverride</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether macros are allowed to override user permission settings. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if macros are allowed to override user permission settings</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PartialReload</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Controls whether Partial Reload is permitted for the document.. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if Partial Reload permitted in document else false</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PromoteDemoteSheets</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether Promote/Demote Sheet is permitted for the document.. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if Promote/Demote Sheet is permitted for the document.</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ReduceData</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether Reduce Data is permitted for the document.. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if Reduce Data permitted in document else false</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Reload</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Controls whether Reload is permitted for the document.. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if Reload permitted in document else false</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SaveApp</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>Controls whether Save and SaveAs are permitted for the document.. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if Save and SaveAs permitted in document else false</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowAllSheetsAndObjects</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>True if all show conditions for sheets and sheet objects should be overridden in ADMIN mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

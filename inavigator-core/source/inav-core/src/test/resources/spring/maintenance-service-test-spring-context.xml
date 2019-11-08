@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="config-service-test-spring-context.xml"/>
+    <import resource="sql-public-service-test-spring-context.xml"/>
+
+    <bean name="sqlRequestAndCertificateEmailVerifier" class="ru.sberbank.syncserver2.service.sql.SQLRequestAndCertificateEmailVerifier">
+        <property name="serviceContainer" ref="serviceContainerMockBean"/>
+        <property name="originalService" ref="sqlPublicServiceSigmaTestBean"/>
+    </bean>
+
+    <bean name="sqlRequestLogService" class="ru.sberbank.syncserver2.service.sql.SQLRequestLogService">
+        <property name="serviceContainer" ref="serviceContainerMockBean"/>
+        <property name="originalService" ref="sqlRequestAndCertificateEmailVerifier"/>
+    </bean>
+
+    <bean name="maintenanceServiceTestBean" class="ru.sberbank.syncserver2.service.sql.MaintenanceService">
+        <property name="serviceContainer" ref="serviceContainerMockBean"/>
+        <property name="originalService" ref="sqlRequestLogService"/>
+        <property name="hosts" value="http://127.0.0.1:48656"/>
+    </bean>
+
+</beans>

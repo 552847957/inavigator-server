@@ -1,0 +1,1116 @@
+<html>
+<head><title>IChartProperties</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IChartProperties</h1><br/>
+Bitmap chart properties<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>AlphaFactor</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Chart background opacity. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Chart background opacity (0-255)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AnimationProperties</b></font> (<a href="IAnimationPropertiesDef.htm">IAnimationPropertiesDef</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Chart animation properties. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Chart animation definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ArrowMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Mode for lines and arrows between scatter points in two-dimensional scatter charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Mode for lines and arrows between scatter points in two-dimensional scatter charts<br/>0 = solid arrow
+        centered<br/>1 = open arrow centered<br/>2 = solid arrow at end<br/>3 = open arrow at end</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ArrowSize</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Size of arrows when used between scatter points in two-dimensional scatter charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Size of arrows. An integer between 1 and 8.</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BackgroundColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Background color for graphs as RGB. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BarChartMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Type of bar chart (look). <p/></dd>
+</dl>
+<dl>
+    <dd><code>Bar chart look<br/>0 = 2D without shadow<br/>1 = 2D with shadow<br/>2 = 3D blocks<br/>3 = 3D
+        cylinders</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BarModeStacked</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for bar charts in stacked mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BarSpacingFactor</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Spacing between bars in bar chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Spacing between bars in bar chart (-6 - 8)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgAlpha</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Chart background opacity. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Background opacity (0-255)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Chart background mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Chart background mode<br/>1 = opaque fixed color (default)<br/>2 = bitmap image</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BlockBorderColors</b></font> (Variant (Array of Long (Color)), <i>read-write</i>)
+<dl>
+    <dd>Block chart border colors. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of colors as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BlockBorderWidths</b></font> (Variant (Array of Integer), <i>read-write</i>)
+<dl>
+    <dd>Block chart border widths. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of border widths</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BlockCaptionColor</b></font> (Long (Color), <i>read-write</i>)
+<dl>
+    <dd>Block caption base color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Block caption base color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BlockCaptionFont</b></font> (<a href="IBaseFont.htm">IBaseFont</a>, <i>objectref.</i>)
+<dl>
+    <dd>Block caption font. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Font definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BlockCaptionFontColor</b></font> (Long (Color), <i>read-write</i>)
+<dl>
+    <dd>Block caption text color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Block caption text color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BlockChartMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Block chart mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Block chart mode<br/>0 = Original<br/>1 = Caption</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BlockLevels</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Number of visible block levels in block chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BlockShowIntermediateLevelCaptions</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if intermediate level captions to be shown (caption mode block charts only). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BorderColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Color of border around plot area. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BorderWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Width of border around plot area. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BottomAxisPosition</b></font> (<a href="IRect.htm">IRect</a>, <i>objectref.</i>)
+<dl>
+    <dd>Position rectangle for bottom axis. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BottomAxisUserSized</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if bottom axis affected by user sizing. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Bubblesize</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Maximum size of bubble in bubble scatter charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if bottom axis affected by user sizing</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ColorMap</b></font> (<a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Array of 18 color area definitions. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of 18 colors as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ComboChartMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Type of combo chart (look). <p/></dd>
+</dl>
+<dl>
+    <dd><code>Look of combo chart<br/>0 = Normal<br/>1 = Bar shadows<br/>2 = Line shadows<br/>3 = Bar and line
+        shadows</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CompressedXAxis</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if compressed x-axis mode is used. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Maximum size of bubble in bubble scatter charts in pixels</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CycleExpressionDockedPos</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Docking status for Cycle expression icon. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Docking status for Cycle expression icon<br/>4 = free floating (undocked)<br/>6 = top/left corner<br/>7 =
+        top/right corner<br/>8 = bottom/left corner<br/>9 = bottom/right corner</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CycleExpressionRects</b></font> (<a href="IArrayOfRect.htm">IArrayOfRect</a>, <i>objectref.</i>)
+<dl>
+    <dd>Position rectangles for cycle expression icons. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of rectangles describing position of cycle expression icons within chart</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ErrorBarColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Error bar color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ErrorBarThickness</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Err or bar thickness. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Error bar thickness<br/>0 = Thin<br/>1 = Medium<br/>2 = Thick</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ErrorBarWidth</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Error bar width. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Error bar width<br/>0 = Narrow<br/>1 = Medium<br/>2 = Wide</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FastChangeDockedPos</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Docking status for Fast type change icon. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Docking status for Fast type change icon<br/>4 = free floating (undocked)<br/>6 = top/left corner<br/>7 =
+        top/right corner<br/>8 = bottom/left corner<br/>9 = bottom/right corner</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FastChangeInChart</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if preferred position of fast change icon is inside chart. False for preferred position in caption. <p/>
+    </dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FastChangeRect</b></font> (<a href="IRect.htm">IRect</a>, <i>objectref.</i>)
+<dl>
+    <dd>Rectangle describing position of fast type change icon in chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Rectangle describing position of fast type change icon within chart</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FullBkgBmp</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if image background to cover entire chart area. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FunnelChartMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Drawing mode for funnel chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Property not used in v 8.0</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FunnelTipWidth</b></font> (<a href="IValueExpr.htm">IValueExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Relative width of funnel chart tip. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FunnelValueMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Funel chart mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Funnel chart mode<br/>0 = No proportionality<br/>1 = Segment height proportionality<br/>2 = Segment area
+        proportionality</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeChartMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Type of gauge chart (look). <p/></dd>
+</dl>
+<dl>
+    <dd><code>Look for gauge chart<br/>0 = Circular<br/>1 = Linear<br/>2 = Traffic light<br/>3 = Segment LED <br/>4 =
+        Speedometer<br/>5 = Test tube</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeSettings</b></font> (<a href="IGaugeSettingsDef.htm">IGaugeSettingsDef</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Gauge setting definitions. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GridAutoBubbleSize</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>True when automatic maximum bubble size should be used in grid chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GridChartMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Type of grid chart (look). <p/></dd>
+</dl>
+<dl>
+    <dd><code>Look of grid chart<br/>0 = Unisize CIRCLE<br/>1 = Unisize BALL<br/>2 = Unisize PLUS<br/>3 = Unisize
+        CROSS<br/>4 = Unisize PIE<br/>5 = Variable size CIRCLE<br/>6 = Variable size BALL<br/>7 = Variable size 3D
+        BALL<br/>8 = Variable size PIE</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GridColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Grid color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GridSecondaryAxis</b></font> (<a href="IAxisDef.htm">IAxisDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Y-axis for grid chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Axis definition for grid chart y-axis</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GridStyle</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Grid style. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Major grid line style<br/>0 = Line<br/>1 = Dashed line<br/>2 = Bricks<br/>3 = Tiles</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GridThickness</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Grid thickness. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Major grid line thickness in docunits</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GroupSpacingFactor</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Spacing between clusters in clustered bar chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Spacing between clusters in clustered bar chart (-6 - 8)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HatchedBrushesOnPrinter</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if hatched brushes are to be used instead of colors when printing chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HatchedBrushesOnScreen</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if hatched brushes are to be used instead of colors when drawing chart on screen. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Horizontal</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if chart to be plotted horizontally. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LeftAxisPosition</b></font> (<a href="IRect.htm">IRect</a>, <i>objectref.</i>)
+<dl>
+    <dd>Rectangle describing left axis position within chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LeftAxisUserSized</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if left axis has been sized interactively by user. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Legend</b></font> (<a href="IChartLegendDef.htm">IChartLegendDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Chart legend. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Chart legend object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LineChartMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Type of line chart (look). <p/></dd>
+</dl>
+<dl>
+    <dd><code>Look of line chart<br/>0 = 2D<br/>1 = 3D<br/>2 = 2D Area<br/>3 = 3D Area</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LineWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Line width in line charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Line width in line charts (1-10)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MajorDimensionTextMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Text orientation for major dimension x-axis labels. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Text orientation for major dimension x-axis labels<br/>0 = horizontal<br/>1 = vertical<br/>2 =
+        tilted</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MaxLabelsInScatter</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Maximum number of data point labels to display in scatter chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MaxNumbersShownInChart</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Max number of data points for which to show numbers above (numbers on bars etc.). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MaxPieNumber</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Maximum number of slices in pie chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MekkoChartMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Mekko chart mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0=Plain<br/>1=Normalized</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MinorDimensionTextMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Text orientation for major dimension x-axis labels. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Text orientation for minor dimension x-axis labels<br/>0 = horizontal<br/>1 = vertical<br/>2 =
+        tilted</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MinorGridColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Color for minor grid lines. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MinorGridStyle</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Style for minor grid lines. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Minor grid line style<br/>0 = Line<br/>1 = Dashed line<br/>2 = Dots</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MinorGridThickness</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Minor grid lines thickness. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Minor grid line thickness in docunits</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MultiColoredX</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if different colors are to be used in single-expression one-dimensional bar/line/combo charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumbersOnBarsTextMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Text orientation for numbers on bars. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Text orientation for numbers on bars<br/>0 = horizontal<br/>1 = vertical</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumbersOnDataPointsLocation</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Location / plot of data points in chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0 = Plot numbers on top 1 = Plot numbers inside segments</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumericX</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if numeric (continous) x-axis is used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumericX2</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if numeric (continous) y-axis is used in grid charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PersistentColors</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if colors do not change with selections. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PieChartMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Type of pie chart (look). <p/></dd>
+</dl>
+<dl>
+    <dd><code>Pie chart look<br/>0 = 2D<br/>1 = 3D<br/>2 = Thin donut<br/>3 = Normal donut<br/>4 = Thick donut</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PieLowerLimit</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Minimum size of pie slice to show in pie chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PlotAreaColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Plot area color for graphs. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PlotAreaMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Plot area mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Plot area mode<br/>0 = Frame<br/>1 = Shadow<br/></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrimaryShare</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Share in percent of primary part of axis when using split axis. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RadarChartMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Type of radar chart (look). <p/></dd>
+</dl>
+<dl>
+    <dd><code>Look of radar chart<br/>0 = Normal<br/>1 = Area </code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ReferenceBkgMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Reference background mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Reference background mode<br/>0 = dimmed<br/>1 = Light gray<br/>2 = Grayscale</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RefLines</b></font> (<a href="IArrayOfReferenceLineDef.htm">IArrayOfReferenceLineDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Reference lines. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of reference lines</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RepeatLastColor</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if 16th color is repeated for additional colors. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ReverseOrientation</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for funnel charts with reveresed drawing orientation. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ReverseStagger</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if x-axis legend stagger to be reversed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RightAxisPosition</b></font> (<a href="IRect.htm">IRect</a>, <i>objectref.</i>)
+<dl>
+    <dd>Rectangle describing right axis position within chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RightAxisUserSized</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if right axis has been sized interactively by user. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScatterAdvancedMode</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if advanced expression dialog should be used for scatter chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScatterBubbles</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if scatter chart should be in bubble mode (requires third expression). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScatterChartMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Type of scatter chart (look). <p/></dd>
+</dl>
+<dl>
+    <dd><code>Look of scatter chart<br/>0 = Multiple symbols<br/>1 = Single symbol PLUS<br/>2 = Single symbol CROSS<br/>3
+        = Single symbol CIRCLE<br/>4 = Single symbol BALL<br/>5 = Bubble CIRCLE<br/>6 = Bubble BALL<br/>7 = Bubble 3D
+        BALL</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScatterFilledBubbles</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if scatter bubbles are to be filled. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScatterLabelPosHorizontal</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Horizontal position of scatter data point label in relation to data point. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Horizontal position of scatter data point label in relation to data point<br/>0 = not applicable<br/>1 =
+        not applicable<br/>2 = left<br/>3 = right<br/>4 = not applicable<br/>5 = center</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScatterLabelPosVertical</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Vertical position of scatter data point label in relation to data point. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical position of scatter data point label in relation to data point<br/>0 = above<br/>1 = below<br/>2
+        = not applicable<br/>3 = not applicable<br/>4 = not applicable<br/>5 = center</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScatterLabelsInChart</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if data point labels are to be shown in scatter chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScatterPlusAsSymbol</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if plus sign is to be used as symbol for all scatter points. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScatterShowDirection</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if direction arrows are to be shown between scatter points in multidimensional scatter charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScatterShowXLabel</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if label should be shown on x-axis in scatter chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScatterShowYLabel</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if label should be shown on y-axis in scatter chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShadedBars</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if shading effect should be used on bars. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowBarTotal</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if total bar should be shown in bar chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowDimValueInPopup</b></font> (Variant (Array of Boolean), <i>read-write</i>)
+<dl>
+    <dd>Array indicating if dimensions should appear in pop-up. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowHighlights</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if hover highlight is to be used in applicable chart types. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowOtherBars</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if others bar should be shown in bar chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowPopupLabels</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if pop-up labels should be enabled in chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowValueInPopup</b></font> (Variant (Array of Boolean), <i>read-write</i>)
+<dl>
+    <dd>Array indicating if values should appear in pop-up. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SideAngle</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Side angle for 3D look in degrees. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical angle of 3D charts (0-45 degrees)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SideAngle_3dPie</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Angle in degrees. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Side angle for 3D perspective pie chart mode</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SplitAxis</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for split y-axis mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>StaggerXLegend</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if x-axis labels should be staggered when spece gets to crowded. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SymbolSize</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Symbol size in line/combo/scatter charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Symbol size in line/combo/scatter charts (1-10)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SyncYAxes</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if y-axes to have synchronized zero level. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Fixed default text color for chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Texts</b></font> (<a href="IArrayOfChartTextDef.htm">IArrayOfChartTextDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Free texts in chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array containing free texts in chart</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ThinBars</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if bars thinner than four pixels are allowed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Title</b></font> (<a href="IChartTitleDef.htm">IChartTitleDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Chart title. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Chart title descriptor object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TopAngle</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Top angle for 3D look in degrees. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical angle of 3D charts (0-45 degrees)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TopAngle_3dPie</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Angle in degrees. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Top angle for 3D perspective pie chart mode</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TopAxisPosition</b></font> (<a href="IRect.htm">IRect</a>, <i>objectref.</i>)
+<dl>
+    <dd>Rectangle describing top axis position within chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Rectangle object describing top axis position within chart. Only the rectangle height has a meaning and
+        only when axis is user sized.</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TopAxisUserSized</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if top axis has been sized interactively by user. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TrellisProperties</b></font> (<a href="ITrellisPropertiesDef.htm">ITrellisPropertiesDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Trellis settings of a chart object. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TrendLineWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Width of trend lines. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>XAxis</b></font> (<a href="IAxisDef.htm">IAxisDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Definition of the x-axis. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Axis definition object for the x-axis</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>XAxisScroll</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if x-axis scroll bar to be shown with limited number of datap points. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>XScrollInitRight</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if x-axis scrollbar to be initiated in the far right position. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if x-axis scroll bar initial position is to the right</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

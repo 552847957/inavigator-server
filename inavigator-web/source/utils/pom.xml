@@ -1,0 +1,33 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ru.sberbank.inavigator</groupId>
+		<artifactId>inavigator</artifactId>
+		<version>${release_number}</version>
+	</parent>
+	<artifactId>inavigator-utils</artifactId>
+	<version>${release_number}</version>
+	<name>inavigator-utils</name>
+	<packaging>pom</packaging>
+
+	<!--
+	<repositories>
+		<repository>
+			<id>com.springsource.repository.bundles.release</id>
+			<name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/release</url>
+		</repository>
+		<repository>
+			<id>com.springsource.repository.bundles.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+	</repositories>
+	-->
+
+	<modules>
+		<module>admin_tool</module>
+		<module>util_backup</module>
+	</modules>
+
+</project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+
+<bean name="pingServiceTestBean" class="ru.sberbank.syncserver2.service.common.PingService"/>
+<bean name="versionServiceTestBean" class="ru.sberbank.syncserver2.service.common.VersionService"/>
+
+<bean name="dataSourceMockFactoryBean" class="ru.sberbank.inav.test.util.factory.bean.MockDataSourceFactory"
+      scope="prototype"/>
+<bean id="configSourceTestBeanAnswer"
+      class="ru.sberbank.inav.test.util.factory.bean.ServiceManagerPropertyTestBeanAnswer"/>
+<bean name="basicDataSourceMockFactoryBean"
+      class="ru.sberbank.inav.test.util.factory.bean.MockBasicDataSourceFactory" scope="prototype"/>
+<bean id="configLoaderTestBeanAnswer" class="ru.sberbank.inav.test.util.factory.bean.ConfigLoaderTestBeanAnswer"/>
+<bean id="configLoaderMockFactoryBean" class="ru.sberbank.inav.test.util.factory.bean.MockConfigLoaderFactory">
+    <constructor-arg name="theAnswer" ref="configLoaderTestBeanAnswer"/>
+</bean>
+
+
+</beans>

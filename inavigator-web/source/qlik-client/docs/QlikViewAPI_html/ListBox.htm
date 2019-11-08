@@ -1,0 +1,1775 @@
+<html>
+<head><title>ListBox</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>ListBox</h1><br/>
+The QlikView list box, a superset of the QlikView sheet object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Method Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<h3>Activate</h3>
+<pre> <b>Activate</b>()</pre>
+<dl>
+    <dd>Makes the sheet object the active sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ActivateAlso</h3>
+<pre> <b>ActivateAlso</b>()</pre>
+<dl>
+    <dd>Adds the sheet object to the active sheet objects. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AppendExport</h3>
+<pre> <b>AppendExport</b>(String Path, String Separator, Integer CodePage)</pre>
+<dl>
+    <dd>Exports the sheet object by appending to an existing file (QV5 compatibility). Export should be used instead!
+        <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : File name with path</dd>
+            <dd><b><code>Separator</code></b> (String) : Separator to be used between values in record</dd>
+            <dd><b><code>CodePage</code></b> (Integer) : Codepage number, e.g. :<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001
+                = UTF-8
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.AppendExport&nbsp;"C:\test.skv"&nbsp;,&nbsp;";"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ApplyTheme</h3>
+<pre> <b>ApplyTheme</b>(String FileName)</pre>
+<dl>
+    <dd>Apply theme to sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : Theme file name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CanPrint</h3>
+<pre>Boolean <b>CanPrint</b>()</pre>
+<dl>
+    <dd>Returns true if sheet object is printable. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Clear</h3>
+<pre>Boolean <b>Clear</b>()</pre>
+<dl>
+    <dd>Clears the field (or underlying field(s) for calculated list boxes) from selections. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.51</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.Clear<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ClearAllButThis</h3>
+<pre>Boolean <b>ClearAllButThis</b>(Boolean SoftLock)</pre>
+<dl>
+    <dd>Selects possible values and clears all other fields. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.51</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.ClearAllButThis<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Close</h3>
+<pre> <b>Close</b>()</pre>
+<dl>
+    <dd>Removes the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyBitmapToClipboard</h3>
+<pre>Boolean <b>CopyBitmapToClipboard</b>()</pre>
+<dl>
+    <dd>Copies a bitmap image of the sheet object to the clipboard. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyTableToClipboard</h3>
+<pre>Boolean <b>CopyTableToClipboard</b>(Boolean IncludeLabels)</pre>
+<dl>
+    <dd>Copies the cells of a table to clipboard (table objects only). <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>IncludeLabels</code></b> (Boolean) : True if labels are to be included</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if operation was successful</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyTextToClipboard</h3>
+<pre>Boolean <b>CopyTextToClipboard</b>()</pre>
+<dl>
+    <dd>Irrelevant for this type of sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyValuesToClipboard</h3>
+<pre>Boolean <b>CopyValuesToClipboard</b>()</pre>
+<dl>
+    <dd>Copies the values of a chart object to clipboard (not available for pivot tables). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DbGetTableData</h3>
+<pre><a href="Ireturn%20object%20for%20SheetObject.DbGetTableData()%20and%20CustomDropDown.DbGetTableData()%20and%20GraphBasics.D....htm">Ireturn object for SheetObject.DbGetTableData() and CustomDropDown.DbGetTableData() and GraphBasics.D...</a> <b>DbGetTableData</b>(Variant (Array of Integer) Columns, Variant (Array of Boolean) ForceText, Integer StartRow, Integer NoOfRows)</pre>
+<dl>
+    <dd>Returns data from table for QV ODBC driver. Irrelevant for list box objects<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Columns</code></b> (Variant (Array of Integer)) : Array of column numbers to extract (0 based)
+            </dd>
+            <dd><b><code>ForceText</code></b> (Variant (Array of Boolean)) : Not implemented</dd>
+            <dd><b><code>StartRow</code></b> (Integer) : First row to extract</dd>
+            <dd><b><code>NoOfRows</code></b> (Integer) : Number of rows to extract</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns data from table for QV ODBC driver</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DbGetTableInfo</h3>
+<pre><a href="Ireturn%20object%20for%20SheetObject.DbGetTableInfo()%20and%20CustomDropDown.DbGetTableInfo()%20and%20GraphBasics.D....htm">Ireturn object for SheetObject.DbGetTableInfo() and CustomDropDown.DbGetTableInfo() and GraphBasics.D...</a> <b>DbGetTableInfo</b>()</pre>
+<dl>
+    <dd>Returns information about fields in table for QV ODBC driver. Irrelevant for list box objects<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DbIsTable</h3>
+<pre>Boolean <b>DbIsTable</b>()</pre>
+<dl>
+    <dd>Returns true if the object is a table box, straight table or bitmap chart (and thus can deliver data to QV ODBC
+        driver). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Deactivate</h3>
+<pre> <b>Deactivate</b>()</pre>
+<dl>
+    <dd>Removes the sheet object from the list of active sheet objects. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogPrint</h3>
+<pre>Boolean <b>DialogPrint</b>()</pre>
+<dl>
+    <dd>Opens the Print dialog for the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject(&nbsp;"LB01"&nbsp;).DialogPrint<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogProperties</h3>
+<pre>Boolean <b>DialogProperties</b>(Integer Page)</pre>
+<dl>
+    <dd>Opens sheet object properties dialog. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Page</code></b> (Integer) : Property dialog page (0 based). -1 opens on last used page.</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Export</h3>
+<pre> <b>Export</b>(String Path, String Separator, Integer CodePage, Boolean Append)</pre>
+<dl>
+    <dd>Exports possible field values from list box to file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : File name with path</dd>
+            <dd><b><code>Separator</code></b> (String) : Separator to be used between values in record</dd>
+            <dd><b><code>CodePage</code></b> (Integer) : Codepage number, e.g. :<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001
+                = UTF-8
+            </dd>
+            <dd><b><code>Append</code></b> (Boolean) : True if export to be appended to existing file</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.Export&nbsp;"C:\test.skv"&nbsp;,&nbsp;";"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportBiff</h3>
+<pre> <b>ExportBiff</b>(String Path)</pre>
+<dl>
+    <dd>Exports sheet object in BIFF (Excel) format. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;obj&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>obj.ExportBiff&nbsp;"C:\test.xls"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportBitmapToFile</h3>
+<pre>Boolean <b>ExportBitmapToFile</b>(String Filename)</pre>
+<dl>
+    <dd>Exports a bitmap image of the sheet object to a file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Filename</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if export succeeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportHtml</h3>
+<pre> <b>ExportHtml</b>(String Path)</pre>
+<dl>
+    <dd>Exports possible field values from list box to file in HTML format. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.ExportHtml&nbsp;"C:\test.htm"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportXml</h3>
+<pre>Integer <b>ExportXml</b>(String Path, Integer CodePage)</pre>
+<dl>
+    <dd>Exports possible field values from list box to file in XML format. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : File name with path</dd>
+            <dd><b><code>CodePage</code></b> (Integer) : Codepage number, e.g. :<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001
+                = UTF-8
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Error code<br/>0 = Operation succeeded<br/>-2 = Could not find ISO name of specified codepage <br/>-1 =
+                The specified codpage is not supported by the system
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.ExportXml&nbsp;"C:\test.xml",1200<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCaption</h3>
+<pre><a href="ICaption.htm">ICaption</a> <b>GetCaption</b>()</pre>
+<dl>
+    <dd>Returns sheet object caption. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCardinal</h3>
+<pre>Integer <b>GetCardinal</b>()</pre>
+<dl>
+    <dd>Returns the number of values in the list box. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.51</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>n&nbsp;=&nbsp;lb.GetCardinal<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCell</h3>
+<pre><a href="IRCCell.htm">IRCCell</a> <b>GetCell</b>(Integer Row, Integer Column)</pre>
+<dl>
+    <dd>Returns a sheet object cell by its x/y coordinates in the current state of the layout. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Row</code></b> (Integer) : Sheet object row (0 based)</dd>
+            <dd><b><code>Column</code></b> (Integer) : Sheet object column (0 based)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Cell content object returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;table&nbsp;=&nbsp;ActiveDocument.GetSheetObject(&nbsp;"LB01"&nbsp;)<br/>for&nbsp;RowIter&nbsp;=&nbsp;0&nbsp;to&nbsp;table.GetRowCount-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;ColIter&nbsp;=0&nbsp;to&nbsp;table.GetColumnCount-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;cell&nbsp;=&nbsp;table.GetCell(RowIter,ColIter)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox(cell.Text)<br/>&nbsp;&nbsp;&nbsp;&nbsp;next<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCells</h3>
+<pre><a href="IArrayOfArrayOfRCCell.htm">IArrayOfArrayOfRCCell</a> <b>GetCells</b>(IRect Rect)</pre>
+<dl>
+    <dd>Returns a set of sheet object cells in the current state of the layout. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Rect</code></b> (<a href="IRect.htm">IRect</a>) : Rectangle describing which cells to return
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Array of cell content objects returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;table&nbsp;=&nbsp;ActiveDocument.GetSheetObject(&nbsp;"LB01"&nbsp;)<br/>CellRect&nbsp;=&nbsp;ActiveDocument.GetApplication().GetEmptyRect()<br/>CellRect.Top&nbsp;=&nbsp;0<br/>CellRect.Left&nbsp;=&nbsp;0<br/>CellRect.Width&nbsp;=&nbsp;table.GetColumnCount<br/>CellRect.Height&nbsp;=&nbsp;table.GetRowCount<br/>set&nbsp;CellMatrix&nbsp;=&nbsp;table.GetCells(&nbsp;CellRect&nbsp;)<br/>for&nbsp;RowIter=CellRect.Top&nbsp;to&nbsp;CellRect.Height-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;ColIter=CellRect.Left&nbsp;to&nbsp;CellRect.Width-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox(CellMatrix(RowIter)(ColIter).Text)<br/>&nbsp;&nbsp;&nbsp;&nbsp;next<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCells2</h3>
+<pre><a href="IArrayOfArrayOfRCCell.htm">IArrayOfArrayOfRCCell</a> <b>GetCells2</b>(Integer Left, Integer Top, Integer Width, Integer Height)</pre>
+<dl>
+    <dd>Returns a set of sheet object cells in the current state of the layout. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Left</code></b> (Integer) : left position of index of base cell (0 based)</dd>
+            <dd><b><code>Top</code></b> (Integer) : Top position of index of base cell (0 based)</dd>
+            <dd><b><code>Width</code></b> (Integer) : Number of cells in horizontal direction</dd>
+            <dd><b><code>Height</code></b> (Integer) : Number of cells in vertical direction</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Array of cell content objects returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;table&nbsp;=&nbsp;ActiveDocument.GetSheetObject(&nbsp;"LB01"&nbsp;)<br/>w&nbsp;=&nbsp;table.GetColumnCount<br/>h&nbsp;=&nbsp;table.GetRowCount<br/>set&nbsp;CellMatrix&nbsp;=&nbsp;table.GetCells2(0,0,w,h)<br/>for&nbsp;RowIter=0&nbsp;to&nbsp;h-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;ColIter=0&nbsp;to&nbsp;w-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox(CellMatrix(RowIter)(ColIter).Text)<br/>&nbsp;&nbsp;&nbsp;&nbsp;next<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetColumnCount</h3>
+<pre>Integer <b>GetColumnCount</b>()</pre>
+<dl>
+    <dd>Returns number of columns in list box. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;table&nbsp;=&nbsp;ActiveDocument.GetSheetObject(&nbsp;"LB01"&nbsp;)<br/>w&nbsp;=&nbsp;table.GetColumnCount<br/>h&nbsp;=&nbsp;table.GetRowCount<br/>set&nbsp;CellMatrix&nbsp;=&nbsp;table.GetCells2(0,0,w,h)<br/>for&nbsp;RowIter=0&nbsp;to&nbsp;h-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;ColIter=0&nbsp;to&nbsp;w-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox(CellMatrix(RowIter)(ColIter).Text)<br/>&nbsp;&nbsp;&nbsp;&nbsp;next<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetDoc</h3>
+<pre><a href="Document.htm">Document</a> <b>GetDoc</b>()</pre>
+<dl>
+    <dd>Returns the document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetField</h3>
+<pre><a href="Field.htm">Field</a> <b>GetField</b>()</pre>
+<dl>
+    <dd>Returns the field shown in the list box. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;LB&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>set&nbsp;boxfield=LB.GetField<br/>if&nbsp;boxfield.GetFieldFlags.HasSelection&nbsp;then&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox("Selections&nbsp;in&nbsp;list&nbsp;box&nbsp;Class")<br/>else&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox("No&nbsp;selections&nbsp;in&nbsp;list&nbsp;box&nbsp;Class")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetFrameDef</h3>
+<pre><a href="IFrame.htm">IFrame</a> <b>GetFrameDef</b>()</pre>
+<dl>
+    <dd>Returns frame, border and caption settings for the sheet object with position rectangles in docunits. Replaces
+        GetFrame from QV5<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectCalcTime</h3>
+<pre>Integer <b>GetObjectCalcTime</b>()</pre>
+<dl>
+    <dd>Returns latest object calculation time. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectId</h3>
+<pre>String <b>GetObjectId</b>()</pre>
+<dl>
+    <dd>Returns th e unique ID for the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectMemoryUsage</h3>
+<pre>Integer <b>GetObjectMemoryUsage</b>()</pre>
+<dl>
+    <dd>Returns latest object calculation memory usage. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectType</h3>
+<pre>short <b>GetObjectType</b>()</pre>
+<dl>
+    <dd>Returns code for sheet object type. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetPossibleValues</h3>
+<pre>Variant (Array of String) <b>GetPossibleValues</b>(short Format)</pre>
+<dl>
+    <dd>Returns possible values in a list box. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Format</code></b> (short) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Array of string values returned. One string for each possible value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;show&nbsp;each&nbsp;possible&nbsp;value&nbsp;in&nbsp;list&nbsp;box&nbsp;**<br/>set&nbsp;LB&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>boxvalues=LB.GetPossibleValues<br/>for&nbsp;i&nbsp;=&nbsp;lbound(boxvalues)&nbsp;to&nbsp;ubound(boxvalues)&nbsp;&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(boxvalues(i))<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetPrintOptions</h3>
+<pre><a href="IPrinterOptions.htm">IPrinterOptions</a> <b>GetPrintOptions</b>()</pre>
+<dl>
+    <dd>Returns printer settings for the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetProperties</h3>
+<pre><a href="IListBoxProperties.htm">IListBoxProperties</a> <b>GetProperties</b>()</pre>
+<dl>
+    <dd>Returns list box properties. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;LB&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateListBox<br/>set&nbsp;BoxProp=LB.GetProperties<br/>BoxProp.Def.Name&nbsp;=&nbsp;"Class"<br/>LB.SetProperties&nbsp;BoxProp<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetRect</h3>
+<pre><a href="IRect.htm">IRect</a> <b>GetRect</b>()</pre>
+<dl>
+    <dd>Returns sheet object position/size rectangle (pixels). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetRelevantSelections</h3>
+<pre>Variant (Array of String) <b>GetRelevantSelections</b>()</pre>
+<dl>
+    <dd>Returns the current selections relevant for the object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetReplacementObject</h3>
+<pre>LPDISPATCH <b>GetReplacementObject</b>()</pre>
+<dl>
+    <dd>Returns pointer to OCX replacement object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetRowCount</h3>
+<pre>Integer <b>GetRowCount</b>()</pre>
+<dl>
+    <dd>Returns number of rows in list box. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;table&nbsp;=&nbsp;ActiveDocument.GetSheetObject(&nbsp;"LB01"&nbsp;)<br/>w&nbsp;=&nbsp;table.GetColumnCount<br/>h&nbsp;=&nbsp;table.GetRowCount<br/>set&nbsp;CellMatrix&nbsp;=&nbsp;table.GetCells2(0,0,w,h)<br/>for&nbsp;RowIter=0&nbsp;to&nbsp;h-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;ColIter=0&nbsp;to&nbsp;w-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox(CellMatrix(RowIter)(ColIter).Text)<br/>&nbsp;&nbsp;&nbsp;&nbsp;next<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetSheet</h3>
+<pre><a href="Sheet.htm">Sheet</a> <b>GetSheet</b>()</pre>
+<dl>
+    <dd>Returns the sheet where the sheet object resides. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetStatus</h3>
+<pre>Integer <b>GetStatus</b>()</pre>
+<dl>
+    <dd>Returns sheet object state. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetTableAsText</h3>
+<pre>String <b>GetTableAsText</b>(Boolean IncludeLabels)</pre>
+<dl>
+    <dd>Not implemented for this object type. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>IncludeLabels</code></b> (Boolean) : Not implemented for this object type</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Not implemented for this object type</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetTableInfo</h3>
+<pre><a href="IRCTableInfo.htm">IRCTableInfo</a> <b>GetTableInfo</b>()</pre>
+<dl>
+    <dd>Returns table formatting information. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;table&nbsp;=&nbsp;ActiveDocument.GetSheetObject(&nbsp;"LB01"&nbsp;)<br/>set&nbsp;ti&nbsp;=&nbsp;table.getTableInfo<br/>font&nbsp;=&nbsp;ti.DefaultFont<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetZedLevel</h3>
+<pre>Integer <b>GetZedLevel</b>()</pre>
+<dl>
+    <dd>Returns z layer for sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>IsActive</h3>
+<pre>Boolean <b>IsActive</b>()</pre>
+<dl>
+    <dd>Returns true if the sheet object is active. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>IsMaximized</h3>
+<pre>Boolean <b>IsMaximized</b>()</pre>
+<dl>
+    <dd>Returns true if sheet object is maximized. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>IsMinimized</h3>
+<pre>Boolean <b>IsMinimized</b>()</pre>
+<dl>
+    <dd>Returns true if the sheet object is minimized. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Lock</h3>
+<pre>Boolean <b>Lock</b>()</pre>
+<dl>
+    <dd>Locks the selections in the field (or underlying field(s) for calculated list boxes). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.51</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.Lock<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Maximize</h3>
+<pre> <b>Maximize</b>()</pre>
+<dl>
+    <dd>Maximizes sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Minimize</h3>
+<pre> <b>Minimize</b>()</pre>
+<dl>
+    <dd>Minimizes the sheet object as an icon if minimizable. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>MoveToSheet</h3>
+<pre>Boolean <b>MoveToSheet</b>(String SheetId)</pre>
+<dl>
+    <dd>Moves the sheet object to a specified sheet. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SheetId</code></b> (String) : Sheet ID of target sheet</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if operation succeeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Print</h3>
+<pre>Boolean <b>Print</b>()</pre>
+<dl>
+    <dd>Prints the sheet object if printable. Prints possible values only. Use PrintOut method from VB to avoid
+        conflicts with the VB keyword Print<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintEx</h3>
+<pre>Boolean <b>PrintEx</b>(String PrinterName, Boolean ShowPrinterDlg)</pre>
+<dl>
+    <dd>Prints the sheet object to a named printer. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>PrinterName</code></b> (String) : Name of printer. If omitted default printer will be used</dd>
+            <dd><b><code>ShowPrinterDlg</code></b> (Boolean) : True if Print dialog should be shown</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if object is printable</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintOut</h3>
+<pre>Boolean <b>PrintOut</b>()</pre>
+<dl>
+    <dd>Prints the sheet object. Same as Print method but to be used from VB where the Print keyword may otherwise cause
+        problems<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ResetInputFieldValues</h3>
+<pre> <b>ResetInputFieldValues</b>(short ResetMode, Integer Row)</pre>
+<dl>
+    <dd>Resets input field values. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>ResetMode</code></b> (short) : Reset mode<br/>0 = Reset all values<br/>1 = Reset posible values<br/>2
+                = Reset single value
+            </dd>
+            <dd><b><code>Row</code></b> (Integer) : Row index (0 based)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.ResetInputFieldValues&nbsp;2,0&nbsp;&nbsp;&nbsp;'reset&nbsp;first&nbsp;value<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Restore</h3>
+<pre> <b>Restore</b>()</pre>
+<dl>
+    <dd>Restores the minimized sheet object if minimized. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SelectAll</h3>
+<pre>Boolean <b>SelectAll</b>(Boolean SoftLock)</pre>
+<dl>
+    <dd>Selects all values in the field (or underlying field(s) for calculated list boxes). <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.51</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.SelectAll<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SelectExcluded</h3>
+<pre>Boolean <b>SelectExcluded</b>(Boolean SoftLock)</pre>
+<dl>
+    <dd>Selects all excluded values in the field (or underlying field(s) for calculated list boxes). <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.51</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.SelectExcluded<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SelectPossible</h3>
+<pre>Boolean <b>SelectPossible</b>(Boolean SoftLock)</pre>
+<dl>
+    <dd>Selects all possible values in the field (or underlying field(s) for calculated list boxes). <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SoftLock</code></b> (Boolean) : True if operation should override lock on field where it
+                operates
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if operation suceeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.51</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.SelectPossible<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SendToExcel</h3>
+<pre>Integer <b>SendToExcel</b>()</pre>
+<dl>
+    <dd>No relevance for objects of this class. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ServerSideExport</h3>
+<pre> <b>ServerSideExport</b>(String Path, String Separator, Integer CodePage, Boolean Append)</pre>
+<dl>
+    <dd>Exports possible field values from list box to file from QlikWebServer. In standard QV equal to Export<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : File name with path</dd>
+            <dd><b><code>Separator</code></b> (String) : Separator to be used between values in record</dd>
+            <dd><b><code>CodePage</code></b> (Integer) : Codepage number, e.g. :<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001
+                = UTF-8
+            </dd>
+            <dd><b><code>Append</code></b> (Boolean) : True if export to be appended to existing file</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.ServerSideExport&nbsp;"C:\test.skv"&nbsp;,&nbsp;";"&nbsp;,&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'ANSI<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ServerSideExportEx</h3>
+<pre> <b>ServerSideExportEx</b>(String Path, String Separator, Integer Mode, Integer CodePage, Boolean Append)</pre>
+<dl>
+    <dd>Exports contents of listbox to file in QlikView Server. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : File name with path</dd>
+            <dd><b><code>Separator</code></b> (String) : Separator to be used between values in record</dd>
+            <dd><b><code>Mode</code></b> (Integer) : 0=HTML<br/>1=Text<br/>2=Bitmap<br/>3=XML<br/>4=QVD<br/>5=BIFF</dd>
+            <dd><b><code>CodePage</code></b> (Integer) : Codepage number, e.g. :<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001
+                = UTF-8
+            </dd>
+            <dd><b><code>Append</code></b> (Boolean) : True if export to be appended to existing file</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.ServerSideExportEx&nbsp;"C:\test.xml"&nbsp;,&nbsp;";"&nbsp;,&nbsp;3&nbsp;'0=HTML,&nbsp;1=Text,&nbsp;2=Bitmap,&nbsp;3=XML,&nbsp;4=QVD,&nbsp;5=BIFF</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetBorder</h3>
+<pre> <b>SetBorder</b>(IFrame Frame)</pre>
+<dl>
+    <dd>Sets border settings for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Frame</code></b> (<a href="IFrame.htm">IFrame</a>) : Frame (border) object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetFont</h3>
+<pre> <b>SetFont</b>(IBaseFont Font)</pre>
+<dl>
+    <dd>Sets font for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Font</code></b> (<a href="IBaseFont.htm">IBaseFont</a>) : Font object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetFrame</h3>
+<pre> <b>SetFrame</b>(IFrame Frame, Boolean RectsAlso, Variant (Array of short) Parts)</pre>
+<dl>
+    <dd>Sets frame, border and caption settings for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Frame</code></b> (<a href="IFrame.htm">IFrame</a>) : Sheet object frame</dd>
+            <dd><b><code>RectsAlso</code></b> (Boolean) : True if position/size rectangles to be included</dd>
+            <dd><b><code>Parts</code></b> (Variant (Array of short)) : Parts of frame to be set.<br/>Should either be
+                empty (all parts set) <br/>or contain an array containing one element for<br/>each part of the frame to
+                be set. The element <br/>should contain one of the numbers below:<br/>0 BORDER_CHANGE, <br/>1
+                CAPTION_ON_OFF,<br/>2 LAYER_CHANGE, <br/>3 ALLOWMINIM_CHANGE,<br/>4 ALLOWMAXIM_CHANGE, <br/>5
+                ALLOWINFO_CHANGE, <br/>6 AUTOMIN_CHANGE,<br/>7 ALLOWMOVESIZE_CHANGE, <br/>8 CONDSHOW_CHANGE, <br/>9
+                FONT_CHANGE, <br/>10 ADVANCEDCAPTION_CHANGE,<br/>11 MACRO_TRIGGER_CHANGE, <br/>The order of the elements
+                is arbitrary.
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetFrameDef</h3>
+<pre> <b>SetFrameDef</b>(IFrame Frame)</pre>
+<dl>
+    <dd>Sets sheet object frame with position/size rectangle in docunits. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Frame</code></b> (<a href="IFrame.htm">IFrame</a>) : Sheet object frame with position/size
+                rectangle in docunits
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetInputFieldCell</h3>
+<pre> <b>SetInputFieldCell</b>(Integer Row, String Value)</pre>
+<dl>
+    <dd>Sets input field cell value. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Row</code></b> (Integer) : Row index (0 based)</dd>
+            <dd><b><code>Value</code></b> (String) : New value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.SetInputFieldCell&nbsp;0,"999"&nbsp;&nbsp;&nbsp;'set&nbsp;first&nbsp;value&nbsp;to&nbsp;999<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetLayer</h3>
+<pre> <b>SetLayer</b>(Integer Level)</pre>
+<dl>
+    <dd>Sets layer for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Level</code></b> (Integer) : -1 is Bottom, 0 is Normal, 1 is Top ; -127 to 127 accepted</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetPrintOptions</h3>
+<pre> <b>SetPrintOptions</b>(IPrinterOptions Opt)</pre>
+<dl>
+    <dd>Sets printer settings for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Opt</code></b> (<a href="IPrinterOptions.htm">IPrinterOptions</a>) : Printer settings object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetProperties</h3>
+<pre> <b>SetProperties</b>(IListBoxProperties Properties)</pre>
+<dl>
+    <dd>Sets list box properties. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Properties</code></b> (<a href="IListBoxProperties.htm">IListBoxProperties</a>) : List box
+                properties object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;LB&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateListBox<br/>set&nbsp;BoxProp=LB.GetProperties<br/>BoxProp.VarNo=8<br/>LB.SetProperties&nbsp;BoxProp&nbsp;<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetRect</h3>
+<pre> <b>SetRect</b>(IRect WinRect)</pre>
+<dl>
+    <dd>Sets the position rectangle for the sheet object. Rectangle must be in pixels. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>WinRect</code></b> (<a href="IRect.htm">IRect</a>) : Position rectangle object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowSearchDialog</h3>
+<pre> <b>ShowSearchDialog</b>(Boolean FuzzySearch)</pre>
+<dl>
+    <dd>Invokes the search window for the list box. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FuzzySearch</code></b> (Boolean) : True if fuzzy search to be used</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Unlock</h3>
+<pre>Boolean <b>Unlock</b>()</pre>
+<dl>
+    <dd>Unlocks the selections in the field (or underlying field(s) for calculated list boxes). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.51</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;lb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>lb.Unlock<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>WriteXmlPropertiesFile</h3>
+<pre> <b>WriteXmlPropertiesFile</b>(String FileName)</pre>
+<dl>
+    <dd>Writes an xml file with properties describing the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+</body>
+</html>

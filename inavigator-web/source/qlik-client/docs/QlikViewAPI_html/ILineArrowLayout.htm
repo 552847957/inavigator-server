@@ -1,0 +1,136 @@
+<html>
+<head><title>ILineArrowLayout</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>ILineArrowLayout</h1><br/>
+Layout description object for Line/Arrow Object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>ActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Reference to actions defined in a LineArrow object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action types enumerated as follows:<br/>Info=0<br/>Sql=1<br/>Lock All=2<br/>Unlock All=3<br/>Clear
+        All=4<br/>Clear All Incl Locked=5<br/>Back=6<br/>Forward=7<br/>File Close=8<br/>Next Tab=9<br/>Prev Tab=10<br/>Export=11<br/>Launch=12<br/>Macro=13<br/>Recall
+        Bookmark=14<br/>Replace Bookmark=15<br/>Create Bookmark=16<br/>Print Report=17<br/>Activate Sheet=18<br/>Print
+        Sheet=19<br/>Print Object=20<br/>Restore Object=21<br/>Minimize Object=22<br/>Maximize Object=23<br/>Activate
+        Object=24<br/>Select Excluded=25<br/>Clear Other Fields=26<br/>Select Possible=27<br/>Lock=28<br/>Unlock=29<br/>Pareto
+        Select=30<br/>Set Value=31<br/>Field Select=32<br/>Field Toggleselect=33<br/>Open Url=34<br/>Document
+        Chain=35<br/>Eov=36</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ArrowOrient</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Arrow orientation. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Arrow orientation<br/>0 = Left/Up filled arrowhead<br/>1 = Right/Down filled arrowhead<br/>2 =
+        Bidirectional filled arrowhead<br/>3 = Left/Up simple arrowhead<br/>4 = Right/Down simple arrowhead<br/>5 =
+        Bidirectional simple arrowhead</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgAlpha</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Backgrouns alpha factor. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Background opacity (0-255)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Fixed background color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Background color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgImageSettings</b></font> (<a href="IImagePresentation.htm">IImagePresentation</a>, <i>objectref.</i>)
+<dl>
+    <dd>Background image settings. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Image settings definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Background mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Background mode<br/>0 = transparent (default)<br/>1 = solid<br/>2 = bitmap</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Frame</b></font> (<a href="IFrame.htm">IFrame</a>, <i>objectref.</i>)
+<dl>
+    <dd>Sheet object frame rendering information. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FromPt</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Anchor point for start of line/arrow. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Anchor point for start of line/arrow<br/>0 = Top/left corner<br/>1 = Top center<br/>2 = Top/right
+        corner<br/>3 = Right center<br/>4 = Bottom/right corner<br/>5 = Bottom center<br/>6 = Bottom/left corner<br/>7 =
+        Left center</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LineColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Fixed line color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Fixed line color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LineStyle</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Line style. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Line style<br/>0 = solid<br/>1 = dashed<br/>2 = dotted<br/>3 = dash dotted<br/>4 = dash dot dotted</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LineWeight</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Weight of line in pixels. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ToPt</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Anchor point for end of line/arrow. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Anchor point for end of line/arrow<br/>0 = Top/left corner<br/>1 = Top center<br/>2 = Top/right
+        corner<br/>3 = Right center<br/>4 = Bottom/right corner<br/>5 = Bottom center<br/>6 = Bottom/left corner<br/>7 =
+        Left center</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

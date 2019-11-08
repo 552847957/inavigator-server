@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="config-service-test-spring-context.xml"/>
+
+    <bean name="emailSenderServiceTestBean" class="ru.sberbank.syncserver2.service.monitor.EmailSender">
+        <property name="mailHost" value="localhost"/>
+        <property name="mailFrom" value="from@localhost.ru"/>
+        <property name="mailPort" value="3025"/>
+        <property name="mailUser" value="vlad"/>
+        <property name="mailPassword" value="password"/>
+        <property name="dbLogger" ref="dbLogService"/>
+    </bean>
+    <bean name="spyEmailSenderServiceTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="emailSenderServiceTestBean"/>
+    </bean>
+
+
+</beans>

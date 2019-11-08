@@ -1,0 +1,235 @@
+<html>
+<head><title>Group</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>Group</h1><br/>
+The QlikView field group<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Method Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<h3>AddField</h3>
+<pre> <b>AddField</b>(String Name)</pre>
+<dl>
+    <dd>Adds a variable to the group. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Field name</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Number of variables in group after add returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>groups=ActiveDocument.GetGroups<br/>groups(0).AddField&nbsp;"City"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Cycle</h3>
+<pre> <b>Cycle</b>(Integer steps)</pre>
+<dl>
+    <dd>Cycles a cyclic group n steps. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>steps</code></b> (Integer) : Number of steps to cycle</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Number of current variable in group returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>groups=ActiveDocument.GetGroups<br/>groups(0).Cycle&nbsp;1<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DrillUp</h3>
+<pre> <b>DrillUp</b>()</pre>
+<dl>
+    <dd>Drills up a drill-down group 1 step. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>groups=ActiveDocument.GetGroups<br/>groups(0).DrillUp&nbsp;<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetActiveField</h3>
+<pre><a href="Field.htm">Field</a> <b>GetActiveField</b>()</pre>
+<dl>
+    <dd>Returns active field in group. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>groups=ActiveDocument.GetGroups<br/>set&nbsp;fld&nbsp;=&nbsp;groups(0).GetActiveField<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetDescription</h3>
+<pre><a href="IGroupDescription.htm">IGroupDescription</a> <b>GetDescription</b>()</pre>
+<dl>
+    <dd>Returns group description. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>groups=ActiveDocument.GetGroups<br/>msgbox(groups(0).GetDescription.IsCyclic)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetProperties</h3>
+<pre><a href="IGroupProperties.htm">IGroupProperties</a> <b>GetProperties</b>()</pre>
+<dl>
+    <dd>Returns group properties. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>groups&nbsp;=&nbsp;ActiveDocument.GetGroups<br/>set&nbsp;gp&nbsp;=&nbsp;groups(0).GetProperties<br/>gp.Name&nbsp;="New&nbsp;group&nbsp;name"<br/>groups(0).SetProperties&nbsp;gp<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveField</h3>
+<pre> <b>RemoveField</b>(Integer index)</pre>
+<dl>
+    <dd>Removes a variable from the group. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>index</code></b> (Integer) : Variable number in group to be removed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Number of variables in group after remove returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>groups=ActiveDocument.GetGroups<br/>groups(0).RemoveField&nbsp;2<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetProperties</h3>
+<pre> <b>SetProperties</b>(IGroupProperties Properties)</pre>
+<dl>
+    <dd>Sets group properties. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Properties</code></b> (<a href="IGroupProperties.htm">IGroupProperties</a>) : Group properties
+                object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>groups&nbsp;=&nbsp;ActiveDocument.GetGroups<br/>set&nbsp;gp&nbsp;=&nbsp;groups(0).GetProperties<br/>gp.Name&nbsp;="New&nbsp;group&nbsp;name"<br/>groups(0).SetProperties&nbsp;gp<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+</body>
+</html>

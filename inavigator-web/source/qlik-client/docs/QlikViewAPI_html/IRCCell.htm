@@ -1,0 +1,166 @@
+<html>
+<head><title>IRCCell</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IRCCell</h1><br/>
+Cell content object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>BgColor</b></font> (<a href="IColorArea.htm">IColorArea</a>, <i>objectref.</i>)
+<dl>
+    <dd>Cell background color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color area definition returned</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BorderStyles</b></font> (<a href="IBorderStyles.htm">IBorderStyles</a>, <i>objectref.</i>)
+<dl>
+    <dd>Cell border styles. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell border styles descriptor object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CellType</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Cell type. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Type of cell returned<br/>0 = EQ_CT_LISTBOX_DATA = List box cell<br/>1 = EQ_CT_TABLEBOX_HEADER = Table box
+        header cell<br/>2 = EQ_CT_TABLEBOX_DATA = table box data cell<br/>3 = EQ_CT_STRAIGHT_HEADER = Straight table
+        header cell<br/>4 = EQ_CT_STRAIGHT_DATA = Straight table data cell<br/>5 = EQ_CT_STRAIGHT_SUM = Straight table
+        total cell<br/>6 = EQ_CT_PIVOT_SUPER = Pivot table super cell<br/>7 = EQ_CT_PIVOT_TOP = Pivot table top header
+        cell<br/>8 = EQ_CT_PIVOT_LEFT = Pivot table left header cell<br/>9 = EQ_CT_PIVOT_DATA = Pivot table data
+        cell</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FgColor</b></font> (<a href="IColorArea.htm">IColorArea</a>, <i>objectref.</i>)
+<dl>
+    <dd>Cell foreground color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color area definition returned</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FieldAttributes</b></font> (<a href="IFieldAttributes.htm">IFieldAttributes</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Cell number format. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell number format descriptor object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FieldAttributesMissing</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if field attributes are unknown. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Font</b></font> (<a href="IBaseFont.htm">IBaseFont</a>, <i>objectref.</i>)
+<dl>
+    <dd>Cell font. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Font descriptor object returned</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IsNull</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Returns true if cell contains a null value. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IsNum</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if cell contains a valid number. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True returned if cell contains a valid number</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LineHeight</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Cell height in lines. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell height in lines returned</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Number</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Cell contents as number (if valid number representation exists. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell contents as number returned (if valid number representation exists</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumHorizontalAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Cell text horizontal number alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell text horizontal number alignment returned<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>State</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Returns state of cell. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Text</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Cell content as (formatted) text. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell content as (formatted) text returned</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextHorizontalAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Cell text horizontal text alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell text horizontal text alignment returned<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>VerticalAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Cell text vertical alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell text vertical alignment returned<br/>0 = top<br/>4 = center<br/>8 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

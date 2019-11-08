@@ -1,0 +1,614 @@
+<html>
+<head><title>IFrame</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IFrame</h1><br/>
+Sheet object rendering information object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>ActiveBgColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Fixed background color for caption in active object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Fixed background color for caption in active object as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ActiveFgColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Fixed foreground color for caption in active object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Fixed foreground color for caption in active object as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowCopyClone</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>False if sheet object is locked for copying/cloning. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowInfo</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if sheet object should be able to display info icons. Only applicable for list boxes and multi boxes. <p/>
+    </dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowMaximize</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if sheet object should be possible to maximize. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowMinimize</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if sheet object should be possible to minimize. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowModify</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if the object is a collaboration object which the user has right to modify. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowMoveSize</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>False if sheet object is locked for moving and sizing. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AutoMinimize</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if sheet object is in auto-minimize mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Background</b></font> (<a href="IBackgroundDef.htm">IBackgroundDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Background definition object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Reference to a background definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BgColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Fixed background color for caption in non-active object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Fixed background color for caption in non-active object as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BmpMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Bitmap border mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Bitmap border mode<br/>0 = repeat<br/>1 = stretch</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BorderEffect</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd><p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BorderWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Border width in pixels. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Border width in pixels (valid for color and bitmap style only)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CaptionFont</b></font> (<a href="IBaseFont.htm">IBaseFont</a>, <i>objectref.</i>)
+<dl>
+    <dd>Font for caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ClearIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Clear icon should appear in caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ClearOtherIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Clear Others icon should appear in caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Color</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Border color (border type color only). <p/></dd>
+</dl>
+<dl>
+    <dd><code>Border color (border type color only) as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CopyIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Copy icon should appear in caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CopyImageIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if copy image icon should appear in caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CustomObjectGuid</b></font> (Variant (Array of Byte), <i>read-write</i>)
+<dl>
+    <dd>GUID of replacement object. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CustomObjectProperties</b></font> (Variant (Array of Byte), <i>read-write</i>)
+<dl>
+    <dd>Replacement OCX properties. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Dark</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>The lowest luminosity value to be used for border effects. <p/></dd>
+</dl>
+<dl>
+    <dd><code>A value between 0 and 0.5</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EnableBottomLeftRounded</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if rounded shape should affect bottom left corner. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EnableBottomRightRounded</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if rounded shape should affect bottom right corner. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EnableTopLeftRounded</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if rounded shape should affect top left corner. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EnableTopRightRounded</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if rounded shape should affect top right corner. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExtendedProperties</b></font> (<a
+        href="IArrayOfExtendedProperty.htm">IArrayOfExtendedProperty</a>, <i>objectref.</i>)
+<dl>
+    <dd>Array of extended properties containing Name and Value as strings for extension objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Reference to array of extended properties for extension objects</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FgColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Fixed foreground color for caption in non-active object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Fixed foreground color for caption in non-active object as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FixCorner</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if corner rounded by fixed number of pixels. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FixCornerSize</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Extent of corner rounding in fixed docunits. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Font</b></font> (<a href="IBaseFont.htm">IBaseFont</a>, <i>objectref.</i>)
+<dl>
+    <dd>Font used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HelpText</b></font> (<a href="IStringExpr.htm">IStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Pop-up help text for sheet object. Not applicable for buttons and text areas. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Light</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>The highest luminosity value to be used for border effects. <p/></dd>
+</dl>
+<dl>
+    <dd><code>A value between 0.5 and 1</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LockIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Lock/Unlock icon should appear in caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MenuIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if menu icon is shown in object caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MinimizedRect</b></font> (<a href="IRect.htm">IRect</a>, <i>objectref.</i>)
+<dl>
+    <dd>Rectangle for minimized sheet object. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MultiLine</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Settings for multiline caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Setting for multiple line caption<br/>0 = single line<br/>1 = forbidden<br/>n = n lines with text wrap and
+        truncation at end (2<=n<=100)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Name</b></font> (<a href="IStringExpr.htm">IStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Caption text. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ObjectId</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Sheet object unique ID. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnActivateActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Actions triggered on sheet object event. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action items triggered by a sheet object event</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnDeactivateActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Actions triggered on sheet object event. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action items triggered by a sheet object event</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Power</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Corner rounding factor. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Corner rounding factor<br/>2 gives elliptic shape, larger values move towards rectangle</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PreserveScrollPosition</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if scroll position is preserved in scrollbar. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrintIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Print icon should appear in caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Rainbow</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for rainbow border color effect. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Rect</b></font> (<a href="IRect.htm">IRect</a>, <i>objectref.</i>)
+<dl>
+    <dd>Rectangle for non-minimized sheet object. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RelCornerSize</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Extent of corner rounding in percent of object side. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RoundedShape</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if rounded corners are to be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScrollBkgColor</b></font> (<a href="IColorDef.htm">IColorDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Color of sheet object scroll bar background. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition of sheet object scroll bar background</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScrollButtonColor</b></font> (<a href="IColorDef.htm">IColorDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Color of sheet object scroll bar buttons. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition of sheet object scroll bar buttons</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScrollStyle</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Style of sheet object scroll bar. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Scroll bar style<br/>0 = Classic<br/>1 = Standard</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScrollWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Width of sheet object scroll bar. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Width of sheet object scroll bar in docunits</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SearchIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Search icon should appear in caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectAllIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Select All icon should appear in caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectExcludedIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Select Excluded icon should appear in caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectPossibleIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Select Possible icon should appear in caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShadowIntensity</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Sets the shadow intensity in the use borders settings of the layout. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0 = No shadow<br/>1 = Soft<br/>2 = Medium<br/>3 = Intense</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Show</b></font> (<a href="ICondDef.htm">ICondDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Show condition. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Show condition definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowCaption</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if sheet object caption is to be shown. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Drawing mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Drawing mode (0=minimized, 1=normal)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShrinkFrameToData</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if sheet object borders are to shrink when size of data grid shrinks beneath available size. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextAdjustHorizontal</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Horizontal text adjust for object caption text. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Horizontal caption text alignment<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextAdjustVertical</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Vertical text alignment for caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical text alignment for caption<br/>0 = top<br/>4 = center<br/>8 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>XLIcon</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Send To XL icon should appear in caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if caption icon for Send To Excel to be shown</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ZedLevel</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Layer on sheet. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Layer on sheet<br/>-1 = Bottom (default for text objects)<br/>0 = Normal (default for all objects but text
+        objects)<br/>1 = Top <br/>Note! Values between -127 and 127 accepted</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<html>
+<head><title>IListBoxLayout</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IListBoxLayout</h1><br/>
+List box layout information object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>Borders</b></font> (<a href="IBorderStylesDef.htm">IBorderStylesDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Border styles for list box cells. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CurrentInfoURL</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>URL used to show info. <p/></dd>
+</dl>
+<dl>
+    <dd><code>URL string used to show info</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultSearchMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Default search mode for list box. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Default Search Mode <br/>0 = Document default<br/>1 = Normal search<br/>2 = Fuzzy search</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExcludedValuesMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Default mode for inclusio of excluded values in search. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Include excluded values in search<br/>0 = Default<br/>1 = Yes<br/>2 = No</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FixedColumnsCount</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Number of fixed columns (-1 denotes auto columns). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Frame</b></font> (<a href="IFrame.htm">IFrame</a>, <i>objectref.</i>)
+<dl>
+    <dd>Sheet object frame rendering information. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FrequencyInPercent</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if frequency information should be shown in precent (only valid if ShowFrequency is true). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HideExcluded</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if excluded values should be made invisible. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HierarchySeparator</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Hierarchy separator when listbox shown as treeview. <p/></dd>
+</dl>
+<dl>
+    <dd><code>String used as hierarchy separator</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ImageRepresentation</b></font> (<a
+        href="ICellImageRepresentation.htm">ICellImageRepresentation</a>, <i>objectref.</i>)
+<dl>
+    <dd>Imagr representation settings. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell image settings object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LayoutDependentPrint</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for wysiwyg print of list box. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MultiColumn</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for multi column list box. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MultiLine</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Setting for multiple line cells. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Setting for multiple line cells<br/>0 = single line cells with horizontal scroll bar if text exceeds box
+        width<br/>1 = single line cells without horizontal scroll bar <br/> (text exceeding box width truncated)<br/>n =
+        n lines in cell with text wrap and truncation at end (2<=n<=100), <br/> requires MultiColumn to be true</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Number alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Number alignment<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OrderByRow</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for order by row. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PreferredTextSearchMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Sets the listbox default search mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0=Wildcard<br/>1=Fuzzy<br/>2=Normal<br/>3=Associated<br/>4=Use previous<br/>5=None</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrintAllValues</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if all values in list box (not nly possible) are to be printed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ReadOnly</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if list box is read only (no selections allowed). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionStyle</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Override selection style settings. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Selection style<br/>-1 = Use User Preference<br/>0 = Classic<br/>1 = Windows checkboxes<br/>2 = Cornertags<br/>3
+        = LEDs</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowAsTreeView</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if ListBox is shown as TreeView. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowFrequency</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if frequencty information should be shown. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SoftLock</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for local override of locked selection. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SuppressHorizontalScroll</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if horizontal scroll bar to be suppressed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SuppressSearchHighlight</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if substring being highlighted should be suppressed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Text alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Text alignment<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd><p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

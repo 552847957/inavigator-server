@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="config-service-test-spring-context.xml"/>
+
+    <bean name="Inav3FrontCheckerBean" class="ru.sberbank.syncserver2.service.monitor.check.AppHttpRequestChecker">
+        <property name="certificateFile" value="c:\Users\16715006\Downloads\16715006 (1).pfx"/>
+        <property name="passwordFile" value="c:\Users\16715006\Downloads\16715006 (1).pass.txt"/>
+        <property name="onlineUrl" value="https://sbt-csit-013.sigma.sbrf.ru:8443"/>
+        <property name="appName" value="iNavigator"/>
+        <property name="matchPattern" value="(.*)(Навигатор 3.0)(.*)"/>
+    </bean>
+    <bean name="spyInav3FrontCheckerBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="Inav3FrontCheckerBean"/>
+    </bean>
+
+    <bean name="Inav3BackCheckerBean" class="ru.sberbank.syncserver2.service.monitor.check.AppHttpRequestChecker">
+        <property name="certificateFile" value="c:\Users\16715006\Downloads\16715006 (1).pfx"/>
+        <property name="passwordFile" value="c:\Users\16715006\Downloads\16715006 (1).pass.txt"/>
+        <property name="onlineUrl" value="https://sbt-csit-013.sigma.sbrf.ru:8443/inavigator2-backend/user"/>
+        <property name="appName" value="iNavigatorApi"/>
+        <property name="matchPattern" value="(.*)(nOrganizationPositionID)(.*)"/>
+    </bean>
+    <bean name="spyInav3BackCheckerBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="Inav3BackCheckerBean"/>
+    </bean>
+
+</beans>

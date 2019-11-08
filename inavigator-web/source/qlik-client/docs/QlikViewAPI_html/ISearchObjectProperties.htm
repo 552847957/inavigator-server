@@ -1,0 +1,133 @@
+<html>
+<head><title>ISearchObjectProperties</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>ISearchObjectProperties</h1><br/>
+Properties object for search object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>Appearance</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Sets the visual style appearance. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0=Rounded<br/>1=Squared</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultSearchMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Sets the default search mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0=Document default<br/>1=Normal search<br/>2=Fuzzy search</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Fields</b></font> (<a href="IArrayOfFieldDefEx.htm">IArrayOfFieldDefEx</a>, <i>objectref.</i>)
+<dl>
+    <dd>Fields selected for search object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of field definitions</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FieldsExpression</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Sets the expression in List of Fields. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Expression in List of Fields</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Frame</b></font> (<a href="IFrame.htm">IFrame</a>, <i>objectref.</i>)
+<dl>
+    <dd>Sheet object frame rendering information. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IncludeExcluded</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if excluded values are to be included in the search. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MaxNumberOfResultsShown</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Limits the number of results shown. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Maximim number of results from search</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Mode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Sets the search mode of search object. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0=All fields<br/>1=List of fields<br/>2=Specific fields</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PreferredTextSearchMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Sets the search object default search mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0=Wildcard<br/>1=Fuzzy<br/>2=Normal</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SearchFieldText</b></font> (<a href="IStringExpr.htm">IStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Sets the visual style text in search field. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Reference for a string expression</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowCollapsedLimit</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Collapses when results in field exceeds this limit. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Will expand if no of matches are <= this limit</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowReflection</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if search object displays a reflection. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SuppressSearchHighlight</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if highlighting is suppressed in search result. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

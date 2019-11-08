@@ -1,0 +1,227 @@
+<html>
+<head><title>IVariableProperties</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IVariableProperties</h1><br/>
+Properties object for QlikView Variable<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>Comment</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd><p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ConstraintsFlag</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Type of input constraint to be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Type of constraint used<br/>0 = No constraint<br/>1 = Standard constraint<br/>2 = Custom constraint<br/>3
+        = Predefined values only<br/>4 = Read-only</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>dFrom</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>First value of predefined number series. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>dStep</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Last value of predefined number series. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>dTo</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Increment value of predefined number series. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EnableExpressionEditDlg</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if full Edit Expression dialog should be available for variable in input box. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ErrorMessage</b></font> (<a href="IStringExpr.htm">IStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Custom defined error message to be shown on illegal entry. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IconType</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Type of icon to be used for variable in input boxes. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Type of icon to be used for variable in input boxes<br/>0 = No icon used<br/>1 = Drop-down<br/>2 = Scroll
+        control</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IncludeInBookmark</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if variable to be included in bookmarks. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>InputConstraint</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Custom input constraint expression. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MRUCount</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Number of recent values in MRU list. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Name</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Name of variable. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumberPresentation</b></font> (<a href="IFieldAttributes.htm">IFieldAttributes</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Number format for variable. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Number format descriptor object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnChangeActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Actions triggered when a variable is changed. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action Items triggered by variable change</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnInputActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Actions triggered when input is set to a variable. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action Items triggered by variable input</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PreDefinedList</b></font> (Variant (Array of String), <i>read-write</i>)
+<dl>
+    <dd>Array of predefined values (not including number series). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>StandardType</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Standard constraint. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Standard constraint<br/>0 = Number<br/>1 = Positive number<br/>2 = Integer<br/>3 = Positive integer<br/>4
+        = Single character</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseMRU</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if recent values should be shown in dropdown in input box. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseMsgOnError</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if error message to be shown on illegal entry. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UsePredefListedValues</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if predefined value list to be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UsePredefNumberSeries</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if predefined number series to be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseScroll</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if predefined values to be used with scroll control in input box. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseSoundOnError</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if sound should be used on illegal input. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<html>
+<head><title>IFieldProperties</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IFieldProperties</h1><br/>
+Field properties object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>AutoInfo</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for automatic showing of info. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CanAnd</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>True if the field can be set in AND-mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CanFrequecy</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>True if the field has non-ambigous frequency information (is not a key). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultMultiColumn</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if new list boxes using the field should have multiple columns. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultMultiLine</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Default number of lines per cell for new sheet objects using the field (where applicable). 0 denotes single line
+        mode.. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultNumAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Default alignment for numeric field values. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Default alignment for numeric field values<br/>0 = left<br/>1 = center<br/>2 = right (default)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultOrderByRow</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if new list boxes using the field should have order by row. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultShowBorders</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if new list boxes using the field should show cell borders. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultTextAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Default alignment for text field values. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Default alignment for text field values<br/>0 = left (default)<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IsAnd</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if field is in AND-mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IsInputField</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>True if the field is an input field. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IsNumeric</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>True if field is numeric. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IsSemantic</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>True if field is semantic. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MaxFreq</b></font> (__int64, <i>read-only</i>)
+<dl>
+    <dd>Sum of all field value frequencies in field. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Name</b></font> (String, <i>read-only</i>)
+<dl>
+    <dd>Field name. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NoOfValues</b></font> (Integer, <i>read-only</i>)
+<dl>
+    <dd>Number of values in field. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumberPresentation</b></font> (<a href="IFieldAttributes.htm">IFieldAttributes</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Field number format information. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumberPresentationSurvive</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if number format should survive reload. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnChangeActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Actions triggered when change is made to a field. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action items triggered by change to a field</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OneAndOnlyOne</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if the field is in Always-one-selection-mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnLockActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Actions triggered when a field is locked. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action items triggered by a field lock</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnSelectActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Actions triggered when a selection is made in a field. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action items triggered by a selection in a field</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnUnlockActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Actions triggered when a field is unlocked. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action items triggered by a field unlock</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowAlternatives</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if alternative values should be shown in list boxes. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SortCriteria</b></font> (<a href="ISortCriteria.htm">ISortCriteria</a>, <i>objectref.</i>)
+<dl>
+    <dd>Default sort criteria for the field. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

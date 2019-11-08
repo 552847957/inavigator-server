@@ -1,0 +1,48 @@
+<html>
+<head><title>IInputDistribution</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IInputDistribution</h1><br/>
+Input field distribution definition object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>AffectMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Input field compensation mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Compensation mode<br/>0 = No compensation<br/>1 = Compensation over selected values<br/>2 = Compensation
+        over all values</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DistributionMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Input field distribution mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Distribution mode<br/>0 = Equal parts of the change is distributed to all the underlying values<br/>1 =
+        The change is distributed proportionally (to existing values) to the underlying values<br/>2 = The value entered
+        is given to all the underlying values<br/>3 = The value is divided equally between underlying values, without
+        regard to previous distribution but keeping previous sum<br/></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MemberType</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Type of distribution used. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0 = same distribution as with InputSum function<br/>3 = same distribution as with IInputAverage
+        function<br/></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

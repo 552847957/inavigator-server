@@ -1,0 +1,131 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <release_number>${product_version}</release_number>
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestamp.format>dd.MM.yyyy HH:mm</maven.build.timestamp.format>
+        <jdk.version>1.6</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <groupId>ru.sberbank.inavigator</groupId>
+    <artifactId>inavigator-common</artifactId>
+    <version>${release_number}</version>
+    <name>inavigator-common</name>
+    <packaging>pom</packaging>
+
+    <profiles>
+        <profile>
+            <!-- профайл для локального запуска с модом preview -->
+            <id>sonar-by-default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.host.url>https://sbt-sonarqube.sigma.sbrf.ru</sonar.host.url>
+                <sonar.login>b7124330b010642b88dfb47762c01cc11857e653</sonar.login>
+                <!--<sonar.password></sonar.password>-->
+                <!--<sonar.branch>develop</sonar.branch>
+                чтобы разные ветки считались разными проектами
+                https://docs.sonarqube.org/display/SONAR/Analysis+Parameters
+                -->
+                <sonar.analysis.mode>preview</sonar.analysis.mode>
+                <sonar.projectName>iNavigator</sonar.projectName>
+                <!--<sonar.projectKey>iNavigator</sonar.projectKey>-->
+                <sonar.language>java</sonar.language>
+            </properties>
+        </profile>
+        <profile>
+            <!-- профайл для запуска с модом публикации результата -->
+            <id>sonar-publish</id>
+            <properties>
+                <sonar.host.url>https://sbt-sonarqube.sigma.sbrf.ru</sonar.host.url>
+                <sonar.login>b7124330b010642b88dfb47762c01cc11857e653</sonar.login>
+                <!--<sonar.password></sonar.password>-->
+                <!--<sonar.branch>develop</sonar.branch>
+                чтобы разные ветки считались разными проектами
+                https://docs.sonarqube.org/display/SONAR/Analysis+Parameters
+                -->
+                <sonar.projectName>iNavigator</sonar.projectName>
+                <!--<sonar.projectKey>iNavigator</sonar.projectKey>-->
+                <sonar.language>java</sonar.language>
+                <sonar.junit.reportPaths>target/surefire-reports</sonar.junit.reportPaths>
+            </properties>
+        </profile>
+    </profiles>
+
+<!--
+    <distributionManagement>
+        <repository>
+            <id>release.repo</id>
+            <url>http://nexus.sigma.sbrf.ru:8099/nexus/content/repositories/iNavigator_release</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot.repo</id>
+            <url>http://nexus.sigma.sbrf.ru:8099/nexus/content/repositories/iNavigator_snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+-->
+    <distributionManagement>
+        <repository>
+            <id>release.repo</id>
+            <url>https://nexus.arcsmed.at/content/repositories/homer.core/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot.repo</id>
+            <url>https://nexus.arcsmed.at/content/repositories/homer.core/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <repositories>
+        <repository>
+            <id>at.arcsmed.nexus</id>
+            <url>https://nexus.arcsmed.at/content/repositories/homer.core/</url>
+        </repository>
+    </repositories>
+
+    <modules>
+        <module>inavigator-core/source</module>
+        <module>inavigator-web/source</module>
+        <module>build_all</module>
+        <module>addMD5</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>3.3.0.603</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.7.8</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.1</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

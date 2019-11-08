@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ru.sberbank.syncserver2.mybatis.bdNavigator">
+
+    <resultMap id="selectQlikViewConectionPropertiesRM" type="QlikViewConectionProperties">
+        <id property="documentUri" column="QDoc" jdbcType="VARCHAR" javaType="String"/>
+        <result property="dashBoardId" column="DSH_ID"/>
+        <collection property="objectIds" ofType="QlikViewObjectId">
+            <id property="objectId" column="VID_ID"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectQlikViewConectionProperties" resultMap="selectQlikViewConectionPropertiesRM">
+        <![CDATA[
+        exec MIS_NAVIGATOR_DATA_IMP.dbo.QV_GET_VID_ID_LIST
+        ]]>
+    </select>
+
+    <delete id="deleteDocument">
+        delete from [MIS_NAVIGATOR_DATA_IMP].[dbo].[IMP_QV_DATA_FROM_CSV]
+    </delete>
+    <insert id="insertDocument" parameterType="map">
+        insert into [MIS_NAVIGATOR_DATA_IMP].[dbo].[IMP_QV_DATA_FROM_CSV] (
+            [DSH_ID]
+            ,[VID_ID]
+            ,[C1]
+            ,[C2]
+            ,[C3]
+            ,[C4]
+            ,[C5]
+            ,[C6]
+            ,[C7]
+            ,[C8]
+            ,[C9]
+            ,[C10]
+        ) values (
+            #{DashBoardCode},
+            #{id},
+            #{collumn_0},
+            #{collumn_1},
+            #{collumn_2},
+            #{collumn_3},
+            #{collumn_4},
+            #{collumn_5},
+            #{collumn_6},
+            #{collumn_7},
+            #{collumn_8},
+            #{collumn_9}
+        )
+    </insert>
+
+    <update id="qlikViewLoadComplete" statementType="CALLABLE" parameterType="map">
+        <![CDATA[
+          exec MIS_NAVIGATOR_DATA_IMP.dbo.QV_LOAD_FROM_CSV #{pxmlOutput, mode=OUT, javaType=ru.sberbank.syncserver2.mybatis.domain.QlikViewDBError, jdbcType=SQLXML, typeHandler=ru.sberbank.syncserver2.mybatis.typehandler.SQLXMLToQlikViewDBErrorTypeHandler}
+        ]]>
+    </update>
+
+<!--
+    <select id="selectQlikViewConectionProperties" resultMap="selectQlikViewConectionPropertiesRM" parameterType="String">
+        <![CDATA[
+        exec QV_GET_VID_ID_LIST #{DashBoardCode}
+        ]]>
+    </select>
+
+    <delete id="deleteDocument">
+        delete from IMP_QV_DATA_FROM_CSV
+    </delete>
+    <insert id="insertDocument" parameterType="map">
+        insert into IMP_QV_DATA_FROM_CSV (
+        [DSH_ID]
+        ,[VID_ID]
+        ,[C1]
+        ,[C2]
+        ,[C3]
+        ,[C4]
+        ,[C5]
+        ,[C6]
+        ,[C7]
+        ,[C8]
+        ,[C9]
+        ,[C10]
+        ) values (
+        #{DashBoardCode},
+        #{id},
+        #{collumn_0},
+        #{collumn_1},
+        #{collumn_2},
+        #{collumn_3},
+        #{collumn_4},
+        #{collumn_5},
+        #{collumn_6},
+        #{collumn_7},
+        #{collumn_8},
+        #{collumn_9}
+        )
+    </insert>
+
+    <update id="qlikViewLoadComplete">
+        exec QV_LOAD_FROM_CSV
+    </update>
+-->
+
+</mapper>

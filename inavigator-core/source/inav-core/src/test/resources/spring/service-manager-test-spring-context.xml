@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="servletContextMockFactoryBean" class="ru.sberbank.syncserver2.service.core.MockServletContextFactory" scope="prototype"/>
+    <bean name="dataSourceMockFactoryBean" class="ru.sberbank.syncserver2.service.core.MockDataSourceFactory" scope="prototype"/>
+    <bean name="configLoader" class="ru.sberbank.syncserver2.service.core.config.MSSQLConfigLoader" init-method="init">
+        <property name="dataSource" ref="dataSourceMockFactoryBean"/>
+    </bean>
+
+    <bean name="serviceManagerTest" class="ru.sberbank.syncserver2.service.core.ServiceManager">
+        <property name="configLoader" ref="configLoader"/>
+        <property name="configSource" ref="dataSourceMockFactoryBean"/>
+        <property name="servletContext" ref="servletContextMockFactoryBean"/>
+    </bean>
+
+</beans>

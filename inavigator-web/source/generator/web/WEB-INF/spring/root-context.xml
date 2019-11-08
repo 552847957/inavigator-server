@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/jee
+                           http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="ru.sberbank.syncserver2"/>
+
+    <bean id="database" class="ru.sberbank.syncserver2.gui.db.DatabaseManager"/>
+    <bean id="authHolder" class="ru.sberbank.syncserver2.gui.data.AuthContextHolder" scope="session"/>
+
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.Throwable">../views/error</prop>
+            </props>
+        </property>
+        <property name="defaultStatusCode" value="500"/>
+    </bean>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+
+    <!--<jee:jndi-lookup id="configSource" jndi-name="java:jboss/datasources/jdbc/GENERATOR_DB" expected-type="javax.sql.DataSource"/>-->
+    <jee:jndi-lookup id="configSource" jndi-name="jdbc/GENERATOR_DB" expected-type="javax.sql.DataSource"/>
+
+    <!--<jee:jndi-lookup id="bdNavigatorDataSource" jndi-name="jdbc/NAVIGATOR_DB" expected-type="javax.sql.DataSource"/>-->
+
+    <!--<bean id="infra.bd.navigator.sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+        <!--&lt;!&ndash;<property name="dataSource" ref="bdNavigatorDataSource"/>&ndash;&gt;-->
+        <!--<property name="dataSource" ref="configSource"/>-->
+        <!--<property name="configLocation" value="classpath:ru/sberbank/syncserver2/mybatis/sql_maper_config.xml"/>-->
+        <!--&lt;!&ndash;<property name="transactionFactory" ref="mybatis.ManagedTransactionFactory"/>&ndash;&gt;-->
+    <!--</bean>-->
+    <bean id="qlikViewConectionDao" class="ru.sberbank.syncserver2.mybatis.dao.QlikViewConectionDao"/>
+
+</beans>

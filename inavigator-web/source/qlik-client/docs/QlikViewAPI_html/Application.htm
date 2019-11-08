@@ -1,0 +1,1453 @@
+<html>
+<head><title>Application</title>
+
+</head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>Application</h1><br/>
+The QlikView program<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Method Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<h3>ActiveDocument</h3>
+<pre><a href="Document.htm">Document</a> <b>ActiveDocument</b>()</pre>
+<dl>
+    <dd>VBScript:Returns the QlikView document in control of the macro<br/>VB:Returns the currently active QlikView
+        document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;Doc&nbsp;=&nbsp;ActiveDocument<br/><br/>ActiveDocument.ClearAll&nbsp;false<br/>&nbsp;<br/>&nbsp;<br/>rem&nbsp;**&nbsp;Create&nbsp;an&nbsp;untyped&nbsp;reference&nbsp;from&nbsp;VB&nbsp;**<br/>set&nbsp;Qv&nbsp;=&nbsp;CreateObject("QlikTech.QlikView")<br/>set&nbsp;ActiveDocument&nbsp;=&nbsp;Qv.ActiveDocument<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateDoc</h3>
+<pre><a href="Document.htm">Document</a> <b>CreateDoc</b>()</pre>
+<dl>
+    <dd>Creates a new QlikView document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetApplication.CreateDoc<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateEmptyReport</h3>
+<pre><a href="IReport.htm">IReport</a> <b>CreateEmptyReport</b>()</pre>
+<dl>
+    <dd>Creates an empty report object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.01</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;rep&nbsp;=&nbsp;ActiveDocument.GetApplication.CreateEmptyReport<br/>&nbsp;rep.Name&nbsp;=&nbsp;"MyNewReport"<br/>&nbsp;rep.Comment&nbsp;=&nbsp;"Sample&nbsp;report"<br/>&nbsp;rep.Pages.Add<br/>&nbsp;rep.Pages.Item(0).Landscape&nbsp;=&nbsp;true<br/>&nbsp;rep.Pages.Item(0).PageMode&nbsp;=&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'single&nbsp;paper&nbsp;page<br/>&nbsp;rep.Pages.Item(0).Items.Add<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).ObjectId&nbsp;=&nbsp;"CH21"<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Top&nbsp;=&nbsp;0&nbsp;&nbsp;'top<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Left&nbsp;=&nbsp;0&nbsp;&nbsp;'left<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Height&nbsp;=&nbsp;0.5&nbsp;'half&nbsp;paper&nbsp;height<br/>&nbsp;rep.Pages.Item(0).Items.Item(0).Rect.Width&nbsp;=&nbsp;0.5&nbsp;'half&nbsp;paper&nbsp;width<br/>&nbsp;ActiveDocument.AddDocReport&nbsp;rep<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DisableCtlBrk</h3>
+<pre> <b>DisableCtlBrk</b>()</pre>
+<dl>
+    <dd>Disables the possibility to interupt macro execution with Ctrl+Break. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;disable&nbsp;ctrl&nbsp;brk&nbsp;**<br/>ActiveDocument.GetApplication.DisableCtlBrk<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>EnableCtlBrk</h3>
+<pre> <b>EnableCtlBrk</b>()</pre>
+<dl>
+    <dd>Enables the possibility to interupt macro execution with Ctrl+Break. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;enable&nbsp;ctrl&nbsp;brk&nbsp;**<br/>ActiveDocument.GetApplication.EnableCtlBrk<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetAffinity</h3>
+<pre>Integer <b>GetAffinity</b>(Integer CoreNo)</pre>
+<dl>
+    <dd>Returns affinity status for a specified core. For debug use only!!<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>CoreNo</code></b> (Integer) : Core number (0 based)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns affinity status for a specified core<br/>0 = off<br/>1 = on<br/>-1 = non-existing core number
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.01</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>i&nbsp;=&nbsp;Activedocument.GetApplication.GetAffinity&nbsp;1&nbsp;&nbsp;'returns&nbsp;status&nbsp;of&nbsp;core#2<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCachePercentage</h3>
+<pre>Integer <b>GetCachePercentage</b>()</pre>
+<dl>
+    <dd>Returns object cache as percentage of total RAM. For debug use only!!<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.01</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(Activedocument.GetApplication.GetCachePercentage)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCommittedMemory</h3>
+<pre>Double <b>GetCommittedMemory</b>()</pre>
+<dl>
+    <dd>Returns currently commited memory. For debug use only!!<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.01</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(Activedocument.GetApplication.GetCommittedMemory)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCpuMilliseconds</h3>
+<pre>Double <b>GetCpuMilliseconds</b>()</pre>
+<dl>
+    <dd>Returns number of CPU milliseconds used by the current instance of QlikView. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.51</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>t&nbsp;=&nbsp;ActiveDocument.GetApplication.GetCpuMilliseconds<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetElapsedMilliseconds</h3>
+<pre>Double <b>GetElapsedMilliseconds</b>()</pre>
+<dl>
+    <dd>Number of milliseconds since Windows started. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.20</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetApplication.GetElapsedMilliseconds)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetEmptyRect</h3>
+<pre><a href="IRect.htm">IRect</a> <b>GetEmptyRect</b>()</pre>
+<dl>
+    <dd>Returns an empty rectangle object (for VBScript). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;R&nbsp;=&nbsp;ActiveDocument.GetApplication.GetEmptyRect<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetMajorVersionDate</h3>
+<pre>String <b>GetMajorVersionDate</b>()</pre>
+<dl>
+    <dd>Returns major version date (For LEF upgrade check). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetApplication.GetMajorVersionDate)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetProcessId</h3>
+<pre>Integer <b>GetProcessId</b>()</pre>
+<dl>
+    <dd>Returns process ID. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetApplication.GetProcessId)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetProperties</h3>
+<pre><a href="IApplicationProperties.htm">IApplicationProperties</a> <b>GetProperties</b>()</pre>
+<dl>
+    <dd>Returns QlikView properties. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetApplication.GetProperties.Computername)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetRunLevel</h3>
+<pre>short <b>GetRunLevel</b>()</pre>
+<dl>
+    <dd>Current QlikView level. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.20</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetApplication.GetunLevel)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetServerDocList</h3>
+<pre><a href="IArrayOfDocListEntry.htm">IArrayOfDocListEntry</a> <b>GetServerDocList</b>(String Server)</pre>
+<dl>
+    <dd>Returns list of available documents on from a QlikView Server. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Server</code></b> (String) : QlikView Server URL</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>List of available documents on from a QlikView Server returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;app&nbsp;=&nbsp;ActiveDocument.GetApplication<br/>set&nbsp;docs&nbsp;=&nbsp;app.GetServerDocList("qvp://@www.qliktech.com")<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;docs.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;doc&nbsp;=&nbsp;docs.Item(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(doc.DocName)<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(doc.FileSize)<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox(doc.Filetime)<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetSolidColorArea</h3>
+<pre><a href="IColorAreaDef.htm">IColorAreaDef</a> <b>GetSolidColorArea</b>(Byte Red, Byte Green, Byte Blue)</pre>
+<dl>
+    <dd>Returns a solid one-color color area. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Red</code></b> (Byte) : Red component of desired color (0-255)</dd>
+            <dd><b><code>Green</code></b> (Byte) : Green component of desired color (0-255)</dd>
+            <dd><b><code>Blue</code></b> (Byte) : Blue component of desired color (0-255)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Color area definition object returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.ActiveSheet.CreateBarChart<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/>col&nbsp;=&nbsp;ActiveDocument.GetApplication.GetSolidColorArea(255,0,0)&nbsp;&nbsp;&nbsp;'red<br/>Graph.AddRefLine&nbsp;"10.5",2,col&nbsp;&nbsp;&nbsp;&nbsp;'red&nbsp;at&nbsp;10.5&nbsp;on&nbsp;primary&nbsp;y<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetTotalPhysicalMemory</h3>
+<pre>Double <b>GetTotalPhysicalMemory</b>()</pre>
+<dl>
+    <dd>Returns total physical memory. For debug use only!!<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.01</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(Activedocument.GetApplication.GetTotalPhysicalMemory)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetUserPreferences</h3>
+<pre><a href="IUserPreferences.htm">IUserPreferences</a> <b>GetUserPreferences</b>()</pre>
+<dl>
+    <dd>Returns User Preferences. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>Cp&nbsp;=&nbsp;ActiveDocument.GetApplication.GetUserPreferences.ConfirmPurge&nbsp;<br/>if&nbsp;Cp=true&nbsp;then&nbsp;msgbox("Warning!&nbsp;No&nbsp;Reduce&nbsp;Data&nbsp;confirmation!")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>InputBox</h3>
+<pre>String <b>InputBox</b>(String label, String DefaultValue)</pre>
+<dl>
+    <dd>Launches an input dialog. Replaces old QvLib method<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>label</code></b> (String) : Label text to be shown above the edit area of thge input dialog
+            </dd>
+            <dd><b><code>DefaultValue</code></b> (String) : Optional initial value to be displayed in edit area of input
+                dialog
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Value entered into edit area of input dialog returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;VBScript<br/>sub&nbsp;TestModule<br/>&nbsp;&nbsp;&nbsp;name&nbsp;=&nbsp;ActiveDocument.GetApplication.InputBox("What&nbsp;is&nbsp;your&nbsp;name?")<br/>&nbsp;&nbsp;&nbsp;msg&nbsp;=&nbsp;"Hello&nbsp;"<br/>&nbsp;&nbsp;&nbsp;msg&nbsp;=&nbsp;msg&nbsp;+&nbsp;name&nbsp;+&nbsp;"&nbsp;!"<br/>&nbsp;&nbsp;&nbsp;qvlib.MsgBox(msg)<br/>end&nbsp;sub&nbsp;<br/><br/>//&nbsp;JScript<br/>function&nbsp;Test()<br/>{<br/>&nbsp;&nbsp;&nbsp;&nbsp;personName&nbsp;=&nbsp;ActiveDocument.GetApplication.InputBox("What&nbsp;is&nbsp;you&nbsp;name?")<br/>&nbsp;&nbsp;&nbsp;&nbsp;msg&nbsp;=&nbsp;"Hello&nbsp;"&nbsp;+&nbsp;personName&nbsp;+&nbsp;"&nbsp;!"<br/>&nbsp;&nbsp;&nbsp;&nbsp;qvlib.MsgBox(msg)<br/>}<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>InputBoxEx</h3>
+<pre>String <b>InputBoxEx</b>(String label, String DefaultValue)</pre>
+<dl>
+    <dd>Launches a sizable multi-line input dialog. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>label</code></b> (String) : Label text to be shown above the edit area of thge input dialog
+            </dd>
+            <dd><b><code>DefaultValue</code></b> (String) : Optional initial value to be displayed in edit area of input
+                dialog
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Value entered into edit area of input dialog returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.51</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;the&nbsp;variable&nbsp;MyVariable&nbsp;must&nbsp;exist&nbsp;for&nbsp;macro&nbsp;to&nbsp;work!<br/>oldtext&nbsp;=&nbsp;ActiveDocument.Evaluate("MyVariable")<br/>t&nbsp;=&nbsp;ActiveDocument.GetApplication.InputBoxEx("Enter&nbsp;text:",oldtext)<br/>ActiveDocument.Variables("MyVariable").SetContent&nbsp;t,true<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Launch</h3>
+<pre>Boolean <b>Launch</b>(String Application, String Parameters)</pre>
+<dl>
+    <dd>Launches a named Windows application. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Application</code></b> (String) : Path and filename for application program to launch</dd>
+            <dd><b><code>Parameters</code></b> (String) : Parameters to launched application program</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;Example&nbsp;1&nbsp;**<br/>set&nbsp;app=&nbsp;ActiveDocument.GetApplication<br/>app.Launch&nbsp;"C:\Program&nbsp;Files\Winword.exe","C:\Myfiles\abc.doc"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>LoadNewerDoc</h3>
+<pre>Boolean <b>LoadNewerDoc</b>()</pre>
+<dl>
+    <dd>Replaces active (remote) document with newer version on server, if one exists. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetApplication.GetNewerDoc<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>MsgBox</h3>
+<pre>Integer <b>MsgBox</b>(String str, Integer type)</pre>
+<dl>
+    <dd>MsgBox function for Jscript. Replaces old QvLib method<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>str</code></b> (String) : Text to be shown in message box</dd>
+            <dd><b><code>type</code></b> (Integer) : Buttons to be shown in dialog<br/>0 = OK (default)<br/>1 =
+                OK,CANCEL<br/>2 = ABORT,RETRY,IGNORE<br/>3 = YES,NO,CANCEL <br/>4 = YES,NO<br/>5 = RETRY,CANCEL <br/>
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Button pressed when exiting dialog<br/>1 = OK<br/>2 = CANCEL<br/>3 = ABORT<br/>4 = RETRY<br/>5 =
+                IGNORE<br/>6 = YES<br/>7 = NO <br/></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetApplication.MsgBox("Hello&nbsp;world")<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>OpenDoc</h3>
+<pre><a href="Document.htm">Document</a> <b>OpenDoc</b>(String DocName, String UserName, String Password, String Serial)</pre>
+<dl>
+    <dd>Opens a QlikView document. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>DocName</code></b> (String) : QV document file name (qvw or qva) with path</dd>
+            <dd><b><code>UserName</code></b> (String) : QlikView document UserID</dd>
+            <dd><b><code>Password</code></b> (String) : QlikView document Pwd</dd>
+            <dd><b><code>Serial</code></b> (String) : Reserved</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>QlikView document returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;VBScript&nbsp;**<br/>set&nbsp;App&nbsp;=&nbsp;ActiveDocument.GetApplication<br/>set&nbsp;newdoc&nbsp;=&nbsp;App.OpenDoc&nbsp;("C:\MyDocuments\QV4Automation.qvw","","")<br/><br/>set&nbsp;App&nbsp;=&nbsp;ActiveDocument.GetApplication<br/>App.OpenDoc&nbsp;"C:\MyDocuments\Budget.qvw","JNN","123456"<br/><br/>rem&nbsp;**&nbsp;Visual&nbsp;Basic&nbsp;**<br/>dim&nbsp;App&nbsp;as&nbsp;New&nbsp;QlikView.Application<br/>set&nbsp;newdoc&nbsp;=&nbsp;App.OpenDoc&nbsp;("C:\MyDocuments\Budget.qvw","JN","123456")</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>OpenDocEx</h3>
+<pre><a href="Document.htm">Document</a> <b>OpenDocEx</b>(String DocName, short AccessMode, Boolean AllowDialog, String UserName, String Password, String Serial, Boolean NoData, Boolean UseDocStartState)</pre>
+<dl>
+    <dd>Opens a document with silent fail. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>DocName</code></b> (String) : QV document file name (qvw or qva) with path</dd>
+            <dd><b><code>AccessMode</code></b> (short) : Requested access mode<br/>0 = unspecified<br/>1 = admin<br/>2 =
+                user
+            </dd>
+            <dd><b><code>AllowDialog</code></b> (Boolean) : True if error messages to appear</dd>
+            <dd><b><code>UserName</code></b> (String) : Section access user name to be used</dd>
+            <dd><b><code>Password</code></b> (String) : Section access password to be used</dd>
+            <dd><b><code>Serial</code></b> (String) : Section access serial number to be used</dd>
+            <dd><b><code>NoData</code></b> (Boolean) :</dd>
+            <dd><b><code>UseDocStartState</code></b> (Boolean) :</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>QlikView document returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;App&nbsp;=&nbsp;ActiveDocument.GetApplication<br/>App.OpenDocEx&nbsp;"C:\MyDocuments\Budget.qvw",2,false,"jnn","123456","",false<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>OSName</h3>
+<pre>String <b>OSName</b>()</pre>
+<dl>
+    <dd>Returns name of operating system. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetApplication.OSName)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>OSVersion</h3>
+<pre>String <b>OSVersion</b>()</pre>
+<dl>
+    <dd>Returns version number of operating system. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetApplication.OSVersion)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PerformLef</h3>
+<pre>Boolean <b>PerformLef</b>()</pre>
+<dl>
+    <dd>Invokes the LEF editor dialog. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.20</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetApplication.PerformLef<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PerformRegistration</h3>
+<pre>Boolean <b>PerformRegistration</b>()</pre>
+<dl>
+    <dd>Invokes the license number registration dialog. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.20</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetApplication.PerformRegistration<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>QTProduct</h3>
+<pre>String <b>QTProduct</b>()</pre>
+<dl>
+    <dd>Returns QlikTech Product name. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>msgbox(ActiveDocument.GetApplication.QTProduct)<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Quit</h3>
+<pre> <b>Quit</b>(Integer ExitCode)</pre>
+<dl>
+    <dd>Closes the QlikView program. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>ExitCode</code></b> (Integer) : Exit code for QlikView program</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;quit&nbsp;QlikView&nbsp;**<br/>ActiveDocument.GetApplication.Quit<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>QvVersion</h3>
+<pre>String <b>QvVersion</b>()</pre>
+<dl>
+    <dd>Returns QlikView version number. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;show&nbsp;current&nbsp;QV&nbsp;version&nbsp;**<br/>msgbox(ActiveDocument.GetApplication.QvVersion)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Refresh</h3>
+<pre> <b>Refresh</b>()</pre>
+<dl>
+    <dd>Forces a redraw od the QlikView window. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;Refresh&nbsp;screen&nbsp;**<br/>ActiveDocument.GetApplication.Refresh<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveAllBuffers</h3>
+<pre>Integer <b>RemoveAllBuffers</b>()</pre>
+<dl>
+    <dd>Removes all QVD buffers. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetApplication.Remove&nbsp;AllBuffers<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RevokeClassObjects</h3>
+<pre> <b>RevokeClassObjects</b>()</pre>
+<dl>
+    <dd>Revokes class factories for QlikView Automation thereby detaching the current instance and opening up for
+        additional instances of QlikView to act as Automation servers. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetApplication.RevokeClassObjects<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ScreenHeight</h3>
+<pre>Integer <b>ScreenHeight</b>()</pre>
+<dl>
+    <dd>Returns height of current screen resolution in pixels. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;show&nbsp;current&nbsp;screen&nbsp;height&nbsp;**<br/>msgbox(ActiveDocument.GetApplication.ScreenHeight)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ScreenWidth</h3>
+<pre>Integer <b>ScreenWidth</b>()</pre>
+<dl>
+    <dd>Returns width of current screen resolution in pixels. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;show&nbsp;current&nbsp;screen&nbsp;width&nbsp;**<br/>msgbox(ActiveDocument.GetApplication.ScreenWidth)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetAffinity</h3>
+<pre>Integer <b>SetAffinity</b>(Integer CoreNo, Integer Mode)</pre>
+<dl>
+    <dd>Sets affinity status for a specified core. For debug use only!!<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>CoreNo</code></b> (Integer) : Core number (0 based)</dd>
+            <dd><b><code>Mode</code></b> (Integer) : 0 = turn off<br/>1 = turn on</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns status after operation<br/>0 = off<br/>1 = on<br/>-1 = non-existing core number</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.01</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>Activedocument.GetApplication.SetAffinity&nbsp;1,1&nbsp;&nbsp;'turns&nbsp;on&nbsp;core#2<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetCachePercentage</h3>
+<pre> <b>SetCachePercentage</b>(Integer Percentage)</pre>
+<dl>
+    <dd>Sets object cache as percentage of total RAM. For debug use only!!<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Percentage</code></b> (Integer) : Percentage of physical RAM</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.01</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>Activedocument.GetApplication.SetCachPercentage&nbsp;15<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetProperties</h3>
+<pre> <b>SetProperties</b>(IApplicationProperties Properties)</pre>
+<dl>
+    <dd>Sets the QlikView properties. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Properties</code></b> (<a href="IApplicationProperties.htm">IApplicationProperties</a>) :
+                Application properties object. Note! Not equal to Application Properties in UI (=IDocumentProperties)
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;QVProp&nbsp;=&nbsp;ActiveDocument.GetApplication.GetProperties<br/>QVProp.UserID="John"<br/>ActiveDocument.GetApplication.SetProperties&nbsp;QVProp<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetUserPreferences</h3>
+<pre> <b>SetUserPreferences</b>(IUserPreferences Preferences)</pre>
+<dl>
+    <dd>Sets User Preferences. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Preferences</code></b> (<a href="IUserPreferences.htm">IUserPreferences</a>) : User perefernces
+                object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;UP&nbsp;=&nbsp;ActiveDocument.GetApplication.GetUserPreferences<br/>UP.ConfirmPurge&nbsp;=&nbsp;true<br/>ActiveDocument.GetApplication.SetUserPreferences&nbsp;UP<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowBookmarksBar</h3>
+<pre> <b>ShowBookmarksBar</b>(Integer Mode)</pre>
+<dl>
+    <dd>Sets show-mode for bookmarks toolbar. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Mode</code></b> (Integer) : Show mode for toolbar<br/>0 = hide<br/>1 = docked top<br/>2 =
+                docked left<br/>3 = docked bottom<br/>4 = docked right<br/>5 = floating<br/></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>ActiveDocument.GetApplication.ShowBookmarksBar&nbsp;1&nbsp;&nbsp;&nbsp;'&nbsp;docked&nbsp;top<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowDesignBar</h3>
+<pre> <b>ShowDesignBar</b>(Integer Mode)</pre>
+<dl>
+    <dd>Sets show-mode for design toolbar. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Mode</code></b> (Integer) : Show mode for toolbar<br/>0 = hide<br/>1 = docked top<br/>2 =
+                docked left<br/>3 = docked bottom<br/>4 = docked right<br/>5 = floating<br/></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetApplication.ShowDesignBar&nbsp;1&nbsp;&nbsp;&nbsp;'&nbsp;docked&nbsp;top<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowMenuBar</h3>
+<pre> <b>ShowMenuBar</b>(Integer Mode)</pre>
+<dl>
+    <dd>Sets show-mode for menubar. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Mode</code></b> (Integer) : Show mode for menu bar<br/>0 = hide<br/>1 = docked top<br/>2 =
+                docked left<br/>3 = docked bottom<br/>4 = docked right<br/>5 = floating<br/></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>ActiveDocument.GetApplication.ShowMenuBar&nbsp;1&nbsp;&nbsp;&nbsp;'&nbsp;docked&nbsp;top<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowNavigationBar</h3>
+<pre> <b>ShowNavigationBar</b>(Integer Mode)</pre>
+<dl>
+    <dd>Sets show-mode for navigation toolbar. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Mode</code></b> (Integer) : Show mode for toolbar<br/>0 = hide<br/>1 = docked top<br/>2 =
+                docked left<br/>3 = docked bottom<br/>4 = docked right<br/>5 = floating<br/></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>ActiveDocument.GetApplication.ShowNavigationBar&nbsp;1&nbsp;&nbsp;&nbsp;'&nbsp;docked&nbsp;top<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowSelectionWindow</h3>
+<pre>Boolean <b>ShowSelectionWindow</b>(Boolean Show)</pre>
+<dl>
+    <dd>Turns current selection window on/off. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Show</code></b> (Boolean) : True if window to be shown</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Selections windows status before operation (true = on)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;turn&nbsp;selection&nbsp;window&nbsp;on&nbsp;**<br/>ActiveDocument.GetApplication.ShowSelectionWindow&nbsp;true<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowSheetsBar</h3>
+<pre> <b>ShowSheetsBar</b>(Integer Mode)</pre>
+<dl>
+    <dd>Sets show-mode for sheets toolbar. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Mode</code></b> (Integer) : Show mode for toolbar<br/>0 = hide<br/>1 = docked top<br/>2 =
+                docked left<br/>3 = docked bottom<br/>4 = docked right<br/>5 = floating<br/></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetApplication.ShowSheetsBar&nbsp;1&nbsp;&nbsp;&nbsp;'&nbsp;docked&nbsp;top<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowStandardBar</h3>
+<pre> <b>ShowStandardBar</b>(Integer Mode)</pre>
+<dl>
+    <dd>Sets show-mode for standard toolbar. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Mode</code></b> (Integer) : Show mode for toolbar<br/>0 = hide<br/>1 = docked top<br/>2 =
+                docked left<br/>3 = docked bottom<br/>4 = docked right<br/>5 = floating<br/></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>ActiveDocument.GetApplication.ShowStandardBar&nbsp;1&nbsp;&nbsp;&nbsp;'&nbsp;docked&nbsp;top<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ShowStatusBar</h3>
+<pre> <b>ShowStatusBar</b>(Boolean Show)</pre>
+<dl>
+    <dd>Sets show-mode for statusbar. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Show</code></b> (Boolean) : True if status bar is to be shown</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>ActiveDocument.GetApplication.ShowBookmarksBar&nbsp;false&nbsp;&nbsp;&nbsp;'hide<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Sleep</h3>
+<pre> <b>Sleep</b>(Integer MilliSec)</pre>
+<dl>
+    <dd>Pauses QlikView for a specified time. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MilliSec</code></b> (Integer) : Number of milliseconds to pause QlikView</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;let&nbsp;QV&nbsp;sleep&nbsp;for&nbsp;10&nbsp;seconds&nbsp;**<br/>ActiveDocument.GetApplication.Sleep&nbsp;10000<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>WaitForIdle</h3>
+<pre>Boolean <b>WaitForIdle</b>(Integer MilliSecTimeout)</pre>
+<dl>
+    <dd>Holds macro execution until all layout entities have been updated. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>MilliSecTimeout</code></b> (Integer) : Optional timeout in milliseconds after which macro
+                execution will resume regardless of idle state or not
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True returned if idle state was reached (no timeout)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.51</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetApplication.WaitForIdle<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="config-service-test-spring-context.xml"/>
+
+    <bean name="infra.bd.navigator.sqlSessionFactory" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg name="classToMock" value="org.apache.ibatis.session.SqlSessionFactory"/>
+    </bean>
+
+    <bean name="qlikViewConectionDaoBean" class="ru.sberbank.syncserver2.mybatis.dao.QlikViewConectionDao"/>
+    <bean name="qlikViewConectionDao" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="qlikViewConectionDaoBean"/>
+    </bean>
+
+    <bean name="qlikViewServiceTestBean" class="ru.sberbank.syncserver2.service.qlikview.QlikViewRequestService">
+        <property name="cronExpression" value="0/5 * * * * ?"/>
+        <property name="clustered" value="false"/>
+        <property name="dbLogger" ref="dbLogService"/>
+    </bean>
+    <bean name="spyQlikViewServiceTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="qlikViewServiceTestBean"/>
+    </bean>
+
+    <bean name="databaseNotificationLoggerTestBean" class="ru.sberbank.syncserver2.service.monitor.DatabaseNotificationLogger">
+    </bean>
+    <bean name="spyDatabaseNotificationLoggerTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="databaseNotificationLoggerTestBean"/>
+    </bean>
+
+    <bean name="serviceManagerTestBean" class="ru.sberbank.syncserver2.service.core.ServiceManager">
+    </bean>
+    <bean name="spyServiceManagerTestBeanTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="serviceManagerTestBean"/>
+    </bean>
+
+
+</beans>

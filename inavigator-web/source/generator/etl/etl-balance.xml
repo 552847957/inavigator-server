@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<etl-config>
+    <etl-action dataFile="balance.sqlite" patternName="BALANCE" autoRun="true" manualRun="true" generationMode = "ON_CONDITION"/>
+
+    <etl-action-pattern patternName="BALANCE" application="Balance" jndi="jdbc/finik1" database="mis_balance"> <!-- it's excpected database user has access to all schemes used in scripts-->
+        <!-- ========================================= -->
+        <query>
+            select
+            BANK_ID TERBANK_ID,
+            shortname TERBANK_CODE,
+            pnl_name TERBANK_NAME,
+            [key] [KEY],
+            parent PARENT_KEY,
+            case when BANK_ID in (1,6) then 1 else 0 end as IS_HIDDEN
+            from [MIS_BALANCE].[dbo].[t 000 Balance PNL Dept Mapping]
+            order by bank_id
+        </query>
+        <name seriesIndex="0" seriesName="BALANCE_BANKS"/>
+        <change-type seriesIndex="0" fields="TERBANK_ID" newDataType="4"/>
+
+        <!-- ========================================= -->
+        <query><![CDATA[
+            execute SP_IPAD_BALANCE_GENERATE_OPU_VALUES
+            execute SP_IPAD_BALANCE_GENERATE_BALANCE_VALUES
+        ]]></query>
+
+        <name seriesIndex="1" seriesName="OPU_GROUPS"/>
+        <change-type seriesIndex="1" fields="ID" newDataType="4"/>
+		
+        <!-- SP_IPAD_BALANCE_GENERATE_OPU_VALUES result 1 -->
+        <name seriesIndex="2" seriesName="OPU_VALUES"/>
+        <change-type seriesIndex="2" fields="TERBANK_ID" newDataType="4"/>
+        <change-type seriesIndex="2" fields="REAL_OPU" newDataType="3"/>
+        <change-type seriesIndex="2" fields="PLAN_OPU" newDataType="3"/>
+        <change-type seriesIndex="2" fields="GROUP_ID" newDataType="4"/>
+
+        <!-- SP_IPAD_BALANCE_GENERATE_OPU_VALUES result 2 -->
+        <name seriesIndex="3" seriesName="OPU_VALUES_QUARTER"/>
+        <change-type seriesIndex="3" fields="TERBANK_ID" newDataType="4"/>
+        <change-type seriesIndex="3" fields="REAL_OPU" newDataType="3"/>
+        <change-type seriesIndex="3" fields="PLAN_OPU" newDataType="3"/>
+        <change-type seriesIndex="3" fields="GROUP_ID" newDataType="4"/>
+
+        <!-- SP_IPAD_BALANCE_GENERATE_OPU_VALUES result 3 -->
+        <name seriesIndex="4" seriesName="OPU_REPORT_SETTINGS"/>
+
+        <!-- ========================================= -->
+        <name seriesIndex="5" seriesName="BALANCE_GROUPS"/>
+        <change-type seriesIndex="5" fields="ID" newDataType="4"/>
+        
+        <name seriesIndex="6" seriesName="BALANCE_VALUES"/>
+        <change-type seriesIndex="6" fields="TERBANK_ID" newDataType="4"/>
+        <change-type seriesIndex="6" fields="REAL_BALANCE" newDataType="3"/>
+        <change-type seriesIndex="6" fields="PLAN_BALANCE" newDataType="3"/>
+        <change-type seriesIndex="6" fields="GROUP_ID" newDataType="4"/>
+        
+        <name seriesIndex="7" seriesName="MONTHLY_BALANCE_VALUES"/>
+        
+        <name seriesIndex="8" seriesName="BALANCE_REPORT_SETTINGS"/>
+
+        <!-- ========================================= -->
+        <query>CREATE INDEX "BALANCE_TERBANK" ON BALANCE_VALUES (TERBANK_ID, BALANCE_DATE)</query>
+        <query>CREATE INDEX "BALANCE_GROUP" ON BALANCE_VALUES (GROUP_ID, BALANCE_DATE)</query>
+        <query>CREATE INDEX "BALANCE_TERBANK_GROUP_DATE" ON BALANCE_VALUES (TERBANK_ID, GROUP_ID, BALANCE_DATE)</query>
+
+        <query>CREATE INDEX "OPU_TERBANK" ON OPU_VALUES (TERBANK_ID, OPU_DATE)</query>
+        <query>CREATE INDEX "OPU_GROUP" ON OPU_VALUES (GROUP_ID, OPU_DATE)</query>
+        <query>CREATE INDEX "OPU_TERBANK_GROUP" ON OPU_VALUES (TERBANK_ID, GROUP_ID, OPU_DATE)</query>
+
+        <query>CREATE INDEX "OPU_TERBANK_QUARTER" ON OPU_VALUES_QUARTER (TERBANK_ID, OPU_DATE)</query>
+        <query>CREATE INDEX "OPU_GROUP_QUARTER" ON OPU_VALUES_QUARTER (GROUP_ID, OPU_DATE)</query>
+        <query>CREATE INDEX "OPU_TERBANK_GROUP_QUARTER" ON OPU_VALUES_QUARTER (TERBANK_ID, GROUP_ID, OPU_DATE)</query>
+        <query>CREATE INDEX BANK_ID on BALANCE_BANKS(TERBANK_ID)</query>
+        <query>CREATE INDEX BANK_CODE on BALANCE_BANKS(TERBANK_CODE)</query>
+        <query>CREATE INDEX GROUP_ID on BALANCE_GROUPS(GROUP_ID)</query>
+        <query>CREATE INDEX GROUP_AND_TERBANK_AND_DATE on MONTHLY_BALANCE_VALUES(GROUP_ID,TERBANK_ID,BALANCE_DATE)</query>
+        <query>CREATE INDEX OPU_GROUP_ID on OPU_GROUPS(ID)</query>
+
+        <!--
+        <query>CREATE INDEX "MONTHLY_BALANCE" ON MONTHLY_BALANCE_VALUES (TERBANK_ID,GROUP_ID, BALANCE_DATE)</query>
+        -->
+
+    </etl-action-pattern>
+
+</etl-config>

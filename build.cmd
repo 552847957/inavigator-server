@@ -1,0 +1,1 @@
+mvn -Dproduct_version="03.005.01-06" -s settings.xml clean install

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<etl-config>
+  <etl-action dataFile="MIS_PROGNOZ_SB_DATA.sqlite" patternName="MIS_PROGNOZ_SB_DATA" autoRun="true" manualRun="true" generationMode = "ON_CONDITION" />
+
+  <etl-action-pattern patternName="MIS_PROGNOZ_SB_DATA" application="iPassport" jndi="jdbc/finik2" database="mis_prognoz_sb_data">
+      <name seriesIndex="0" seriesName="BANKS_DATA"/>
+      <query>SELECT * FROM BANKS_DATA ORDER BY ord,value_abs,value_type_id,region_id,value_date</query>
+      
+      <name seriesIndex="1" seriesName="COMPETITION_DATA"/>
+      <query>SELECT * FROM COMPETITION_DATA ORDER BY region_id,value_type_id,value_date, incorporate_rank</query>
+      
+      <name seriesIndex="2" seriesName="COMPETITION_VALUE_TYPES"/>
+      <query>SELECT * FROM COMPETITION_VALUE_TYPES</query>
+      
+      <name seriesIndex="3" seriesName="COMPETITION_VALUE_TYPE_CATEGORIES"/>
+      <query>SELECT * FROM COMPETITION_VALUE_TYPE_CATEGORIES</query>
+      
+      <name seriesIndex="4" seriesName="DATA_TYPES"/>
+      <query>SELECT * FROM DATA_TYPES</query>
+      
+      <name seriesIndex="5" seriesName="PENETRATION_DATA"/>
+      <query>SELECT * FROM PENETRATION_DATA ORDER BY value_type_id,value_date,region_id,business_type_id</query>
+      
+      <name seriesIndex="6" seriesName="PR_MAP_APP"/>
+      <query>SELECT * FROM [MIS_PROGNOZ_SB_DATA].[dbo].[PR_MAP_APP]</query>
+      
+      <name seriesIndex="7" seriesName="PENETRATION_DATA_VALUE_TYPES"/>
+      <query>SELECT * FROM PENETRATION_DATA_VALUE_TYPES</query>
+      
+      <name seriesIndex="8" seriesName="PR_INDICATORS_REF"/>
+      <query>SELECT * FROM PR_INDICATORS_REF</query>
+      
+      <name seriesIndex="9" seriesName="PR_ORG_STRUCTURE_REF"/>
+      <query>SELECT * FROM PR_ORG_STRUCTURE_REF</query>
+      
+      <name seriesIndex="10" seriesName="PR_CORP_HR_STRUCT"/>
+      <query>SELECT * FROM PR_CORP_HR_STRUCT</query>
+      
+      <name seriesIndex="11" seriesName="PR_DATAMART"/>
+      <query>SELECT * FROM PR_DATAMART</query>
+      
+      <name seriesIndex="12" seriesName="PR_PHOTO_DATA"/>
+      <query>SELECT * FROM PR_PHOTO_DATA</query>
+      <change-type seriesIndex="12" fields="PHOTO" newDataType="2004"/> <!-- java.sql.Types.BLOB -->
+      
+      <name seriesIndex="13" seriesName="PR_RISKGROUP_REF"/>
+      <query>SELECT * FROM PR_RISKGROUP_REF ORDER BY ord,id,code</query>
+      
+      <name seriesIndex="14" seriesName="PR_RISKPROFILE_DATA"/>
+      <query>SELECT * FROM PR_RISKPROFILE_DATA ORDER BY data,terr_id,rg_id,segm_id,value_type_id</query>
+      
+      <name seriesIndex="15" seriesName="PR_RISKPROFILE_TYPE_REF"/>
+      <query>SELECT * FROM PR_RISKPROFILE_TYPE_REF</query>
+      
+      <name seriesIndex="16" seriesName="PR_SEGMENTS_REF"/>
+      <query>SELECT * FROM PR_SEGMENTS_REF ORDER BY id</query>
+      
+      <name seriesIndex="17" seriesName="PR_TERR_REF"/>
+      <query>SELECT * FROM PR_TERR_REF ORDER BY id,terr_type</query>
+      
+      <name seriesIndex="18" seriesName="SEGMENTS_DATA_ECONOMY_COMM"/>
+      <query>SELECT * FROM SEGMENTS_DATA_ECONOMY_COMM</query>
+      
+      <name seriesIndex="19" seriesName="SEGMENTS_DATA_ECONOMY_CREDITS"/>
+      <query>SELECT * FROM SEGMENTS_DATA_ECONOMY_CREDITS</query>
+      
+      <name seriesIndex="20" seriesName="SEGMENTS_DATA_ECONOMY_DEPOSITS"/>
+      <query>SELECT * FROM SEGMENTS_DATA_ECONOMY_DEPOSITS ORDER BY segment_id, region_id, value_date</query>
+
+      <name seriesIndex="21" seriesName="PR_CALENDAR_REF"/>
+      <query>SELECT * FROM PR_CALENDAR_REF</query>
+
+      <name seriesIndex="22" seriesName="PR_SLICES_DATA"/>
+      <query>SELECT * FROM PR_SLICES_DATA</query>
+
+      <name seriesIndex="23" seriesName="PR_AUCTIONS"/>
+      <query>SELECT * FROM PR_AUCTIONS</query>
+
+      <name seriesIndex="24" seriesName="PR_CARDS"/>
+      <query>SELECT * FROM PR_CARDS</query>
+
+      <name seriesIndex="25" seriesName="PR_PROJECTS"/>
+      <query>SELECT * FROM PR_PROJECTS</query>
+
+      <name seriesIndex="26" seriesName="PR_CARDS_POKS"/>
+      <query>SELECT * FROM PR_CARDS_POKS</query>
+
+      <name seriesIndex="27" seriesName="PR_PRODUCTS_REF"/>
+      <query>SELECT * FROM PR_PRODUCTS_REF</query>
+
+      <name seriesIndex="28" seriesName="PR_COMM_TYPE_REF"/>
+      <query>SELECT * FROM PR_COMM_TYPE_REF</query>
+
+      <name seriesIndex="29" seriesName="PR_CIB_BRANCH_REF"/>
+      <query>SELECT * FROM PR_CIB_BRANCH_REF</query>
+
+      <name seriesIndex="30" seriesName="PR_LOAN_TYPE_REF"/>
+      <query>SELECT * FROM PR_LOAN_TYPE_REF</query>
+
+      <name seriesIndex="31" seriesName="PR_SLICES_CARDS_REF"/>
+      <query>SELECT * FROM PR_SLICES_CARDS_REF</query>
+
+      <name seriesIndex="32" seriesName="PR_SLICES_REF"/>
+      <query>SELECT * FROM PR_SLICES_REF</query>
+
+      <name seriesIndex="33" seriesName="PR_SLICES_POKS_REF"/>
+      <query>SELECT * FROM PR_SLICES_POKS_REF</query>
+
+      <name seriesIndex="34" seriesName="PR_TOP10_DATA"/>
+      <query>SELECT * FROM PR_TOP10_DATA</query>
+
+      <name seriesIndex="35" seriesName="PR_SALARY_PROJECTS"/>
+      <query>SELECT * FROM PR_SALARY_PROJECTS</query>
+
+      <name seriesIndex="36" seriesName="PR_INFORMATION_EMPLOYEES"/>
+      <query>select * from PR_INFORMATION_EMPLOYEES</query>
+
+      <name seriesIndex="37" seriesName="PR_PCA_CIB_COMM_DATA"/>
+      <query>select * from PR_PCA_CIB_COMM_DATA</query>
+
+      <name seriesIndex="38" seriesName="PR_PCA_CIB_DEPO_DATA"/>
+      <query>select * from PR_PCA_CIB_DEPO_DATA</query>
+
+      <name seriesIndex="39" seriesName="PR_PCA_CIB_DEPO_S_DATA"/>
+      <query>select * from PR_PCA_CIB_DEPO_S_DATA</query>
+
+      <name seriesIndex="40" seriesName="PR_PCA_CIB_LOANS_DATA"/>
+      <query>select * from PR_PCA_CIB_LOANS_DATA</query>
+
+      <name seriesIndex="41" seriesName="PR_PCA_CIB_ProductsGM_DATA"/>
+      <query>select * from PR_PCA_CIB_ProductsGM_DATA</query>
+
+      <name seriesIndex="42" seriesName="PR_PCA_CIB_ProductsIB_DATA"/>
+      <query>select * from PR_PCA_CIB_ProductsIB_DATA</query>
+
+      <name seriesIndex="43" seriesName="PR_PCA_CIB_RKO_DATA"/>
+      <query>select * from PR_PCA_CIB_RKO_DATA</query>
+
+      <name seriesIndex="44" seriesName="PR_PCA_CIB_SEC_DATA"/>
+      <query>select * from PR_PCA_CIB_SEC_DATA</query>
+
+      <name seriesIndex="45" seriesName="PR_PCA_CIB_VEKS_DATA"/>
+      <query>select * from PR_PCA_CIB_VEKS_DATA</query>
+
+      <query>CREATE INDEX "IDX_BANKS_DATA_1" ON BANKS_DATA (value_type_id,region_id,value_date)</query>
+      <query>CREATE INDEX "IDX_BANKS_DATA_2" ON BANKS_DATA (value_abs,ord)</query>
+      <query>CREATE INDEX "IDX_COMPETITION_DATA_1" ON COMPETITION_DATA (region_id,value_type_id,value_date)</query>
+      <query>CREATE INDEX "IDX_COMPETITION_DATA_2" ON COMPETITION_DATA (incorporate_rank)</query>
+      <query>CREATE INDEX "IDX_PENETRATION_DATA_1" ON PENETRATION_DATA (value_type_id,value_date,region_id,business_type_id)</query>
+      <query>CREATE INDEX "IDX_PR_RISKGROUP_REFS_1" ON PR_RISKGROUP_REF (id,code)</query>
+      <query>CREATE INDEX "IDX_PR_RISKGROUP_REFS_2" ON PR_RISKGROUP_REF (ord)</query>
+      <query>CREATE UNIQUE INDEX "IDX_PR_RISKPROFILE_DATA_1" ON PR_RISKPROFILE_DATA (data,terr_id,rg_id,segm_id,value_type_id)</query>
+      <query>CREATE INDEX "IDX_PR_RISKPROFILE_DATA_2" ON PR_RISKPROFILE_DATA (data,terr_id,rg_id,segm_id,value_type_id)</query>
+      <query>CREATE INDEX "IDX_PR_SEGMENTS_REF_1" ON PR_SEGMENTS_REF (id)</query>
+      <query>CREATE INDEX "IDX_PR_TERR_REF_1" ON PR_TERR_REF (id,terr_type)</query>
+      <query>CREATE INDEX "IDX_PR_TERR_REF_2" ON PR_TERR_REF (id)</query>
+      <query>CREATE INDEX "IDX_SEGMENTS_DATA_ECONOMY_CREDITS_1" ON SEGMENTS_DATA_ECONOMY_CREDITS (segment_id, region_id, value_date)</query>
+      <query>CREATE INDEX "IDX_SEGMENTS_DATA_ECONOMY_CREDITS_2" ON SEGMENTS_DATA_ECONOMY_CREDITS (segment_id, region_id)</query>
+      <query>CREATE INDEX "IDX_SEGMENTS_DATA_ECONOMY_CREDITS_3" ON SEGMENTS_DATA_ECONOMY_CREDITS (segment_id)</query>
+      <query>CREATE INDEX "IDX_SEGMENTS_DATA_ECONOMY_CREDITS_4" ON SEGMENTS_DATA_ECONOMY_CREDITS (region_id)</query>
+      <query>CREATE INDEX "IDX_SEGMENTS_DATA_ECONOMY_DEPOSITS_1" ON SEGMENTS_DATA_ECONOMY_DEPOSITS (segment_id, region_id, value_date)</query>
+      <query>CREATE INDEX "IDX_SEGMENTS_DATA_ECONOMY_DEPOSITS_2" ON SEGMENTS_DATA_ECONOMY_DEPOSITS (segment_id, region_id)</query>
+      <query>CREATE INDEX "IDX_SEGMENTS_DATA_ECONOMY_DEPOSITS_3" ON SEGMENTS_DATA_ECONOMY_DEPOSITS (segment_id)</query>
+      <query>CREATE INDEX "IDX_SEGMENTS_DATA_ECONOMY_DEPOSITS_4" ON SEGMENTS_DATA_ECONOMY_DEPOSITS (region_id)</query>
+      <query>CREATE INDEX "PR_DATAMART_INDEX1" ON PR_DATAMART (VAL_FLOAT)</query>
+      <query>CREATE INDEX "PR_DATAMART_INDEX2" ON PR_DATAMART (IND_ID,DATA)</query>
+      <query>CREATE INDEX "PR_DATAMART_INDEX3" ON PR_DATAMART (TERR_ID)</query>
+      <query>CREATE INDEX "PR_DATAMART_INDEX4" ON PR_DATAMART (DATA,TERR_ID)</query>
+      <query>CREATE INDEX "PR_DATAMART_INDEX5" ON PR_DATAMART (DATA DESC)</query>
+      <query>CREATE UNIQUE INDEX "PR_DATAMART_INDEX6" ON PR_DATAMART (TERR_ID,IND_ID,DATA)</query>
+      <query>CREATE UNIQUE INDEX "PR_ORG_STRUCTURE_REF_RP_ORG_STRUCTURE_REF_AK" ON PR_ORG_STRUCTURE_REF (TERR_ID DESC, DATA DESC, NAME DESC)</query>
+      <query>CREATE INDEX "PR_RISKGROUP_REF2" ON PR_RISKGROUP_REF (id)</query>
+      <query>CREATE INDEX "PR_RISKGROUP_REF3" ON PR_RISKGROUP_REF (id, name)</query>
+      <query>CREATE INDEX "penetration_data_value_types1" ON PENETRATION_DATA_VALUE_TYPES(id)</query>
+      <query>CREATE INDEX "penetration_data_value_types2" ON PENETRATION_DATA_VALUE_TYPES(ord)</query>
+      <query>CREATE INDEX "PR_SLICES_DATA__ix1" ON PR_SLICES_DATA (CARD_ID ASC, POK_ID ASC, TERR_ID ASC, DATA DESC, SEGM_ID ASC)</query>
+      <query>CREATE INDEX "PR_SALARY_PROJECTS__ix1" ON PR_SALARY_PROJECTS (TERR_ID ASC, DATA DESC)</query>
+      <query>CREATE INDEX "PR_SLICES_DATA__ix2" ON PR_SLICES_DATA (TERR_ID, DATA, SEGM_ID,display_in_card,card_id)</query>
+      <query>CREATE INDEX "PR_SLICES_DATA__ix3" ON PR_SLICES_DATA (TERR_ID,SLICE_ID,POK_ID,data)</query>
+      <query>CREATE INDEX "PR_INDICATORS_REF_ix1" ON PR_INDICATORS_REF (id)</query>
+      <query>CREATE INDEX "PR_PHOTO_DATA_IX1" ON PR_PHOTO_DATA (TERR_ID ASC, PHOTO_TYPE ASC, DATA_UPD DESC)</query>
+  </etl-action-pattern>
+</etl-config>

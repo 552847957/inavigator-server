@@ -1,0 +1,53 @@
+<html>
+<head><title>IVisualCueDef</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IVisualCueDef</h1><br/>
+Definition of a single visual cue within a table expression<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>BgColor</b></font> (<a href="IColorDef.htm">IColorDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Cell background color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell background color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Color</b></font> (<a href="IColorDef.htm">IColorDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Text color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Text color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FontStyleMod</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Bit vector for font styles. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Bit vector for font styles<br/>bit 0 = italic<br/>bit 1 = bold<br/>bit 2 = underline</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SizeMod</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Size modification for font. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Size modification for font<br/>-2 = -40%<br/>-1 = -20%<br/>0 = no modification<br/>1 = +20%<br/>2 =
+        +40%</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

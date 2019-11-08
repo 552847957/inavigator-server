@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="cache-diff-checker-service-test-spring-context.xml"/>
+
+    <bean name="clusterManagerServiceTestBean" class="ru.sberbank.syncserver2.service.generator.ClusterManager">
+        <property name="dbLogger" ref="dbLogService"/>
+    </bean>
+    <bean name="spyClusterManagerServiceTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="clusterManagerServiceTestBean"/>
+    </bean>
+
+    <bean name="alphaNetworkFileMoverTestBean" class="ru.sberbank.syncserver2.service.file.transport.AlphaNetworkFileMover">
+        <property name="localSourceFolder" value="test/tmp/directory/AlphaNetworkFileMoverTest/tst/local/source/"/>
+        <property name="duplicateFolder" value="test/tmp/directory/AlphaNetworkFileMoverTest/tst/local/duplicate/"/>
+        <property name="localArchiveFolder" value="test/tmp/directory/AlphaNetworkFileMoverTest/tst/local/archive/"/>
+        <property name="localTempFolder" value="test/tmp/directory/AlphaNetworkFileMoverTest/tst/local/temp/"/>
+        <property name="networkTempFolder" value="test/tmp/directory/AlphaNetworkFileMoverTest/tst/network/temp/"/>
+        <property name="networkTargetFolder" value="test/tmp/directory/AlphaNetworkFileMoverTest/tst/network/target/"/>
+    </bean>
+    <bean name="spyChangeSetGeneratorServiceTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="alphaNetworkFileMoverTestBean"/>
+    </bean>
+
+</beans>

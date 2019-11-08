@@ -1,0 +1,1079 @@
+{
+  "jsonrpc": "2.0",
+  "id": 31,
+  "result": {
+    "qDataPages": [
+      {
+        "qLeft": [
+          {
+            "qText": "Капитал",
+            "qElemNo": 15,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          }
+        ],
+        "qTop": [
+          {
+            "qText": "-",
+            "qElemNo": -2,
+            "qValue": "NaN",
+            "qType": "U",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---АБ \"Россия\"",
+            "qElemNo": 22,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Абсолют Банк",
+            "qElemNo": 38,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---АК БАРС банк",
+            "qElemNo": 11,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Альфа",
+            "qElemNo": 7,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Банк Зенит",
+            "qElemNo": 12,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Банк Русский Стандарт",
+            "qElemNo": 13,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Банк Санкт-Петербург",
+            "qElemNo": 14,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Бинбанк",
+            "qElemNo": 18,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---БСЖВ",
+            "qElemNo": 35,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Возрождение",
+            "qElemNo": 15,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Газпромбанк",
+            "qElemNo": 4,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Глобэкс",
+            "qElemNo": 19,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Группа ВТБ",
+            "qElemNo": 3,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Евразия",
+            "qElemNo": 30,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Еврофинанс Моснарбанк",
+            "qElemNo": 29,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---КИТ Финанс",
+            "qElemNo": 31,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---МИнБ",
+            "qElemNo": 28,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Московский кредитный банк",
+            "qElemNo": 24,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---МТС-Банк",
+            "qElemNo": 27,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Номос банк",
+            "qElemNo": 16,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Нордеа Банк",
+            "qElemNo": 40,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Остальные банки",
+            "qElemNo": 42,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Открытие",
+            "qElemNo": 25,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Петрокоммерц",
+            "qElemNo": 17,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Промсвязьбанк",
+            "qElemNo": 10,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Райффайзенбанк",
+            "qElemNo": 37,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Россельхозбанк",
+            "qElemNo": 5,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Связной Банк",
+            "qElemNo": 32,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Ситибанк",
+            "qElemNo": 39,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Союз",
+            "qElemNo": 20,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---ТКС Банк",
+            "qElemNo": 33,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Траст",
+            "qElemNo": 21,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Уралсиб",
+            "qElemNo": 9,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Урса",
+            "qElemNo": 8,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---Ханты-Мансийский банк",
+            "qElemNo": 23,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---ХКФ Банк",
+            "qElemNo": 26,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "---ЮниКредит",
+            "qElemNo": 36,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "Банковская система",
+            "qElemNo": 1,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "Госбанки (инт.)",
+            "qElemNo": 2,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "Иностранные банки (инт.)",
+            "qElemNo": 34,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "Прочее",
+            "qElemNo": 41,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "Сбербанк",
+            "qElemNo": 0,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          },
+          {
+            "qText": "Частные банки (инт.)",
+            "qElemNo": 6,
+            "qValue": "NaN",
+            "qType": "N",
+            "qUp": 0,
+            "qDown": 0,
+            "qSubNodes": []
+          }
+        ],
+        "qData": [
+          [
+            {
+              "qText": "-",
+              "qNum": "NaN",
+              "qType": "U"
+            },
+            {
+              "qText": "48,86607",
+              "qNum": 48.86606675386429,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "41,72061",
+              "qNum": 41.72060839831829,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "88,65",
+              "qNum": 88.65000486373901,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "255,873",
+              "qNum": 255.8729763031006,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "65,02333",
+              "qNum": 65.02333143353462,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "76,62276",
+              "qNum": 76.62275886535645,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "69,4986",
+              "qNum": 69.4985958635807,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "34,64421",
+              "qNum": 34.644212026149035,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "242,2108",
+              "qNum": 242.21082544326782,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "43,77889",
+              "qNum": 43.77889069914818,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "548,3852",
+              "qNum": 548.3851919174194,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "49,56825",
+              "qNum": 49.568249023519456,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "2154,389",
+              "qNum": 2154.3890857696533,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "56,29212",
+              "qNum": 56.29211884737015,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "29,77165",
+              "qNum": 29.771649926900864,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "23,48069",
+              "qNum": 23.480694361031055,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "32,07968",
+              "qNum": 32.079681783914566,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "54,87178",
+              "qNum": 54.87178057432175,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "31,23943",
+              "qNum": 31.239430651068687,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "139,7645",
+              "qNum": 139.76452606916428,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "47,06359",
+              "qNum": 47.06358726322651,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "2440,59",
+              "qNum": 2440.5901641845703,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "22,63421",
+              "qNum": 22.634208790957928,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "55,0476",
+              "qNum": 55.04759766720235,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "110,0648",
+              "qNum": 110.06476891040802,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "179,6265",
+              "qNum": 179.62653005123138,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "315,9347",
+              "qNum": 315.93470871448517,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "6,174545",
+              "qNum": 6.17454470647499,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "94,83864",
+              "qNum": 94.83863747119904,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "20,56593",
+              "qNum": 20.565926728770137,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "14,57497",
+              "qNum": 14.574970755726099,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "20,26234",
+              "qNum": 20.26233537180815,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "111,2082",
+              "qNum": 111.20819209655747,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "179,1907",
+              "qNum": 179.1906959414482,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "53,59148",
+              "qNum": 53.591481655836105,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "67,60731",
+              "qNum": 67.60731104016304,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "199,8366",
+              "qNum": 199.83657252788544,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "11300",
+              "qNum": 11300,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "3018,709",
+              "qNum": 3018.708974838257,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "805,2968",
+              "qNum": 805.2967586517334,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "2440,59",
+              "qNum": 2440.5901641845703,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "3274,457",
+              "qNum": 3274.4570960998535,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            },
+            {
+              "qText": "1760,947",
+              "qNum": 1760.9470052719116,
+              "qType": "V",
+              "qAttrExps": {
+                "qValues": [
+                  {
+                    "qNum": "NaN"
+                  },
+                  {
+                    "qNum": "NaN"
+                  }
+                ]
+              }
+            }
+          ]
+        ],
+        "qArea": {
+          "qLeft": 0,
+          "qTop": 20,
+          "qWidth": 44,
+          "qHeight": 1
+        }
+      }
+    ]
+  }
+}

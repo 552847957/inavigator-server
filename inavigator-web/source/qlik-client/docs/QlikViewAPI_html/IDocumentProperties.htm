@@ -1,0 +1,841 @@
+<html>
+<head><title>IDocumentProperties</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IDocumentProperties</h1><br/>
+Document properties<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>Alerts</b></font> (<a href="IArrayOfAlert.htm">IArrayOfAlert</a>, <i>objectref.</i>)
+<dl>
+    <dd>Array of alerts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowServerAlerts</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if document allows server alerts when run on QVS. Not implemented in 8.0<p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowServerBookmarks</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if document allows server bookmarks when run on QVS. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowServerObjects</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if document allows server sheet objects when run on QVS. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowServerReports</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if document allows server reports when run on QVS. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Author</b></font> (String, <i>read-only</i>)
+<dl>
+    <dd>Name of document author. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Document default for sheet background color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BkgImageSettings</b></font> (<a href="IImagePresentation.htm">IImagePresentation</a>, <i>objectref.</i>)
+<dl>
+    <dd>Background image settings. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Image settings definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ClearedForNamedUserDocumentCal</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ClientGracefulMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Client Refresh Initiation Mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Client Refresh Initiation Mode<br/>0 = Indicate<br/>1 = Prompt<br/>2 = Progress<br/>3 = Silent</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ColorMap</b></font> (<a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Document default chart color map. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of colors as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CompatibleFractile</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if compatibility mode discrete fractile mode to be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Contact</b></font> (String, <i>read-only</i>)
+<dl>
+    <dd>Contact information. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Creator</b></font> (String, <i>read-only</i>)
+<dl>
+    <dd>License number of document's creator's QlikView. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CurrentCompression</b></font> (Integer, <i>read-only</i>)
+<dl>
+    <dd>Current compression setting for document when saved. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Current compression level for QVW file<br/>0 = No compression<br/>1 = Normal<br/>2 = High</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CurrentFileFormat</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>QlikView file format number for saved document. <p/></dd>
+</dl>
+<dl>
+    <dd><code>QlikView file format number for saved document<br/>6000 = 6.0x - 7.0x<br/>5001 = 5.0x<br/>4001 = 4.0x<br/>2085
+        = 3.15<br/>2075 = 3.1<br/>2058 = 3.01/3.02</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultAlertPopupProperties</b></font> (<a href="IPopupProperties.htm">IPopupProperties</a>, <i>objectref.</i>)
+<dl>
+    <dd>Default alert pop-up layout. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Pop-up layout definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultBookmarkPopupProperties</b></font> (<a href="IPopupProperties.htm">IPopupProperties</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Default bookmark pop-up layout. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Pop-up layout definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultExportCharset</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default character set for export from document. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Default codepage for export from document<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001 = UTF-8</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultHelpPopupProperties</b></font> (<a href="IPopupProperties.htm">IPopupProperties</a>, <i>objectref.</i>)
+<dl>
+    <dd>Default help pop-up layout. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Pop-up layout definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultTextSearchMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Sets the default search mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0=Wildcard<br/>1=Fuzzy<br/>2=Normal</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultTheme</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Default theme for document. If no default theme is defined, property heritage will be used<p/></dd>
+</dl>
+<dl>
+    <dd><code>File name if theme resides in default theme folder, else full path with file name</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DisableLayoutUndo</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if layout undo buffer enabled for document. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DisablePopupMenus</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if context menus to be disabled. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DynamicReduceData</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Set to true will cause dynamic data reduction based on section access. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ElapsedSecondsBeforeClose</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Document overall session timeout when used on QlikView Server (seconds). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EnableDynamicDataUpdate</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if dynamic data update is allowed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EnablePushFromServer</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if push from server is allowed. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if enable push from server is allowed</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FileName</b></font> (String, <i>read-only</i>)
+<dl>
+    <dd>Returns document filename with path. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Filename (including path) of document</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FreeDays</b></font> (Integer, <i>read-only</i>)
+<dl>
+    <dd>Free days left to test QVA application. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GenerateLogfile</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if log file is to be generated when running script. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HasWorkingDirectory</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if working directory exists. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HideUnavailableMenuOptions</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Determines whether object menu items made illegal by security settings should be grayed or removed from menu.
+        <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if object menu items made illegal by security settings should be removed from menu</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IdleSecondsBeforeClose</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Document idle timeout when used on QlikView Server (seconds). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IgnoreInfoLost</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True disables features lost warning when saving in old file format. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>InhibitAggressiveQvdCleaning</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if aggressive automatic QVD purge is to be turned off. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>InitialSelection</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if initial selection based on section access is active. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if initial selection based on section access is active else false</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LastReduceTime</b></font> (Double, <i>read-only</i>)
+<dl>
+    <dd>Last time when document was reduced. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LastReloadTime</b></font> (Double, <i>read-only</i>)
+<dl>
+    <dd>Last time when document was reloaded. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LastReloadTimeAsString</b></font> (String, <i>read-only</i>)
+<dl>
+    <dd>Last time when document was reloaded (as string). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LocaleInfo</b></font> (<a href="ILocaleInfo.htm">ILocaleInfo</a>, <i>objectref.</i>)
+<dl>
+    <dd>Locale infor for document. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Locale info description object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LogfileIOMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Sets logfile mode as overwrite or timestamp in file name. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0=Overwrites logfiles<br/>1=Timestamp in logfile name<br/></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ModuleSystemAccessIntended</b></font> (Integer, <i>read-only</i>)
+<dl>
+    <dd>Document module security level. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Document module security level<br/>0 = no system access (default)<br/>1 = system access allowed</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MyWorkingDirectory</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Working directory for document. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NotClearedForNamedUserDocumentCalReason</b></font> (String, <i>read-only</i>)
+<dl>
+    <dd>. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ObjectCaptionStyle</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Sheet object caption style. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Sheet object caption style<br/>0 = Plain<br/>1 = Glass<br/></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnOpenActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Document event trigger actions. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action types enumerated as follows:<br/>Info=0<br/>Sql=1<br/>Lock All=2<br/>Unlock All=3<br/>Clear
+        All=4<br/>Clear All Incl Locked=5<br/>Back=6<br/>Forward=7<br/>File Close=8<br/>Next Tab=9<br/>Prev Tab=10<br/>Export=11<br/>Launch=12<br/>Macro=13<br/>Recall
+        Bookmark=14<br/>Replace Bookmark=15<br/>Create Bookmark=16<br/>Print Report=17<br/>Activate Sheet=18<br/>Print
+        Sheet=19<br/>Print Object=20<br/>Restore Object=21<br/>Minimize Object=22<br/>Maximize Object=23<br/>Activate
+        Object=24<br/>Select Excluded=25<br/>Clear Other Fields=26<br/>Select Possible=27<br/>Lock=28<br/>Unlock=29<br/>Pareto
+        Select=30<br/>Set Value=31<br/>Field Select=32<br/>Field Toggleselect=33<br/>Open Url=34<br/>Document
+        Chain=35<br/>Eov=36</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnPostReduceDataActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Document event trigger actions. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action types enumerated as follows:<br/>Info=0<br/>Sql=1<br/>Lock All=2<br/>Unlock All=3<br/>Clear
+        All=4<br/>Clear All Incl Locked=5<br/>Back=6<br/>Forward=7<br/>File Close=8<br/>Next Tab=9<br/>Prev Tab=10<br/>Export=11<br/>Launch=12<br/>Macro=13<br/>Recall
+        Bookmark=14<br/>Replace Bookmark=15<br/>Create Bookmark=16<br/>Print Report=17<br/>Activate Sheet=18<br/>Print
+        Sheet=19<br/>Print Object=20<br/>Restore Object=21<br/>Minimize Object=22<br/>Maximize Object=23<br/>Activate
+        Object=24<br/>Select Excluded=25<br/>Clear Other Fields=26<br/>Select Possible=27<br/>Lock=28<br/>Unlock=29<br/>Pareto
+        Select=30<br/>Set Value=31<br/>Field Select=32<br/>Field Toggleselect=33<br/>Open Url=34<br/>Document
+        Chain=35<br/>Eov=36</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnPostReloadActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Document event trigger actions. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action types enumerated as follows:<br/>Info=0<br/>Sql=1<br/>Lock All=2<br/>Unlock All=3<br/>Clear
+        All=4<br/>Clear All Incl Locked=5<br/>Back=6<br/>Forward=7<br/>File Close=8<br/>Next Tab=9<br/>Prev Tab=10<br/>Export=11<br/>Launch=12<br/>Macro=13<br/>Recall
+        Bookmark=14<br/>Replace Bookmark=15<br/>Create Bookmark=16<br/>Print Report=17<br/>Activate Sheet=18<br/>Print
+        Sheet=19<br/>Print Object=20<br/>Restore Object=21<br/>Minimize Object=22<br/>Maximize Object=23<br/>Activate
+        Object=24<br/>Select Excluded=25<br/>Clear Other Fields=26<br/>Select Possible=27<br/>Lock=28<br/>Unlock=29<br/>Pareto
+        Select=30<br/>Set Value=31<br/>Field Select=32<br/>Field Toggleselect=33<br/>Open Url=34<br/>Document
+        Chain=35<br/>Eov=36<br/></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OnSelectionActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Document event trigger actions. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action types enumerated as follows:<br/>Info=0<br/>Sql=1<br/>Lock All=2<br/>Unlock All=3<br/>Clear
+        All=4<br/>Clear All Incl Locked=5<br/>Back=6<br/>Forward=7<br/>File Close=8<br/>Next Tab=9<br/>Prev Tab=10<br/>Export=11<br/>Launch=12<br/>Macro=13<br/>Recall
+        Bookmark=14<br/>Replace Bookmark=15<br/>Create Bookmark=16<br/>Print Report=17<br/>Activate Sheet=18<br/>Print
+        Sheet=19<br/>Print Object=20<br/>Restore Object=21<br/>Minimize Object=22<br/>Maximize Object=23<br/>Activate
+        Object=24<br/>Select Excluded=25<br/>Clear Other Fields=26<br/>Select Possible=27<br/>Lock=28<br/>Unlock=29<br/>Pareto
+        Select=30<br/>Set Value=31<br/>Field Select=32<br/>Field Toggleselect=33<br/>Open Url=34<br/>Document
+        Chain=35<br/>Eov=36</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OpenPicCloseOnClick</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>True if document splash-screen should be cancelled by mouse click. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OpenPicCloseWhenLoaded</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>True if document splash-screen should be cancelled when document loaded. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OpenPicTimeout</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Time-out for document splash-screen in seconds. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PreviousFileFormat</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Previous QlikView file format number for saved document. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Previous QlikView file format number for saved document<br/>6000 = 6.0x - 7.0x<br/>5001 = 5.0x<br/>4001 =
+        4.0x<br/>2085 = 3.15<br/>2075 = 3.1<br/>2058 = 3.01/3.02</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrintSheetSettings</b></font> (<a href="IPrinterOptions.htm">IPrinterOptions</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Print settings for sheet print. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Print settings object for sheet print</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ProhibitBinaryLoad</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if binary load from document should be prohibited. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SaveAsPrim</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>True if QVA document has been modified in a way which disqualifies it for reading from QVA Viewer. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Script</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Document script. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScriptingEngine</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Scripting engine used in document. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Scripting engine used in document<br/>0 = VBScript<br/>1 = JavaScript</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionAlpha</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Sets the selection appearance transparency. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Transparency (0-255)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionBgColor</b></font> (<a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Current selection background colors. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of current selection background colors<br/>position 0 = locked<br/>position 1 = selected<br/>position
+        2 = optional<br/>position 3 = deselected <br/>position 4 = alternative // not distinguished from optional in
+        most schemes<br/>position 5 = excluded<br/>position 6 = excluded selected // not distinguished from excluded in
+        most schemes<br/>position 7 = excluded locked // not distinguished from excluded in most schemes</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionColors</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Document selection color scheme setting. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Selection color scheme for document<br/>0 = User default<br/>1 = Classic<br/>2 = Forest<br/>3 =
+        Spring<br/>4 = Lime</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionFgColor</b></font> (<a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Current selection text colors. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of current selection text colors<br/>position 0 = locked<br/>position 1 = selected<br/>position 2 =
+        optional<br/>position 3 = deselected <br/>position 4 = alternative // not distinguished from optional in most
+        schemes<br/>position 5 = excluded<br/>position 6 = excluded selected // not distinguished from excluded in most
+        schemes<br/>position 7 = excluded locked // not distinguished from excluded in most schemes</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionStyle</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Setting for selection style used in document. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Setting for selection style used in document<br/>0 = According to User Preferences<br/>1 = QlikView
+        Classic<br/>2 = Windows Checkboxes</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ServerGracefulMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Refresh Mode when Document is Updated on Server. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Refresh Mode when Document is Updated on Server<br/>0 = Client initiates refresh. If old data not kept in
+        server or client too old, session will be disconnected<br/>1 = Client initiates refresh. If old data not kept in
+        server or client too old, refresh will be performed automatically<br/>2 = Server performs refresh automatically,
+        without client action</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowTabRow</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if tabrow is to be displayed. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if tabrow is to be displayed else false</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>StrictDynamicReduction</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True when strict dynamic data reduction access rules should be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SuppressScriptProgressButtons</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if buttons in script progress dialog to be disabled. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TableViewerPrintSettings</b></font> (<a href="IPrinterOptions.htm">IPrinterOptions</a>, <i>objectref.</i>)
+<dl>
+    <dd>Print settings for table viewer. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TabRowActiveFont</b></font> (<a href="IBaseFont.htm">IBaseFont</a>, <i>objectref.</i>)
+<dl>
+    <dd>Active tabrow font. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Font object reference</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TabRowBgColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Tab row background color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TabRowInactiveFont</b></font> (<a href="IBaseFont.htm">IBaseFont</a>, <i>objectref.</i>)
+<dl>
+    <dd>Inactive tabrow font. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Font object reference</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TabrowStyle</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Sets the tabrow style in document properties. <p/></dd>
+</dl>
+<dl>
+    <dd><code>0 = Oblique<br/>1 = Straight</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ThumbNailSettings</b></font> (<a href="IThumbNailSettings.htm">IThumbNailSettings</a>, <i>objectref.</i>)
+<dl>
+    <dd>Reference to document thumbnail settings. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TimerPollInterval</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Poll interval for timer dependent objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Timer poll interval in seconds</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TxBuFont</b></font> (<a href="IBaseFont.htm">IBaseFont</a>, <i>objectref.</i>)
+<dl>
+    <dd>Default font for text objects and buttons. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseAjaxUI</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if document uses WebView in layout. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseBkgImage</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if document background image to be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseMetaSectionAccessNames</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Access Point document list is filtered based on section access. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UsePassiveFtp</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if passive FTP semantics should be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UserPermissions</b></font> (<a href="IDocumentUserPermissions.htm">IDocumentUserPermissions</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>User permissions data for document level. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseWallpaperColor</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if document background color to be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UtcLastReloadTime</b></font> (Double, <i>read-only</i>)
+<dl>
+    <dd>Coordinated universal time of last reload. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>VBModule</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Document macro module. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>WarningDays</b></font> (Integer, <i>read-only</i>)
+<dl>
+    <dd>Number of warning days before QVA expiry date. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>WasSavedAsPrim</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>True if QVA document was saved modified in a way which disqualifies it for reading from QVA Viewer. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>WindowTitle</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Document title text to replace filename in application caption. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

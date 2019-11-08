@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="cache-diff-checker-service-test-spring-context.xml"/>
+
+    <bean name="misFileServiceTestBean" class="ru.sberbank.syncserver2.service.file.FileService">
+        <property name="fileCache" ref="spyFileCacheDraftTestBean"/>
+    </bean>
+    <bean name="spyMisFileServiceTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="misFileServiceTestBean"/>
+    </bean>
+
+    <bean name="fileCacheDraftTestBean" class="ru.sberbank.syncserver2.service.file.cache.FileCacheDraftSupported">
+        <!-- addLoader(spySpyMbrUnzipperTestBean) ???????   How to do this ?????? -->
+    </bean>
+    <bean name="spyFileCacheDraftTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="fileCacheDraftTestBean"/>
+    </bean>
+
+    <bean name="misFileLoaderTestBean" class="ru.sberbank.syncserver2.service.file.cache.SingleFileLoader">
+        <property name="archiveFolder" value="test/tmp/directory/MisFileServiceTest/archiveFolder"/>
+        <property name="cacheFolder" value="test/tmp/directory/MisFileServiceTest/cacheFolder"/>
+        <property name="inboxFolder" value="test/tmp/directory/MisFileServiceTest/inboxFolder"/>
+        <property name="chunkSize" value="1024"/>
+        <property name="tempFolder" value="test/tmp/directory/MisFileServiceTest/tempFolder"/>
+        <property name="fileLister" ref="spyMisDbFileListerTestBean"/>
+    </bean>
+    <bean name="spyMisFileLoaderTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="misFileLoaderTestBean"/>
+    </bean>
+
+    <bean name="dataPowerNotificationLogger" class="ru.sberbank.syncserver2.service.monitor.DataPowerNotificationLogger">
+        <property name="dataPowerBeanCode" value="spyDataPowerServiceTestBean"/>
+    </bean>
+    <bean name="spyDataPowerNotificationLogger" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="dataPowerNotificationLogger"/>
+    </bean>
+
+    <bean name="misDbFileListerTestBean" class="ru.sberbank.syncserver2.service.file.cache.list.DatabaseFileLister">
+    </bean>
+    <bean name="spyMisDbFileListerTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="misDbFileListerTestBean"/>
+    </bean>
+
+    <bean name="misFileStatusCacheServerTestBean" class="ru.sberbank.syncserver2.service.file.cache.SingleFileStatusCacheService">
+    </bean>
+    <bean name="spyMisFileStatusCacheServerTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="misFileStatusCacheServerTestBean"/>
+    </bean>
+
+
+</beans>

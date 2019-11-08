@@ -1,0 +1,3 @@
+mvn -s settings.xml deploy -Djavax.net.ssl.trustStore="c:\Program Files\Java\jdk1.8.0_161\jre\lib\security\cacerts" -Djavax.net.ssl.trustStorePassword=changeit
+
+"c:\Program Files\Java\jdk1.8.0_161\jre\lib\security\cacerts" -storepass changeit

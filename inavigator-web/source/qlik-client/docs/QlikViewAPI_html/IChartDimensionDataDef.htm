@@ -1,0 +1,276 @@
+<html>
+<head><title>IChartDimensionDataDef</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IChartDimensionDataDef</h1><br/>
+Chart dimension description object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>AttributeExpressions</b></font> (<a href="IAttributeExpressions.htm">IAttributeExpressions</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Dimension attribute expressions. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Attribute expression definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ColWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Dimension column widths. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Column width</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultSearchMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Default search mode for dimension. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Default Search Mode when drop-down select is used in table<br/>0 = Document default<br/>1 = Normal
+        search<br/>2 = Fuzzy search</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DimCellVariations</b></font> (<a href="IArrayOfCellVariationDef.htm">IArrayOfCellVariationDef</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Cell format variations for dimension cells. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DropdownSelect</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if drop-down select to be available for dimension column in table charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExcludedValuesMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Default setting for inclusiion of excluded values in search for dimension. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Include excluded values in search (drop-down select in tables)<br/>0 = Default<br/>1 = Yes<br/>2 =
+        No</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ImageRepresentation</b></font> (<a
+        href="ICellImageRepresentation.htm">ICellImageRepresentation</a>, <i>objectref.</i>)
+<dl>
+    <dd>Text/image interpretation mode for dimension. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell image settings object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LabelAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Alignment for label in tables. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Alignment for label (straight table)<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LabelVerticalAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Vertical alignment for label in tables. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical alignment for label (straight table)<br/>0 = top<br/>4 = center<br/>8 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MaxNumShown</b></font> (<a href="IValueExpr.htm">IValueExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Maximum number of values shown in dimension. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Value expression definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MaxStringLength</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Limit for dimension label length in certain chart types. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NullSuppression</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if null values should be suppressed. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if null values are to be suppressed</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Alignment for numeric values. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Alignment for numeric values (straight table)<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OverrideGroupSort</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if group sort order to be overridden. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PageBreaks</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Dimension page break setting. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Page break settings for dimension<br/>0 = automatic<br/>1 = conditional at dimension value change<br/>2 =
+        forced at dimension value change</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PseudoDef</b></font> (<a href="IFieldDefEx.htm">IFieldDefEx</a>, <i>objectref.</i>)
+<dl>
+    <dd>Dimension field or group definition. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionStyle</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Override selection style for dimension. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Selection style (drop-down select in tables)<br/>-1 = Use User Preference<br/>0 = Classic<br/>1 = Windows
+        checkboxes<br/>2 = Cornertags<br/>3 = LEDs</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Show</b></font> (<a href="ICondExDef.htm">ICondExDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Sets the show condition for straight table columns that are dimensions. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Reference to the possible show conditions</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowAll</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if x-values other than those possible should be plotted. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowLabel</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if label for expression should appear in chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowLegend</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if legend should be shown for dimension. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowPartialSums</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Pivot table partial sums. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Pivot table partial sums<br/>0 = no partial sums in pivot table for this variable<br/>1 = show partial
+        sums in pivot table for this variable</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SortCriteria</b></font> (<a href="ISortCriteria.htm">ISortCriteria</a>, <i>objectref.</i>)
+<dl>
+    <dd>Sort criteria for dimension. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Sort criteria for dimension variable</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Spacing</b></font> (<a href="IDimensionSpacing.htm">IDimensionSpacing</a>, <i>objectref.</i>)
+<dl>
+    <dd>Dimension spacing setting. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Dimension spacing definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Alignment for text values in table chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Alignment for text values (straight table)<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Title</b></font> (<a href="IStringExpr.htm">IStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Dimension label. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TotalString</b></font> (<a href="IStringExpr.htm">IStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Total string for dimension (used for partial sums in pivot). <p/></dd>
+</dl>
+<dl>
+    <dd><code>Total string for dimension (definition object)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>VerticalAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Vertical text aligment for dimension. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical alignment<br/>0 = top<br/>4 = center<br/>8 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+<head><title>IArrayOfExpressionType</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IArrayOfExpressionType</h1><br/>
+Array of chart expression display options<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Method Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<h3>Add</h3>
+<pre> <b>Add</b>()</pre>
+<dl>
+    <dd>Adds an element to array. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;chart&nbsp;=&nbsp;ActiveDocument.ActiveSheet.CreateBarChart<br/>chart.AddDimension&nbsp;"ProductType"<br/>chart.AddExpression&nbsp;"count(Customer)"<br/>set&nbsp;p&nbsp;=&nbsp;chart.GetProperties<br/>set&nbsp;expr&nbsp;=&nbsp;p.Expressions.Item(0).Item(0).Data.ExpressionVisual<br/>rem&nbsp;**&nbsp;add&nbsp;linear&nbsp;regression&nbsp;trend&nbsp;line&nbsp;**<br/>expr.ExpressionTypes.Add<br/>expr.ExpressionTypes.Item(1).Type&nbsp;=&nbsp;1<br/>expr.ExpressionTypes(1).Order&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'&nbsp;default&nbsp;member&nbsp;short&nbsp;form<br/>chart.SetProperties&nbsp;p<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>Count</b></font> (Integer, <i>read-only</i>)
+<dl>
+    <dd>Returns number of elements in array. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Item</b></font> (<a href="IExpressionType.htm">IExpressionType</a>, <i>objectref.</i>)
+<dl>
+    <dd>Returns expression display option (trendlines etc). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

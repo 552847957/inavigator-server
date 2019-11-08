@@ -1,0 +1,21 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ru.sberbank.inavigator</groupId>
+        <artifactId>inav</artifactId>
+        <version>${release_number}</version>
+    </parent>
+    <artifactId>inav-common</artifactId>
+    <version>${release_number}</version>
+    <name>inav-common</name>
+    <packaging>jar</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

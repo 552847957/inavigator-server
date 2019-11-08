@@ -1,0 +1,36 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+    <id>Distrib_Docs</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>../inavigator-web/docs</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>i-NavigatorInstallation.docx</include>
+                <include>i-NavigatorApplicationSettings.docx</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>../inavigator-web/_fpd/drivers</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>sqlite-jdbc-3.7.15-M1.jar</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>../inavigator-web/_fpd/drivers</directory>
+            <outputDirectory>.</outputDirectory>
+            <includes>
+                <include>sqljdbc.jar</include>
+            </includes>
+        </fileSet>
+
+    </fileSets>
+
+</assembly>

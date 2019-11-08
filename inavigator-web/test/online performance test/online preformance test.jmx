@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.3" jmeter="2.8 r1393162">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Dynamic model performance" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+        <longProp name="ThreadGroup.start_time">1387891890000</longProp>
+        <longProp name="ThreadGroup.end_time">1387891890000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">text/xml</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">i-navigator.sbrf.ru</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/syncserver/online/online.sql</stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">4</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="INAV_2_0.DASHBOARD" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;request&gt;&#xd;
+    &lt;stored-procedure&gt;INAV_2_0.DASHBOARD&lt;/stored-procedure&gt;&#xd;
+    &lt;arguments&gt;&lt;argument&gt;&lt;index&gt;1&lt;/index&gt;&lt;type&gt;STRING&lt;/type&gt;&lt;value&gt;&amp;lt;params&amp;gt;&amp;lt;param name=&amp;quot;nDashboardID&amp;quot; value=&amp;quot;1&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;Email&amp;quot; value=&amp;quot;RONovoselov.SBT@sberbank.ru&amp;quot; /&amp;gt;&amp;lt;/params&amp;gt;&lt;/value&gt;&lt;/argument&gt;&lt;/arguments&gt;&#xd;
+    &lt;Fields&gt;&#xd;
+        &lt;Field Name=&quot;XML&quot; Type=&quot;STRING&quot;/&gt;&#xd;
+    &lt;/Fields&gt;&#xd;
+    &lt;provider&gt;DATAPOWER&lt;/provider&gt;&#xd;
+    &lt;service&gt;finik2-new&lt;/service&gt;&#xd;
+&lt;/request&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="INAV_2_0.DASHBOARD_DATA 1" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;request&gt;&#xd;
+    &lt;stored-procedure&gt;INAV_2_0.DASHBOARD_DATA&lt;/stored-procedure&gt;&#xd;
+    &lt;arguments&gt;&lt;argument&gt;&lt;index&gt;1&lt;/index&gt;&lt;type&gt;STRING&lt;/type&gt;&lt;value&gt;&amp;lt;params&amp;gt;&amp;lt;param name=&amp;quot;nDashboardID&amp;quot; value=&amp;quot;4&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;nDynamicType&amp;quot; value=&amp;quot;2&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;nDynamicType&amp;quot; value=&amp;quot;2&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;dtDate&amp;quot; value=&amp;quot;20150930&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;nDepartmentID&amp;quot; value=&amp;quot;355050&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;Email&amp;quot; value=&amp;quot;RONovoselov.SBT@sberbank.ru&amp;quot; /&amp;gt;&amp;lt;/params&amp;gt;&lt;/value&gt;&lt;/argument&gt;&lt;/arguments&gt;&#xd;
+    &lt;Fields&gt;&#xd;
+        &lt;Field Name=&quot;XML&quot; Type=&quot;STRING&quot;/&gt;&#xd;
+    &lt;/Fields&gt;&#xd;
+    &lt;provider&gt;DATAPOWER&lt;/provider&gt;&#xd;
+    &lt;service&gt;finik2-new&lt;/service&gt;&#xd;
+&lt;/request&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="INAV_2_0.DASHBOARD_DATA 2" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;request&gt;&#xd;
+    &lt;stored-procedure&gt;INAV_2_0.DASHBOARD_DATA&lt;/stored-procedure&gt;&#xd;
+    &lt;arguments&gt;&lt;argument&gt;&lt;index&gt;1&lt;/index&gt;&lt;type&gt;STRING&lt;/type&gt;&lt;value&gt;&amp;lt;params&amp;gt;&amp;lt;param name=&amp;quot;nDashboardID&amp;quot; value=&amp;quot;5&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;nDynamicType&amp;quot; value=&amp;quot;2&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;nDynamicType&amp;quot; value=&amp;quot;2&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;dtDate&amp;quot; value=&amp;quot;20150930&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;nDepartmentID&amp;quot; value=&amp;quot;355050&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;Email&amp;quot; value=&amp;quot;RONovoselov.SBT@sberbank.ru&amp;quot; /&amp;gt;&amp;lt;/params&amp;gt;&lt;/value&gt;&lt;/argument&gt;&lt;/arguments&gt;&#xd;
+    &lt;Fields&gt;&#xd;
+        &lt;Field Name=&quot;XML&quot; Type=&quot;STRING&quot;/&gt;&#xd;
+    &lt;/Fields&gt;&#xd;
+    &lt;provider&gt;DATAPOWER&lt;/provider&gt;&#xd;
+    &lt;service&gt;finik2-new&lt;/service&gt;&#xd;
+&lt;/request&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="INAV_2_0.DASHBOARD_DATA_CARD_DETAIL" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;request&gt;&#xd;
+    &lt;stored-procedure&gt;INAV_2_0.DASHBOARD_DATA_CARD_DETAIL&lt;/stored-procedure&gt;&#xd;
+    &lt;arguments&gt;&lt;argument&gt;&lt;index&gt;1&lt;/index&gt;&lt;type&gt;STRING&lt;/type&gt;&lt;value&gt;&amp;lt;params&amp;gt;&amp;lt;param name=&amp;quot;nDynamicTypeID&amp;quot; value=&amp;quot;2&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;nMeasID&amp;quot; value=&amp;quot;7&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;nPokID&amp;quot; value=&amp;quot;13907&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;nCardID&amp;quot; value=&amp;quot;15394&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;nDepartmentID&amp;quot; value=&amp;quot;355050&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;dtDate&amp;quot; value=&amp;quot;20150930&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;nDataPointID&amp;quot; value=&amp;quot;-1&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;Email&amp;quot; value=&amp;quot;RONovoselov.SBT@sberbank.ru&amp;quot; /&amp;gt;&amp;lt;/params&amp;gt;&lt;/value&gt;&lt;/argument&gt;&lt;/arguments&gt;&#xd;
+    &lt;Fields&gt;&#xd;
+        &lt;Field Name=&quot;XML&quot; Type=&quot;STRING&quot;/&gt;&#xd;
+    &lt;/Fields&gt;&#xd;
+    &lt;provider&gt;DATAPOWER&lt;/provider&gt;&#xd;
+    &lt;service&gt;finik2-new&lt;/service&gt;&#xd;
+&lt;/request&gt;&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="INAV_2_0.ENTERPOINT_DATA" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&#xd;
+&lt;request&gt;&#xd;
+    &lt;stored-procedure&gt;INAV_2_0.ENTERPOINT_DATA&lt;/stored-procedure&gt;&#xd;
+    &lt;arguments&gt;&lt;argument&gt;&lt;index&gt;1&lt;/index&gt;&lt;type&gt;STRING&lt;/type&gt;&lt;value&gt;&amp;lt;params&amp;gt;&amp;lt;param name=&amp;quot;nEnterpointID&amp;quot; value=&amp;quot;3&amp;quot; /&amp;gt;&amp;lt;param name=&amp;quot;Email&amp;quot; value=&amp;quot;RONovoselov.SBT@sberbank.ru&amp;quot; /&amp;gt;&amp;lt;/params&amp;gt;&lt;/value&gt;&lt;/argument&gt;&lt;/arguments&gt;&#xd;
+    &lt;Fields&gt;&#xd;
+        &lt;Field Name=&quot;XML&quot; Type=&quot;STRING&quot;/&gt;&#xd;
+    &lt;/Fields&gt;&#xd;
+    &lt;provider&gt;DATAPOWER&lt;/provider&gt;&#xd;
+    &lt;service&gt;finik2-new&lt;/service&gt;&#xd;
+&lt;/request&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="Response Time Graph" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="false">
+        <stringProp name="FileSaver.filename">c:\usr\docs\mis\dynamicModel\response\a</stringProp>
+        <boolProp name="FileSaver.errorsonly">false</boolProp>
+        <boolProp name="FileSaver.skipautonumber">false</boolProp>
+        <boolProp name="FileSaver.skipsuffix">false</boolProp>
+        <boolProp name="FileSaver.successonly">false</boolProp>
+      </ResultSaver>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

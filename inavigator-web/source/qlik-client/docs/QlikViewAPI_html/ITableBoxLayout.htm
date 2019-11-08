@@ -1,0 +1,119 @@
+<html>
+<head><title>ITableBoxLayout</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>ITableBoxLayout</h1><br/>
+Table box layout description object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>AllowDragNDrop</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if drag and drop column moves allowed in UI. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ColLayouts</b></font> (<a href="IArrayOfLTableColLayout.htm">IArrayOfLTableColLayout</a>, <i>objectref.</i>)
+<dl>
+    <dd>Array of column layout information. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of column layout information returned</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Frame</b></font> (<a href="IFrame.htm">IFrame</a>, <i>objectref.</i>)
+<dl>
+    <dd>Sheet object frame rendering information. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HeaderMultiLine</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Setting for multiple line header cells. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Setting for multiple line header cells<br/>0 = single line cells<br/>1 = forbidden<br/>n = n lines in cell
+        with text wrap and truncation at end (2<=n<=100)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MultiLine</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Setting for multiple line cells. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Setting for multiple line cells<br/>0 = single line cells<br/>1 = forbidden<br/>n = n lines in cell with
+        text wrap and truncation at end (2<=n<=100)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ReadOnly</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if table is read-only. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowSelectIndicators</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if selection indicators are to be shown in column headers. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowSortIndicators</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if sort indicator is to be shown in column headers. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Striping</b></font> (Variant (Array of Byte), <i>read-write</i>)
+<dl>
+    <dd>Array where each element tells the number of lines to be striped with each stripe type.. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array where each element tells the number of lines to be striped with each stripe type. Any number of
+        stripes can be used, although only two can be controlled from the UI. The array must always contain minimum one
+        element (no striping) containing a positive number (>0).</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SuppressHeader</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if table header row is to be suppressed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>VerticalLabels</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if vertical column labels are to be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<etl-config>
+  <etl-action dataFile="competitors.sqlite" patternName="COMPETITORS" autoRun="true" manualRun="true" generationMode = "ON_CONDITION" />
+
+  <etl-action-pattern patternName="COMPETITORS" application="Competitors" jndi="jdbc/finik1" database="mis_competitors">
+    <name seriesIndex="0" seriesName="BANK_GROUPS"/>   
+    <query>
+        select id GROUP_ID, name GROUP_LEVEL1, '' GROUP_LEVEL2, '' GROUP_LEVEL3, '' SHORT_NAME, '' CHART_COLOR
+        from miscc_bank l1
+        where pid is null
+        union 
+        select id, 
+              (select name from miscc_bank sl2 where sl2.id = l2.pid),
+              name GROUP_LEVEL2,
+              '' GROUP_LEVEL3, 
+              '', 
+              ''
+        from miscc_bank l2
+        where pid is not null
+    </query>
+    
+    <name seriesIndex="1" seriesName="OPU_VS_BALANCES"/>   
+    <query>
+        select d1.id OPU_VS_BALANCE_ID, d1.bank_id, d1.date, d1.abs_val left_value, d1.perc_val left_percent, m.name + '(левая ось)' left_name,
+            (select abs_val from miscc_data d2 
+             where mvs.metric_opu_id = d2.metric_id 
+                  and d1.bank_id = d2.bank_id
+                  and d2.date = d1.date
+            ) as right_value,
+            (select perc_val from miscc_data d2
+             where mvs.metric_opu_id = d2.metric_id 
+                  and d1.bank_id = d2.bank_id
+                  and d2.date = d1.date
+            ) as right_percent,
+            (select m3.name + '(правая ось)' from miscc_data d2 
+             join miscc_metric m3 on m3.id = d2.metric_id
+             --join miscc_metric_vs mvs3 on mvs3.metric_opu_id = m3.id
+             where mvs.metric_opu_id = d2.metric_id 
+                  and d1.bank_id = d2.bank_id
+                  and d2.date = d1.date
+            ) as right_name,
+            mvs.id group_id
+        from miscc_metric_vs mvs
+        join miscc_metric m on m.id = mvs.metric_bal_id
+        join miscc_data d1 on d1.metric_id = m.id
+        where exists (select 1 from miscc_data d2 
+             join miscc_metric m3 on m3.id = d2.metric_id
+             where mvs.metric_opu_id = d2.metric_id 
+                  and d1.bank_id = d2.bank_id
+                  and d2.date = d1.date
+            )    
+            and year(d1.date) >= year(getdate()) - 1
+    </query>
+    
+    <name seriesIndex="2" seriesName="OPU_VS_BALANCES_GROUPS"/>   
+    <query>
+        select mvs.id GROUP_ID, mvs.name GROUP_LEVEL1, '' as GROUP_LEVEL2, '' as GROUP_LEVEL3
+        from miscc_metric m
+        join miscc_metric_vs mvs on mvs.metric_bal_id = m.id
+        order by mvs.sort asc    
+    </query>
+    
+    <name seriesIndex="3" seriesName="BANK_BALANCES"/>   
+    <query>
+        select d.id BANK_BALANCE_ID, 
+              d.bank_id BANK_ID, 
+              dateadd(month, -1, d.date) BALANCE_DATE, 
+              d.abs_val BALANCE_VALUE, 
+              d.perc_val BALANCE_PERCENT, 
+              d.metric_id GROUP_ID 
+        from miscc_data d
+        join miscc_metric m on m.id = d.metric_id
+        where lower(m.type)='bal'    
+    </query>
+    
+    <name seriesIndex="4" seriesName="BANK_BALANCES_GROUPS"/>   
+    <query>
+        select l3.id GROUP_ID, l1.name GROUP_LEVEL1, l2.name GROUP_LEVEL2, l3.name GROUP_LEVEL3, l3.sort SORT_ORDER 
+        from miscc_metric l1
+        join miscc_metric l2 on l1.id = l2.pid
+        join miscc_metric l3 on l2.id = l3.pid
+        where lower(l1.type) = 'bal'
+            union
+        select l2.id, l1.name, l2.name, '' as name3, l2.sort from miscc_metric l1
+        join miscc_metric l2 on l1.id = l2.pid
+        where lower(l1.type) = 'bal' and
+                l2.id not in (
+                    select sl3.id from miscc_metric sl1
+                    join miscc_metric sl2 on sl1.id = sl2.pid
+                    join miscc_metric sl3 on sl2.id = sl3.pid
+                )
+            union
+        select l1.id, l1.name, '' as name2, '' as name3, l1.sort from miscc_metric l1
+        where lower(l1.type) = 'bal' and 
+                l1.pid is null
+    </query>
+    
+    <name seriesIndex="5" seriesName="OPU_VALUES"/>   
+    <query>
+        select d.id OPU_VALUE_ID, 
+              d.bank_id BANK_ID, 
+              d.date OPU_VALUE_DATE, 
+              d.abs_val OPU_VALUE, 
+              d.perc_val OPU_PERCENT, 
+              d.metric_id GROUP_ID 
+        from miscc_data d
+        join miscc_metric m on m.id = d.metric_id
+        where lower(m.type)='inc' and year(d.date) >= year(getdate()) - 1
+    </query>
+    
+    <name seriesIndex="6" seriesName="OPU_VALUES_GROUPS"/>   
+    <query>
+        select l3.id GROUP_ID, l1.name GROUP_LEVEL1, l2.name GROUP_LEVEL2, l3.name GROUP_LEVEL3, l3.sort SORT_ORDER 
+        from miscc_metric l1
+        join miscc_metric l2 on l1.id = l2.pid
+        join miscc_metric l3 on l2.id = l3.pid
+        where lower(l1.type) = 'inc'
+            union
+        select l2.id, l1.name, l2.name, '' as name3, l2.sort from miscc_metric l1
+        join miscc_metric l2 on l1.id = l2.pid
+        where lower(l1.type) = 'inc' and
+                l2.id not in (
+                    select sl3.id from miscc_metric sl1
+                    join miscc_metric sl2 on sl1.id = sl2.pid
+                    join miscc_metric sl3 on sl2.id = sl3.pid
+                )
+            union
+        select l1.id, l1.name, '' as name2, '' as name3, l1.sort from miscc_metric l1
+        where lower(l1.type) = 'inc' and 
+                l1.pid is null
+    </query>
+    
+    <name seriesIndex="7" seriesName="RATIOS"/>   
+    <query>
+        select d.id RATIO_ID, 
+              d.bank_id BANK_ID, 
+              dateadd(month, -1, d.date) RATIO_DATE, 
+              d.abs_val RATIO_VALUE, 
+              d.metric_id GROUP_ID 
+        from miscc_data d
+        join miscc_metric m on m.id = d.metric_id
+        where lower(m.type)='rts' and year(d.date) >= year(getdate()) - 1 and d.metric_id in (130, 131, 132, 162)
+		union
+        select d.id RATIO_ID, 
+              d.bank_id BANK_ID, 
+              d.date RATIO_DATE, 
+              d.abs_val RATIO_VALUE, 
+              d.metric_id GROUP_ID 
+        from miscc_data d
+        join miscc_metric m on m.id = d.metric_id
+        where lower(m.type)='rts' and year(d.date) >= year(getdate()) - 1 and d.metric_id not in (130, 131, 132, 162)
+    </query>
+
+    <name seriesIndex="8" seriesName="RATIOS_GROUPS"/>   
+    <query>
+        select l3.id GROUP_ID, l1.name GROUP_LEVEL1, l2.name GROUP_LEVEL2, l3.name GROUP_LEVEL3, l3.sort SORT_ORDER 
+        from miscc_metric l1
+        join miscc_metric l2 on l1.id = l2.pid
+        join miscc_metric l3 on l2.id = l3.pid
+        where lower(l1.type) = 'rts'
+            union
+        select l2.id, l1.name, l2.name, '' as name3, l2.sort from miscc_metric l1
+        join miscc_metric l2 on l1.id = l2.pid
+        where lower(l1.type) = 'rts' and
+                l2.id not in (
+                    select sl3.id from miscc_metric sl1
+                    join miscc_metric sl2 on sl1.id = sl2.pid
+                    join miscc_metric sl3 on sl2.id = sl3.pid
+                )
+            union
+        select l1.id, l1.name, '' as name2, '' as name3, l1.sort from miscc_metric l1
+        where lower(l1.type) = 'rts' and 
+                l1.pid is null
+    </query>
+
+    <query>DROP TABLE IF EXISTS 'PARAMETERS'</query>
+    <query>CREATE TABLE 'PARAMETERS' ('PARAMETER_NAME' VARCHAR(50), 'PARAMETER_VALUE' DATETIME)</query>
+    <query>INSERT INTO 'PARAMETERS' SELECT 'BANK_BALANCES_BEGIN_DATE', MIN(BALANCE_DATE) FROM BANK_BALANCES</query>
+    <query>INSERT INTO 'PARAMETERS' SELECT 'BANK_BALANCES_END_DATE', MAX(BALANCE_DATE) FROM BANK_BALANCES</query>
+    <query>INSERT INTO 'PARAMETERS' SELECT 'OPU_VALUES_BEGIN_DATE', MIN(OPU_VALUE_DATE) FROM OPU_VALUES</query>
+    <query>INSERT INTO 'PARAMETERS' SELECT 'OPU_VALUES_END_DATE', MAX(OPU_VALUE_DATE) FROM OPU_VALUES</query>
+    <query>INSERT INTO 'PARAMETERS' SELECT 'OPU_VS_BALANCES_BEGIN_DATE', MIN(date) FROM OPU_VS_BALANCES</query>
+    <query>INSERT INTO 'PARAMETERS' SELECT 'OPU_VS_BALANCES_END_DATE', MAX(date) FROM OPU_VS_BALANCES</query>
+    <query>INSERT INTO 'PARAMETERS' SELECT 'RATIOS_BEGIN_DATE', MIN(RATIO_DATE) FROM RATIOS</query>
+    <query>INSERT INTO 'PARAMETERS' SELECT 'RATIOS_END_DATE', MAX(RATIO_DATE) FROM RATIOS</query>
+
+    <query>CREATE INDEX "BANK_BALANCES_BANK" ON BANK_BALANCES (BANK_ID, BALANCE_DATE)</query>
+    <query>CREATE INDEX "BANK_BALANCES_BANK_GROUP" ON BANK_BALANCES (BANK_ID, GROUP_ID, BALANCE_DATE)</query>
+    <query>CREATE INDEX "BANK_GROUPS_ID" ON BANK_GROUPS (GROUP_ID)</query>
+
+    <query>update BANK_GROUPS set SHORT_NAME='Сбербанк', CHART_COLOR='008313' where GROUP_ID=1</query>
+    <query>update BANK_GROUPS set SHORT_NAME='БС РФ', CHART_COLOR='714192' where GROUP_ID=2</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Гос (инт.)', CHART_COLOR='57b7e7' where GROUP_ID=3</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Гр ВТБ', CHART_COLOR='004b8d' where GROUP_ID=4</query>
+    <query>update BANK_GROUPS set SHORT_NAME='ГПБ', CHART_COLOR='12477d' where GROUP_ID=5</query>
+    <query>update BANK_GROUPS set SHORT_NAME='РСХБ', CHART_COLOR='00a351' where GROUP_ID=6</query>
+    <query>update BANK_GROUPS set SHORT_NAME='ДКК', CHART_COLOR='7bb60e' where GROUP_ID=72</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Частн (инт.)', CHART_COLOR='2BA499' where GROUP_ID=8</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Альф', CHART_COLOR='e12b1d' where GROUP_ID=9</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Урс', CHART_COLOR='f58220' where GROUP_ID=10</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Урал', CHART_COLOR='0b1761' where GROUP_ID=11</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Пром', CHART_COLOR='e35f14' where GROUP_ID=12</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Иностр (инт.)', CHART_COLOR='ffe738' where GROUP_ID=13</query>
+    <query>update BANK_GROUPS set SHORT_NAME='БСЖВ', CHART_COLOR='ea413a' where GROUP_ID=14</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Юник', CHART_COLOR='eb492d' where GROUP_ID=15</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Райф', CHART_COLOR='f9f300' where GROUP_ID=17</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Абсолют', CHART_COLOR='f78f1e' where GROUP_ID=43</query>
+    <query>update BANK_GROUPS set SHORT_NAME='АК БАРС', CHART_COLOR='00a950' where GROUP_ID=44</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Зенит', CHART_COLOR='008c96' where GROUP_ID=45</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Русский ст.', CHART_COLOR='0076a3' where GROUP_ID=46</query>
+    <query>update BANK_GROUPS set SHORT_NAME='СПБ', CHART_COLOR='dc1e35' where GROUP_ID=47</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Возр.', CHART_COLOR='003873' where GROUP_ID=48</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Номос', CHART_COLOR='0076bd' where GROUP_ID=49</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Петроком.', CHART_COLOR='ab0534' where GROUP_ID=50</query>
+    <query>update BANK_GROUPS set SHORT_NAME='бин', CHART_COLOR='54aaed' where GROUP_ID=52</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Глобэкс', CHART_COLOR='f89b1c' where GROUP_ID=53</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Союз', CHART_COLOR='ff7d33' where GROUP_ID=54</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Траст', CHART_COLOR='a1a1a1' where GROUP_ID=55</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Сити', CHART_COLOR='ef0e09' where GROUP_ID=56</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Россия', CHART_COLOR='1b76bc' where GROUP_ID=57</query>
+    <query>update BANK_GROUPS set SHORT_NAME='ХМ', CHART_COLOR='3f745d' where GROUP_ID=58</query>
+    <query>update BANK_GROUPS set SHORT_NAME='МКБ', CHART_COLOR='a80735' where GROUP_ID=59</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Нордеа', CHART_COLOR='0d5d8e' where GROUP_ID=60</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Открытие', CHART_COLOR='2db9e4' where GROUP_ID=61</query>
+    <query>update BANK_GROUPS set SHORT_NAME='ХКФ Банк', CHART_COLOR='e2383f' where GROUP_ID=62</query>
+    <query>update BANK_GROUPS set SHORT_NAME='МТС', CHART_COLOR='eb1921' where GROUP_ID=63</query>
+    <query>update BANK_GROUPS set SHORT_NAME='МИнБ', CHART_COLOR='94140b' where GROUP_ID=64</query>
+    <query>update BANK_GROUPS set SHORT_NAME='ЕФМНБ', CHART_COLOR='004071' where GROUP_ID=65</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Евразия', CHART_COLOR='364bf2' where GROUP_ID=66</query>
+    <query>update BANK_GROUPS set SHORT_NAME='КИТ', CHART_COLOR='ea0f6b' where GROUP_ID=67</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Проч.', CHART_COLOR='ec008c' where GROUP_ID=68</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Ост.', CHART_COLOR='550608' where GROUP_ID=69</query>
+    <query>update BANK_GROUPS set SHORT_NAME='Связной', CHART_COLOR='fbae3b' where GROUP_ID=70</query>
+    <query>update BANK_GROUPS set SHORT_NAME='ТКС', CHART_COLOR='faea27' where GROUP_ID=71</query>
+    
+    
+  </etl-action-pattern>
+
+</etl-config>

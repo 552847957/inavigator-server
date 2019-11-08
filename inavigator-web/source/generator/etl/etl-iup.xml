@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<etl-config>
+    <etl-action dataFile="mis_iup_kpi.sqlite" patternName="MIS_IUP_KPI"	autoRun="true" manualRun="true" generationMode = "ON_CONDITION" />
+    
+    <etl-action-pattern patternName="MIS_IUP_KPI" application="IUP" jndi="jdbc/finik1" database="mis_iup_kpi">
+        <name seriesIndex="0" seriesName="Dashboards"/>
+        <query>SELECT * FROM Dashboards</query>
+        <name seriesIndex="1" seriesName="Default_params"/>
+        <query>SELECT * FROM Default_params</query>
+        <name seriesIndex="2" seriesName="Iup_role"/>
+        <query>SELECT * FROM Iup_role</query>
+        <name seriesIndex="3" seriesName="Links"/>
+        <query>SELECT * FROM Links</query>
+        <name seriesIndex="4" seriesName="UnitIdDept"/>
+        <query>SELECT * FROM UnitIdDeprt</query>
+
+        <name seriesIndex="5" seriesName="DATA"/>
+        <query>EXECUTE GET_MOBILE_DATA</query>
+        <change-type seriesIndex="5" fields="dt" newDataType="92"/>
+		
+		
+        <name seriesIndex="6" seriesName="DEPARTMENT"/>
+        <query>EXECUTE GET_MOBILE_DEPARTMENT</query>
+        <change-type seriesIndex="6" fields="date_close" newDataType="92"/>
+		
+        <name seriesIndex="7" seriesName="KPI"/>
+        <query>EXECUTE GET_MOBILE_KPI</query>
+        <name seriesIndex="8" seriesName="MEASURE"/>
+        <query>EXECUTE GET_MOBILE_MEASURE</query>
+
+		<query>update KPI set visible = (case when visible = 0 then 'false' 
+									when visible = 1 then 'true'
+									end)
+		</query>
+
+        <query>CREATE UNIQUE INDEX PK_DATA ON DATA(DEPRT_ID COLLATE BINARY ASC,DynType COLLATE BINARY ASC,DT COLLATE BINARY ASC,KPI_ID COLLATE BINARY ASC)</query>
+        <query>CREATE UNIQUE INDEX PK_DEPARTMENT ON DEPARTMENT(DEPRT_ID COLLATE BINARY ASC)</query>
+        <query>CREATE UNIQUE INDEX PK_KPI ON KPI(KPI_ID COLLATE BINARY ASC)</query>
+        <query>CREATE UNIQUE INDEX PK_DASHBOARDS ON DASHBOARDS(DASH_ID COLLATE BINARY ASC)</query>
+        <query>CREATE UNIQUE INDEX PK_MEASURE ON MEASURE(MEASURE_ID COLLATE BINARY ASC)</query>
+        <query>CREATE UNIQUE INDEX PK_LINKS ON LINKS(DASH_ID COLLATE BINARY ASC,KPI_ID COLLATE BINARY ASC,LEVEL_ COLLATE BINARY ASC)</query>
+        <query>CREATE UNIQUE INDEX PK_DEFAULT_PARAMS ON DEFAULT_PARAMS(PARAM_NAME COLLATE BINARY ASC)</query>
+    </etl-action-pattern>
+
+</etl-config>
+
+
+
+
+
+
+
+
+
+

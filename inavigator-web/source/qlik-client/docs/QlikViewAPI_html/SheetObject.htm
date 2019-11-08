@@ -1,0 +1,1291 @@
+<html>
+<head><title>SheetObject</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>SheetObject</h1><br/>
+The general QlikView sheet object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Method Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<h3>Activate</h3>
+<pre> <b>Activate</b>()</pre>
+<dl>
+    <dd>Makes the sheet object the active sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;activate&nbsp;all&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;one&nbsp;by&nbsp;one&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>for&nbsp;i=0&nbsp;to&nbsp;s.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;s.SheetObjects(i).Activate<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ActivateAlso</h3>
+<pre> <b>ActivateAlso</b>()</pre>
+<dl>
+    <dd>Adds the sheet object to the active sheet objects. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;activate&nbsp;all&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;and&nbsp;leave&nbsp;activated&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>for&nbsp;i=0&nbsp;to&nbsp;s.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;s.SheetObjects(i).ActivateAlso<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ApplyTheme</h3>
+<pre> <b>ApplyTheme</b>(String FileName)</pre>
+<dl>
+    <dd>Returns sheet object caption. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : Theme file name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;obj&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>obj.ApplyTheme&nbsp;"Forest.qvt"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CanPrint</h3>
+<pre>Boolean <b>CanPrint</b>()</pre>
+<dl>
+    <dd>Returns true if sheet object is printable. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;print&nbsp;all&nbsp;printable&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;one&nbsp;by&nbsp;one&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>for&nbsp;i=0&nbsp;to&nbsp;s.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;s.SheetObjects(i).CanPrint&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.SheetObjects(i).Print<br/>&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;if<br/>next</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Close</h3>
+<pre> <b>Close</b>()</pre>
+<dl>
+    <dd>Removes the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;remove&nbsp;all&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>orignumber=s.NoOfSheetObjects<br/>for&nbsp;i=0&nbsp;to&nbsp;orignumber-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;s.SheetObjects(0).Close<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyBitmapToClipboard</h3>
+<pre>Boolean <b>CopyBitmapToClipboard</b>()</pre>
+<dl>
+    <dd>Copies a bitmap image of the sheet object to the clipboard. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject("CH01").CopyBitmapToClipboard<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyTableToClipboard</h3>
+<pre>Boolean <b>CopyTableToClipboard</b>(Boolean IncludeLabels)</pre>
+<dl>
+    <dd>Copies the cells of a table to clipboard (table objects only). <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>IncludeLabels</code></b> (Boolean) : True if labels are to be included</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if operation was successful</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;copy&nbsp;full&nbsp;table&nbsp;to&nbsp;clipboard&nbsp;**<br/>ActiveDocument.GetSheetObject("CH01").CopyTableToClipboard&nbsp;true<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyTextToClipboard</h3>
+<pre>Boolean <b>CopyTextToClipboard</b>()</pre>
+<dl>
+    <dd>Copies text to clipboard. Relevant only for text objects and buttons<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject("TX01").CopyTextToClipboard<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyValuesToClipboard</h3>
+<pre>Boolean <b>CopyValuesToClipboard</b>()</pre>
+<dl>
+    <dd>Copies the values of a chart object to clipboard (not available for pivot tables). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject("CH01").CopyValuesToClipboard<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DbGetTableData</h3>
+<pre><a href="Ireturn%20object%20for%20SheetObject.DbGetTableData()%20and%20CustomDropDown.DbGetTableData()%20and%20GraphBasics.D....htm">Ireturn object for SheetObject.DbGetTableData() and CustomDropDown.DbGetTableData() and GraphBasics.D...</a> <b>DbGetTableData</b>(Variant (Array of Integer) Columns, Variant (Array of Boolean) ForceText, Integer StartRow, Integer NoOfRows)</pre>
+<dl>
+    <dd>Returns data from table for QV ODBC driver. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Columns</code></b> (Variant (Array of Integer)) : Array of column numbers to extract (0 based)
+            </dd>
+            <dd><b><code>ForceText</code></b> (Variant (Array of Boolean)) : Not implemented</dd>
+            <dd><b><code>StartRow</code></b> (Integer) : First row to extract</dd>
+            <dd><b><code>NoOfRows</code></b> (Integer) : Number of rows to extract</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns data from table for QV ODBC driver</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;Method&nbsp;for&nbsp;use&nbsp;by&nbsp;QV&nbsp;ODBC&nbsp;driver</code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DbGetTableInfo</h3>
+<pre><a href="Ireturn%20object%20for%20SheetObject.DbGetTableInfo()%20and%20CustomDropDown.DbGetTableInfo()%20and%20GraphBasics.D....htm">Ireturn object for SheetObject.DbGetTableInfo() and CustomDropDown.DbGetTableInfo() and GraphBasics.D...</a> <b>DbGetTableInfo</b>()</pre>
+<dl>
+    <dd>Returns information about fields in table for QV ODBC driver. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;Method&nbsp;for&nbsp;use&nbsp;by&nbsp;QV&nbsp;ODBC&nbsp;driver</code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DbIsTable</h3>
+<pre>Boolean <b>DbIsTable</b>()</pre>
+<dl>
+    <dd>Returns true if the object is a table box, straight table or bitmap chart (and thus can deliver data to QV ODBC
+        driver). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;Method&nbsp;for&nbsp;use&nbsp;by&nbsp;QV&nbsp;ODBC&nbsp;driver<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Deactivate</h3>
+<pre> <b>Deactivate</b>()</pre>
+<dl>
+    <dd>Removes the sheet object from the list of active sheet objects. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;deactivate&nbsp;all&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;one&nbsp;by&nbsp;one&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>for&nbsp;i=0&nbsp;to&nbsp;s.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;s.SheetObjects(i).Deactivate<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogPrint</h3>
+<pre>Boolean <b>DialogPrint</b>()</pre>
+<dl>
+    <dd>Opens the Print dialog for the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject(&nbsp;"CH01"&nbsp;).DialogPrint<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogProperties</h3>
+<pre>Boolean <b>DialogProperties</b>(Integer Page)</pre>
+<dl>
+    <dd>Opens sheet object properties dialog. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Page</code></b> (Integer) : Property dialog page (0 based). -1 opens on last used page.</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;obj&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>obj.DialogProperties&nbsp;1<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportBitmapToFile</h3>
+<pre>Boolean <b>ExportBitmapToFile</b>(String Filename)</pre>
+<dl>
+    <dd>Exports a bitmap image of the sheet object to a file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Filename</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if export succeeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;***&nbsp;This&nbsp;method&nbsp;is&nbsp;not&nbsp;meaningful&nbsp;for&nbsp;all&nbsp;types&nbsp;of&nbsp;sheet&nbsp;objects&nbsp;***<br/>set&nbsp;obj&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>obj.ExportBitmapToFile&nbsp;"MyImage.bmp"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCaption</h3>
+<pre><a href="ICaption.htm">ICaption</a> <b>GetCaption</b>()</pre>
+<dl>
+    <dd>Apply theme to sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;obj&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>msgbox(obj.GetCaption.Name.v)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetDoc</h3>
+<pre><a href="Document.htm">Document</a> <b>GetDoc</b>()</pre>
+<dl>
+    <dd>Returns the document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ActiveSheet.SheetObjects(0).GetDoc.Activate&nbsp;<br/>rem&nbsp;awkward&nbsp;way&nbsp;of&nbsp;activating&nbsp;the&nbsp;document&nbsp;running&nbsp;the&nbsp;macro<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetFrameDef</h3>
+<pre><a href="IFrame.htm">IFrame</a> <b>GetFrameDef</b>()</pre>
+<dl>
+    <dd>Returns frame, border and caption settings for the sheet object with position rectangles in docunits. Replaces
+        GetFrame from QV5<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>move&nbsp;all&nbsp;objects&nbsp;on&nbsp;active&nbsp;sheet&nbsp;60&nbsp;docunits&nbsp;down&nbsp;and&nbsp;45&nbsp;right<br/>set&nbsp;sh&nbsp;=&nbsp;ActiveDocument.ActiveSheet&nbsp;<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;sh.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;obj&nbsp;=&nbsp;sh.SheetObjects(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;fr&nbsp;=&nbsp;obj.GetFrameDef<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos&nbsp;=&nbsp;fr.Rect<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos.Top&nbsp;=&nbsp;pos.Top&nbsp;+&nbsp;60<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos.Left&nbsp;=&nbsp;pos.Left&nbsp;+&nbsp;45<br/>&nbsp;&nbsp;&nbsp;&nbsp;obj.SetFrameDef&nbsp;fr<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectCalcTime</h3>
+<pre>Integer <b>GetObjectCalcTime</b>()</pre>
+<dl>
+    <dd>Returns latest object calculation time. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;s0&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>t&nbsp;=&nbsp;so.GetObjectCalcTime<br/>msgbox(t)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectId</h3>
+<pre>String <b>GetObjectId</b>()</pre>
+<dl>
+    <dd>Returns th e unique ID for the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;get&nbsp;unique&nbsp;object&nbsp;ID&nbsp;for&nbsp;first&nbsp;object&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s&nbsp;=&nbsp;ActiveDocument.Sheets("Main")<br/>set&nbsp;so&nbsp;=&nbsp;s.SheetObjects(0)<br/>id&nbsp;=&nbsp;so.GetObjectId<br/>msgbox("ID&nbsp;=&nbsp;"&nbsp;&&nbsp;id)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectMemoryUsage</h3>
+<pre>Integer <b>GetObjectMemoryUsage</b>()</pre>
+<dl>
+    <dd>Returns latest object calculation memory usage. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;s0&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>m&nbsp;=&nbsp;so.GetObjectmemoryUsage<br/>msgbox(m)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectType</h3>
+<pre>short <b>GetObjectType</b>()</pre>
+<dl>
+    <dd>Returns code for sheet object type. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;&nbsp;**&nbsp;remove&nbsp;borders&nbsp;from&nbsp;all&nbsp;listboxes&nbsp;on&nbsp;active&nbsp;sheet&nbsp;**<br/>set&nbsp;x&nbsp;=&nbsp;ActiveDocument.ActiveSheet.GetSheetObjects<br/>Objects&nbsp;=&nbsp;x.SheetObjects<br/>For&nbsp;i&nbsp;=&nbsp;lBound(Objects)&nbsp;To&nbsp;uBound(Objects)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;obj&nbsp;=&nbsp;Objects(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;obj.GetObjectType&nbsp;=&nbsp;1&nbsp;then&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'list&nbsp;boxes<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;p&nbsp;=&nbsp;obj.GetProperties<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p.Layout.Frame.BorderEffect&nbsp;=&nbsp;0&nbsp;&nbsp;'no&nbsp;border<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj.SetProperties&nbsp;p<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;if<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetPrintOptions</h3>
+<pre><a href="IPrinterOptions.htm">IPrinterOptions</a> <b>GetPrintOptions</b>()</pre>
+<dl>
+    <dd>Returns printer settings for the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;obj&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>set&nbsp;po&nbsp;=&nbsp;obj.GetPrintOptions<br/>po.Landscape&nbsp;=&nbsp;true<br/>obj.SetPrintOptions&nbsp;po<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetRect</h3>
+<pre><a href="IRect.htm">IRect</a> <b>GetRect</b>()</pre>
+<dl>
+    <dd>Returns sheet object position/size rectangle (pixels). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;move&nbsp;all&nbsp;objects&nbsp;on&nbsp;active&nbsp;sheet&nbsp;20&nbsp;pixels&nbsp;down&nbsp;and&nbsp;15&nbsp;right&nbsp;**<br/>set&nbsp;sh&nbsp;=&nbsp;ActiveDocument.ActiveSheet&nbsp;<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;sh.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;obj&nbsp;=&nbsp;sh.SheetObjects(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos&nbsp;=&nbsp;obj.GetRect<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos.Top&nbsp;=&nbsp;pos.Top&nbsp;+&nbsp;20<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos.Left&nbsp;=&nbsp;pos.Left&nbsp;+&nbsp;15<br/>&nbsp;&nbsp;&nbsp;&nbsp;obj.SetRect&nbsp;pos<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetRelevantSelections</h3>
+<pre>Variant (Array of String) <b>GetRelevantSelections</b>()</pre>
+<dl>
+    <dd>Returns the current selections relevant for the object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>x=ActiveDocument.GetSheetObject("CH01").GetRelevantSelections&nbsp;<br/>for&nbsp;i&nbsp;=&nbsp;lbound(x)&nbsp;to&nbsp;ubound(x)<br/>&nbsp;&nbsp;&nbsp;msgbox(x(i))<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetReplacementObject</h3>
+<pre>LPDISPATCH <b>GetReplacementObject</b>()</pre>
+<dl>
+    <dd>Returns pointer to OCX replacement object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;ro&nbsp;=&nbsp;ActiveDocument.GetSheetObject("TX01").GetReplacementObject<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetSheet</h3>
+<pre><a href="Sheet.htm">Sheet</a> <b>GetSheet</b>()</pre>
+<dl>
+    <dd>Returns the sheet where the sheet object resides. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;s&nbsp;=&nbsp;ActiveDocument.ActiveSheet.SheetObjects(0).GetSheet&nbsp;<br/>rem&nbsp;awkward&nbsp;way&nbsp;of&nbsp;accessing&nbsp;the&nbsp;active&nbsp;sheet<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetStatus</h3>
+<pre>Integer <b>GetStatus</b>()</pre>
+<dl>
+    <dd>Returns sheet object state. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;obj&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>msgbox(obj.GetStatus)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetTableAsText</h3>
+<pre>String <b>GetTableAsText</b>(Boolean IncludeLabels)</pre>
+<dl>
+    <dd>Returns table data as text for table box or chart. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>IncludeLabels</code></b> (Boolean) : True if labels are to be included</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Table box, straight table, pivot table or chart's underlying data table as text</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;table&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>tabtext&nbsp;=&nbsp;table.GetTableAsText(true)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetZedLevel</h3>
+<pre>Integer <b>GetZedLevel</b>()</pre>
+<dl>
+    <dd>Returns z layer for sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;obj&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>msgbox(obj.GetZedLevel)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>IsActive</h3>
+<pre>Boolean <b>IsActive</b>()</pre>
+<dl>
+    <dd>Returns true if the sheet object is active. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;minimize&nbsp;all&nbsp;active&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;active&nbsp;sheet&nbsp;**<br/>set&nbsp;s=ActiveDocument.ActiveSheet<br/>objs=s.GetSheetObjects<br/>for&nbsp;i=lbound(objs)&nbsp;to&nbsp;ubound(objs)<br/>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;objs(i).IsActive&nbsp;then&nbsp;objs(i).Minimize<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>IsMaximized</h3>
+<pre>Boolean <b>IsMaximized</b>()</pre>
+<dl>
+    <dd>Returns true if sheet object is maximized. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;reverse&nbsp;maximize&nbsp;status&nbsp;for&nbsp;chart&nbsp;CH01&nbsp;**<br/>set&nbsp;c=ActiveDocument.GetSheetObject("CH01")<br/>if&nbsp;c.IsMaximized&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;c.Restore<br/>else<br/>&nbsp;&nbsp;&nbsp;&nbsp;c.Maximize&nbsp;<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>IsMinimized</h3>
+<pre>Boolean <b>IsMinimized</b>()</pre>
+<dl>
+    <dd>Returns true if the sheet object is minimized. Irrelevant for non-minimizable sheet objects<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;reverse&nbsp;minimize&nbsp;status&nbsp;for&nbsp;all&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>for&nbsp;i=0&nbsp;to&nbsp;s.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;s.SheetObjects(i).IsMinimized&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.SheetObjects(i).Restore<br/>&nbsp;&nbsp;&nbsp;&nbsp;else<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.SheetObjects(i).Minimize&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;if<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Maximize</h3>
+<pre> <b>Maximize</b>()</pre>
+<dl>
+    <dd>Maximizes sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;maximize&nbsp;first&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>s.SheetObjects(0).Maximize<br/><br/>rem&nbsp;**&nbsp;reverse&nbsp;maximize&nbsp;status&nbsp;for&nbsp;chart&nbsp;CH01&nbsp;**<br/>set&nbsp;c=ActiveDocument.GetSheetObject("CH01")<br/>if&nbsp;c.IsMaximized&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;c.Restore<br/>else<br/>&nbsp;&nbsp;&nbsp;&nbsp;c.Maximize&nbsp;<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Minimize</h3>
+<pre> <b>Minimize</b>()</pre>
+<dl>
+    <dd>Minimizes the sheet object as an icon if minimizable. Irrelevant for non-minimizable sheet objects<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;minimize&nbsp;all&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>for&nbsp;i=0&nbsp;to&nbsp;s.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;s.SheetObjects(i).Minimize<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>MoveToSheet</h3>
+<pre>Boolean <b>MoveToSheet</b>(String SheetId)</pre>
+<dl>
+    <dd>Moves the sheet object to a specified sheet. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SheetId</code></b> (String) : Sheet ID of target sheet</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if operation succeeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject(&nbsp;"CH01"&nbsp;).MoveToSheet&nbsp;"SH02"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Print</h3>
+<pre>Boolean <b>Print</b>()</pre>
+<dl>
+    <dd>Prints the sheet object if printable. Use PrintOut method from VB to avoid conflicts with the VB keyword Print
+        <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;print&nbsp;all&nbsp;bitmap&nbsp;graphs&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>charts=s.GetGraphs<br/>for&nbsp;i=lbound(charts)&nbsp;to&nbsp;ubound(charts)<br/>&nbsp;&nbsp;&nbsp;&nbsp;charts(i).Print<br/>next<br/><br/>rem&nbsp;**&nbsp;print&nbsp;all&nbsp;pivot&nbsp;tables&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>charts=s.GetPivotTableBoxes<br/>for&nbsp;i=lbound(charts)&nbsp;to&nbsp;ubound(charts)<br/>&nbsp;&nbsp;&nbsp;&nbsp;charts(i).Print<br/>next<br/><br/>rem&nbsp;**&nbsp;print&nbsp;list&nbsp;box&nbsp;LB01&nbsp;**<br/>set&nbsp;lb=ActiveDocument.GetSheetObject("LB01")<br/>lb.Print<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintEx</h3>
+<pre>Boolean <b>PrintEx</b>(String PrinterName, Boolean ShowPrinterDlg)</pre>
+<dl>
+    <dd>Prints the sheet object to a named printer. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>PrinterName</code></b> (String) : Name of printer. If omitted default printer will be used</dd>
+            <dd><b><code>ShowPrinterDlg</code></b> (Boolean) : True if Print dialog should be shown</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if object is printable</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject(&nbsp;"CH01"&nbsp;).PrintEx&nbsp;"DevLaser",true<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintOut</h3>
+<pre>Boolean <b>PrintOut</b>()</pre>
+<dl>
+    <dd>Prints the sheet object if printable. Same as Print method but to be used from VB where the Print keyword may
+        otherwise cause problems<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;print&nbsp;all&nbsp;bitmap&nbsp;graphs&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>charts=s.GetGraphs<br/>for&nbsp;i=lbound(charts)&nbsp;to&nbsp;ubound(charts)<br/>&nbsp;&nbsp;&nbsp;&nbsp;charts(i).PrintOut<br/>next<br/><br/>rem&nbsp;**&nbsp;print&nbsp;all&nbsp;pivot&nbsp;tables&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>charts=s.GetPivotTablesBoxes<br/>for&nbsp;i=lbound(charts)&nbsp;to&nbsp;ubound(charts)<br/>&nbsp;&nbsp;&nbsp;&nbsp;charts(i).PrintOut<br/>next<br/><br/>rem&nbsp;**&nbsp;print&nbsp;list&nbsp;box&nbsp;LB01&nbsp;**<br/>set&nbsp;lb=ActiveDocument.GetSheetObject("LB01")<br/>lb.PrintOut<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Restore</h3>
+<pre> <b>Restore</b>()</pre>
+<dl>
+    <dd>Restores the minimized sheet object if minimized. Irrelevant for non-minimizable sheet objects<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject("CH01").Restore&nbsp;<br/><br/>rem&nbsp;**&nbsp;restore&nbsp;all&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>for&nbsp;i=0&nbsp;to&nbsp;s.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;s.SheetObjects(i).Restore<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SendToExcel</h3>
+<pre>Integer <b>SendToExcel</b>()</pre>
+<dl>
+    <dd>Exports table chart data to Excel. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;***&nbsp;This&nbsp;method&nbsp;is&nbsp;only&nbsp;meaningful&nbsp;for&nbsp;charts&nbsp;and&nbsp;table&nbsp;boxes&nbsp;***<br/>set&nbsp;obj&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>obj.SendToExcel<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetBorder</h3>
+<pre> <b>SetBorder</b>(IFrame Frame)</pre>
+<dl>
+    <dd>Sets border settings for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Frame</code></b> (<a href="IFrame.htm">IFrame</a>) : Frame (border) object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;set&nbsp;thin&nbsp;border&nbsp;for&nbsp;all&nbsp;objects&nbsp;on&nbsp;active&nbsp;sheet&nbsp;**<br/>set&nbsp;sh&nbsp;=&nbsp;ActiveDocument.ActiveSheet&nbsp;<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;sh.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;obj&nbsp;=&nbsp;sh.SheetObjects(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;frame&nbsp;=&nbsp;obj.GetFrame<br/>&nbsp;&nbsp;&nbsp;&nbsp;frame.BorderEffect&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;'depressed&nbsp;border<br/>&nbsp;&nbsp;&nbsp;&nbsp;obj.SetBorder&nbsp;frame<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetFont</h3>
+<pre> <b>SetFont</b>(IBaseFont Font)</pre>
+<dl>
+    <dd>Sets font for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Font</code></b> (<a href="IBaseFont.htm">IBaseFont</a>) : Font object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;increase&nbsp;fontsize&nbsp;for&nbsp;all&nbsp;objects&nbsp;on&nbsp;active&nbsp;sheet&nbsp;by&nbsp;1&nbsp;point&nbsp;**<br/>set&nbsp;sh&nbsp;=&nbsp;ActiveDocument.ActiveSheet&nbsp;<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;sh.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;obj&nbsp;=&nbsp;sh.SheetObjects(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;fnt&nbsp;=&nbsp;obj.GetFrameDef.Font<br/>&nbsp;&nbsp;&nbsp;&nbsp;fnt.PointSize1000&nbsp;=&nbsp;fnt.PointSize1000&nbsp;+&nbsp;1000<br/>&nbsp;&nbsp;&nbsp;&nbsp;obj.SetFont&nbsp;fnt<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetFrame</h3>
+<pre> <b>SetFrame</b>(IFrame Frame, Boolean RectsAlso, Variant (Array of short) Parts)</pre>
+<dl>
+    <dd>Sets frame, border and caption settings for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Frame</code></b> (<a href="IFrame.htm">IFrame</a>) : Sheet object frame</dd>
+            <dd><b><code>RectsAlso</code></b> (Boolean) : True if position/size rectangles to be included</dd>
+            <dd><b><code>Parts</code></b> (Variant (Array of short)) : Parts of frame to be set.<br/>Should either be
+                empty (all parts set) <br/>or contain an array containing one element for<br/>each part of the frame to
+                be set. The element <br/>should contain one of the numbers below:<br/>0 BORDER_CHANGE, <br/>1
+                CAPTION_ON_OFF,<br/>2 LAYER_CHANGE, <br/>3 ALLOWMINIM_CHANGE,<br/>4 ALLOWMAXIM_CHANGE, <br/>5
+                ALLOWINFO_CHANGE, <br/>6 AUTOMIN_CHANGE,<br/>7 ALLOWMOVESIZE_CHANGE, <br/>8 CONDSHOW_CHANGE, <br/>9
+                FONT_CHANGE, <br/>10 ADVANCEDCAPTION_CHANGE,<br/>11 MACRO_TRIGGER_CHANGE, <br/>The order of the elements
+                is arbitrary.
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;mybox&nbsp;=&nbsp;ActiveDocument.GetSheetObject("LB01")<br/>mybox.Minimize<br/>set&nbsp;fr&nbsp;=&nbsp;mybox.GetFrameDef<br/>set&nbsp;pos&nbsp;=&nbsp;fr.MinimizedRect<br/>pos.Top&nbsp;=&nbsp;pos.Top&nbsp;+&nbsp;20<br/>pos.Left&nbsp;=&nbsp;pos.Left&nbsp;+&nbsp;15<br/>mybox.SetFrame&nbsp;fr<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetFrameDef</h3>
+<pre> <b>SetFrameDef</b>(IFrame Frame)</pre>
+<dl>
+    <dd>Sets sheet object frame with position/size rectangle in docunits. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Frame</code></b> (<a href="IFrame.htm">IFrame</a>) : Sheet object frame with position/size
+                rectangle in docunits
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>move&nbsp;all&nbsp;objects&nbsp;on&nbsp;active&nbsp;sheet&nbsp;60&nbsp;docunits&nbsp;down&nbsp;and&nbsp;45&nbsp;right<br/>set&nbsp;sh&nbsp;=&nbsp;ActiveDocument.ActiveSheet&nbsp;<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;sh.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;obj&nbsp;=&nbsp;sh.SheetObjects(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;fr&nbsp;=&nbsp;obj.GetFrameDef<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos&nbsp;=&nbsp;fr.Rect<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos.Top&nbsp;=&nbsp;pos.Top&nbsp;+&nbsp;60<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos.Left&nbsp;=&nbsp;pos.Left&nbsp;+&nbsp;45<br/>&nbsp;&nbsp;&nbsp;&nbsp;obj.SetFrameDef&nbsp;fr<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetLayer</h3>
+<pre> <b>SetLayer</b>(Integer Level)</pre>
+<dl>
+    <dd>Sets layer for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Level</code></b> (Integer) : -1 is Bottom, 0 is Normal, 1 is Top ; -127 to 127 accepted</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject("LB01").SetLayer&nbsp;1<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetPrintOptions</h3>
+<pre> <b>SetPrintOptions</b>(IPrinterOptions Opt)</pre>
+<dl>
+    <dd>Sets printer settings for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Opt</code></b> (<a href="IPrinterOptions.htm">IPrinterOptions</a>) : Printer settings object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;obj&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>set&nbsp;po&nbsp;=&nbsp;obj.GetPrintOptions<br/>po.Landscape&nbsp;=&nbsp;true<br/>obj.SetPrintOptions&nbsp;po<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetRect</h3>
+<pre> <b>SetRect</b>(IRect WinRect)</pre>
+<dl>
+    <dd>Sets the position rectangle for the sheet object. Rectangle must be in pixels. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>WinRect</code></b> (<a href="IRect.htm">IRect</a>) : Position rectangle object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;move&nbsp;all&nbsp;objects&nbsp;on&nbsp;active&nbsp;sheet&nbsp;20&nbsp;pixels&nbsp;down&nbsp;and&nbsp;15&nbsp;right&nbsp;**<br/>set&nbsp;sh&nbsp;=&nbsp;ActiveDocument.ActiveSheet&nbsp;<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;sh.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;obj&nbsp;=&nbsp;sh.SheetObjects(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos&nbsp;=&nbsp;obj.GetRect<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos.Top&nbsp;=&nbsp;pos.Top&nbsp;+&nbsp;20<br/>&nbsp;&nbsp;&nbsp;&nbsp;pos.Left&nbsp;=&nbsp;pos.Left&nbsp;+&nbsp;15<br/>&nbsp;&nbsp;&nbsp;&nbsp;obj.SetRect&nbsp;pos<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>WriteXmlPropertiesFile</h3>
+<pre> <b>WriteXmlPropertiesFile</b>(String FileName)</pre>
+<dl>
+    <dd>Writes an xml file with properties describing the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject(&nbsp;"CH01"&nbsp;).WriteXmlPropertiesFile&nbsp;"C:\MychartProp.xml"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+</body>
+</html>

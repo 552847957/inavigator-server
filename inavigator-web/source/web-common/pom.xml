@@ -1,0 +1,42 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ru.sberbank.inavigator</groupId>
+		<artifactId>inavigator</artifactId>
+		<version>${release_number}</version>
+	</parent>
+	<artifactId>web-common</artifactId>
+	<version>${release_number}</version>
+	<name>web-common</name>
+	<packaging>pom</packaging>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<configuration combine.self="override">
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>copy-resources</id>
+							<phase/>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<modules>
+		<module>web-resources</module>
+		<module>web-core</module>          
+	</modules>
+
+</project>

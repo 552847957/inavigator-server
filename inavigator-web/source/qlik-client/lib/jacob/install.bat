@@ -1,0 +1,1 @@
+mvn -s ../../../../../settings.xml install:install-file -Dfile=./jacob.jar -DgroupId=com.jacob -DartifactId=jacob -Dversion=1.18  -Dpackaging=jar

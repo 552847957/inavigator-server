@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<etl-config>
+    <etl-action dataFile="test_finik1.sqlite" frequencySeconds="10800" patternName="FINIK1_TEST" autoRun="false" manualRun="true" />
+    <etl-action dataFile="test_finik2.sqlite" frequencySeconds="10800" patternName="FINIK2_TEST" autoRun="false" manualRun="true" />
+
+    <etl-action-pattern patternName="FINIK1_TEST" application="Tests" jndi="jdbc/finik1" database="mis_balance">
+      <name seriesIndex="0" seriesName="test_table"/>
+      <query>SELECT 1 as COL_1, 2 as COL_2, 3 as COL_3</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern patternName="FINIK2_TEST" application="Tests" jndi="jdbc/finik2" database="mis_balance">
+      <name seriesIndex="0" seriesName="test_table"/>
+      <query>SELECT 1 as COL_1, 2 as COL_2, 3 as COL_3</query>
+    </etl-action-pattern>
+	
+</etl-config>

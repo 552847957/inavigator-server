@@ -1,0 +1,179 @@
+<html>
+<head><title>IBookmark</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IBookmark</h1><br/>
+Bookmark definition object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>ApplyAdditive</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if bookmark is additive. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ApplyInputFieldValues</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True of bookmark to include input field values. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ApplyLayoutState</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if bookmark includes layout state. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FieldItems</b></font> (<a href="IArrayOfBookmarkFieldItem.htm">IArrayOfBookmarkFieldItem</a>, <i>objectref.</i>)
+<dl>
+    <dd>Field selections in bookmark. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of field selections definition objects</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Groups</b></font> (<a href="IArrayOfGroupBookmarkData.htm">IArrayOfGroupBookmarkData</a>, <i>objectref.</i>)
+<dl>
+    <dd>Groups in bookmark. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of group bookmark data objects</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Id</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Bookmark ID. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IncludeScrollPosition</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if scroll position included. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IncludeSelectionState</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if selection state included in bookmark. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>InfoText</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Bookmark pop-up text. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>InputFieldItems</b></font> (<a href="IArrayOfInputFieldItem.htm">IArrayOfInputFieldItem</a>, <i>objectref.</i>)
+<dl>
+    <dd>Input field items in bookmark. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of input field item objects</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Name</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Bookmark name. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Objects</b></font> (<a href="IArrayOfLayoutBookmarkData.htm">IArrayOfLayoutBookmarkData</a>, <i>objectref.</i>)
+<dl>
+    <dd>Bookmark layot objects if layout included. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Owner</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Owner/creator of server bookmark. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RecallCount</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Number of times bookmark has been recalled. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SheetId</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>SheetID of active sheet if layout included. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Show</b></font> (<a href="ICondDef.htm">ICondDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Show condition for bookmark. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Show condition definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowPopupInfo</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if pop-up to be shown on recall. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>VariableItems</b></font> (<a
+        href="IArrayOfBookmarkVariableItem.htm">IArrayOfBookmarkVariableItem</a>, <i>objectref.</i>)
+<dl>
+    <dd>variable values in bookmark. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of variable values objects</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

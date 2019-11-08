@@ -1,0 +1,117 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ru.sberbank.inavigator</groupId>
+        <artifactId>inavigator</artifactId>
+        <version>${release_number}</version>
+    </parent>
+    <artifactId>pushserver</artifactId>
+    <version>${release_number}</version>
+    <packaging>war</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>croche.maven</groupId>
+                <artifactId>maven-merge-file-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>commons-io</groupId>
+                        <artifactId>commons-io</artifactId>
+                        <version>1.4</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>merge-release-notes</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>merge</goal>
+                        </goals>
+                        <configuration>
+                            <merges>
+                                <merge>
+                                    <targetFile>target/1.install.sql</targetFile>
+                                    <sourceDirs>
+                                        <sourceDir>sql</sourceDir>
+                                    </sourceDirs>
+                                    <nameContainsOrderings>
+                                        <nameContainsOrdering>install.sql</nameContainsOrdering>
+                                    </nameContainsOrderings>
+                                    <includes>
+                                        <include>install.sql</include>
+                                    </includes>
+                                </merge>
+                                <merge>
+                                    <targetFile>target/2.push-notifications.sql</targetFile>
+                                    <sourceDirs>
+                                        <sourceDir>../../database/sql/03.server-cache</sourceDir>
+                                    </sourceDirs>
+                                    <includes>
+                                        <include>push-notifications.sql</include>
+                                    </includes>
+                                </merge>
+                                <merge>
+                                    <targetFile>target/3.cluster.sql</targetFile>
+                                    <sourceDirs>
+                                        <sourceDir>sql</sourceDir>
+                                    </sourceDirs>
+                                    <includes>
+                                        <include>cluster.sql</include>
+                                    </includes>
+                                </merge>
+                            </merges>
+
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+            </plugin>
+
+
+        </plugins>
+    </build>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>ru.sberbank.inavigator</groupId>
+            <artifactId>web-resources</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.sberbank.inavigator</groupId>
+            <artifactId>web-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

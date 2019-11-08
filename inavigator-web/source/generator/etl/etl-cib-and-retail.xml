@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<etl-config>
+    <etl-action autoRun="true" dataFile="CIB_KPI.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_KPI"/>
+    <etl-action autoRun="true" dataFile="CIB_MARGIN.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_MARGIN"/>
+    
+    <etl-action autoRun="true" dataFile="RETAIL_ATM.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="RETAIL_ATM"/>
+    <etl-action autoRun="true" dataFile="RETAIL_CRED.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="RETAIL_CRED"/>
+    <etl-action autoRun="true" dataFile="RETAIL_CRED_BAG.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="RETAIL_CRED_BAG"/>
+    
+    <etl-action autoRun="true" dataFile="CIB_IBGM.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_IBGM"/>
+    <etl-action autoRun="true" dataFile="CIB_KPKI.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_KPKI"/>
+    <etl-action autoRun="true" dataFile="CIB_KPKI_PROD.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_KPKI_PROD"/>
+    <etl-action autoRun="true" dataFile="CIB_ASSETS.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_ASSETS"/>
+    <etl-action autoRun="true" dataFile="CIB_LIABILITIES.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_LIABILITIES"/>
+    <etl-action autoRun="true" dataFile="CIB_PROFIT_PASSIVE.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_PROFIT_PASSIVE"/>
+    <etl-action autoRun="true" dataFile="CIB_PROFIT_PRODUCT.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_PROFIT_PRODUCT"/>
+    <etl-action autoRun="true" dataFile="CIB_PROFIT_TOTAL.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_PROFIT_TOTAL"/>
+    <etl-action autoRun="true" dataFile="CIB_PROFIT_CONCENTRATION.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_PROFIT_CONCENTRATION"/>
+    <etl-action autoRun="true" dataFile="CIB_PROFIT_ACTIVE.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_PROFIT_ACTIVE"/>
+    <etl-action autoRun="true" dataFile="CIB_PROFIT_PRODOTR.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_PROFIT_PRODOTR"/>
+    <etl-action autoRun="true" dataFile="CIB_WEEK.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_WEEK"/>
+    <etl-action autoRun="true" dataFile="CIB_UTFIKO.sqlite" generationMode="ON_CONDITION" manualRun="true" patternName="CIB_UTFIKO"/>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_KPI">
+        <name seriesIndex="0" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="1" seriesName="t_300_102_KPI_Indicators"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_300_102_KPI_Indicators]</query>
+
+        <name seriesIndex="2" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+        <change-type fields="startDate" newDataType="datetime" seriesIndex="2"/>
+        <change-type fields="endDate" newDataType="datetime" seriesIndex="2"/>
+
+        <name seriesIndex="3" seriesName="t_900_CIB_KPI_AllData_Table"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_KPI_AllData_Table]</query>
+        <change-type fields="startDate" newDataType="datetime" seriesIndex="3"/>
+
+        <name seriesIndex="4" seriesName="t_900_CIB_KPI_DefaultParams"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_KPI_DefaultParams]</query>
+
+        <name seriesIndex="5" seriesName="t_900_DataBaseVersion"/>
+        <query>select 2.0 as id </query>
+
+        <name seriesIndex="6" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <query>CREATE UNIQUE INDEX PK_ALL_DATA ON t_900_CIB_KPI_AllData_Table (KPI_id ASC, UKM_id ASC, period_id ASC);</query>
+        <query>CREATE INDEX branch_id on t_100_003_Report_Branches (id)</query>
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_MARGIN">
+        <name seriesIndex="0" seriesName="t_900_CIB_MARGIN_blocksData"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_MARGIN_blocksData]</query>
+
+        <name seriesIndex="1" seriesName="t_900_CIB_MARGIN_blocksData_plan"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_MARGIN_blocksData_plan]</query>
+
+        <name seriesIndex="2" seriesName="t_900_CIB_MARGIN_CIBData"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_MARGIN_CIBData]</query>
+
+        <name seriesIndex="3" seriesName="t_900_CIB_MARGIN_CIBData_plan"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_MARGIN_CIBData_plan]</query>
+
+        <name seriesIndex="4" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+        <change-type fields="startDate" newDataType="datetime" seriesIndex="4"/>
+        <change-type fields="endDate" newDataType="datetime" seriesIndex="4"/>
+
+        <name seriesIndex="5" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="6" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="7" seriesName="t_900_CIB_MARGIN_cib_products"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_MARGIN_cib_products]</query>
+        
+        <name seriesIndex="8" seriesName="t_900_CIB_MARGIN_blocksData_plan2"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_MARGIN_blocksData_plan2]</query>
+
+        <name seriesIndex="9" seriesName="t_900_CIB_MARGIN_Default_Params"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_MARGIN_Default_Params]</query>
+
+        <name seriesIndex="10" seriesName="t_900_CIB_MARGIN_cib_costs_terr"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_MARGIN_cib_costs_terr]</query>
+
+        <name seriesIndex="11" seriesName="t_900_CIB_MARGIN_cib_costs_cl"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_MARGIN_cib_costs_cl]</query>
+
+        <name seriesIndex="12" seriesName="t_900_CIB_MARGIN_cib_costsCorp_terr"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_MARGIN_cib_costsCorp_terr]</query>
+
+        <name seriesIndex="13" seriesName="t_900_CIB_MARGIN_cib_costsCorp_cl"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_MARGIN_cib_costsCorp_cl]</query>
+
+        <name seriesIndex="14" seriesName="t_100_009_010_Report_Clients_In_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_010_Report_Clients_In_Benefits]</query>
+
+        <name seriesIndex="15" seriesName="t_100_009_011_Report_Clients_In_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_011_Report_Clients_In_Holdings]</query>
+
+        <name seriesIndex="16" seriesName="t_100_010_Report_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_010_Report_Benefits]</query>
+
+        <name seriesIndex="17" seriesName="t_100_011_Report_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_011_Report_Holdings]</query>
+
+        <name seriesIndex="18" seriesName="t_100_108_Agg_By_HoldClients_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_108_Agg_By_HoldClients_Mapping]</query>
+
+        <name seriesIndex="19" seriesName="t_900_CIB_Margin_Clients_GroupbyType"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Margin_Clients_GroupbyType]</query>
+
+        <name seriesIndex="20" seriesName="t_900_cib_Segments_for_filter"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_cib_Segments_for_filter]</query>
+
+        <name seriesIndex="21" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+
+        <name seriesIndex="22" seriesName="t_900_DataBaseVersion"/>
+        <query>select 2.0 as id </query>
+
+        <name seriesIndex="23" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <query>CREATE INDEX indx_block_data ON t_900_CIB_MARGIN_blocksData (periodId COLLATE BINARY ASC, territoryId COLLATE BINARY ASC)</query>
+        <query>CREATE INDEX indx_block_data_chart on t_900_CIB_MARGIN_blocksData(productId, territoryId)</query>
+        
+        <query>CREATE INDEX indx_block_data_plan ON t_900_CIB_MARGIN_blocksData_plan (periodId COLLATE BINARY ASC, territoryId COLLATE BINARY ASC)</query>
+        <query>CREATE INDEX indx_block_data_plan_chart on t_900_CIB_MARGIN_blocksData_plan(productId, territoryId)</query>
+        
+        <query>CREATE INDEX indx_data_plan_chart on t_900_CIB_MARGIN_CIBData_plan(productId, territoryId, branchId)</query>
+        <query>CREATE INDEX indx_data_plan ON t_900_CIB_MARGIN_CIBData_plan (periodId COLLATE BINARY ASC, territoryId COLLATE BINARY ASC, branchId COLLATE BINARY ASC)</query>
+        
+        <query>CREATE INDEX indx_cib_data ON t_900_CIB_MARGIN_CIBData (periodId COLLATE BINARY ASC, territoryId COLLATE BINARY ASC, branchId COLLATE BINARY ASC)</query>
+        <query>CREATE INDEX indx_cib_data_chart ON t_900_CIB_MARGIN_CIBData (productId,territoryId, branchId)</query>
+        
+        <query>CREATE INDEX indx_block_data_plan2 on t_900_CIB_MARGIN_blocksData_plan2(periodId, territoryId)</query>
+        <query>CREATE INDEX indx_block_data_plan2_chart on t_900_CIB_MARGIN_blocksData_plan2(productId, territoryId)</query>
+
+        <query>CREATE INDEX branch_id on t_100_003_Report_Branches (id)</query>
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id)</query>
+        <query>CREATE INDEX period_id on t_100_002_Report_Periods (type, periodChar, endDate)</query>
+
+        <query>CREATE index costs_terr_ind on t_900_CIB_MARGIN_cib_costs_terr(periodId, branch_Id,product_id,clientid)</query>
+        <query>CREATE index costs_terrChart_ind on t_900_CIB_MARGIN_cib_costs_terr(periodId,branch_Id,territoryId,product_id,clientid)</query>
+        <query>CREATE index costs_cl_ind on t_900_CIB_MARGIN_cib_costs_cl(periodId, branch_Id,territoryId,product_id,clientid)</query>
+        
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_MOBILE" jndi="jdbc/finik1" patternName="RETAIL_ATM">
+        <name seriesIndex="0" seriesName="t 000 010 report dates"/>
+        <query>select * from [MIS_RETAIL_ATM].dbo.[t 000 010 report dates]</query>
+        <change-type fields="ReportDate" newDataType="datetime" seriesIndex="0"/>
+
+        <name seriesIndex="1" seriesName="t 000 020 hier_bank"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 000 020 hier_bank]</query>
+
+        <name seriesIndex="2" seriesName="t 000 030 ATM type_heirarchy"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 000 030 ATM type_heirarchy]</query>
+
+        <name seriesIndex="3" seriesName="t 000 040 Transaction type_heirarchy"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 000 040 Transaction type_heirarchy]</query>
+
+        <name seriesIndex="4" seriesName="t 002 005 norm"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 002 005 norm]</query>
+        <change-type fields="ReportDate" newDataType="datetime" seriesIndex="4"/>
+
+        <name seriesIndex="5" seriesName="t 002 007 norm"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 002 007 norm]</query>
+        <change-type fields="ReportDate" newDataType="datetime" seriesIndex="5"/>
+
+        <name seriesIndex="6" seriesName="t_900_DataBaseVersion"/>
+        <query>select 1.0 as id </query>
+
+        <query>update "t 000 010 report dates" set Report_Date = cast(strftime('%s', Report_Date) as integer)</query>
+        <query>update "t 002 005 norm" set Report_Date = cast(strftime('%s', Report_Date) as integer)</query>
+        <query>update "t 002 007 norm" set Report_Date = cast(strftime('%s', Report_Date) as integer)</query>
+        <query>CREATE INDEX "PK_DATA_05" ON "t 002 005 norm" (bankkey_int,basekey_int,Report_date,TERMINALTYPE)</query>
+        <query>CREATE INDEX "PK_DATA_07" ON "t 002 007 norm" (Report_date, bankkey_int, basekey_int, eff)</query>
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+    
+    <etl-action-pattern application="MISMobile" database="MIS_MOBILE" jndi="jdbc/finik1" patternName="RETAIL_CRED">
+        <name seriesIndex="0" seriesName="stat_ch_hier"/>
+        <query>select * from [MIS_MOBILE].dbo.[stat_ch_hier]</query>
+
+        <name seriesIndex="1" seriesName="stat_client_hier"/>
+        <query>select * from [MIS_MOBILE].dbo.[stat_client_hier]</query>
+
+        <name seriesIndex="2" seriesName="stat_prod_hier"/>
+        <query>select * from [MIS_MOBILE].dbo.[stat_prod_hier]</query>
+
+        <name seriesIndex="3" seriesName="t 000 020 CredType"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 000 020 CredType]</query>
+
+        <name seriesIndex="4" seriesName="t 000 100 depart hierarchy"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 000 100 depart hierarchy]</query>
+
+        <name customSQLInTarget="CREATE UNIQUE INDEX PK_REQ_PVT ON 't 100 010 Requests Pvt' (reportdate COLLATE BINARY DESC,periodtype COLLATE BINARY ASC,DepartKey_int COLLATE BINARY ASC,CredTypeKey_int COLLATE BINARY ASC,ChanelTypeKey_int COLLATE BINARY ASC,ClientTypeKey_int COLLATE BINARY ASC)" seriesIndex="5" seriesName="t 100 010 Requests Pvt"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 100 010 Requests Pvt] order BY reportdate DESC,periodtype ASC,DepartKey_int ASC,CredTypeKey_int ASC,ChanelTypeKey_int ASC,ClientTypeKey_int ASC</query>
+        <change-type fields="ReportDate" newDataType="datetime" seriesIndex="5"/>
+
+        <name seriesIndex="6" seriesName="t 000 030 ChanelType"/>
+        <query>select * from [MIS_RETAIL_CRED].dbo.[t 000 030 ChanelType]</query>
+
+        <name seriesIndex="7" seriesName="t 000 040 ClientType"/>
+        <query>select * from [MIS_RETAIL_CRED].dbo.[t 000 040 ClientType]</query>
+
+        <name seriesIndex="8" seriesName="t 000 090 IndType"/>
+        <query>select * from [MIS_RETAIL_CRED].dbo.[t 000 090 IndType]</query>
+
+        <name seriesIndex="9" seriesName="t 000 200 report dates"/>
+        <query>select * from [MIS_RETAIL_CRED].dbo.[t 000 200 report dates]</query>
+
+        <name seriesIndex="10" seriesName="t 000 080 Volume Requests"/>
+        <query>select * from [MIS_RETAIL_CRED].dbo.[t 000 080 Volume Requests]</query>
+
+        <name seriesIndex="11" seriesName="t_900_DataBaseVersion"/>
+        <query>select 1.0 as id </query>
+
+        <query>update "t 100 010 Requests Pvt" set reportDate = cast(strftime('%s', reportDate) as integer)</query>
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_MOBILE" jndi="jdbc/finik1" patternName="RETAIL_CRED_BAG">
+        <name seriesIndex="0" seriesName="t 000 020 CredType"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 000 020 CredType]</query>
+
+        <name seriesIndex="1" seriesName="t 000 090 IndType"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 000 090 IndType]</query>
+
+        <name seriesIndex="2" seriesName="t 000 100 depart hierarchy"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 000 100 depart hierarchy]</query>
+
+        <name customSQLInTarget="CREATE UNIQUE INDEX PK_SUM ON 't 200 010 Volume Sums Pvt' (reportdate,DepartKey_int,CredTypeKey_int,ChanelTypeKey_int,ClientTypeKey_int,VolumeTypeKey_int)" seriesIndex="3" seriesName="t 200 010 Volume Sums Pvt"/>
+        <query>select * from [MIS_MOBILE].dbo.[t 200 010 Volume Sums Pvt] ORDER BY reportdate,DepartKey_int,CredTypeKey_int,ChanelTypeKey_int,ClientTypeKey_int,VolumeTypeKey_int</query>
+        <change-type fields="ReportDate" newDataType="datetime" seriesIndex="3"/>
+
+        <name seriesIndex="4" seriesName="t 000 030 ChanelType"/>
+        <query>select * from [MIS_RETAIL_CRED].dbo.[t 000 030 ChanelType]</query>
+
+        <name seriesIndex="5" seriesName="t 000 040 ClientType"/>
+        <query>select * from [MIS_RETAIL_CRED].dbo.[t 000 040 ClientType]</query>
+
+        <name seriesIndex="6" seriesName="t 000 200 report dates"/>
+        <query>select * from [MIS_RETAIL_CRED].dbo.[t 000 200 report dates]</query>
+
+        <name seriesIndex="7" seriesName="t_900_DataBaseVersion"/>
+        <query>select 1.0 as id </query>
+
+        <query>update "t 200 010 Volume Sums Pvt" set reportDate = cast(strftime('%s', reportDate) as integer)</query>
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_IBGM">
+        <name seriesIndex="0" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="1" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+         <name seriesIndex="2" seriesName="t_100_102_Agg_By_Branch_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_102_Agg_By_Branch_Mapping]</query>
+
+        <name seriesIndex="3" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+         <name seriesIndex="4" seriesName="t_100_008_Report_Products"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products]</query>
+
+         <name seriesIndex="5" seriesName="t_100_008_Report_Products_New"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products_New]</query>
+
+        <name seriesIndex="6" seriesName="t_900_CIB_IBGM"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_IBGM]</query>
+
+        <name seriesIndex="7" seriesName="t_900_CIB_IBGM_prof"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_IBGM_prof]</query>
+
+        <name seriesIndex="8" seriesName="t_900_CIB_IBGM_desk"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_IBGM_desk]</query>
+
+        <name seriesIndex="9" seriesName="t_900_CIB_IBGM_default_params"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_IBGM_default_params]</query>
+
+        <name seriesIndex="10" seriesName="t_900_DataBaseVersion"/>
+        <query>select 2.0 as id </query>
+
+        <name seriesIndex="11" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+        
+        <query>CREATE INDEX ibgm on t_900_CIB_IBGM(periodId,territoryId, branchId )</query>
+        
+        <query>CREATE INDEX desk_ind on t_900_CIB_IBGM_desk(periodid, terr_id)</query>
+        <query>CREATE INDEX prof_ind on t_900_CIB_IBGM_prof(periodid)</query>
+        
+        <query>CREATE INDEX branch_id on t_100_003_Report_Branches (id)</query>
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id)</query>
+        
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+     <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_KPKI">
+        <name seriesIndex="0" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="1" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="2" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="3" seriesName="t_100_008_Report_Products_new"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products_new]</query>
+
+        <name seriesIndex="4" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+
+        <name seriesIndex="5" seriesName="t_100_009_010_Report_Clients_In_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_010_Report_Clients_In_Benefits]</query>
+
+        <name seriesIndex="6" seriesName="t_100_009_011_Report_Clients_In_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_011_Report_Clients_In_Holdings]</query>
+
+        <name seriesIndex="7" seriesName="t_100_010_Report_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_010_Report_Benefits]</query>
+
+        <name seriesIndex="8" seriesName="t_100_011_Report_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_011_Report_Holdings]</query>
+
+        <name seriesIndex="9" seriesName="t_900_CIB_KPKI_AllData_TableCredit_contract"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_KPKI_AllData_TableCredit_contract]</query>
+
+        <name seriesIndex="10" seriesName="t_900_CIB_KPKI_Contract"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_KPKI_Contract]</query>
+
+        <name seriesIndex="11" seriesName="t_900_CIB_KPKI_Mapping_GroupClient"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_KPKI_Mapping_GroupClient]</query>
+
+        <name seriesIndex="12" seriesName="t_900_CIB_KPKI_AllData_TableCredit_NoContract"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_KPKI_AllData_TableCredit_NoContract] </query>
+
+        <name seriesIndex="13" seriesName="t_100_108_Agg_By_HoldClients_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_108_Agg_By_HoldClients_Mapping]</query>
+
+        <name seriesIndex="14" seriesName="t_900_CIB_KPKI_Holding_client"/>
+        <query>select *  from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_KPKI_Holding_client] </query>
+
+        <name seriesIndex="15" seriesName="t_900_CIB_KPKI_Holding_product"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_KPKI_Holding_product] </query>
+
+        <name seriesIndex="16" seriesName="t_900_CIB_KPKI_DefaultParams"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_KPKI_DefaultParams]</query>
+
+        <name seriesIndex="17" seriesName="t_100_106_Agg_By_Holding_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[v_100_106_Agg_By_Holding_Mapping]</query>
+
+        <name seriesIndex="18" seriesName="t_900_DataBaseVersion"/>
+        <query>select 3.0 as id </query>
+
+        <name seriesIndex="19" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <name seriesIndex="20" seriesName="t_100_005_Report_Currencies"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_005_Report_Currencies]</query>
+
+        <name seriesIndex="21" seriesName="t_900_cib_Segments_for_filter"/>
+        <query>select * from  t_900_cib_Segments_for_filter</query>
+
+        <query>CREATE INDEX credit_Contract on t_900_CIB_KPKI_AllData_TableCredit_Contract (period_id, branch_id, loansignId, client_id)</query>
+        <query>CREATE INDEX credit_NoContract on t_900_CIB_KPKI_AllData_TableCredit_NoContract (period_id, branch_id, loansignId,client_id)</query>
+
+
+        <query>CREATE INDEX holding_prod_id  on t_900_CIB_KPKI_Holding_product (periodId, branchid,  segment, clientId)</query>
+        <query>CREATE INDEX holding_client_id ON t_900_CIB_KPKI_Holding_client (periodid,  branchid ,  segment, clientId)</query>
+        
+        <query>CREATE INDEX branch_id on t_100_003_Report_Branches (id)</query>
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id)</query>
+        <query>CREATE INDEX client_id on t_100_009_000_Report_Clients (client_id)</query>
+        <query>CREATE INDEX hold_id on t_100_011_Report_Holdings (holding_id)</query>
+        <query>CREATE INDEX benefit_id on t_100_010_Report_Benefits (BENEFIT_ID)</query>
+        <query>CREATE INDEX prodN_id on t_100_008_Report_Products_new (id)</query>
+        <query>CREATE index period_id on t_100_002_Report_Periods(id)</query>
+
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_KPKI_PROD">
+        <name seriesIndex="0" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="1" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="2" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="3" seriesName="t_100_008_Report_Products_new"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products_new]</query>
+
+        <name seriesIndex="4" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+
+        <name seriesIndex="5" seriesName="t_100_009_010_Report_Clients_In_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_010_Report_Clients_In_Benefits]</query>
+
+        <name seriesIndex="6" seriesName="t_100_009_011_Report_Clients_In_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_011_Report_Clients_In_Holdings]</query>
+
+        <name seriesIndex="7" seriesName="t_100_010_Report_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_010_Report_Benefits]</query>
+
+        <name seriesIndex="8" seriesName="t_100_011_Report_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_011_Report_Holdings]</query>
+
+        <name seriesIndex="9" seriesName="t_900_CIB_KPKI_AllData_TableProduct"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_KPKI_AllData_TableProduct] </query>
+
+
+        <name seriesIndex="10" seriesName="t_900_CIB_KPKI_prod_DefaultParams"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_KPKI_prod_DefaultParams]</query>
+
+        <name seriesIndex="11" seriesName="t_100_106_Agg_By_Holding_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[v_100_106_Agg_By_Holding_Mapping]</query>
+
+        <name seriesIndex="12" seriesName="t_900_DataBaseVersion"/>
+        <query>select 3.0 as id </query>
+
+        <name seriesIndex="13" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <name seriesIndex="14" seriesName="t_900_cib_Segments_for_filter"/>
+        <query>select * from  t_900_cib_Segments_for_filter</query>
+
+        <query>CREATE INDEX product ON t_900_CIB_KPKI_AllData_TableProduct (period_id,  branch_id , client_id,  loansignid)</query>
+        
+        <query>CREATE INDEX branch_id on t_100_003_Report_Branches (id)</query>
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id)</query>
+        <query>CREATE INDEX client_id on t_100_009_000_Report_Clients (client_id)</query>
+        <query>CREATE INDEX hold_id on t_100_011_Report_Holdings (holding_id)</query>
+        <query>CREATE INDEX benefit_id on t_100_010_Report_Benefits (BENEFIT_ID)</query>
+        <query>CREATE INDEX prodN_id on t_100_008_Report_Products_new (id)</query>
+        <query>CREATE index period_id on t_100_002_Report_Periods(id)</query>
+
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_ASSETS">
+        <name seriesIndex="0" seriesName="t_900_CIB_Actives_Dynamics_CIB"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Actives_Dynamics_CIB]</query>
+
+        <name seriesIndex="1" seriesName="t_900_CIB_Actives_Dynamics_Corp"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Actives_Dynamics_Corp]</query>
+
+        <name seriesIndex="2" seriesName="t_900_CIB_Actives_Slice_CIB"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Actives_Slice_CIB]</query>
+
+        <name seriesIndex="3" seriesName="t_900_CIB_Actives_Term_Currency"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Actives_Term_Currency]</query>
+
+        <name seriesIndex="4" seriesName="t_900_CIB_Actives_Term_Currency_Terr"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Actives_Term_Currency_Terr]</query>
+
+        <name seriesIndex="5" seriesName="t_900_CIB_Active_Concentration"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Active_Concentration]</query>
+
+        <name seriesIndex="6" seriesName="t_900_CIB_Actives_Quality"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Actives_Quality]</query>
+
+        <name seriesIndex="7" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="8" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="9" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="10" seriesName="t_100_005_Report_Currencies"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_005_Report_Currencies]</query>
+
+        <name seriesIndex="11" seriesName="t_100_006_Report_Terms"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_006_Report_Terms]</query>
+
+        <name seriesIndex="12" seriesName="t_100_008_Report_Products"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products]</query>
+
+        <name seriesIndex="13" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+
+        <name seriesIndex="14" seriesName="t_900_CIB_Actives_Term_Currency_Terr_Chart"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Actives_Term_Currency_Terr_Chart]</query>
+
+        <name seriesIndex="15" seriesName="t_900_DataBaseVersion"/>
+        <query>select 5.0 as id </query>
+
+        <name seriesIndex="16" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <name seriesIndex="17" seriesName="t_900_CIB_Actives_margin_Terr"/> 
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Actives_margin_Terr]</query>
+
+        <name seriesIndex="18" seriesName="t_900_CIB_Actives_margin_Clients"/> 
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Actives_margin_Clients]</query>
+
+        <name seriesIndex="19" seriesName="t_900_CIB_Actives_margin_Contracts"/> 
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Actives_margin_Contracts]</query>
+
+        <name seriesIndex="20" seriesName="t_900_CIB_Active_Clients_GroupbyType"/> 
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Active_Clients_GroupbyType]</query>
+
+        <name seriesIndex="21" seriesName="t_900_CIB_Actives_report_contract"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Actives_report_contract]</query>
+
+        <name seriesIndex="22" seriesName="t_100_009_010_Report_Clients_In_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_010_Report_Clients_In_Benefits]</query>
+
+        <name seriesIndex="23" seriesName="t_100_009_011_Report_Clients_In_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_011_Report_Clients_In_Holdings]</query>
+
+        <name seriesIndex="24" seriesName="t_100_010_Report_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_010_Report_Benefits]</query>
+
+        <name seriesIndex="25" seriesName="t_100_011_Report_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_011_Report_Holdings]</query>
+
+        <name seriesIndex="26" seriesName="t_100_101_Agg_By_Territory_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_101_Agg_By_Territory_Mapping]</query>
+
+        <name seriesIndex="27" seriesName="t_900_cib_Segments_for_filter"/>
+        <query>select * from  t_900_cib_Segments_for_filter</query>
+
+        <name seriesIndex="28" seriesName="t_900_CIB_Actives_Slice_CIB_SHARE"/>
+        <query>select * from  t_900_CIB_Actives_Slice_CIB_SHARE</query>
+
+        <query>update "t_100_002_Report_Periods" set startDate = cast(strftime('%s', startDate) as integer)</query>
+        <query>update "t_100_002_Report_Periods" set endDate = cast(strftime('%s', endDate) as integer)</query>
+        
+        <query>create index client on t_100_009_000_Report_Clients (Client_Id)</query>
+        <query>create index periodIdTypeChar on t_100_002_Report_Periods (ID, Period, Type, periodChar)</query>
+        <query>CREATE INDEX hold_id on t_100_011_Report_Holdings (holding_id)</query>
+        <query>CREATE INDEX benefit_id on t_100_010_Report_Benefits (BENEFIT_ID)</query>
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id)</query>
+        <query>CREATE INDEX prod_id on  t_100_008_Report_Products (id)</query>
+        
+        <query>CREATE INDEX concent on t_900_CIB_Active_Concentration(periodid, branch_id, Security_flag, loansignId)</query>
+        
+        <query>CREATE INDEX indx_Slice_terr on t_900_CIB_Actives_Slice_CIB(branchId, territoryId, Currency_flag, Security_Flag)</query>
+        <query>CREATE INDEX indx_Slice_terr2 on t_900_CIB_Actives_Slice_CIB(branchId, Currency_flag, Security_Flag)</query>
+        <query>CREATE INDEX indx_Slice_CIB_SHARE on t_900_CIB_Actives_Slice_CIB_SHARE(territoryId,periodid, Currency_flag, Security_Flag)</query>
+        
+        <query>CREATE INDEX indx_active on t_900_CIB_Actives_Quality(branchId)</query>
+        
+        <query>CREATE INDEX indx_cur on t_900_CIB_Actives_Term_Currency(branchId,termType, Currency_flag, Security_flag)</query>
+        <query>CREATE INDEX indx_cur_chart on t_900_CIB_Actives_Term_Currency_Terr_Chart(branchId,termType, Currency_flag, Security_flag )</query>
+
+        <query>CREATE INDEX margin_Terr on t_900_CIB_Actives_margin_Terr(branchid,periodid,currency, clientid,products  )</query>
+        <query>CREATE INDEX margin_Clients on t_900_CIB_Actives_margin_Clients(branchid,territoryid,periodid, clientid,products  )</query>
+        <query>CREATE INDEX margin_Contracts on t_900_CIB_Actives_margin_Contracts(branchid,territoryid, periodid, clientid,products  )</query>
+
+        <query>CREATE INDEX index_clients on t_900_CIB_Active_Clients_GroupbyType (client_type,ident,client_id)</query>
+
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+
+
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_LIABILITIES">
+        <name seriesIndex="0" seriesName="t_900_CIB_Passives_Concentration_Client"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Passives_Concentration_Client]</query>
+
+        <name seriesIndex="1" seriesName="t_900_CIB_Passives_Concentration_Client_Bank"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Passives_Concentration_Client_Bank]</query>
+
+        <name seriesIndex="2" seriesName="t_900_CIB_Passives_Concentration_Total"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Passives_Concentration_Total]</query>
+
+        <name seriesIndex="3" seriesName="t_900_CIB_Passives_Dynamics_CIB"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Passives_Dynamics_CIB]</query>
+
+        <name seriesIndex="4" seriesName="t_900_CIB_Passives_Dynamics_Corp"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Passives_Dynamics_Corp]</query>
+
+        <name seriesIndex="5" seriesName="t_900_CIB_Passives_Slice_CIB"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Passives_Slice_CIB]</query>
+
+        <name seriesIndex="6" seriesName="t_900_CIB_Passives_Slice_Corp"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Passives_Slice_Corp]</query>
+
+        <name seriesIndex="7" seriesName="t_900_CIB_Passives_Term_Curr_Terr"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Passives_Term_Curr_Terr]</query>
+
+        <name seriesIndex="8" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="9" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="10" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="11" seriesName="t_100_005_Report_Currencies"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_005_Report_Currencies]</query>
+
+        <name seriesIndex="12" seriesName="t_100_008_Report_Products"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products]</query>
+
+        <name seriesIndex="13" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+        
+        <name seriesIndex="14" seriesName="t_100_013_Report_ResidualTerm_Deposits_Hierarchy"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_013_Report_ResidualTerm_Deposits_Hierarchy]</query>
+        
+        <name seriesIndex="15" seriesName="t_100_006_Report_Terms"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_006_Report_Terms]</query>
+        
+        <name seriesIndex="16" seriesName="t_900_CIB_Passives_Deposits_Terms"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Passives_Deposits_Terms]</query>
+
+        <name seriesIndex="17" seriesName="t_900_DataBaseVersion"/>
+        <query>select 2.0 as id </query>
+
+        <name seriesIndex="18" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <!--query>update "t_100_002_Report_Periods" set startDate = cast(strftime('%s', startDate) as integer)</query>        <query>update "t_100_002_Report_Periods" set endDate = cast(strftime('%s', endDate) as integer)</query>
+        <query>create index client on t_100_009_000_Report_Clients (Client_Id)</query-->
+
+
+        <query>CREATE INDEX  Conc_total on t_900_CIB_Passives_Concentration_Total(branchId,territoryId,totalType, periodId)</query>
+        
+        <query>CREATE INDEX  Conc_client on t_900_CIB_Passives_Concentration_Client(branchId,periodId,territoryId,  currency_flag)</query>
+        <query>CREATE INDEX  Conc_client_ch on t_900_CIB_Passives_Concentration_Client(branchId,territoryId, currency_flag, clientId)</query>
+
+        <query>CREATE INDEX  Conc_bank on t_900_CIB_Passives_Concentration_Client_Bank(branchId,territoryId, periodId,currency_flag, clientid )</query>
+        <query>CREATE INDEX  Conc_bank_ch on t_900_CIB_Passives_Concentration_Client_Bank(branchId,territoryId,currency_flag, clientid, bankid)</query>
+
+        <query>CREATE INDEX ter_cib on t_900_CIB_Passives_Slice_CIB  (branchId, territoryId, Currency_Flag)</query>
+        <query>CREATE INDEX Curr_Terr on t_900_CIB_Passives_Term_Curr_Terr  (branchId, periodId,  territoryId, tillCalled)</query>
+        <query>CREATE INDEX client_CIB on t_900_CIB_Passives_Slice_CIB  (branchId,  territoryId)</query>
+        <query>CREATE INDEX dinamic_CIB on t_900_CIB_Passives_Dynamics_CIB  (territoryId,tillCalled, Currency_flag )</query>
+
+        <query>CREATE INDEX period_id on t_100_002_Report_Periods (id)</query>
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id)</query>
+        <query>CREATE INDEX prod_id on  t_100_008_Report_Products (id)</query>
+        <query>CREATE INDEX client_id on t_100_009_000_Report_Clients (client_id)</query>
+        <query>CREATE INDEX branch_id on t_100_003_Report_Branches (id)</query>
+        
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_PROFIT_PASSIVE">
+        <name seriesIndex="0" seriesName="t_100_101_Agg_By_Territory_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_101_Agg_By_Territory_Mapping]</query>
+
+        <name seriesIndex="1" seriesName="t_100_102_Agg_By_Branch_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_102_Agg_By_Branch_Mapping]</query>
+
+        <name seriesIndex="2" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="3" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="4" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="5" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+
+        <name seriesIndex="6" seriesName="t_100_008_Report_Products"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products_New]</query>
+
+        <name seriesIndex="7" seriesName="t_100_005_Report_Currencies"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_005_Report_Currencies]</query>
+
+        <name seriesIndex="8" seriesName="t_100_009_010_Report_Clients_In_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_010_Report_Clients_In_Benefits]</query>
+
+        <name seriesIndex="9" seriesName="t_100_009_011_Report_Clients_In_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_011_Report_Clients_In_Holdings]</query>
+
+        <name seriesIndex="10" seriesName="t_100_010_Report_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_010_Report_Benefits]</query>
+
+        <name seriesIndex="11" seriesName="t_100_011_Report_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_011_Report_Holdings]</query>
+
+        <name seriesIndex="12" seriesName="t_900_CIB_Profit_Passive_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Profit_Passive_Clients]</query>
+
+        <!--name seriesIndex="13" seriesName="t_900_CIB_Profit_Passive_Contracts"/>        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Profit_Passive_Contracts]</query-->
+
+
+        <name seriesIndex="13" seriesName="t_900_CIB_Profit_Passive_Default_Params"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Profit_Passive_Default_Params]</query>
+
+        <name seriesIndex="14" seriesName="t_900_DataBaseVersion"/>
+        <query>select 2.0 as id </query>
+
+        <name seriesIndex="15" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <name seriesIndex="16" seriesName="t_900_cib_Segments_for_filter"/>
+        <query>select * from  t_900_cib_Segments_for_filter</query>
+
+
+        <!--query>CREATE        INDEX IDX_SUM_PASSIVE_CNTR   ON t_900_CIB_Profit_Passive_Contracts (periodId COLLATE BINARY ASC,productNewId COLLATE BINARY ASC)</query-->
+        <query>CREATE UNIQUE INDEX "PK_REPORT_CURRENCIES" ON t_100_005_Report_Currencies (ID COLLATE BINARY ASC)</query>
+        <query>CREATE UNIQUE INDEX "PK_REPORT_CLIENTS"    ON t_100_009_000_Report_Clients (Client_Id COLLATE BINARY ASC)</query>
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id)</query>
+        <query>CREATE INDEX branch_id on t_100_003_Report_Branches (id)</query>
+        <query>CREATE INDEX prod_id on  t_100_008_Report_Products (id)</query>
+        <query>CREATE INDEX hold_id on t_100_011_Report_Holdings (holding_id)</query>
+        <query>CREATE INDEX benefit_id on t_100_010_Report_Benefits (BENEFIT_ID)</query>
+
+        <query>CREATE        INDEX "IDX_BRANCH_MAPPING"   ON t_100_102_Agg_By_Branch_Mapping (Branch_Child_Id COLLATE BINARY ASC)</query>
+        <query>CREATE  INDEX IDX_SUM_PASSIVE_CL ON "t_900_CIB_Profit_Passive_Clients" (periodId,branchId,productNewId,clientId,territoryId)</query>
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_PROFIT_PRODUCT">
+        <name seriesIndex="0" seriesName="t_900_cib_products_commissions"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_cib_products_commissions]</query>
+
+        <name seriesIndex="1" seriesName="t_900_cib_profit_product_ibgm"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_cib_profit_product_ibgm]</query>
+
+        <name seriesIndex="2" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="3" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="4" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="5" seriesName="t_100_104_Agg_By_Product_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_104_Agg_By_Product_Mapping]</query>
+
+        <name seriesIndex="6" seriesName="t_100_105_Agg_By_Product_Mapping_new"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_105_Agg_By_Product_Mapping_new]</query>
+        
+        <name seriesIndex="7" seriesName="t_100_008_Report_Products"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products]</query>
+
+        <name seriesIndex="8" seriesName="t_100_008_Report_Products_New"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products_New]</query>
+
+        <name seriesIndex="9" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+
+        <name seriesIndex="10" seriesName="t_100_010_Report_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_010_Report_Benefits]</query>
+
+        <name seriesIndex="11" seriesName="t_100_011_Report_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_011_Report_Holdings]</query>
+
+        <name seriesIndex="12" seriesName="t_100_101_Agg_By_Territory_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_101_Agg_By_Territory_Mapping]</query>
+
+        <name seriesIndex="13" seriesName="t_100_102_Agg_By_Branch_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_102_Agg_By_Branch_Mapping]</query>
+
+        <name seriesIndex="14" seriesName="t_100_009_010_Report_Clients_In_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_010_Report_Clients_In_Benefits]</query>
+
+        <name seriesIndex="15" seriesName="t_100_009_011_Report_Clients_In_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_011_Report_Clients_In_Holdings]</query>
+
+        <name seriesIndex="16" seriesName="t_900_CIB_Profit_Products_Default_Params"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Profit_Products_Default_Params]</query>
+
+        <name seriesIndex="17" seriesName="t_900_DataBaseVersion"/>
+        <query>select 2.0 as id </query>
+
+        <name seriesIndex="18" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <name seriesIndex="19" seriesName="t_900_cib_Segments_for_filter"/>
+        <query>select * from  t_900_cib_Segments_for_filter</query>
+
+        <query>CREATE index commis_ch_id on t_900_cib_products_commissions( periodId,productId, branchId,territoryId)</query>
+        <query>CREATE index commis_id on t_900_cib_products_commissions( periodId, branchId)</query>
+        <query>CREATE INDEX IDX_SUM_IBGM ON "t_900_cib_profit_product_ibgm" (periodId,branchId,filter,clientId)</query>
+
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id)</query>
+        <query>CREATE INDEX branch_id on t_100_003_Report_Branches (id)</query>
+        <query>CREATE INDEX prod_id on  t_100_008_Report_Products (id)</query>
+        <query>CREATE INDEX hold_id on t_100_011_Report_Holdings (holding_id)</query>
+        <query>CREATE INDEX benefit_id on t_100_010_Report_Benefits (BENEFIT_ID)</query>
+        <query>CREATE INDEX prodN_id on t_100_008_Report_Products_New (id)</query>
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_PROFIT_TOTAL">
+        <name seriesIndex="0" seriesName="t_900_CIB_Profit_Total"/>        <query> select [periodId] ,[territoryId] ,[branchId]  ,[clientId] ,[productId] ,[loansignId], [PL_MARGIN], [PL_COMM] ,[PL_LLP], [SDO_A] , [SDO_P] , [PL_FUND_RES]  
+                  from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Profit_Total]</query>
+
+
+        <name seriesIndex="1" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="2" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="3" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="4" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+
+        <name seriesIndex="5" seriesName="t_100_011_Report_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_011_Report_Holdings]</query>
+
+        <name seriesIndex="6" seriesName="t_100_010_Report_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_010_Report_Benefits]</query>
+
+        <name seriesIndex="7" seriesName="t_100_101_Agg_By_Territory_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_101_Agg_By_Territory_Mapping]</query>
+
+        <name seriesIndex="8" seriesName="v_100_105_Agg_By_Product_Mapping_new"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[v_100_105_Agg_By_Product_Mapping_new]</query>
+
+        <name seriesIndex="9" seriesName="t_100_008_Report_Products_New"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products_New]</query>
+
+        <name seriesIndex="10" seriesName="t_900_CIB_Profit_Total_Default_Params"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Profit_Total_Default_Params]</query>
+
+        <name seriesIndex="11" seriesName="clients_mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[clients_mapping]</query>
+
+        <name seriesIndex="12" seriesName="loansign_mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[loansign_mapping]</query>
+
+        <name seriesIndex="13" seriesName="t_900_DataBaseVersion"/>
+        <query>select 2.0 as id </query>
+
+        <name seriesIndex="14" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+        
+        <name seriesIndex="15" seriesName="t_100_108_Agg_By_HoldClients_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_108_Agg_By_HoldClients_Mapping]</query>
+        
+        <name seriesIndex="16" seriesName="t_100_009_011_Report_Clients_In_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_011_Report_Clients_In_Holdings]</query>
+
+        <name seriesIndex="17" seriesName="t_900_cib_Segments_for_filter"/>
+        <query>select * from  t_900_cib_Segments_for_filter</query>
+
+        <query>CREATE INDEX idx_total_data ON t_900_CIB_Profit_Total (periodId, branchId, loansignId,territoryId, clientId)</query>
+        <query>create index idx_loansign_mapping on loansign_mapping (loansign_param)</query>
+        <query>create index idx_clients_mapping on clients_mapping (client_type)</query>
+        <query>CREATE UNIQUE INDEX terr on t_100_004_Report_Territories(id)</query>
+        <query>CREATE UNIQUE INDEX pk_products ON t_100_008_Report_Products_new (id)</query>
+        <query>CREATE UNIQUE INDEX pk_clients  ON t_100_009_000_Report_Clients (Client_Id)</query>
+        <query>CREATE INDEX branch_id on t_100_003_Report_Branches (id)</query>
+        <query>CREATE INDEX hold_id on t_100_011_Report_Holdings (holding_id)</query>
+        <query>CREATE INDEX benefit_id on t_100_010_Report_Benefits (BENEFIT_ID)</query>
+        <query>CREATE INDEX hold_m on t_100_108_Agg_By_HoldClients_Mapping(client_id)</query>
+        <query>CREATE INDEX Bank_m on t_100_101_Agg_By_Territory_Mapping(Bank_id)</query>
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_PROFIT_CONCENTRATION">
+        <name seriesIndex="0" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="1" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="2" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="3" seriesName="t_100_008_Report_Products_new"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products_new]</query>
+
+        <name seriesIndex="4" seriesName="v_100_105_Agg_By_Product_Mapping_new"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[v_100_105_Agg_By_Product_Mapping_new]</query>
+
+        <name seriesIndex="5" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+
+        <name seriesIndex="6" seriesName="t_900_CIB_PROFIT_CONCENTRATION"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_PROFIT_CONCENTRATION]</query>
+
+        <name seriesIndex="7" seriesName="t_900_CIB_PROFIT_CONCENTRATION_sums"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_PROFIT_CONCENTRATION_sums]</query>
+
+        <name seriesIndex="8" seriesName="t_900_CIB_PROFIT_CONCENTRATION_Default_Params"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_PROFIT_CONCENTRATION_Default_Params]</query>
+
+        <name seriesIndex="9" seriesName="t_900_DataBaseVersion"/>
+        <query>select 2.0 as id </query>
+
+        <name seriesIndex="10" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <query>CREATE INDEX "main"."indx1" ON t_900_CIB_PROFIT_CONCENTRATION (periodId COLLATE BINARY ASC, branchId COLLATE BINARY ASC, territoryId COLLATE BINARY ASC)</query>
+        <query>CREATE INDEX "main"."chart1" ON t_900_CIB_PROFIT_CONCENTRATION ( branchId, territoryId, clientid, bankid)</query>
+        <query>CREATE INDEX conc_sum on t_900_CIB_PROFIT_CONCENTRATION_sums(clients_category,territoryId, branchId )</query>
+
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id)</query>
+        <query>CREATE INDEX branch_id on t_100_003_Report_Branches (id)</query>
+        <query>CREATE INDEX client_id on t_100_009_000_Report_Clients (client_id)</query>  
+        <query>CREATE INDEX prodN_id on t_100_008_Report_Products_new (id)</query>
+
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_PROFIT_ACTIVE">
+        <name seriesIndex="0" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="1" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="2" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="3" seriesName="t_100_005_Report_Currencies"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_005_Report_Currencies]</query>
+
+        <name seriesIndex="4" seriesName="t_100_008_Report_Products"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products]</query>
+
+        <name seriesIndex="5" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+
+        <name seriesIndex="6" seriesName="t_100_009_010_Report_Clients_In_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_010_Report_Clients_In_Benefits]</query>
+
+        <name seriesIndex="7" seriesName="t_100_009_011_Report_Clients_In_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_011_Report_Clients_In_Holdings]</query>
+
+        <name seriesIndex="8" seriesName="t_100_010_Report_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_010_Report_Benefits]</query>
+
+        <name seriesIndex="9" seriesName="t_100_011_Report_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_011_Report_Holdings]</query>
+
+        <name seriesIndex="10" seriesName="t_100_101_Agg_By_Territory_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_101_Agg_By_Territory_Mapping]</query>
+
+        <name seriesIndex="11" seriesName="t_900_CIB_PROFIT_ACTIVE_cl_bagg"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_PROFIT_ACTIVE_cl_bagg]</query>
+
+        <name seriesIndex="12" seriesName="t_900_CIB_PROFIT_ACTIVE_contracts"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_PROFIT_ACTIVE_contracts]</query>
+
+        <name seriesIndex="13" seriesName="t_900_CIB_PROFIT_ACTIVE_sec_cl"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_PROFIT_ACTIVE_sec_cl]</query>
+
+        <name seriesIndex="14" seriesName="t_900_CIB_PROFIT_ACTIVE_sec_contracts"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_PROFIT_ACTIVE_sec_contracts]</query>
+
+        <name seriesIndex="15" seriesName="t_900_CIB_PROFIT_ACTIVE_Default_Params"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_PROFIT_ACTIVE_Default_Params]</query>
+
+        <name seriesIndex="16" seriesName="t_900_DataBaseVersion"/>
+        <query>select 2.0 as id </query>
+
+        <name seriesIndex="17" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <name seriesIndex="18" seriesName="t_900_cib_Segments_for_filter"/>
+        <query>select * from  t_900_cib_Segments_for_filter</query>
+
+        <query>CREATE INDEX PK_SUM_LOAN_CL ON "t_900_CIB_PROFIT_ACTIVE_cl_bagg" (periodId,branchId,loansignId,clientId,territoryId)</query>
+        <query>CREATE INDEX PK_SUM_LOAN_CNTR ON "t_900_CIB_PROFIT_ACTIVE_contracts" (periodId,branchId,loansignId,currencyId,clientId)</query>
+        <query>CREATE INDEX PK_SUM_SEC_CL ON "t_900_CIB_PROFIT_ACTIVE_sec_cl" (periodId,branchId,clientId,territoryId)</query>
+        <query>CREATE INDEX PK_SUM_SEC_CNTR ON "t_900_CIB_PROFIT_ACTIVE_sec_contracts" (periodId,branchId,currencyId,clientId)</query>
+
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id)</query>
+        <query>CREATE INDEX branch_id on t_100_003_Report_Branches (id)</query>
+        <query>CREATE INDEX client_id on t_100_009_000_Report_Clients (client_id)</query>  
+        <query>CREATE INDEX prod_id on  t_100_008_Report_Products (id)</query>
+        <query>CREATE INDEX hold_id on t_100_011_Report_Holdings (holding_id)</query>
+        <query>CREATE INDEX benefit_id on t_100_010_Report_Benefits (BENEFIT_ID)</query>
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_PROFIT_PRODOTR">
+        <name seriesIndex="0" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="1" seriesName="t_100_003_Report_Branches"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_003_Report_Branches]</query>
+
+        <name seriesIndex="2" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="3" seriesName="t_100_008_Report_Products_new"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products_new]</query>
+
+        <name seriesIndex="5" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+
+        <name seriesIndex="6" seriesName="t_100_009_010_Report_Clients_In_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_010_Report_Clients_In_Benefits]</query>
+
+        <name seriesIndex="7" seriesName="t_100_009_011_Report_Clients_In_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_011_Report_Clients_In_Holdings]</query>
+
+        <name seriesIndex="8" seriesName="t_100_010_Report_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_010_Report_Benefits]</query>
+
+        <name seriesIndex="9" seriesName="t_100_011_Report_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_011_Report_Holdings]</query>
+
+        <name seriesIndex="10" seriesName="t_100_023_Report_OTR"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_023_Report_OTR]</query>
+
+        <name seriesIndex="11" seriesName="t_100_101_Agg_By_Territory_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_101_Agg_By_Territory_Mapping]</query>
+
+        <name seriesIndex="12" seriesName="t_100_105_Agg_By_Product_Mapping_new"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_105_Agg_By_Product_Mapping_new]</query>
+
+        <name seriesIndex="13" seriesName="t_100_106_Agg_By_Holding_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[v_100_106_Agg_By_Holding_Mapping]</query>
+
+        <name seriesIndex="14" seriesName="t_100_107_Agg_By_OTR_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_107_Agg_By_OTR_Mapping]</query>
+
+        <name seriesIndex="15" seriesName="t_100_108_Agg_By_HoldClients_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_108_Agg_By_HoldClients_Mapping]</query>
+
+        <name seriesIndex="16" seriesName="t_900_CIB_Profit_OtrProd_Default_Params"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_Profit_OtrProd_Default_Params]</query>
+
+        <name seriesIndex="17" seriesName="t_900_CIB_PROFIT_OTR_PROD"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_PROFIT_OTR_PROD]</query>
+
+        <name seriesIndex="18" seriesName="t_900_CIB_PROFIT_OTR_PROD_cl"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_PROFIT_OTR_PROD_cl]</query>
+
+        <name seriesIndex="19" seriesName="t_900_cib_Segments_for_filter"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_cib_Segments_for_filter]</query>
+
+        <name seriesIndex="20" seriesName="t_900_DataBaseVersion"/>
+        <query>select 1.0 as id </query>
+
+        <name seriesIndex="21" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <query>CREATE INDEX otr on t_900_CIB_PROFIT_OTR_PROD(periodId,BranchId, territoryId ,OTRID, clientId);</query>
+        <query>CREATE INDEX otr_cl on t_900_CIB_PROFIT_OTR_PROD_cl(periodId,OTRID,productid,BranchId, territoryId,clientId )</query>
+
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id) </query>
+        <query>CREATE INDEX client_id on t_100_009_000_Report_Clients (client_id)   </query>
+        <query>CREATE INDEX hold_id on t_100_011_Report_Holdings (holding_id) </query>
+        <query>CREATE INDEX benefit_id on t_100_010_Report_Benefits (BENEFIT_ID) </query>
+        <query>CREATE INDEX prod_id on  t_100_008_Report_Products_New (id) </query>
+        <query>CREATE INDEX otr_id on  t_100_023_Report_OTR (id) </query>
+        <query>CREATE INDEX prodM_id on  t_100_105_Agg_By_Product_Mapping_new (Product_Id) </query>
+        <query>CREATE INDEX otrM_id on t_100_107_Agg_By_OTR_Mapping(Otr_Id, Otr_Child_Id)</query>
+
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_WEEK">
+        <name seriesIndex="0" seriesName="t_100_002_Report_Periods_week"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods_week]</query>
+
+        <name seriesIndex="1" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="2" seriesName="t_100_008_Report_Products"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Report_Products]</query>
+
+        <name seriesIndex="3" seriesName="t_100_101_Agg_By_Territory_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_101_Agg_By_Territory_Mapping]</query>
+
+        <name seriesIndex="4" seriesName="t_300_400_CIB_Assets_Week_Data_Report"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_300_400_CIB_Assets_Week_Data_Report]</query>
+
+        <name seriesIndex="5" seriesName="t_300_400_CIB_Loans_Week_Data_Report"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_300_400_CIB_Loans_Week_Data_Report]</query>
+
+        <name seriesIndex="6" seriesName="t_300_500_CIB_Deposits_Week_Data_Report"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_300_500_CIB_Deposits_Week_Data_Report]</query>
+
+        <name seriesIndex="7" seriesName="t_900_cib_ibgm_week"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_cib_ibgm_week]</query>
+
+        <name seriesIndex="8" seriesName="t_900_CIB_week_Default_Params"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_week_Default_Params]</query>
+
+        <name seriesIndex="9" seriesName="t_900_DataBaseVersion"/>
+        <query>select 1.0 as id </query>
+
+        <name seriesIndex="10" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <query>CREATE INDEX Bank_m on t_100_101_Agg_By_Territory_Mapping(Bank_id, Bank_Child_Id)</query>
+        <query>create index periodIdTypeChar on t_100_002_Report_Periods_week (Type, periodChar,week)</query>
+
+        <query>CREATE INDEX Assets_Week on t_300_400_CIB_Assets_Week_Data_Report(period_id, territoryId)</query>
+        <query>CREATE INDEX ibgm_Week on t_900_cib_ibgm_week(periodid, productId)</query>
+        <query>CREATE INDEX Deposits_Week on t_300_500_CIB_Deposits_Week_Data_Report(period_id, territoryId)</query>
+        <query>CREATE INDEX Loans_Week on t_300_400_CIB_Loans_Week_Data_Report(period_id)</query>
+
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+    <etl-action-pattern application="MISMobile" database="MIS_PCA_DKK_DATA_MOBILE" jndi="jdbc/finik1" patternName="CIB_UTFIKO">
+        <name seriesIndex="0" seriesName="t_100_002_Report_Periods"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_002_Report_Periods]</query>
+
+        <name seriesIndex="1" seriesName="t_100_004_Report_Territories"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_004_Report_Territories]</query>
+
+        <name seriesIndex="2" seriesName="t_100_008_000_Utfiko_Product_MIS_RULE"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_000_Utfiko_Product_MIS_RULE]</query>
+
+        <name seriesIndex="3" seriesName="t_100_008_Utfiko_Product_MIS"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_008_Utfiko_Product_MIS]</query>
+
+        <name seriesIndex="4" seriesName="t_100_009_000_Report_Clients"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_000_Report_Clients]</query>
+
+        <name seriesIndex="5" seriesName="t_100_009_010_Report_Clients_In_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_010_Report_Clients_In_Benefits]</query>
+
+        <name seriesIndex="6" seriesName="t_100_009_011_Report_Clients_In_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_009_011_Report_Clients_In_Holdings]</query>
+
+        <name seriesIndex="7" seriesName="t_100_010_Report_Benefits"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_010_Report_Benefits]</query>
+
+        <name seriesIndex="8" seriesName="t_100_011_Report_Holdings"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_011_Report_Holdings]</query>
+
+        <name seriesIndex="9" seriesName="t_100_101_Agg_By_Territory_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_100_101_Agg_By_Territory_Mapping]</query>
+
+        <name seriesIndex="10" seriesName="t_100_106_Agg_By_Holding_Mapping"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[v_100_106_Agg_By_Holding_Mapping]</query>
+
+        <name seriesIndex="11" seriesName="t_300_600_CIB_UTFIKO_Data_Report"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_300_600_CIB_UTFIKO_Data_Report]</query>
+
+        <name seriesIndex="12" seriesName="t_900_cib_utfiko"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_cib_utfiko]</query>
+
+        <name seriesIndex="13" seriesName="t_900_cib_Segments_for_filter"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_cib_Segments_for_filter]</query>
+
+        <name seriesIndex="14" seriesName="t_900_CIB_utfiko_Default_Params"/>
+        <query>select * from [MIS_PCA_DKK_DATA_MOBILE].dbo.[t_900_CIB_utfiko_Default_Params]</query>
+
+        <name seriesIndex="15" seriesName="t_900_DataBaseVersion"/>
+        <query>select 1.0 as id </query>
+
+        <name seriesIndex="16" seriesName="serverName"/>
+        <query>select @@servername as servername</query>
+
+        <query>CREATE INDEX Bank_m on t_100_101_Agg_By_Territory_Mapping(Bank_id, Bank_Child_Id)</query>
+        <query>CREATE INDEX ter_id on t_100_004_Report_Territories (id) </query>
+        <query>CREATE INDEX client_id on t_100_009_000_Report_Clients (client_id)   </query>
+        <query>CREATE INDEX hold_id on t_100_011_Report_Holdings (holding_id) </query>
+        <query>CREATE INDEX benefit_id on t_100_010_Report_Benefits (BENEFIT_ID) </query>
+
+        <query>CREATE INDEX utfiko_data on t_900_cib_utfiko(periodid, territoryId, clientId)</query>
+        <query>CREATE INDEX utfiko_client on t_300_600_CIB_UTFIKO_Data_Report(periodid, UTFIKO_product_MIS_ID, territoryId,clientId)</query>
+
+        <query>VACUUM</query>
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+</etl-config>

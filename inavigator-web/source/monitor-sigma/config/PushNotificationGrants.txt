@@ -1,0 +1,32 @@
+updateStatusTest
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+	<stored-procedure>INAVIGATOR20.TEST.UPDATE_NOTIFICATION_SEND_STATUS</stored-procedure>
+	<arguments>
+		<argument>
+			<index>1</index>
+			<type>NUMBER</type>
+			<value>1</value>
+        </argument>
+        <argument>
+			<index>2</index>
+			<type>NUMBER</type>
+			<value>1</value>
+        </argument>
+        <argument>
+			<index>3</index>
+			<type>STRING</type>
+			<value>GRANTS_TEST</value>
+        </argument>
+	</arguments>
+   	<provider>DATAPOWER</provider>
+    <service>@service@</service>
+</request>
+----------------------
+testQuery2
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request>
+   	<stored-procedure>INAVIGATOR20.TEST.GET_NOTIFICATIONS_FOR_SEND</stored-procedure>
+   	<provider>DATAPOWER</provider>
+    <service>@service@</service>
+</request>

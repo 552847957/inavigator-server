@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="cache-diff-checker-service-test-spring-context.xml"/>
+
+    <bean name="clusterManagerServiceTestBean" class="ru.sberbank.syncserver2.service.generator.ClusterManager">
+        <property name="dbLogger" ref="dbLogService"/>
+    </bean>
+    <bean name="spyClusterManagerServiceTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="clusterManagerServiceTestBean"/>
+    </bean>
+
+    <bean name="databaseNotificationLoggerTestBean" class="ru.sberbank.syncserver2.service.monitor.DatabaseNotificationLogger">
+        <property name="dbLogger" ref="dbLogService"/>
+    </bean>
+    <bean name="spyDatabaseNotificationLoggerTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="databaseNotificationLoggerTestBean"/>
+    </bean>
+
+    <bean name="singleGeneratorServiceTestBean" class="ru.sberbank.syncserver2.service.generator.single.SingleGeneratorService">
+        <property name="configHome" value="test/tmp/directory/SingleGeneratorServiceTest/configHome"/>
+        <property name="localFileHome" value="test/tmp/directory/SingleGeneratorServiceTest/localFileHome"/>
+        <property name="threadCount" value="3"/>
+    </bean>
+    <bean name="spySingleGeneratorServiceTestBean" class="org.mockito.Mockito" factory-method="spy">
+        <constructor-arg name="object" ref="singleGeneratorServiceTestBean"/>
+    </bean>
+
+</beans>

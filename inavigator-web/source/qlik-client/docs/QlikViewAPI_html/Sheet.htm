@@ -1,0 +1,1735 @@
+<html>
+<head><title>Sheet</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>Sheet</h1><br/>
+The QlikView sheet<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Method Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<h3>Activate</h3>
+<pre> <b>Activate</b>()</pre>
+<dl>
+    <dd>Makes the sheet active. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>ActiveDocument.Sheets("Market").Activate<br/><br/>set&nbsp;newsheet=ActiveDocument.CreateSheet<br/>set&nbsp;sp=newsheet.GetProperties<br/>sp.Name="abc"<br/>newsheet.setProperties&nbsp;sp<br/>newsheet.Activate<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ActivateAll</h3>
+<pre> <b>ActivateAll</b>()</pre>
+<dl>
+    <dd>Activates all sheet objects on sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Sheets("Market").ActivateAll<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AdjustOffScreenObjects</h3>
+<pre> <b>AdjustOffScreenObjects</b>()</pre>
+<dl>
+    <dd>Fetches invisible sheet objects to the screen. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;fetch&nbsp;invisible&nbsp;objects&nbsp;on&nbsp;active&nbsp;sheet&nbsp;**<br/>ActiveDocument.ActiveSheet.AdjustOffScreenObjects<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ApplyTheme</h3>
+<pre> <b>ApplyTheme</b>(String FileName)</pre>
+<dl>
+    <dd>Apply theme to sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : Theme file name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ActiveSheet.Applytheme&nbsp;"A:\Forest.qvt"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ApplyZoomToAllSheets</h3>
+<pre> <b>ApplyZoomToAllSheets</b>()</pre>
+<dl>
+    <dd>Applies the zoom factor of the sheet to all sheets in document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;fit&nbsp;active&nbsp;sheet&nbsp;to&nbsp;window&nbsp;and&nbsp;apply&nbsp;same&nbsp;zoom&nbsp;to&nbsp;all&nbsp;sheets&nbsp;**<br/>ActiveDocument.ActiveSheet.FitZoomToWindow<br/>ActiveDocument.ActiveSheet.ApplyZoomToAllSheets<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CanExport</h3>
+<pre>Boolean <b>CanExport</b>()</pre>
+<dl>
+    <dd>True if export is allowed from sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>if&nbsp;ActiveDocument.ActiveSheet.CanExport&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox("Export&nbsp;allowed&nbsp;from&nbsp;sheet")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CanResizeMove</h3>
+<pre>Boolean <b>CanResizeMove</b>()</pre>
+<dl>
+    <dd>Returns information if moving and sizing of sheet objects is allowed on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rm&nbsp;=&nbsp;ActiveDocument.Sheets(0).CanResizeMove<br/>if&nbsp;rm&nbsp;then<br/>&nbsp;&nbsp;&nbsp;msgbox("Move&nbsp;resize&nbsp;allowed&nbsp;on&nbsp;sheet")<br/>else<br/>&nbsp;&nbsp;&nbsp;msgbox("Move&nbsp;resize&nbsp;not&nbsp;allowed&nbsp;on&nbsp;sheet")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Close</h3>
+<pre> <b>Close</b>()</pre>
+<dl>
+    <dd>Removes the sheet from the document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ActiveSheet.Close<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyBitmapToClipboard</h3>
+<pre>Boolean <b>CopyBitmapToClipboard</b>(Boolean DrawBackground)</pre>
+<dl>
+    <dd>Copies a bitmap image of the sheet to the clipboard. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>DrawBackground</code></b> (Boolean) : True if sheet background to be included</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True returned if export succeeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ActiveSheet.CopyBitmapToClipboard<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateBarChart</h3>
+<pre><a href="Graph.htm">Graph</a> <b>CreateBarChart</b>()</pre>
+<dl>
+    <dd>Creates a new bar chart on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateBarChart<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateBookmarkObject</h3>
+<pre><a href="BookmarkObject.htm">BookmarkObject</a> <b>CreateBookmarkObject</b>()</pre>
+<dl>
+    <dd>Creates a new bookmark object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Sheets("Main").CreateBookmarkObject<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateButton</h3>
+<pre><a href="Button.htm">Button</a> <b>CreateButton</b>()</pre>
+<dl>
+    <dd>Creates a new button on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;create&nbsp;new&nbsp;button&nbsp;that&nbsp;launches&nbsp;a&nbsp;Macro<br/>set&nbsp;newbutton&nbsp;=&nbsp;ActiveDocument.ActiveSheet.CreateButton<br/>set&nbsp;prop&nbsp;=&nbsp;newbutton.GetProperties<br/>&nbsp;prop.Text.v&nbsp;=&nbsp;"Do&nbsp;it"<br/>&nbsp;set&nbsp;ButtonActions&nbsp;=&nbsp;prop.ActionItems<br/>&nbsp;ButtonActions.Add<br/>&nbsp;ButtonActions.Item(0).Type=13&nbsp;'Macro&nbsp;Action&nbsp;Type<br/>&nbsp;set&nbsp;ActionParam=ButtonActions.Item(0).Parameters<br/>&nbsp;ActionParam.Add<br/>&nbsp;ActionParam.Item(0).v="Test"<br/>newbutton.SetProperties&nbsp;prop<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateComboChart</h3>
+<pre><a href="Graph.htm">Graph</a> <b>CreateComboChart</b>()</pre>
+<dl>
+    <dd>Creates a new combo chart on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;chart&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateComboChart<br/>chart.AddDimension&nbsp;"ProductType"<br/>chart.AddExpression&nbsp;"sum(Amount)"<br/>chart.AddExpression&nbsp;"count(Customer)"<br/>set&nbsp;p&nbsp;=&nbsp;chart.GetProperties<br/>p.Expressions.Item(1).Item(0).Data.ExpressionData.Accumulate&nbsp;=&nbsp;1&nbsp;&nbsp;&nbsp;<br/>chart.SetProperties&nbsp;p<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateContainer</h3>
+<pre><a href="Container.htm">Container</a> <b>CreateContainer</b>()</pre>
+<dl>
+    <dd>Creates a new container object on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>10.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>Set&nbsp;ContainerObj&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateContainer<br/>set&nbsp;ContProp=ContainerObj.GetProperties<br/>&nbsp;ContProp.ContainedObjects.Add&nbsp;<br/>&nbsp;ContProp.SingleObjectMode=1<br/>&nbsp;ContProp.SingleObjectStyle=1<br/>&nbsp;ContProp.ShowObjectTypeIcons=true<br/>&nbsp;ContProp.ContainedObjects.Add&nbsp;<br/>&nbsp;ContProp.ContainedObjects.Item(0).Id&nbsp;=&nbsp;"Document\CH03"<br/>&nbsp;ContProp.ContainedObjects.Item(0).Text.v&nbsp;=&nbsp;"Bar"<br/>&nbsp;ContProp.ContainedObjects.Add<br/>&nbsp;ContProp.ContainedObjects.Item(1).Id&nbsp;=&nbsp;"Document\CH01"<br/>&nbsp;ContProp.ContainedObjects.Item(1).Text.v&nbsp;=&nbsp;"Mekko"<br/>ContainerObj.SetProperties&nbsp;ContProp</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateCurrentSelectionBox</h3>
+<pre><a href="CurrentSelection.htm">CurrentSelection</a> <b>CreateCurrentSelectionBox</b>()</pre>
+<dl>
+    <dd>Creates a new current selection box on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Sheets("Main").CreateCurrentSelectionBox<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateCustomObject</h3>
+<pre><a href="CustomObject.htm">CustomObject</a> <b>CreateCustomObject</b>()</pre>
+<dl>
+    <dd>Creates a new custom object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Sheets("Main").CreateCustomObject<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateGaugeChart</h3>
+<pre><a href="Graph.htm">Graph</a> <b>CreateGaugeChart</b>()</pre>
+<dl>
+    <dd>Creates a new gauge chart on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateGaugeChart<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateGridChart</h3>
+<pre><a href="Graph.htm">Graph</a> <b>CreateGridChart</b>()</pre>
+<dl>
+    <dd>Creates a new grid chart on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateGridChart<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddDimension&nbsp;"Customer"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateInputBox</h3>
+<pre><a href="InputBox.htm">InputBox</a> <b>CreateInputBox</b>()</pre>
+<dl>
+    <dd>Creates a new input box on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;IB&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateInputBox<br/>IB.AddVariable&nbsp;"Variable1"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateLineArrowObject</h3>
+<pre><a href="LineArrow.htm">LineArrow</a> <b>CreateLineArrowObject</b>()</pre>
+<dl>
+    <dd>Creates a new line/arrow object on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;la&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateLineArrowObject<br/>set&nbsp;prop&nbsp;=&nbsp;la.GetProperties<br/>prop.Layout.LineColor.PrimaryCol.Col&nbsp;=&nbsp;RGB(255,0,0)<br/>prop.Layout.UseFixedLineColor&nbsp;=&nbsp;true<br/>la.SetProperties&nbsp;prop<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateLineChart</h3>
+<pre><a href="Graph.htm">Graph</a> <b>CreateLineChart</b>()</pre>
+<dl>
+    <dd>Creates a new line chart on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateLineChart<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateListBox</h3>
+<pre><a href="ListBox.htm">ListBox</a> <b>CreateListBox</b>()</pre>
+<dl>
+    <dd>Creates a new list box on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;LB&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateListBox<br/>set&nbsp;BoxProp=LB.GetProperties<br/>BoxProp.Def.Name&nbsp;=&nbsp;"Customer"<br/>LB.SetProperties&nbsp;BoxProp<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateMultiBox</h3>
+<pre><a href="MultiBox.htm">MultiBox</a> <b>CreateMultiBox</b>()</pre>
+<dl>
+    <dd>Creates a new multi box on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;MB&nbsp;=&nbsp;ActiveDocument.Sheets("Products").CreateMultiBox<br/>MB.AddField&nbsp;"ProductType"<br/>MB.AddField&nbsp;"Product"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateObjectFromXmlPropertiesFile</h3>
+<pre> <b>CreateObjectFromXmlPropertiesFile</b>(String FileName)</pre>
+<dl>
+    <dd>Creates a new sheet object from xml properties file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>ActiveDocument.ActiveSheet.CreateObjectFromXmlPropertiesFile&nbsp;"C:\MychartProp.xml"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreatePieChart</h3>
+<pre><a href="Graph.htm">Graph</a> <b>CreatePieChart</b>()</pre>
+<dl>
+    <dd>Creates a new pie chart on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.GetSheet(0).CreatePieChart<br/>Graph.AddDimension&nbsp;"Product"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreatePivotTable</h3>
+<pre><a href="PivotTableBox.htm">PivotTableBox</a> <b>CreatePivotTable</b>()</pre>
+<dl>
+    <dd>Creates a new pivot table on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;Create&nbsp;HLO&nbsp;system&nbsp;table&nbsp;on&nbsp;new&nbsp;sheet<br/>set&nbsp;Sheet=ActiveDocument.CreateSheet<br/>set&nbsp;Hlo=Sheet.CreatePivotTable<br/>Hlo.AddDimension&nbsp;"$Field"<br/>Hlo.AddDimension&nbsp;"$Table"<br/>Hlo.AddExpression&nbsp;"Only([$Field])"<br/>set&nbsp;Prop&nbsp;=&nbsp;Hlo.GetProperties<br/>Prop.TableProperties.PivotAlwaysFullyExpanded=true<br/>Prop.Dimensions(0).SortCriteria.SortByAscii=0<br/>Prop.Dimensions(0).SortCriteria.SortByLoadOrder=1<br/>Prop.Dimensions(1).SortCriteria.SortByAscii=0<br/>Prop.Dimensions(1).SortCriteria.SortByLoadOrder=1<br/>Prop.TableProperties.NumberOfLeftDimensions=1&nbsp;<br/>Hlo.SetProperties&nbsp;Prop<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateRadarChart</h3>
+<pre><a href="Graph.htm">Graph</a> <b>CreateRadarChart</b>()</pre>
+<dl>
+    <dd>Creates a new radar chart on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateRadarChart<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateScatterChart</h3>
+<pre><a href="Graph.htm">Graph</a> <b>CreateScatterChart</b>()</pre>
+<dl>
+    <dd>Creates a new scatter chart on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;chart&nbsp;=&nbsp;ActiveDocument.ActiveSheet.CreateScatterChart<br/>chart.AddDimension&nbsp;"Corporation"<br/>chart.AddExpression&nbsp;"Avg([Profit&nbsp;95])"<br/>chart.AddExpression&nbsp;"Avg([%&nbsp;profit&nbsp;change])"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateSearchObject</h3>
+<pre><a href="SearchObject.htm">SearchObject</a> <b>CreateSearchObject</b>()</pre>
+<dl>
+    <dd>Creates a new search object on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;mySO&nbsp;=&nbsp;ActiveDocument.ActiveSheet.CreateSearchObject</code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateSlider</h3>
+<pre><a href="Slider.htm">Slider</a> <b>CreateSlider</b>()</pre>
+<dl>
+    <dd>Creates a new slider/calendar object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Sheets("Main").CreateSlider<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateStatisticsBox</h3>
+<pre><a href="StatisticsBox.htm">StatisticsBox</a> <b>CreateStatisticsBox</b>()</pre>
+<dl>
+    <dd>Creates a new statistics box on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;sb&nbsp;=&nbsp;ActiveDocument.Sheets(0).CreateStatisticsBox<br/>set&nbsp;BoxProp=sb.GetProperties<br/>BoxProp.FieldDef.Name&nbsp;=&nbsp;"Amount"<br/>sb.SetProperties&nbsp;BoxProp<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateStraightTable</h3>
+<pre><a href="StraightTableBox.htm">StraightTableBox</a> <b>CreateStraightTable</b>()</pre>
+<dl>
+    <dd>Creates a new straight table on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;chart&nbsp;=&nbsp;ActiveDocument.GetSheet(0).CreateStraightTable<br/>chart.AddDimension&nbsp;"Corporation"<br/>chart.AddExpression&nbsp;"Avg([Profit&nbsp;95])"<br/>chart.AddExpression&nbsp;"Avg([%&nbsp;profit&nbsp;change])"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateSystemTable</h3>
+<pre><a href="PivotTableBox.htm">PivotTableBox</a> <b>CreateSystemTable</b>()</pre>
+<dl>
+    <dd>Creates a system pivot table on the current sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;create&nbsp;system&nbsp;table&nbsp;on&nbsp;current&nbsp;sheet&nbsp;**<br/>ActiveDocument.ActiveSheet.CreateSystemTable<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateTableBox</h3>
+<pre><a href="TableBox.htm">TableBox</a> <b>CreateTableBox</b>()</pre>
+<dl>
+    <dd>Creates a new table box on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;TB&nbsp;=&nbsp;ActiveDocument.Sheets("Products").CreateTableBox<br/>TB.AddField&nbsp;"ProductType"<br/>TB.AddField&nbsp;"Product"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CreateTextObject</h3>
+<pre><a href="TextObject.htm">TextObject</a> <b>CreateTextObject</b>()</pre>
+<dl>
+    <dd>Creates a new text area on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;mytext&nbsp;=&nbsp;ActiveDocument.ActiveSheet.CreateTextObject<br/>prop&nbsp;=&nbsp;mytext.GetProperties<br/>prop.Layout.Text.v&nbsp;=&nbsp;"abc"<br/>mytext.SetProperties&nbsp;prop<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DeactivateAll</h3>
+<pre> <b>DeactivateAll</b>()</pre>
+<dl>
+    <dd>Deactivates all sheet objects on sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Sheets("Market").DeactivateAll<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Demote</h3>
+<pre> <b>Demote</b>()</pre>
+<dl>
+    <dd>Demotes the sheet one step to the right. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ActiveSheet.Promote&nbsp;<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogPrint</h3>
+<pre>Boolean <b>DialogPrint</b>()</pre>
+<dl>
+    <dd>Opens the Print dialog for the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ActiveSheet.DialogPrint<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogProperties</h3>
+<pre>Boolean <b>DialogProperties</b>(Integer Page)</pre>
+<dl>
+    <dd>Opens Sheet Properties dialog. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Page</code></b> (Integer) : Property dialog page (0 based). -1 opens on last used page.</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Sheets("Main").DialogProperties&nbsp;1<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportBitmapToFile</h3>
+<pre>Boolean <b>ExportBitmapToFile</b>(String Filename, Boolean DrawBackground)</pre>
+<dl>
+    <dd>Exports a bitmap image of the sheet to a file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Filename</code></b> (String) : File name with path</dd>
+            <dd><b><code>DrawBackground</code></b> (Boolean) : True if sheet background to be included</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True returned if export succeeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Sheets("Main").ExportBitmapToFile&nbsp;"C:\MyImage.bmp"<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>FitZoomToWindow</h3>
+<pre> <b>FitZoomToWindow</b>()</pre>
+<dl>
+    <dd>Fits the zoom factor of the current sheet so that all objects are visible on the screen. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;fit&nbsp;active&nbsp;sheet&nbsp;zoom&nbsp;to&nbsp;window&nbsp;**<br/>ActiveDocument.ActiveSheet.FitZoomToWindow<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetActiveSheetObjects</h3>
+<pre>Variant (Array of SheetObject) <b>GetActiveSheetObjects</b>()</pre>
+<dl>
+    <dd>Returns all active sheet objects on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;minimize&nbsp;all&nbsp;active&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;active&nbsp;sheet&nbsp;**<br/>ActiveDocument.ActiveSheet.ActivateAll<br/>objs=ActiveDocument.ActiveSheet.GetActiveSheetObjects<br/>for&nbsp;i=lbound(objs)&nbsp;to&nbsp;ubound(objs)<br/>&nbsp;&nbsp;&nbsp;&nbsp;objs(i).Minimize<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetButtons</h3>
+<pre>Variant (Array of Button) <b>GetButtons</b>()</pre>
+<dl>
+    <dd>Returns the buttons on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;remove&nbsp;all&nbsp;buttons&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>buttons=s.GetButtons<br/>for&nbsp;i=lbound(buttons)&nbsp;to&nbsp;ubound(buttons)<br/>&nbsp;&nbsp;&nbsp;&nbsp;buttons(i).Close<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCurrentSelectionBoxes</h3>
+<pre>Variant (Array of CurrentSelection) <b>GetCurrentSelectionBoxes</b>()</pre>
+<dl>
+    <dd>Returns the current selection boxes on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;activate&nbsp;all&nbsp;current&nbsp;selection&nbsp;boxes&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>lboxes=s.GetCurrentSelectionBoxes<br/>for&nbsp;i=lbound(lboxes)&nbsp;to&nbsp;ubound(lboxes)<br/>&nbsp;&nbsp;&nbsp;&nbsp;lboxes(i).ActivateAlso<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCurrentSelections</h3>
+<pre>Variant (Array of CurrentSelection) <b>GetCurrentSelections</b>()</pre>
+<dl>
+    <dd>Returns all current selection boxes on sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>cs&nbsp;=&nbsp;ActiveDocument.ActiveSheet.GetCurrentSelections<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetGraphs</h3>
+<pre>Variant (Array of Graph) <b>GetGraphs</b>()</pre>
+<dl>
+    <dd>Returns the graphs on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;print&nbsp;all&nbsp;graphs&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>charts=s.GetGraphs<br/>for&nbsp;i=lbound(charts)&nbsp;to&nbsp;ubound(charts)<br/>&nbsp;&nbsp;&nbsp;&nbsp;charts(i).Print<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetInputBoxes</h3>
+<pre>Variant (Array of InputBox) <b>GetInputBoxes</b>()</pre>
+<dl>
+    <dd>Returns the input boxes on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;activate&nbsp;all&nbsp;input&nbsp;boxes&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>lboxes=s.GetInputBoxes<br/>for&nbsp;i=lbound(lboxes)&nbsp;to&nbsp;ubound(lboxes)<br/>&nbsp;&nbsp;&nbsp;&nbsp;lboxes(i).ActivateAlso<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetLineArrowObjects</h3>
+<pre>Variant (Array of LineArrow) <b>GetLineArrowObjects</b>()</pre>
+<dl>
+    <dd>Returns the line/arrow objects on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;activate&nbsp;all&nbsp;line/arrow&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>lboxes=s.GetLineArrowObjects<br/>for&nbsp;i=lbound(lboxes)&nbsp;to&nbsp;ubound(lboxes)<br/>&nbsp;&nbsp;&nbsp;&nbsp;lboxes(i).ActivateAlso<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetListBoxes</h3>
+<pre>Variant (Array of ListBox) <b>GetListBoxes</b>()</pre>
+<dl>
+    <dd>Returns the list boxes on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;activate&nbsp;all&nbsp;list&nbsp;boxes&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>lboxes=s.GetListBoxes<br/>for&nbsp;i=lbound(lboxes)&nbsp;to&nbsp;ubound(lboxes)<br/>&nbsp;&nbsp;&nbsp;&nbsp;lboxes(i).ActivateAlso<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetMultiBoxes</h3>
+<pre>Variant (Array of MultiBox) <b>GetMultiBoxes</b>()</pre>
+<dl>
+    <dd>Returns the multi boxes on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;minimize&nbsp;all&nbsp;multi&nbsp;boxes&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>mboxes=s.GetMultiBoxes<br/>for&nbsp;i=lbound(mboxes)&nbsp;to&nbsp;ubound(mboxes)<br/>&nbsp;&nbsp;&nbsp;&nbsp;mboxes(i).Minimize<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetPalette</h3>
+<pre><a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a> <b>GetPalette</b>()</pre>
+<dl>
+    <dd>Returns sheet default chart color map. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;set&nbsp;sheet&nbsp;default&nbsp;color&nbsp;map&nbsp;as&nbsp;doc&nbsp;default<br/>set&nbsp;cm&nbsp;=&nbsp;ActiveDocument.ActiveSheet.GetPalette<br/>ActiveDocument.SetPalette&nbsp;cm<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetPivotTableBoxes</h3>
+<pre>Variant (Array of PivotTableBox) <b>GetPivotTableBoxes</b>()</pre>
+<dl>
+    <dd>Returns the pivot tables on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;print&nbsp;all&nbsp;pivot&nbsp;tables&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>tables=s.GetPivotTableBoxes<br/>for&nbsp;i=lbound(tables)&nbsp;to&nbsp;ubound(tables)<br/>&nbsp;&nbsp;&nbsp;&nbsp;tables(i).Print<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetPosition</h3>
+<pre>Integer <b>GetPosition</b>()</pre>
+<dl>
+    <dd>Returns the position number of the sheet on the tab row (0 based). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;demote&nbsp;active&nbsp;sheet&nbsp;&nbsp;(move&nbsp;one&nbsp;step&nbsp;left)&nbsp;**<br/>set&nbsp;s&nbsp;=&nbsp;ActiveDocument.ActiveSheet<br/>pos&nbsp;=&nbsp;s.GetPosition<br/>if&nbsp;pos>0&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.SetPosition&nbsp;pos-1<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetProperties</h3>
+<pre><a href="ISheetProperties.htm">ISheetProperties</a> <b>GetProperties</b>()</pre>
+<dl>
+    <dd>Returns the sheet properties. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;newsheet=ActiveDocument.CreateSheet<br/>set&nbsp;sp=newsheet.GetProperties<br/>sp.Name="abc"<br/>newsheet.SetProperties&nbsp;sp<br/>newsheet.Activate<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetSheetObjects</h3>
+<pre>Variant (Array of SheetObject) <b>GetSheetObjects</b>()</pre>
+<dl>
+    <dd>Returns all sheet objects on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>function&nbsp;Rand&nbsp;(Lo,&nbsp;Hi)<br/>&nbsp;&nbsp;&nbsp;&nbsp;Rand&nbsp;=&nbsp;Lo&nbsp;+&nbsp;Rnd()&nbsp;*&nbsp;(Hi&nbsp;-&nbsp;Lo&nbsp;+&nbsp;1)&nbsp;-&nbsp;0.5<br/>end&nbsp;function<br/><br/>sub&nbsp;randpiv<br/>rem&nbsp;&nbsp;**&nbsp;set&nbsp;random&nbsp;colors&nbsp;in&nbsp;all&nbsp;expression&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**<br/>rem&nbsp;&nbsp;**&nbsp;cells&nbsp;in&nbsp;all&nbsp;pivot&nbsp;tables&nbsp;on&nbsp;active&nbsp;sheet.&nbsp;**<br/>Objects&nbsp;=&nbsp;ActiveDocument.ActiveSheet.GetSheetObjects<br/>For&nbsp;i&nbsp;=&nbsp;lBound(Objects)&nbsp;To&nbsp;uBound(Objects)<br/>&nbsp;&nbsp;&nbsp;If&nbsp;Objects(i).GetObjectType&nbsp;=&nbsp;10&nbsp;Then&nbsp;&nbsp;&nbsp;'pivot&nbsp;tables<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;Pivot&nbsp;=&nbsp;Objects(i)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;y&nbsp;=&nbsp;Pivot.GetProperties<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;e&nbsp;=&nbsp;y.ExpressionVisuals<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;k&nbsp;=&nbsp;0&nbsp;to&nbsp;e.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;f&nbsp;=&nbsp;e.Item&nbsp;(k)<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set&nbsp;v&nbsp;=&nbsp;f.CellVariations&nbsp;(0)&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.FgColor.Col&nbsp;=&nbsp;RGB(Rand(0,&nbsp;127),&nbsp;Rand&nbsp;(0,&nbsp;127),&nbsp;Rand&nbsp;(0,&nbsp;127))<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.BgColor.Col&nbsp;=&nbsp;RGB(Rand(128,255),&nbsp;Rand&nbsp;(128,255),&nbsp;Rand(128,255))<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.TotalFgColor.Col&nbsp;=&nbsp;RGB(Rand(0,&nbsp;127),&nbsp;Rand(0,127),&nbsp;Rand(0,127))<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.TotalBgColor.Col&nbsp;=&nbsp;RGB(Rand(128,255),&nbsp;Rand(128,255),&nbsp;Rand(128,255))&nbsp;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y.TableProperties.StyleNumber&nbsp;=&nbsp;-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pivot.SetProperties&nbsp;(y)<br/>&nbsp;&nbsp;&nbsp;&nbsp;end&nbsp;if<br/>next<br/>end&nbsp;sub<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetStatisticsBoxes</h3>
+<pre>Variant (Array of StatisticsBox) <b>GetStatisticsBoxes</b>()</pre>
+<dl>
+    <dd>Returns the statistics boxes on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;activate&nbsp;all&nbsp;statistics&nbsp;boxes&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>sboxes=s.GetStatisticsBoxes<br/>for&nbsp;i=lbound(sboxes)&nbsp;to&nbsp;ubound(sboxes)<br/>&nbsp;&nbsp;&nbsp;&nbsp;sboxes(i).ActivateAlso<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetStraightTableBoxes</h3>
+<pre>Variant (Array of StraightTableBox) <b>GetStraightTableBoxes</b>()</pre>
+<dl>
+    <dd>Returns the straight tables on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;print&nbsp;all&nbsp;straight&nbsp;tables&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>tables=s.GetStraightTableBoxes<br/>for&nbsp;i=lbound(tables)&nbsp;to&nbsp;ubound(tables)<br/>&nbsp;&nbsp;&nbsp;&nbsp;tables(i).Print<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetTableBoxes</h3>
+<pre>Variant (Array of TableBox) <b>GetTableBoxes</b>()</pre>
+<dl>
+    <dd>Returns the table boxes on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;minimize&nbsp;all&nbsp;table&nbsp;boxes&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>tboxes=s.GetTableBoxes<br/>for&nbsp;i=lbound(tboxes)&nbsp;to&nbsp;ubound(tboxes)<br/>&nbsp;&nbsp;&nbsp;&nbsp;tboxes(i).Minimize<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetTextObjects</h3>
+<pre>Variant (Array of TextObject) <b>GetTextObjects</b>()</pre>
+<dl>
+    <dd>Returns the text objects on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>rem&nbsp;**&nbsp;remove&nbsp;all&nbsp;text&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>t=s.GetTextObjects<br/>for&nbsp;i=lbound(t)&nbsp;to&nbsp;ubound(t)<br/>&nbsp;&nbsp;&nbsp;&nbsp;t(i).Close<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>IsActive</h3>
+<pre>Boolean <b>IsActive</b>()</pre>
+<dl>
+    <dd>Returns true if the sheet is active. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>if&nbsp;ActiveDocument.Sheets(0).IsActive&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;rem&nbsp;**&nbsp;actions&nbsp;when&nbsp;macro&nbsp;triggered&nbsp;from&nbsp;first&nbsp;sheet&nbsp;**<br/>&nbsp;&nbsp;&nbsp;&nbsp;msgbox("Option&nbsp;unavailable&nbsp;on&nbsp;this&nbsp;sheet")<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>NoOfSheetObjects</h3>
+<pre>Integer <b>NoOfSheetObjects</b>()</pre>
+<dl>
+    <dd>Returns the total number of sheet objects on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;minimize&nbsp;all&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>for&nbsp;i=0&nbsp;to&nbsp;s.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;s.SheetObjects(i).Minimize<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Print</h3>
+<pre>Boolean <b>Print</b>(Boolean DrawBackground)</pre>
+<dl>
+    <dd>Prints the sheet. Use PrintOut method from VB to avoid conflicts with the VB keyword Print<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>DrawBackground</code></b> (Boolean) : Info whether background to be printed<br/>no value = use
+                default<br/>true = print background<br/>false = do not draw background
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;print&nbsp;active&nbsp;sheet&nbsp;**<br/>ActiveDocument.ActiveSheet.Print&nbsp;<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintOut</h3>
+<pre>Boolean <b>PrintOut</b>(Boolean DrawBackground)</pre>
+<dl>
+    <dd>Prints the sheet. Same as Print method but to be used from VB where the Print keyword may otherwise cause
+        problems<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>DrawBackground</code></b> (Boolean) : Info whether background to be printed<br/>no value = use
+                default<br/>true = print background<br/>false = do not draw background
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;print&nbsp;active&nbsp;sheet&nbsp;without&nbsp;background&nbsp;**<br/>ActiveDocument.ActiveSheet.PrintOut&nbsp;false<br/><br/>rem&nbsp;**&nbsp;print&nbsp;first&nbsp;sheet&nbsp;with&nbsp;background&nbsp;**<br/>ActiveDocument.Sheets(0).PrintOut&nbsp;true<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Promote</h3>
+<pre> <b>Promote</b>()</pre>
+<dl>
+    <dd>Promotes the sheet one step to the left. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ActiveSheet.Promote&nbsp;<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RearrangeSheetObjects</h3>
+<pre> <b>RearrangeSheetObjects</b>()</pre>
+<dl>
+    <dd>Rearranges all sheet objects on the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.ActiveSheet.RearrangeSheetObjects&nbsp;<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Remove</h3>
+<pre> <b>Remove</b>()</pre>
+<dl>
+    <dd>Permanently removes the sheet. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;remove&nbsp;first&nbsp;sheet&nbsp;**<br/>ActiveDocument.Sheets(0).Remove&nbsp;<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetFont</h3>
+<pre> <b>SetFont</b>(IBaseFont Font)</pre>
+<dl>
+    <dd>Sets the font for the sheet and all sheet objects on the sheet. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Font</code></b> (<a href="IBaseFont.htm">IBaseFont</a>) : Font object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;set&nbsp;active&nbsp;sheet&nbsp;to&nbsp;Arial&nbsp;14&nbsp;bold&nbsp;**<br/>set&nbsp;sp&nbsp;=&nbsp;ActiveDocument.ActiveSheet.GetProperties<br/>set&nbsp;sfont&nbsp;=&nbsp;sp.SheetFont<br/>sfont.FontName&nbsp;=&nbsp;"Arial"<br/>sfont.Bold&nbsp;=&nbsp;true<br/>sfont.Italic&nbsp;=&nbsp;false<br/>sfont.Underline&nbsp;=&nbsp;false<br/>sfont.PointSize1000&nbsp;=&nbsp;14000<br/>ActiveDocument.ActiveSheet.SetFont&nbsp;sfont<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetLayer</h3>
+<pre> <b>SetLayer</b>(Integer z)</pre>
+<dl>
+    <dd>Sets the layer for all sheet objects on the sheet. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>z</code></b> (Integer) : -1 is Bottom, 0 is Normal, 1 is Top ; -127 to 127 accepted</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.Sheets("Main").SetLayer&nbsp;0<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetPalette</h3>
+<pre> <b>SetPalette</b>(IArrayOfColorAreaDef Pal)</pre>
+<dl>
+    <dd>Sets sheet default chart color map. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Pal</code></b> (<a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a>) : Array of colors
+                as RGB in three least significant bytes (compatible with VB RGB function)
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;set&nbsp;doc&nbsp;default&nbsp;color&nbsp;map&nbsp;as&nbsp;sheet&nbsp;default<br/>set&nbsp;cm&nbsp;=&nbsp;ActiveDocument.GetPalette<br/>ActiveDocument.ActiveSheet.SetPalette&nbsp;cm<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetPosition</h3>
+<pre> <b>SetPosition</b>(Integer Position)</pre>
+<dl>
+    <dd>Sets the position of the sheet on the tab row. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Position</code></b> (Integer) : The sheet's new position number of the sheet on the tab row (0
+                based)
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;demote&nbsp;active&nbsp;sheet&nbsp;&nbsp;(move&nbsp;one&nbsp;step&nbsp;left)&nbsp;**<br/>set&nbsp;s&nbsp;=&nbsp;ActiveDocument.ActiveSheet<br/>pos&nbsp;=&nbsp;s.GetPosition<br/>if&nbsp;pos>0&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s.SetPosition&nbsp;pos-1<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetProperties</h3>
+<pre> <b>SetProperties</b>(ISheetProperties _Properties)</pre>
+<dl>
+    <dd>Sets the sheet properties. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>_Properties</code></b> (<a href="ISheetProperties.htm">ISheetProperties</a>) : Sheet properties
+                object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;newsheet=ActiveDocument.CreateSheet<br/>set&nbsp;sp=newsheet.GetProperties<br/>sp.Name="abc"<br/>newsheet.SetProperties&nbsp;sp<br/>newsheet.Activate<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetWallpaper</h3>
+<pre>Boolean <b>SetWallpaper</b>(String Path, Integer ShowMode)</pre>
+<dl>
+    <dd>Sets a sheet wallpaper from file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : Path to the file containing the wallpaper bitmap</dd>
+            <dd><b><code>ShowMode</code></b> (Integer) : 0 = centered<br/>1 = tiled<br/>2 = no wallpaper</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if new picture was set</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;set&nbsp;tiled&nbsp;wallpaper&nbsp;on&nbsp;first&nbsp;sheet&nbsp;**<br/>status&nbsp;=&nbsp;ActiveDocument.Sheets(0).SetWallPaper&nbsp;("C:\MyBmp.bmp"&nbsp;,&nbsp;1)<br/>if&nbsp;status&nbsp;=&nbsp;true&nbsp;then&nbsp;msgbox("wallpaper&nbsp;set")<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SheetObjects</h3>
+<pre><a href="SheetObject.htm">SheetObject</a> <b>SheetObjects</b>(String NameOrNumber)</pre>
+<dl>
+    <dd>Returns a sheet object specified by name or number. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>NameOrNumber</code></b> (String) : Object ID</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Object of class SheetObject returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;minimize&nbsp;all&nbsp;sheet&nbsp;objects&nbsp;on&nbsp;sheet&nbsp;Main&nbsp;**<br/>set&nbsp;s=ActiveDocument.Sheets("Main")<br/>for&nbsp;i=0&nbsp;to&nbsp;s.NoOfSheetObjects-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;s.SheetObjects(i).Minimize<br/>next<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+</body>
+</html>

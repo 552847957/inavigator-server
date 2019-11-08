@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<etl-config>
+    <etl-action dataFile="mis_dashboard_rb2.sqlite" patternName="MIS_DASHBOARD_RB" autoRun="false" manualRun="true" generationMode = "ON_CONDITION" />
+    
+    <etl-action-pattern patternName="MIS_DASHBOARD_RB" application="Balance" jndi="jdbc/finik1" database="mis_balance"> <!-- it's excpected database user has access to all schemes used in scripts-->
+        <name seriesIndex="0" seriesName="default_params"/>
+        <query>SELECT * FROM MIS_DASHBOARD_RB_KPI.dbo.default_params</query>
+
+        <name seriesIndex="1" seriesName="start_screen"/>
+        <query>SELECT * FROM MIS_DASHBOARD_RB_KPI.dbo.start_screen</query>
+
+        <name seriesIndex="2" seriesName="Data"/>
+        <query>SELECT * FROM MIS_DASHBOARD_RB.dbo.Data</query>
+        <change-type seriesIndex="2" fields="dt" newDataType="92"/>
+		
+        <name seriesIndex="3" seriesName="DEPRT"/>
+        <query>SELECT * FROM MIS_DASHBOARD_RB.dbo.DEPRT</query>
+
+        <name seriesIndex="4" seriesName="KPI"/>
+        <query>SELECT * FROM MIS_DASHBOARD_RB.dbo.KPI</query>
+
+        <name seriesIndex="5" seriesName="MEASURE"/>
+        <query>SELECT * FROM MIS_DASHBOARD_RB.dbo.MEASURE</query>
+
+        <query>CREATE INDEX indx_data_1 ON Data (dt ASC, deprt_id ASC, kpi_id ASC)</query>
+
+        <query>CREATE UNIQUE INDEX inndx_kpi_u1 ON KPI (kpi_id)</query>
+
+        <query>VACUUM</query>
+
+        <query>ANALYZE</query>
+    </etl-action-pattern>
+</etl-config>

@@ -1,0 +1,170 @@
+<html>
+<head><title>IGraphProperties</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IGraphProperties</h1><br/>
+Chart properties object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>ActionItems</b></font> (IArrayOfActionItemDef, <i>objectref.</i>)
+<dl>
+    <dd>Reference to actions defined in a chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Action types enumerated as follows:<br/>Info=0<br/>Sql=1<br/>Lock All=2<br/>Unlock All=3<br/>Clear
+        All=4<br/>Clear All Incl Locked=5<br/>Back=6<br/>Forward=7<br/>File Close=8<br/>Next Tab=9<br/>Prev Tab=10<br/>Export=11<br/>Launch=12<br/>Macro=13<br/>Recall
+        Bookmark=14<br/>Replace Bookmark=15<br/>Create Bookmark=16<br/>Print Report=17<br/>Activate Sheet=18<br/>Print
+        Sheet=19<br/>Print Object=20<br/>Restore Object=21<br/>Minimize Object=22<br/>Maximize Object=23<br/>Activate
+        Object=24<br/>Select Excluded=25<br/>Clear Other Fields=26<br/>Select Possible=27<br/>Lock=28<br/>Unlock=29<br/>Pareto
+        Select=30<br/>Set Value=31<br/>Field Select=32<br/>Field Toggleselect=33<br/>Open Url=34<br/>Document
+        Chain=35<br/>Eov=36</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Cacheable</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if the chart should have its cleared state cached. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ChartProperties</b></font> (<a href="IChartProperties.htm">IChartProperties</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Properties for bitmap charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Properties definitions for bitmap charts</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Detached</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if chart is detached. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Dimensions</b></font> (<a
+        href="IArrayOfChartDimensionDataDef.htm">IArrayOfChartDimensionDataDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Array of dimensions. Replaces Variables property in QV 4.0x<p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of dimension variables</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EvaluationCondition</b></font> (<a href="IValueExpr.htm">IValueExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Logical condition which determines whether a chart should be evaluated. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Expressions</b></font> (<a href="IArrayOfArrayOfMainExpressionData.htm">IArrayOfArrayOfMainExpressionData</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Chart expressions. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of expression definition arrays</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GraphLayout</b></font> (<a href="IGraphLayout.htm">IGraphLayout</a>, <i>objectref.</i>)
+<dl>
+    <dd>Graph layout definition. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Memory</b></font> (ICalculationLimits, <i>objectref.</i>)
+<dl>
+    <dd>Calculation memory limits for chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrintSettings</b></font> (<a href="IPrinterOptions.htm">IPrinterOptions</a>, <i>objectref.</i>)
+<dl>
+    <dd>Print settings for chart. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Print settings object for chart</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ReadOnly</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if chart is read-only. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowNumbersOnBarsZeroValues</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if numbers onm bars to be shown for zero values. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SortByYValue</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Setting for chart sort by y-value. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if chart to be sorted by y-value</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SuppressMissing</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for suppression of missing values. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SuppressZero</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for suppression of zero values. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TableProperties</b></font> (<a href="ITableProperties.htm">ITableProperties</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Properties for table charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Properties definitions for table charts</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

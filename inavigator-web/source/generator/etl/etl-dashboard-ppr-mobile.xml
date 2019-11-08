@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<etl-config>
+    <etl-action dataFile="DASHBOARD_PPR_MOBILE.sqlite"
+				patternName="DASHBOARD_PPR_MOBILE"
+				autoRun="false" 
+				manualRun="true" 
+				/>
+
+    <etl-action-pattern patternName="DASHBOARD_PPR_MOBILE" application="Dashboard PPR" jndi="jdbc/finik1" database="dashboard_ppr_mobile">
+        <name seriesIndex="0" seriesName="block"/>
+        <query>select * from [dbo].[block]</query>
+
+        <name seriesIndex="1" seriesName="data"/>
+        <query>select * from [dbo].[data]</query>
+
+        <name seriesIndex="2" seriesName="Files"/>
+        <query>select * from [dbo].[Files]</query>
+        <change-type seriesIndex="2" fields="FILE" newDataType="2004"/>
+
+        <name seriesIndex="3" seriesName="ForecastDates"/>
+        <query>select * from [dbo].[ForecastDates]</query>
+
+        <name seriesIndex="4" seriesName="General_values"/>
+        <query>SELECT * from [dbo].[General_values]</query>
+
+        <name seriesIndex="5" seriesName="goal"/>
+        <query>SELECT * FROM [dbo].[goal]</query>
+
+        <name seriesIndex="6" seriesName="goal_type"/>
+        <query>SELECT * FROM [dbo].[goal_type]</query>
+
+        <name seriesIndex="7" seriesName="Mark5Plus_data"/>
+        <query>SELECT * FROM [dbo].[Mark5Plus_data]</query>
+
+        <name seriesIndex="8" seriesName="Mark5PlusCompetences"/>
+        <query>SELECT * FROM [dbo].[Mark5PlusCompetences]</query>
+
+        <name seriesIndex="9" seriesName="measure"/>
+        <query>SELECT * FROM [dbo].[measure]</query>
+
+        <name seriesIndex="10" seriesName="MyMark_data"/>
+        <query>SELECT * FROM [dbo].[MyMark_data]</query>
+
+        <name seriesIndex="11" seriesName="person"/>
+        <query>SELECT * FROM [dbo].[person]</query>
+        <change-type seriesIndex="11" fields="personImage" newDataType="2004"/>
+
+        <name seriesIndex="12" seriesName="person_in_year"/>
+        <query>SELECT * FROM [dbo].[person_in_year]</query>
+
+        <name seriesIndex="13" seriesName="position"/>
+        <query>SELECT * FROM [dbo].[position]</query>
+
+        <query>CREATE UNIQUE INDEX "data_ix1" ON data (personId ASC, goalId ASC, date_ DESC, dynType ASC)</query>
+
+</etl-action-pattern>
+
+</etl-config>
+
+
+
+
+
+
+
+
+
+

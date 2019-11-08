@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="config-service-test-spring-context.xml"/>
+
+    <bean name="jdbcTamplateMSSQLServiceAnswer"
+          class="ru.sberbank.syncserver2.service.sql.mssql.JdbcTamplateMSSQLServiceAnswer"/>
+    <bean name="jdbcTamplateMSSQLServiceMockFactoryBean"
+          class="ru.sberbank.inav.test.util.factory.bean.MockJdbcTemplateFactory" scope="prototype">
+        <constructor-arg name="theAnswer" ref="jdbcTamplateMSSQLServiceAnswer"/>
+    </bean>
+    <bean id="sqlTemplateLoaderBean" class="ru.sberbank.syncserver2.service.sql.SQLTemplateLoader">
+        <property name="serviceContainer" ref="serviceContainerMockBean"/>
+    </bean>
+    <bean name="msSQLServiceServiceTestBean" class="ru.sberbank.syncserver2.service.sql.MSSQLService">
+        <property name="serviceContainer" ref="serviceContainerMockBean"/>
+        <property name="mssqlURL" value="jdbc:sqlserver://127.0.0.1:1433;databaseName=inav_test"/>
+        <property name="mssqlUser" value="inav_test"/>
+        <property name="mssqlPassword" value="Qwerty123456"/>
+        <property name="serviceName" value="MSSQLTestService"/>
+        <property name="dataSource" ref="basicDataSourceMockFactoryBean"/>
+    </bean>
+
+
+</beans>

@@ -1,0 +1,1212 @@
+<html>
+<head><title>IUserPreferences</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IUserPreferences</h1><br/>
+User preferences for QlikView on computer<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>BorderColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Default border color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Default border color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BorderEffect</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Default border effect (border style) for new documents. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Border effect<br/>0=bitmap<br/>1=depressed<br/>2=raised<br/>3=walled<br/>4=walled2<br/>5=walled3<br/>6=solid</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BorderWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default border width in pixels. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CacheLoginInfo</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if login info for document should be cached for the remainder of the QlikView session. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CalculationProgressInformation</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Verbosity level of sheet object progress info. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Verbosity level of sheet object progress info<br/>0 = off<br/>1 = normal<br/>2 = verbose</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ChartCellSize</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default limit on max number of cells in new calculated objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ChartColorPrintMode</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Override settings for chart printout mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Override settings for chart printout mode<br/>0 = use chart settings<br/>1 = always print color<br/>2 =
+        always print b/w</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ChartMemorySize</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default limit on max memory for calculation in new calculated objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ChartTotalString</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Default total string for charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ChartUseCapNBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Copy bitmap to clipboard of chart objects are to include sheet object caption and border. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ClipboardHeaderMode</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Header mode for copy table to clipboard. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Header mode for copy table to clipboard<br/>0 = Full table as default<br/>1 = Data area only as
+        default<br/>2 = Cascade menu with both options</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ClipboardZoom</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Zoom factor in percent for copy bitmap to clipboard. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ColorMap</b></font> (<a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>User default chart color map. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of colors as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ConfirmCloseSheetObject</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if confirmation dialog should be shown when removing sheet objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ConfirmPurge</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if confirmation dialog should be shown when reducing data. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ConfirmRemoveTab</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if confirmation dialog should be shown when removing sheets. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CreateProjectFolder</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd><p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CurrentSelections</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Current selections window visible. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CurSelBoxUseCapNBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Copy bitmap to clipboard of current selection boxes are to include sheet object caption and border. <p/>
+    </dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CustomSelBgColor</b></font> (<a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Custom selection background colors. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of custom selection background colors</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CustomSelFgColor</b></font> (<a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Custom selection text colors. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of custom selection text colors</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CustSelCol</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if custom selection color scheme enabled. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DarkLuminosity</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Default for darkest border luminosity for new sheet objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code>A value between 0 and 1, typically between 0 and 0,5.</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DateTimeFormat</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Custom date/time format for printout time stamps. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultObjectCaptionStyle</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Default sheet object caption style for new documents. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Default sheet object caption style for new documents<br/>0 = Plain<br/>1 = Glass<br/></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultTheme</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Default theme for new documents. If no default theme is defined, property heritage will be used<p/></dd>
+</dl>
+<dl>
+    <dd><code>File name if theme resides in default theme folder, else full path with file name</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DontUseInternetCache</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if local cache should be ignored when reading data from ftp or http. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EditorCopyAsRtf</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if output from editor should be in RTF format. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>EditorKeysPerSecond</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Repeat rate for keys in editor. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Repeat rate for keys in editor (characters per second)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExpComment</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for Expression comments. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExpDanger</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for Expression dangerous fields. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExpError</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for Expression errors. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExpField</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for Expression fields. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExpFunction</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for Expression functions. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExpHighlight</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for Expression highlighted text. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExpNormalText</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for Expression normal text. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExportFormat</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Export number format modification. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Export number format modification<br/>0 = no modification<br/>1 = remove thousand separators (recommended
+        for Excel)<br/>2 = remove all number formatting</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExpString</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for Expression string literals. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FileWizardSampleSize</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Number of rows to load from database in table file wizard. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ForceCasingInScripts</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if script forced casing is enabled. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FunctionPopupHelp</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if function pop-up help is enabled. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IncludeExcluded</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if excluded values are to be included in text searches. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>InputBoxUseCapNBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Copy bitmap to clipboard of input boxes are to include sheet object caption and border. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>KeepOrphanQvds</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if orpkaned QVD buffers should be kept. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LightLuminosity</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Default for lightest border luminosity for new sheet objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code>A value between 0 and 1, typically between 0,5 and 1.</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ListBoxUseCapNBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Copy bitmap to clipboard of list boxes are to include sheet object caption and border. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MacroLaunchConfirmation</b></font> (Boolean, <i>read-only</i>)
+<dl>
+    <dd>True if dialog warning for application launch from macro should be shown. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MarginBottom</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default bottom print margin in mm. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MarginLeft</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default left print margin in mm. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MarginRight</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default right print margin in mm. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MarginTop</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default top print margin in mm. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MaxCurSelEntries</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Maximum number of individual selected field values to be shown in current selections. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MaxLineSymbols</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Maximum number of data points for which to use symbols in line/combo charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MRU_number</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Number of entries in MRU list on File menu. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MultiBoxUseCapNBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Copy bitmap to clipboard of multi boxes are to include sheet object caption and border. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Name</b></font> (String, <i>read-only</i>)
+<dl>
+    <dd>Registered QlikView license owner name. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Organization</b></font> (String, <i>read-only</i>)
+<dl>
+    <dd>Registered QlikView license owner organization. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Other_String</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Default others string for charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PaperOrientation</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Printer paper orientation. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Printer paper orientation<br/>1 = portrait<br/>2 = landscape</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PossibleValuesForListbox</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if input boxes should be copied as possible values instead of image on Copy command. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PreferredSearchStyle</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Preferred search style. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True for user set preferred search style</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PreferredSelectionColors</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>User default color selection scheme. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Selection color scheme for document<br/>0 = Classic<br/>1 = Forest<br/>2 = Spring<br/>3 = Lime</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PreferredSelectionStyle</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>User default selection style. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Selection style<br/>0 = Classic<br/>1 = Windows checkboxes<br/>2 = Cornertags<br/>3 = LEDs</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrinterPoints</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Not used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrintSelectionHistory</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if selection stamp should be included on printouts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrintTimestamp</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if time stamp should be included on printouts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrintWindowTitle</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if chart/table title should be included on printouts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QFont</b></font> (<a href="IBaseFont.htm">IBaseFont</a>, <i>objectref.</i>)
+<dl>
+    <dd>Default QV font. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QTxBuFont</b></font> (<a href="IBaseFont.htm">IBaseFont</a>, <i>objectref.</i>)
+<dl>
+    <dd>Default font for text objects and buttons. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Font definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QvScriptComment</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for script comments. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QvScriptError</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for script errors. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QvScriptField</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for script fields. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QvScriptFilename</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for file names in script. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QvScriptFunction</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for script functions. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QvScriptHighlight</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for script highlighted text. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QvScriptKeyword</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for script keywords. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QvScriptLabel</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for script table labels. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QvScriptLiteral</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for script text literals. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QvScriptMacro</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for script macros. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>QvScriptNormalText</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for script normal text. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RainbowBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Default for rainbow border color on new objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RememberScriptScrollPos</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if script editor should remember scroll position. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RoundedCornersBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if rounded corners are to be used on new sheet objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RoundnessBottomLeftBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if left bottom corner is enabled for rounded shape on new sheet objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RoundnessBottomRightBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if right bottom corner is enabled for rounded shape on new sheet objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RoundnessFixCornerBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if fixed radius rounding is to be used on new sheet objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RoundnessTopLeftBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if left top corner is enabled for rounded shape on new sheet objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RoundnessTopRightBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if right top corner is enabled for rounded shape on new sheet objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RoundnessValueFixBorder</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default extent of corner rounding in fixed docunits. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RoundnessValuePercentBorder</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Default rounding of corners in percent of side for new sheet objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Extent of corner rounding in percent of object side (0-100)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RoundnessValuePowerBorder</b></font> (Double, <i>read-write</i>)
+<dl>
+    <dd>Default for object shape squareness for new sheet objects. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Corner rounding factor<br/>2 gives elliptic shape, larger values move towards rectangle</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ScriptFont</b></font> (<a href="IBaseFont.htm">IBaseFont</a>, <i>objectref.</i>)
+<dl>
+    <dd>Font used in script editor. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionPagePosition</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Selection stamp position on a certain page. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Selection stamp position on a certain page<br/>0 = top<br/>1 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionPosition</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Selection stamp on different pages. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Selection stamp on different pages<br/>0 = first page only<br/>1 = all pages<br/>2 = last page only</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionsForCurSel</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if current selection objects should be copied as selection stamp instead of image on Copy command. <p/>
+    </dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionStampInBIFFExport</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if selection stamp is to be included in BIFF export. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionStampInHTMLExport</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if selection stamp is to be included in HTML export. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionStampInTextExport</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if selection stamp is to be included in plain text file export. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SendToExcelExportNumberFormat</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Type of number format settings to be used for Send to Excel. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Type of number format settings to be used for Send to Excel<br/>0 = Wysiwyg<br/>1 = No thousand
+        separator<br/>2 = Native<br/>4 = American</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Serial</b></font> (String, <i>read-only</i>)
+<dl>
+    <dd>Current QlikView serial number. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowSystemFields</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if system fields are to be shown in field lists in UI. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowSystemVariables</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if system variables are to be shown in field lists in UI. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SingleExpressionMemoryLimit</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Memory limit for calculated formulas. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SMTPAddress</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Sets the address of the sender in mail settings of user preferences. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Takes a single string parameter</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SMTPPassword</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Sets the server password in mail settings of user preferences. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Takes a single string parameter</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SMTPServer</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Sets the address of the server in mail settings of user preferences. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Takes a single string parameter</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SMTPUsername</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Sets the User ID on the server in mail settings of user preferences. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Takes a single string parameter</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>StartupFolder</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>QlikView default start-up folder. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>StatBoxUseCapNBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Copy bitmap to clipboard of statistics boxes are to include sheet object caption and border. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TableBeaconsMode</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default for selection indicators in new tables. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if selection indicators are to be used in new tables</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TableBoxUseCapNBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if Copy bitmap to clipboard of table boxes are to include sheet object caption and border. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TableDropdownSelectMode</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default for drop-down select in new tables. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if drop-down select is to be used in new tables</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TableForTables</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if tables should be copied as table instead of image on Copy command. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TablePrintRepeatColumns</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if column headers are to be repeated on each page when printing tables. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TablePrintRepeatRows</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if row headers are to be repeated on each page when printing pivot tables. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TableShowSortIndicator</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default for sort indicator in new tables. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if sort indicator is to be used in new tables</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextForButtons</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if buttons should be copied as text instead of image on Copy command. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextForText</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if text objects should be copied as text instead of image on Copy command. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseAjaxUI</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if new documents should use WebView in layout. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseCompression</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>True if new documents should use compressed file format as default. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseFileWizard</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if file wizard should be used for typed files. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseRelativePaths</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if relative paths are to be generated by script wizards. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UserExportCharset</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default export character set for new documents. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Default export character set for new documents<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001 =
+        UTF-8</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UserLogfileCharset</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Character set for script log files. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Character set for script log files<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001 = UTF-8</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UserPrefGenerateLogfile</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if new documents should have generate log files as default. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UserScriptEngine</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Default scripting engine for new documents. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Default scripting engine for new documents<br/>0 = VBScript<br/>1 = JavaScript</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseSounds</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if QlikView sounds are to be used. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseSystemDateTime</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if system date/time format should be used for printout time stamps. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ValuesForChart</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if charts should be copied as values instead of image on Copy command. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>VBScriptHighlight</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for VBScript highlighted text. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>VBScriptKeyword</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for VBScript keywords. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>VBScriptNormalText</b></font> (<a href="ISyntaxColor.htm">ISyntaxColor</a>, <i>objectref.</i>)
+<dl>
+    <dd>Editor syntax color settings for VBScript normal text. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

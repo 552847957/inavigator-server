@@ -1,0 +1,54 @@
+<configuration backupPath="out/backup" logsRoot="out/logs">
+ <servers>
+  <server host="127.0.0.1" port="1433" username="user" password="password" windowsSecurity="false">
+		<database name="MIS_IPAD_SYNCSERVER">
+		  <table name="EMPLOYEES" update="EMPLOYEE_EMAIL"/>
+		  <table name="SYNC_CONFIG" update="PROPERTY_KEY" updateOnly="true" ignore="PROPERTY_DESC;PROPERTY_GROUP"/>
+		  <table name="SYNC_LOGS" skipRestore="true"/>
+		  <table name="SYNC_CACHE_STATIC_FILES" update="FILE_ID;APP_CODE"/>
+		  <table name="SYNC_AUDIT" clear="true"/>
+		  <table name="SYNC_PUSH_NOTIFICATIONS_CLIENTS" update="SYNC_PNC_OS_CODE;SYNC_PNC_APPLICATION_CODE;SYNC_PNC_EMAIL;SYNC_PNC_DEVICE_CODE"/>
+		  <table name="SYNC_PUSH_NOTIFICATIONS_ARCHIVE" skipRestore="true">
+			  <query>
+				  select SYNC_PNA_MESSAGE_TEXT
+				  ,SYNC_PNA_PUSH_DATE
+				  ,SYNC_PNC_EMAIL
+				  ,SYNC_PNC_APPLICATION_CODE
+				  ,SYNC_PNC_APPLICATION_VERSION
+				  ,SYNC_PNC_OS_CODE
+				  ,SYNC_PNC_DEVICE_NAME
+				  ,SYNC_PNC_STATUS
+				  from SYNC_PUSH_NOTIFICATIONS_ARCHIVE arch
+				  inner join SYNC_PUSH_NOTIFICATIONS2CLIENT conn
+				  on arch.SYNC_PNA_ID = conn.SYNC_PN_ID
+				  inner join SYNC_PUSH_NOTIFICATIONS_CLIENTS clients
+				  on conn.SYNC_PNC_ID = clients.SYNC_PNC_ID
+			  </query>
+		  </table>
+		</database>
+		<database name="MIS_IPAD_GENERATOR">
+			<table name="EMPLOYEES" update="EMPLOYEE_EMAIL"/>
+			<table name="SYNC_CONFIG" update="PROPERTY_KEY" updateOnly="true" ignore="PROPERTY_DESC;PROPERTY_GROUP"/>
+			<table name="SYNC_LOGS" skipRestore="true"/>
+			<table name="SYNC_CACHE_STATIC_FILES" update="FILE_ID;APP_CODE"/>
+			<table name="GENERATOR_GROUP_USERS" update="APP_ID;EMAIL"/>
+			<table name="SYNC_AUDIT" skipRestore="true"/>
+		</database> 		
+		<database name="MIS_IPAD_PROXYSERVER">
+			<table name="EMPLOYEES" update="EMPLOYEE_EMAIL"/>
+			<table name="SYNC_CONFIG" update="PROPERTY_KEY" updateOnly="true" ignore="PROPERTY_DESC;PROPERTY_GROUP"/>
+			<table name="SQL_TEMPLATES_MOBILE" update="TEMPLATE_CODE"/>
+			<table name="SUBST_DICT" update="SUBST_CODE"/>
+			<table name="SYNC_LOGS" skipRestore="true"/>
+			<table name="SYNC_AUDIT" />
+		</database> 		
+		<database name="MIS_IPAD_MONITOR">
+			<table name="EMPLOYEES" update="EMPLOYEE_EMAIL"/>
+			<table name="SYNC_CONFIG" update="PROPERTY_KEY" updateOnly="true" ignore="PROPERTY_DESC;PROPERTY_GROUP"/>
+			<table name="NOTIFICATION_SERVERS" clear="true" update="SOURCE_HOST"/>
+			<table name="SYNC_LOGS" skipRestore="true"/>
+			<table name="SYNC_AUDIT" />
+		</database> 		
+  </server>
+ </servers>
+</configuration>

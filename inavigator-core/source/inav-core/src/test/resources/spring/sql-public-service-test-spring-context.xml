@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans profile="unit-test"
+       xml:base="sql-public-service-base-test-spring-context.xml"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="config-service-test-spring-context.xml"/>
+    <import resource="data-power-service-test-spring-context.xml"/>
+    <import resource="mssql-service-test-spring-context.xml"/>
+    <import resource="sqlite-service-test-spring-context.xml"/>
+    <import resource="sql-dispatcher-service-test-spring-context.xml"/>
+    <import resource="qlik-sense-service-test-spring-context.xml"/>
+    <import resource="qlik-sense-dispatcher-service-test-spring-context.xml"/>
+
+    <bean name="sqlPublicServiceSigmaTestBean" class="ru.sberbank.syncserver2.service.sql.SQLPublicService"/>
+
+</beans>

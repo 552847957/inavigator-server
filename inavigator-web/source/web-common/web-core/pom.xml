@@ -1,0 +1,36 @@
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>ru.sberbank.inavigator</groupId>
+		<artifactId>web-common</artifactId>
+		<version>${release_number}</version>
+	</parent>
+	<artifactId>web-core</artifactId>
+	<version>${release_number}</version>
+	<packaging>jar</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>ru.sberbank.inavigator</groupId>
+			<artifactId>inav-core</artifactId>
+			<version>${project.version}</version>
+			<scope>compile</scope>
+		</dependency>	
+	
+	</dependencies>
+
+</project>

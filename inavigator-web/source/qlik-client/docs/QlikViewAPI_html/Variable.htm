@@ -1,0 +1,266 @@
+<html>
+<head><title>Variable</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>Variable</h1><br/>
+The QlikView variable<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Method Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<h3>ForceContent</h3>
+<pre> <b>ForceContent</b>(String s, Double d)</pre>
+<dl>
+    <dd>Sets the value of a variable overriding any input constraints. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>s</code></b> (String) : String representation of dual value</dd>
+            <dd><b><code>d</code></b> (Double) : Numeric value of dual value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.50</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;v&nbsp;=&nbsp;ActiveDocument.Variables("Variable1")<br/>v.ForceContent&nbsp;"123",123<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetComment</h3>
+<pre>String <b>GetComment</b>()</pre>
+<dl>
+    <dd>Returns the comment text of the variable. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>10.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;v&nbsp;=&nbsp;ActiveDocument.Variables("Variable1")<br/>msgbox(v.GetComment)</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetContent</h3>
+<pre><a href="IAlfaNumString.htm">IAlfaNumString</a> <b>GetContent</b>()</pre>
+<dl>
+    <dd>Returns calculated value of variable (formula evaluated value if variable contains formula). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;v&nbsp;=&nbsp;ActiveDocument.Variables("Variable1")<br/>msgbox(v.GetContent.String)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetMRUStrings</h3>
+<pre><a href="Ireturn%20object%20for%20Variable.GetMRUStrings().htm">Ireturn object for Variable.GetMRUStrings()</a> <b>GetMRUStrings</b>()</pre>
+<dl>
+    <dd>Returns list of recently used variable values. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;v&nbsp;=&nbsp;ActiveDocument.Variables("Variable1")<br/>n&nbsp;=&nbsp;v.GetProperties.MRUCount<br/>set&nbsp;m&nbsp;=&nbsp;v.GetMRUStrings<br/>if&nbsp;m.Default&nbsp;then<br/>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;n-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;=&nbsp;m.Strings<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msgbox&nbsp;(s(i))<br/>&nbsp;&nbsp;&nbsp;&nbsp;next<br/>end&nbsp;if<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetProperties</h3>
+<pre><a href="IVariableProperties.htm">IVariableProperties</a> <b>GetProperties</b>()</pre>
+<dl>
+    <dd>Returns variable properties. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;v&nbsp;=&nbsp;ActiveDocument.Variables("Variable1")<br/>prop&nbsp;=&nbsp;v.GetProperties<br/>prop.ErrorMessage.v&nbsp;=&nbsp;"Illegal&nbsp;entry"<br/>prop.UseMsgOnError&nbsp;=&nbsp;true<br/>v.SetProperties&nbsp;prop<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetRawContent</h3>
+<pre>String <b>GetRawContent</b>()</pre>
+<dl>
+    <dd>Returns raw value of variable (formula text if variable contains formula). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;v&nbsp;=&nbsp;ActiveDocument.Variables("Variable1")<br/>msgbox(v.GetRawContent)<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetComment</h3>
+<pre> <b>SetComment</b>(String s)</pre>
+<dl>
+    <dd>Sets the comment text of the variable. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>s</code></b> (String) : Comment text of the variable</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>10.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;v&nbsp;=&nbsp;ActiveDocument.Variables("Variable1")<br/>v.SetComment&nbsp;"The&nbsp;currency&nbsp;rate"</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetContent</h3>
+<pre>Boolean <b>SetContent</b>(String Content, Boolean UpdateMRU)</pre>
+<dl>
+    <dd>Sets the value of variable. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Content</code></b> (String) : New variable value</dd>
+            <dd><b><code>UpdateMRU</code></b> (Boolean) : True if value to be added to MRU list</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if operation was successful</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd>
+                <i><code>set&nbsp;v&nbsp;=&nbsp;ActiveDocument.Variables("Variable1")<br/>v.SetContent&nbsp;"123",true<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetProperties</h3>
+<pre> <b>SetProperties</b>(IVariableProperties Properties)</pre>
+<dl>
+    <dd>Sets variable properties. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Properties</code></b> (<a href="IVariableProperties.htm">IVariableProperties</a>) : Variable
+                properties object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;v&nbsp;=&nbsp;ActiveDocument.Variables("Variable1")<br/>prop&nbsp;=&nbsp;v.GetProperties<br/>prop.ErrorMessage.v&nbsp;=&nbsp;"Illegal&nbsp;entry"<br/>prop.UseMsgOnError&nbsp;=&nbsp;true<br/>v.SetProperties&nbsp;prop<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+</body>
+</html>

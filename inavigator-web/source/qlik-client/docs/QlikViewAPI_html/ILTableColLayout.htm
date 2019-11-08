@@ -1,0 +1,175 @@
+<html>
+<head><title>ILTableColLayout</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>ILTableColLayout</h1><br/>
+Table box column layout description object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>ColWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Width of column in docunits. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultSearchMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Default search mode for table box member. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Default Search Mode when drop-down select is used in table<br/>0 = Document default<br/>1 = Normal
+        search<br/>2 = Fuzzy search</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DimCellVariations</b></font> (<a href="IArrayOfCellVariationDef.htm">IArrayOfCellVariationDef</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Cell format variation for column cells. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DropdownSelect</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if drop-down select to be available for column. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExcludedValuesMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Mode for inclusion of excluded values in search for table box member. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Include excluded values in search (drop-down select in tables)<br/>0 = Default<br/>1 = Yes<br/>2 =
+        No</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Field</b></font> (<a href="IFieldDefEx.htm">IFieldDefEx</a>, <i>objectref.</i>)
+<dl>
+    <dd>Field to be shown in column. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Field definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ImageRepresentation</b></font> (<a
+        href="ICellImageRepresentation.htm">ICellImageRepresentation</a>, <i>objectref.</i>)
+<dl>
+    <dd>Image representation settings for table box column. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell image settings object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Label</b></font> (<a href="IStringExpr.htm">IStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Column label (override for field name). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LabelAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Header horizontal text alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Header horizontal text alignment<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LabelVerticalAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Header vertical text alignment. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Header vertical text alignment<br/>0 = top<br/>4 = center<br/>8 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NullSuppression</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if null values should be suppressed in column. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Number alignment for column. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Number alignment for column<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumberPresentation</b></font> (<a href="IFieldAttributes.htm">IFieldAttributes</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Number format for column. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Number format definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Presentation</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Cell contents mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell contents mode<br/>0 = Text<br/>1 = Interpret value as image<br/>2 = Info as image<br/></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionStyle</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Override selection style settings for column. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Selection style (drop-down select in tables)<br/>-1 = Use User Preference<br/>0 = Classic<br/>1 = Windows
+        checkboxes<br/>2 = Cornertags<br/>3 = LEDs</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SortCriteria</b></font> (<a href="ISortCriteria.htm">ISortCriteria</a>, <i>objectref.</i>)
+<dl>
+    <dd>Sort criteria for column. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Text alignment for column. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Text alignment for column<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

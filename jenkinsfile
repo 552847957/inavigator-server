@@ -1,0 +1,59 @@
+node('Windows_Default') {
+    stage('prepare') {
+        echo "=====> start iNavigator pipeline: $BRANCH_NAME $BUILD_DISPLAY_NAME \nnodeLabels: $NODE_LABELS \nparams: $params \nbuildVariables: $currentBuild.buildVariables"
+        def mvnHome = tool 'Maven 3.3.9'
+        if (isUnix()) {
+            env.PATH = "${mvnHome}/bin:${env.PATH}"
+        } else {
+            env.PATH = "${mvnHome}/bin;${env.PATH}"
+        }
+    }
+    stage('checkout') {
+        checkout scm
+    }
+    stage('build') {
+        printVersion('inavigator','pom.xml')
+        if (isUnix()) {
+            sh "mvn -s settings.xml clean install"
+        } else {
+            bat "mvn -s settings.xml clean install"
+        }
+    }
+    stage('sonar') {
+        if (isUnix()) {
+            sh "mvn -s settings.xml -P sonar-publish sonar:sonar"
+        } else {
+            bat "mvn -s settings.xml -P sonar-publish sonar:sonar"
+        }
+    }
+    stage('deploy') {
+        if (isUnix()) {
+            sh "mvn -s settings.xml deploy"
+        } else {
+            bat "mvn -s settings.xml deploy"
+        }
+    }
+    stage('start deploy job') {
+        build job: '../Deploy_to_DEV', wait: false
+    }
+    stage('clean-after') {
+        if (currentBuild.currentResult == 'SUCCESS') {
+            echo "Build succeed, clearing workspace..."
+            cleanWs cleanWhenAborted: false, cleanWhenFailure: false, cleanWhenNotBuilt: false, cleanWhenUnstable: false
+			mail to: 'INShakhov.SBT@sberbank.ru', subject: "Jenkins: Успешная сборка",
+                    body: "Сборка завершилась успешно. Ссылка на билд: ${BUILD_URL} \n---\nJenkins"
+        } else {
+            echo "Build have $currentBuild.currentResult status"
+            mail to: 'INShakhov.SBT@sberbank.ru', subject: "Jenkins: Неуспешная сборка",
+                    body: "Сборка имеет статус $currentBuild.currentResult. Ссылка на билд: ${BUILD_URL} \n---Jenkins"
+        }
+    }
+}
+
+@NonCPS
+def printVersion(name, pomPath) {
+    def matcher = readFile(pomPath) =~ '<version>(.+)</version>'
+    if (matcher) {
+        echo "Building $name ${matcher[0][1]}"
+    }
+}

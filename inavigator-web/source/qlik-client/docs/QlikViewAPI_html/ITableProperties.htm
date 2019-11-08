@@ -1,0 +1,367 @@
+<html>
+<head><title>ITableProperties</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>ITableProperties</h1><br/>
+Pivot table and straight table properties object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>AllowMenuSort</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if interactive sorting allowed in straight table. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>AllowPivoting</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if interactive pivoting allowed in pivot tables. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>BorderAboveSpacing</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for border above spacing cells. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CellBackgroundAlpha</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Sets the cell background color transparency. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Transparency (0-255)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>CellBorderAlpha</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Sets the cell borders transparency. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Transparency (0-255)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ColWidths</b></font> (Variant (Array of Integer), <i>read-write</i>)
+<dl>
+    <dd>Table column widths. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of column widths in docunits</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultDimCellVariation</b></font> (<a href="ICellVariationDef.htm">ICellVariationDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Cell format variation information for dimension cells when all dimension columns or dimension rows have been
+        collapsed (pivot tables only). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DefaultExprCellVariations</b></font> (<a href="IArrayOfCellVariationDef.htm">IArrayOfCellVariationDef</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Cell format variation information for non-dimension cells when all dimension columns or dimension rows have been
+        collapsed (pivot tables only). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DimensionVtBorderMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Vertical border mode for dimension columns. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical border mode for dimension columns<br/>0 = no border<br/>1 = border where applicable</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>DisplayOrder</b></font> (Variant (Array of Integer), <i>read-write</i>)
+<dl>
+    <dd>Display order for columns in straight table. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExpressionVtBorderMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Vertical border mode for expression columns. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Vertical border mode for expression columns<br/>0 = no border<br/>1 = border where applicable</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HeaderMultiLine</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Setting for multiple line header cells. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Setting for multiple line header cells<br/>0 = single line cells<br/>1 = forbidden<br/>n = n lines in cell
+        with text wrap and truncation at end (2<=n<=100)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Horizontal</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for horizontal (transposed) straight tables. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HorizontalDimWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Width of dimension columns in horizontal straight table (docunits). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HorizontalExpWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Width of expression columns in horizontal straight table (docunits). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IndentMode</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for indent mode pivot tables. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>InterFieldSortOrder</b></font> (Variant (Array of Integer), <i>read-write</i>)
+<dl>
+    <dd>Array of column numbers indicating sort priority between columns in straight table. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LabelCellVariation</b></font> (<a href="ICellVariationDef.htm">ICellVariationDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Cell format variations for label cells in table. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MaxNumShown</b></font> (<a href="IValueExpr.htm">IValueExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Maximum number of rows to show in straight table. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Value expression definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MissingSymbol</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Symbol for missing values. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MultiLine</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Setting for multiple line cells. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Setting for multiple line cells<br/>0 = single line cells<br/>1 = forbidden<br/>n = n lines in cell with
+        text wrap and truncation at end (2<=n<=100)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NullSymbol</b></font> (String, <i>read-write</i>)
+<dl>
+    <dd>Symbol for NULL values. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumberOfLeftDimensions</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Number of dimensions on the vertical axis in pivot table. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PivotAlwaysFullyExpanded</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if pivot table partial expand/collapse disabled. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PivotTableTotalPosition</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Position of subtotals in pivot table. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Position of subtotals in pivot table<br/>0 = top<br/>1 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PopulateMissingPivotCells</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if missing values in cross tables should be counted as null. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PseudoDimCellVariation</b></font> (<a href="ICellVariationDef.htm">ICellVariationDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Cell format variation information for cells for pseudo dimensions formed by multiple expressions (pivot tables
+        only). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowSelectIndicators</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if selection indicators should be shown in table header for table charts. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowSortIndicators</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if sort indicator is to be shown in column headers for straight table. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>StraightShowOthers</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if others row should be displayed in straight table. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Striping</b></font> (Variant (Array of Byte), <i>read-write</i>)
+<dl>
+    <dd>Array where each element tells the number of lines to be striped with each stripe type.. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array where each element tells the number of lines to be striped with each stripe type. Any number of
+        stripes can be used, although only two can be controlled from the UI. The array must always contain minimum one
+        element (no striping) containing a positive number (>0).</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>StyleNumber</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Style number. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Style number<br/>-1 = custom style<br/>0 = Basic<br/>1 = Table1<br/>2 = Whacky<br/>3 = Classic<br/>4 =
+        Pyjama1<br/>5 = Pivot1<br/>6 = Relief</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SuppressHeader</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if table header row is to be suppressed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SuppressPivotExpandIconsOnPrint</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if expand/collapse icons in pivot table are to be suppressed when printing. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TableTotalPosition</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Total position in straight tables. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Position of total row<br/>0 = top<br/>1 = bottom</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseOnlyFirstDimLabel</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if only first dimension label should be shown in indent mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>UseTotalLabelForStraight</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>Determines whether total label should be used on total row in straight table. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True if total label should be used on total row in straight table</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>VerticalLabels</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for vertical labels. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

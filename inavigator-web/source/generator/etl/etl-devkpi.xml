@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<etl-config>
+  <etl-action dataFile="MIS_NAVIGATOR_KPI_D.sqlite" patternName="MIS_NAVIGATOR_KPI_D"  autoRun="true" manualRun="true" generationMode="ON_CONDITION"/>
+  <etl-action dataFile="MIS_NAVIGATOR_KPI_W.sqlite" patternName="MIS_NAVIGATOR_KPI_W"  autoRun="true" manualRun="true" generationMode="ON_CONDITION"/>
+  <etl-action dataFile="MIS_NAVIGATOR_KPI.sqlite"   patternName="MIS_NAVIGATOR_KPI"    autoRun="true" manualRun="true" generationMode="ON_CONDITION"/>
+
+  <etl-action dataFile="MIS_NAVIGATOR_KPI_D2.sqlite" patternName="MIS_NAVIGATOR_KPI_D" autoRun="true" manualRun="true" generationMode="ON_CONDITION"/>
+  <etl-action dataFile="MIS_NAVIGATOR_KPI_W2.sqlite" patternName="MIS_NAVIGATOR_KPI_W" autoRun="false" manualRun="true"/>
+  <etl-action dataFile="MIS_NAVIGATOR_KPI2.sqlite"   patternName="MIS_NAVIGATOR_KPI"     autoRun="false" manualRun="true"/>
+
+  <etl-action-pattern patternName="MIS_NAVIGATOR_KPI" application="iNavigator" jndi="jdbc/finik1" database="mis_navigator_kpi">
+    <name seriesIndex="0" seriesName="NAV_KPI_DASHBOARD"/>
+    <query>SELECT * FROM NAV_KPI_DASHBOARD_MOBILE</query>
+
+    <name seriesIndex="1" seriesName="NAV_KPI_DOMAINS"/>
+    <query>SELECT * FROM NAV_KPI_DOMAINS</query>
+
+    <name seriesIndex="2" seriesName="NAV_KPI_DASHBOARD_DOMAINS"/>
+    <query>SELECT * FROM NAV_KPI_DASHBOARD_DOMAINS</query>
+
+    <name seriesIndex="3" seriesName="NAV_KPI_CARD"/>
+    <query>SELECT * FROM NAV_KPI_CARD</query>
+
+    <name seriesIndex="4" seriesName="NAV_KPI_DOMAIN_CARDS"/>
+    <query>SELECT * FROM NAV_KPI_DOMAIN_CARDS</query>
+
+    <name seriesIndex="5" seriesName="NAV_KPI_TREE_CARDS"/>
+    <query>SELECT * FROM NAV_KPI_TREE_CARDS</query>
+
+    <name seriesIndex="6" seriesName="NAV_KPI_TREE_CARD_HIER"/>
+    <query>SELECT * FROM NAV_KPI_TREE_CARD_HIER</query>
+
+    <name seriesIndex="7" seriesName="NAV_KPI_TREE_ARROW"/>
+    <query>SELECT * FROM NAV_KPI_TREE_ARROW</query>
+
+    <name seriesIndex="8" seriesName="NAV_KPI_ARROW_POINT"/>
+    <query>SELECT * FROM NAV_KPI_ARROW_POINT</query>
+
+    <name seriesIndex="9" seriesName="NAV_KPI_ENTERPOINT_DASHBOARD"/>
+    <query>SELECT * FROM NAV_KPI_ENTERPOINT_DASHBOARD</query>
+
+    <name seriesIndex="10" seriesName="NAV_KPI_MENU"/>
+    <query>SELECT * FROM NAV_KPI_MENU</query>
+
+    <name seriesIndex="11" seriesName="NAV_KPI_MENU_ITEM"/>
+    <query>SELECT * FROM NAV_KPI_MENU_ITEM</query>
+
+    <name seriesIndex="12" seriesName="NAV_KPI_MENU_HIER"/>
+    <query>SELECT * FROM NAV_KPI_MENU_HIER</query>
+
+    <name seriesIndex="13" seriesName="NAV_KPI_DASHBOARD_MENU"/>
+    <query>SELECT * FROM NAV_KPI_DASHBOARD_MENU</query>
+
+    <name seriesIndex="14" seriesName="NAV_KPI_MENU_ITEM_PARAM"/>
+    <query>SELECT * FROM NAV_KPI_MENU_ITEM_PARAM</query>
+
+    <name seriesIndex="15" seriesName="NAV_KPI_MENU_ITEM_PARAMS"/>
+    <query>SELECT * FROM NAV_KPI_MENU_ITEM_PARAMS</query>
+
+    <name seriesIndex="16" seriesName="NAV_KPI_MENU_ITEM_CUSTOM_PARAMS"/>
+    <query>SELECT * FROM NAV_KPI_MENU_ITEM_CUSTOM_PARAMS</query>
+
+    <name seriesIndex="17" seriesName="PUB_NAV_KPI_POKS"/>
+    <query>SELECT * FROM PUB_NAV_KPI_POKS</query>
+
+    <name seriesIndex="18" seriesName="NAV_KPI_DASHBOARD2ROLE"/>
+    <query>SELECT * FROM NAV_KPI_DASHBOARD2ROLE</query>
+
+    <name seriesIndex="19" seriesName="PUB_NAV_AXIS"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_DATA.dbo.PUB_NAV_AXIS</query>
+
+    <name seriesIndex="20" seriesName="PUB_NAV_AXISDETAIL"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_DATA.dbo.PUB_NAV_AXISDETAIL</query>
+
+    <name seriesIndex="21" seriesName="PUB_NAV_AXISATTRIBUTE"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_DATA.dbo.PUB_NAV_AXISATTRIBUTE</query>
+
+    <name seriesIndex="22" seriesName="PUB_NAV_AXISATRIBUTEVALUE"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_DATA.dbo.PUB_NAV_AXISATRIBUTEVALUE</query>
+    
+    <name seriesIndex="23" seriesName="PUB_NAV_SLICE"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_DATA.dbo.PUB_NAV_SLICE</query>
+    
+    <name seriesIndex="24" seriesName="PUB_NAV_SLICEDETAIL"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_DATA.dbo.PUB_NAV_SLICEDETAIL</query>
+    
+    <name seriesIndex="25" seriesName="PUB_NAV_MEASURE"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_DATA.dbo.PUB_NAV_MEASURE</query>
+    
+    <name seriesIndex="26" seriesName="PUB_NAV_DATA_200"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_200 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="27" seriesName="PUB_NAV_DATA_201"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_201 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="28" seriesName="PUB_NAV_DATA_202"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_202 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="29" seriesName="PUB_NAV_DATA_203"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_203 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="30" seriesName="PUB_NAV_DATA_205"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_205 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="31" seriesName="PUB_NAV_DATA_206"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_206 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="32" seriesName="PUB_NAV_DATA_208"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_208 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="33" seriesName="PUB_NAV_KPI_POK"/>
+    <change-type seriesIndex="33" fields="availableDate,startDate" newDataType="93"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_DATA.dbo.PUB_NAV_KPI_POK</query>
+
+    <name seriesIndex="34" seriesName="NAV_KPI_DASHBOARD_DEFAULT_PARAMS"/>
+    <change-type seriesIndex="34" fields="dataDate" newDataType="93"/>
+    <query>GET_MOBILE_NAV_KPI_DASHBOARD_DEFAULT_PARAMS 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="35" seriesName="NAV_KPI_DASHBOARD_PARAMS"/>
+    <change-type seriesIndex="35" fields="dataDate" newDataType="93"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_KPI.dbo.[NAV_KPI_DASHBOARD_PARAMS]</query>
+
+    <name seriesIndex="36" seriesName="NAV_KPI_DASHBOARD_START_POINT"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_KPI.dbo.[NAV_KPI_DASHBOARD_START_POINT]</query>
+
+    <name seriesIndex="37" seriesName="NAV_KPI_DASHBOARD_NAVIGATION"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_KPI.dbo.[NAV_KPI_DASHBOARD_NAVIGATION]</query>
+
+    <name seriesIndex="38" seriesName="NAV_KPI_DASHBOARD_NAVIGATION_DETAIL"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_KPI.dbo.[NAV_KPI_DASHBOARD_NAVIGATION_DETAIL]</query>
+
+    <name seriesIndex="39" seriesName="PUB_NAV_DATA_DOCS_200"/>
+    <change-type seriesIndex="39" fields="date_,last_update" newDataType="93"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_200 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="40" seriesName="PUB_NAV_DATA_DOCS_201"/>
+    <change-type seriesIndex="40" fields="DATE_,LAST_UPDATE" newDataType="93"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_201 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="41" seriesName="PUB_NAV_DATA_DOCS_202"/>
+    <change-type seriesIndex="41" fields="DATE_,LAST_UPDATE" newDataType="93"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_202 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="42" seriesName="PUB_NAV_DATA_DOCS_203"/>
+    <change-type seriesIndex="42" fields="DATE_,LAST_UPDATE" newDataType="93"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_203 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="43" seriesName="PUB_NAV_DATA_DOCS_205"/>
+    <change-type seriesIndex="43" fields="DATE_,LAST_UPDATE" newDataType="93"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_205 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="44" seriesName="PUB_NAV_DATA_DOCS_206"/>
+    <change-type seriesIndex="44" fields="DATE_,LAST_UPDATE" newDataType="93"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_206 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="45" seriesName="PUB_NAV_DATA_DOCS_208"/>
+    <change-type seriesIndex="45" fields="DATE_,LAST_UPDATE" newDataType="93"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_208 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="46" seriesName="PUB_NAV_DATA_LIMITS"/>
+    <change-type seriesIndex="46" fields="DATE_" newDataType="93"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_DATA.dbo.[PUB_NAV_DATA_LIMITS]</query>
+
+    <!--<query>delete from pub_nav_data_200 where kpi_id in (5,181)</query>-->
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_200"   ON PUB_NAV_DATA_200 (KPI_ID COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, DynamicType COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_201"   ON PUB_NAV_DATA_201 (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, INDKM COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_202"   ON PUB_NAV_DATA_202 (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, INDKI COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_203"   ON PUB_NAV_DATA_203 (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, CURNC COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_205"   ON PUB_NAV_DATA_205 (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, SEGMT COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_206"   ON PUB_NAV_DATA_206 (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, PRDCT COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_208"   ON PUB_NAV_DATA_208 (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, INDST COLLATE BINARY ASC)</query>
+    <query>CREATE INDEX        "NUI_PUB_NAV_DATA_205"  ON PUB_NAV_DATA_205 (KPI_ID COLLATE BINARY ASC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, SEGMT COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_KPI_POKS"   ON PUB_NAV_KPI_POKS (CARD_ID COLLATE BINARY ASC, POK_ID COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_KPI_POK"    ON PUB_NAV_KPI_POK (ID COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_MEASURE"    ON PUB_NAV_MEASURE (ID COLLATE BINARY ASC)</query>
+    <query>CREATE INDEX "IDX_AXIS_DETAIL_PARENT_LEVEL" ON PUB_NAV_AXISDETAIL (PARENTID, LEVEL_)</query>
+
+
+    <query>drop view if exists NAV_KPI_SEARCH_LIST</query>
+    <query>
+      create view NAV_KPI_SEARCH_LIST as
+      select d.id, REPLACE(REPLACE(REPLACE(d.name, '%TERR_NAME%','Сбербанк России'), '%DASH_OWNER%', 'Руководителя'), '%DYN_TYPE%', case when dd.dyn_type=2 then 'Ежеквартальный' when dd.dyn_type=3 then 'Ежемесячный' when dd.dyn_type=4 then 'Еженедельный' else '' end) as name, REPLACE(REPLACE(REPLACE(d.name_en, '%TERR_NAME%','Sberbank'), '%DASH_OWNER%', 'Head'), '%DYN_TYPE%', case when dd.dyn_type=2 then 'Quarterly' when dd.dyn_type=3 then 'Monthly' when dd.dyn_type=4 then 'Weekly' else '' end) as name_en, d.dashboard_type, d.isTree, '' as desc_, '' as desc_en,dd.dyn_type, 1 as terr_type, 1 as result_type, 0 as object_id
+      from NAV_KPI_DASHBOARD d, NAV_KPI_DASHBOARD_DOMAINS dd
+      where d.id = dd.dashboard_id
+      and dd.dyn_type not in (0)
+      and d.isTree=0
+      and dd.terr_type=1
+      union all
+      select d.id, REPLACE(d.name, '%TERR_NAME%','Сбербанк России'), REPLACE(d.name_en, '%TERR_NAME%','Sberbank'), d.dashboard_type, d.isTree, '' as desc_, '' as desc_en, 3, 1, 2 as result_type, 0 as object_id
+      from NAV_KPI_DASHBOARD d
+      where d.isTree=1
+      union all
+      select d.id, c.name, c.name_en, d.dashboard_type, d.isTree, REPLACE(REPLACE(REPLACE(d.name, '%TERR_NAME%','Сбербанк России'), '%DASH_OWNER%', 'Руководителя'), '%DYN_TYPE%', case when dd.dyn_type=2 then 'Ежеквартальный' when dd.dyn_type=3 then 'Ежемесячный' when dd.dyn_type=4 then 'Еженедельный' else '' end) as desc_, REPLACE(REPLACE(REPLACE(d.name_en, '%TERR_NAME%','Sberbank'), '%DASH_OWNER%', 'Head'), '%DYN_TYPE%', case when dd.dyn_type=2 then 'Quarterly' when dd.dyn_type=3 then 'Monthly' when dd.dyn_type=4 then 'Weekly' else '' end) as desc_en, dd.dyn_type, 1 as terr_type, 3 as result_type, c.id as object_id
+      from NAV_KPI_CARD c, NAV_KPI_DASHBOARD d, NAV_KPI_DASHBOARD_DOMAINS dd, NAV_KPI_DOMAIN_CARDS DC
+      where dd.dashboard_id = d.id
+      and dc.dbdm_id=dd.id
+      and dc.kpi_id=c.id
+      and dd.dyn_type not in (0)
+      and d.isTree=0
+      and dd.terr_type=1
+      union all
+      select d.id, c.name, c.name_en, d.dashboard_type, d.isTree, REPLACE(REPLACE(d.name, '%TERR_NAME%','Сбербанк России'), '%DASH_OWNER%', 'Руководителя') as desc_, REPLACE(REPLACE(d.name_en, '%TERR_NAME%','Sberbank'), '%DASH_OWNER%', 'Head') as desc_en, 3, 1, 3 as result_type, c.id as object_id
+      from nav_kpi_dashboard d, NAV_KPI_TREE_CARDS cd, NAV_KPI_CARD c
+      where d.id=cd.dashboard_id
+      and cd.kpi_id=c.id
+      union ALL
+      select d.id, p.name, p.name_en, d.dashboard_type, d.isTree, 'Карточка - '||c.name||', дэшборд - '||REPLACE(REPLACE(REPLACE(d.name, '%TERR_NAME%','Сбербанк России'), '%DASH_OWNER%', 'Руководителя'), '%DYN_TYPE%', case when dd.dyn_type=2 then 'Ежеквартальный' when dd.dyn_type=3 then 'Ежемесячный' when dd.dyn_type=4 then 'Еженедельный' else '' end) as desc_, 'Card - '||c.name_en||', dash board - '||REPLACE(REPLACE(REPLACE(d.name_en, '%TERR_NAME%','Sberbank'), '%DASH_OWNER%', 'Head'), '%DYN_TYPE%', case when dd.dyn_type=2 then 'Quarterly' when dd.dyn_type=3 then 'Monthly' when dd.dyn_type=4 then 'Weekly' else '' end) as desc_en, dd.dyn_type, 1 as terr_type, 4 as result_type, c.id as object_id
+      from NAV_KPI_CARD c, PUB_NAV_KPI_POK P, PUB_NAV_KPI_POKS PP, NAV_KPI_DASHBOARD d, NAV_KPI_DASHBOARD_DOMAINS dd, NAV_KPI_DOMAIN_CARDS DC
+      where dd.dashboard_id = d.id
+      and dc.dbdm_id=dd.id
+      and dc.kpi_id=c.id
+      and dd.dyn_type not in (0)
+      and d.isTree=0
+      and p.id=pp.pok_id
+      and c.id=pp.card_id
+      and dd.terr_type=1
+      union all
+      select d.id, p.name, p.name_en, d.dashboard_type, d.isTree, 'Карточка - '||c.name||', дерево - '||REPLACE(REPLACE(d.name, '%TERR_NAME%','Сбербанк России'), '%DASH_OWNER%', 'Руководителя') as desc_, 'Card - '||c.name_en||', tree - '||REPLACE(REPLACE(d.name_en, '%TERR_NAME%','Sberbank'), '%DASH_OWNER%', 'Head') as desc_en, 3, 1, 4 as result_type, c.id as object_id
+      from nav_kpi_dashboard d, pub_nav_kpi_pok p, pub_nav_kpi_poks pp, NAV_KPI_TREE_CARDS cd, NAV_KPI_CARD c
+      where d.id=cd.dashboard_id
+      and cd.kpi_id=c.id
+      and p.id=pp.pok_id
+      and c.id=pp.card_id
+    </query>
+  </etl-action-pattern>
+
+  <etl-action-pattern patternName="MIS_NAVIGATOR_KPI_W" application="iNavigator" jndi="jdbc/finik1" database="mis_navigator_kpi">
+    <name seriesIndex="0" seriesName="PUB_NAV_DATA_200_W"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_200_W 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="1" seriesName="PUB_NAV_DATA_201_W"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_201_W 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="2" seriesName="PUB_NAV_DATA_202_W"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_202_W 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="3" seriesName="PUB_NAV_DATA_203_W"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_203_W 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="4" seriesName="PUB_NAV_DATA_205_W"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_205_W 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="5" seriesName="PUB_NAV_DATA_206_W"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_206_W 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="6" seriesName="PUB_NAV_DATA_208_W"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_208_W 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="7" seriesName="NAV_KPI_DASHBOARD_DEFAULT_PARAMS_W"/>
+    <change-type seriesIndex="7" fields="dataDate" newDataType="93"/>
+    <query>GET_MOBILE_NAV_KPI_DASHBOARD_DEFAULT_PARAMS 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="8" seriesName="NAV_KPI_DASHBOARD_PARAMS_W"/>
+    <change-type seriesIndex="8" fields="dataDate" newDataType="93"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_KPI.dbo.[NAV_KPI_DASHBOARD_PARAMS]</query>
+
+    <name seriesIndex="9" seriesName="PUB_NAV_DATA_DOCS_200_W"/>
+    <change-type seriesIndex="9" fields="DATE_,LAST_UPDATE" newDataType="93"/>    
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_200_W 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="10" seriesName="PUB_NAV_DATA_DOCS_201_W"/>
+    <change-type seriesIndex="10" fields="DATE_,LAST_UPDATE" newDataType="93"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_201_W 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="11" seriesName="PUB_NAV_DATA_DOCS_202_W"/>
+    <change-type seriesIndex="11" fields="DATE_,LAST_UPDATE" newDataType="93"/>    
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_202_W 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="12" seriesName="PUB_NAV_DATA_DOCS_203_W"/>
+    <change-type seriesIndex="12" fields="DATE_,LAST_UPDATE" newDataType="93"/>    
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_203_W 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="13" seriesName="PUB_NAV_DATA_DOCS_205_W"/>
+    <change-type seriesIndex="13" fields="DATE_,LAST_UPDATE" newDataType="93"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_205_W 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="14" seriesName="PUB_NAV_DATA_DOCS_206_W"/>
+    <change-type seriesIndex="14" fields="DATE_,LAST_UPDATE" newDataType="93"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_206_W 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="15" seriesName="PUB_NAV_DATA_DOCS_208_W"/>
+    <change-type seriesIndex="15" fields="DATE_,LAST_UPDATE" newDataType="93"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_208_W 'NAV_PRESIDENT'</query>
+
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_200_W" ON PUB_NAV_DATA_200_W (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_201_W" ON PUB_NAV_DATA_201_W (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, INDKM COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_202_W" ON PUB_NAV_DATA_202_W (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, INDKI COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_203_W" ON PUB_NAV_DATA_203_W (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, CURNC COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_205_W" ON PUB_NAV_DATA_205_W (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, SEGMT COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_206_W" ON PUB_NAV_DATA_206_W (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, PRDCT COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_208_W" ON PUB_NAV_DATA_208_W (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, INDST COLLATE BINARY ASC)</query>
+
+  </etl-action-pattern>
+
+  <etl-action-pattern patternName="MIS_NAVIGATOR_KPI_D" application="iNavigator" jndi="jdbc/finik1" database="mis_navigator_kpi">
+    <name seriesIndex="0" seriesName="PUB_NAV_DATA_200_D"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_200_D 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="1" seriesName="PUB_NAV_DATA_201_D"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_201_D 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="2" seriesName="PUB_NAV_DATA_202_D"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_202_D 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="3" seriesName="PUB_NAV_DATA_203_D"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_203_D 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="4" seriesName="PUB_NAV_DATA_205_D"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_205_D 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="5" seriesName="PUB_NAV_DATA_206_D"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_206_D 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="6" seriesName="PUB_NAV_DATA_208_D"/>
+    <query>GET_MOBILE_PUB_NAV_DATA_208_D 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="7" seriesName="NAV_KPI_DASHBOARD_DEFAULT_PARAMS_D"/>
+    <change-type seriesIndex="7" fields="dataDate" newDataType="93"/>
+    <query>GET_MOBILE_NAV_KPI_DASHBOARD_DEFAULT_PARAMS 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="8" seriesName="NAV_KPI_DASHBOARD_PARAMS_D"/>
+    <change-type seriesIndex="8" fields="dataDate" newDataType="93"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_KPI.dbo.[NAV_KPI_DASHBOARD_PARAMS]</query>
+
+    <name seriesIndex="9" seriesName="PUB_NAV_DATA_DOCS_200_D"/>
+    <change-type seriesIndex="9" fields="DATE_,LAST_UPDATE" newDataType="93"/>    
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_200_D 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="10" seriesName="PUB_NAV_DATA_DOCS_201_D"/>
+    <change-type seriesIndex="10" fields="DATE_,LAST_UPDATE" newDataType="93"/>    
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_201_D 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="11" seriesName="PUB_NAV_DATA_DOCS_202_D"/>
+    <change-type seriesIndex="11" fields="DATE_,LAST_UPDATE" newDataType="93"/>    
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_202_D 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="12" seriesName="PUB_NAV_DATA_DOCS_203_D"/>
+    <change-type seriesIndex="12" fields="DATE_,LAST_UPDATE" newDataType="93"/>    
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_203_D 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="13" seriesName="PUB_NAV_DATA_DOCS_205_D"/>
+    <change-type seriesIndex="13" fields="DATE_,LAST_UPDATE" newDataType="93"/>    
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_205_D 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="14" seriesName="PUB_NAV_DATA_DOCS_206_D"/>
+    <change-type seriesIndex="14" fields="DATE_,LAST_UPDATE" newDataType="93"/>    
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_206_D 'NAV_PRESIDENT'</query>
+    
+    <name seriesIndex="15" seriesName="PUB_NAV_DATA_DOCS_208_D"/>
+    <change-type seriesIndex="15" fields="DATE_,LAST_UPDATE" newDataType="93"/>    
+    <query>GET_MOBILE_PUB_NAV_DATA_DOCS_208_D 'NAV_PRESIDENT'</query>
+
+    <name seriesIndex="16" seriesName="PUB_NAV_DATA_INCOME_UL"/>
+    <change-type seriesIndex="16" fields="dt" newDataType="93"/>
+    <change-type seriesIndex="16" fields="ReportDate" newDataType="93"/>
+    <query>SELECT * FROM MIS_NAVIGATOR_DATA.dbo.PUB_NAV_DATA_INCOME_UL</query>
+
+    <name seriesIndex="17" seriesName="PUB_NAV_DATA_INCOME_UL_LIMITS"/>
+    <change-type seriesIndex="17" fields="incomeDate" newDataType="93"/>
+    <query>
+        select t.*
+              ,isnull((select max(incomeDaysCnt) 
+                         from MIS_NAVIGATOR_DATA.dbo.PUB_NAV_DATA_INCOME_UL_LIMITS tt 
+                        where tt.incomeCurrency = t.incomeCurrency 
+                          and tt.incomeDate     = t.incomeDate
+                          and tt.incomeDaysCnt  &lt; t.incomeDaysCnt),0) incomeDaysCntLow 
+          from MIS_NAVIGATOR_DATA.dbo.PUB_NAV_DATA_INCOME_UL_LIMITS t
+    </query>
+
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_200_D" ON PUB_NAV_DATA_200_D (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_201_D" ON PUB_NAV_DATA_201_D (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, INDKM COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_202_D" ON PUB_NAV_DATA_202_D (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, INDKI COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_203_D" ON PUB_NAV_DATA_203_D (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, CURNC COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_205_D" ON PUB_NAV_DATA_205_D (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, SEGMT COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_206_D" ON PUB_NAV_DATA_206_D (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, PRDCT COLLATE BINARY ASC)</query>
+    <query>CREATE UNIQUE INDEX "PK_PUB_NAV_DATA_208_D" ON PUB_NAV_DATA_208_D (KPI_ID COLLATE BINARY ASC, DATE_ COLLATE BINARY DESC, DynamicType COLLATE BINARY ASC, DEPRT COLLATE BINARY ASC, INDST COLLATE BINARY ASC)</query>
+    <query>CREATE INDEX "IDX_PUB_NAV_DATA_INCOME_UL" ON PUB_NAV_DATA_INCOME_UL (DT COLLATE BINARY ASC)</query>
+
+  </etl-action-pattern>
+</etl-config>

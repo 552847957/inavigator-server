@@ -1,0 +1,227 @@
+<html>
+<head><title>IMultiBoxMemberAttributes</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IMultiBoxMemberAttributes</h1><br/>
+Multi box member attributes object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>DefaultSearchMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Default search mode for multi box member. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Default Search Mode <br/>0 = Document default<br/>1 = Normal search<br/>2 = Fuzzy search</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExcludedValuesMode</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Mode for inclusion of excluded values in search for multibox member. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Include excluded values in search<br/>0 = Default<br/>1 = Yes<br/>2 = No</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FieldDef</b></font> (<a href="IFieldDefEx.htm">IFieldDefEx</a>, <i>objectref.</i>)
+<dl>
+    <dd>Field definition for multi box row. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FrequencyInPercent</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if frequency should be shown in percent. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HideExcluded</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if excluded values should be made invisible. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>IgnoreNull</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if NULL values should be excluded in value count. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ImageRepresentation</b></font> (<a
+        href="ICellImageRepresentation.htm">ICellImageRepresentation</a>, <i>objectref.</i>)
+<dl>
+    <dd>Image representation settings for multi box row. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Cell image settings object</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Label</b></font> (<a href="IStringExpr.htm">IStringExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Multi box member label (override for field name). <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MultiColumn</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if multi column mode should be used when opening multi box. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>MultiLine</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Setting for multiple line cells. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Setting for multiple line cells<br/>0 = single line cells<br/>1 = forbidden<br/>n = n lines in cell with
+        text wrap and truncation at end (2<=n<=100)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Alignment for numerical values in opened multi box. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Alignment for numerical values in opened multi box<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>NumberPresentation</b></font> (<a href="IFieldAttributes.htm">IFieldAttributes</a>,
+<i>objectref.</i>)
+<dl>
+    <dd>Number format for multi box row. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Number format definition</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>OrderByRow</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if field values should ordered by row in open multi box. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PreferredTextSearchMode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd><p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ReadOnly</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if field is read-only in multi box. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SelectionStyle</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Selection style for multi box row. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Selection style<br/>-1 = Use User Preference<br/>0 = Classic<br/>1 = Windows checkboxes<br/>2 = Cornertags<br/>3
+        = LEDs</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowBorder</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if borders should be drawn between field value cells in open multi box. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowFrequency</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if frequency should be shown. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SoftLock</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if locked selections override available in multi box row. <p/></dd>
+</dl>
+<dl>
+    <dd><code>True for local override of locked selection</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SortCriteria</b></font> (<a href="ISortCriteria.htm">ISortCriteria</a>, <i>objectref.</i>)
+<dl>
+    <dd>Multi box member sort criteria. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SuppressAutoSortByState</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if automatic sort by state should be suppressed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SuppressHorizontalScroll</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if horizontal scroll bar to be suppressed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TextAdjust</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Alignment for text values in opened multi box. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Alignment for text values in opened multi box<br/>0 = left<br/>1 = center<br/>2 = right</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

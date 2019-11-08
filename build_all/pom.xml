@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>inavigator-common</artifactId>
+        <groupId>ru.sberbank.inavigator</groupId>
+        <version>${release_number}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>build_all</artifactId>
+    <version>${release_number}</version>
+    <properties>
+        <inavigator.portal.version>${release_number}</inavigator.portal.version>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <!--<configuration>-->
+                    <!--<finalName>CI00377171_i-Navigator-${pom.version}-distrib.zip</finalName>-->
+                <!--</configuration>-->
+                <executions>
+                    <execution>
+                        <id>create-distribution-docs</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <finalName>i-NavigatorInstallation</finalName>
+                            <descriptors>
+                                <descriptor>assembly_doc.xml</descriptor>
+                            </descriptors>
+                            <attach>false</attach>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>create-distribution-all</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <finalName>CI00377171_i-Navigator-${pom.version}-distrib</finalName>
+                            <descriptors>
+                                <descriptor>assembly.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

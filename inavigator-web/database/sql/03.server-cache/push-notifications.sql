@@ -1,0 +1,484 @@
+set nocount
+on
+if object_id('SYNC_PUSH_NOTIFICATIONS2CLIENT') is not null DROP TABLE SYNC_PUSH_NOTIFICATIONS2CLIENT
+GO
+if object_id('SYNC_PUSH_NOTIFICATIONS') is not null DROP TABLE SYNC_PUSH_NOTIFICATIONS
+GO
+if object_id('SYNC_PUSH_NOTIFICATIONS_ARCHIVE') is not null DROP TABLE SYNC_PUSH_NOTIFICATIONS_ARCHIVE
+GO
+if object_id('SEND_NOTIFICATION') is not null DROP PROCEDURE SEND_NOTIFICATION
+GO
+if object_id('SELECT_PUSH_NOTIFICATIONS') is not null DROP PROCEDURE SELECT_PUSH_NOTIFICATIONS
+GO
+if object_id('INSERT_PUSH_NOTIFICATION') is not null DROP PROCEDURE INSERT_PUSH_NOTIFICATION
+GO
+if object_id('SYNC_PUSH_NOTIFICATIONS_CLIENTS') is not null DROP TABLE SYNC_PUSH_NOTIFICATIONS_CLIENTS
+GO
+if object_id('GET_OS_CODES') is not null DROP PROCEDURE GET_OS_CODES
+GO
+if object_id('INSERT_PUSH_NOTIFICATIONS_CLIENT') is not null DROP PROCEDURE INSERT_PUSH_NOTIFICATIONS_CLIENT
+GO
+if object_id('GET_APPLICATIONS') is not null DROP PROCEDURE GET_APPLICATIONS
+GO
+if object_id('GET_APPLICATION_VERSIONS') is not null DROP PROCEDURE GET_APPLICATION_VERSIONS
+GO
+if object_id('GET_EMAILS') is not null DROP PROCEDURE GET_EMAILS
+GO
+if object_id('GET_DEVICES') is not null DROP PROCEDURE GET_DEVICES
+GO
+if object_id('SELECT_NOTIFICATION_CLIENTS') is not null DROP PROCEDURE SELECT_NOTIFICATION_CLIENTS
+GO
+if object_id('ADD_CLIENTS_TO_NOTIFICATION') is not null DROP PROCEDURE ADD_CLIENTS_TO_NOTIFICATION
+GO
+if object_id('GET_CLIENTS_BY_NOTIFICATION') is not null DROP PROCEDURE GET_CLIENTS_BY_NOTIFICATION
+GO
+if object_id('SET_NOTIFICATION_2_CLIENT_STATUS') is not null DROP PROCEDURE SET_NOTIFICATION_2_CLIENT_STATUS
+GO
+if object_id('GET_NOTIFICATIONS') is not null DROP PROCEDURE GET_NOTIFICATIONS
+GO
+
+
+CREATE TABLE SYNC_PUSH_NOTIFICATIONS(
+  SYNC_PN_ID     		  INT IDENTITY(1,1) PRIMARY KEY,
+  SYNC_SOURCE_PN_ID		  INT,
+  SYNC_PN_TITLE		  VARCHAR(128),
+  SYNC_PN_MESSAGE_TEXT	  VARCHAR(1024) NOT NULL,
+  SYNC_PN_PARAMETERS	  VARCHAR(512),
+  SYNC_PN_BADGE_NUMBER	  INT NOT NULL default 0,
+  SYNC_PN_SOUND_NAME	  VARCHAR(256) NOT NULL,
+  SYNC_PN_EVENT_CODE	  VARCHAR(20) NOT NULL,
+  SYNC_PN_PUSH_DATE	 	  DATETIME NOT NULL,
+  SYNC_PN_LOCK_TIME	 	  DATETIME,
+  SYNC_PN_NOTIFY_TIME 	  DATETIME
+)
+GO
+
+CREATE TABLE SYNC_PUSH_NOTIFICATIONS_ARCHIVE(
+  SYNC_PNA_ID     		  INT NOT NULL UNIQUE,
+  SYNC_SOURCE_PN_ID		  INT,
+  SYNC_PNA_TITLE		  VARCHAR(128),
+  SYNC_PNA_MESSAGE_TEXT	  VARCHAR(1024) NOT NULL,
+  SYNC_PN_PARAMETERS	  VARCHAR(512),
+  SYNC_PNA_BADGE_NUMBER	  INT NOT NULL,
+  SYNC_PNA_SOUND_NAME	  VARCHAR(256) NOT NULL,
+  SYNC_PNA_EVENT_CODE	  VARCHAR(20) NOT NULL,
+  SYNC_PNA_PUSH_DATE	  DATETIME NOT NULL,
+  SYNC_PNA_LOCK_TIME	  DATETIME,
+  SYNC_PNA_NOTIFY_TIME 	  DATETIME
+)
+GO
+
+CREATE TABLE SYNC_PUSH_NOTIFICATIONS_CLIENTS (
+	SYNC_PNC_ID					INT IDENTITY(1,1) PRIMARY KEY,
+	SYNC_PNC_OS_CODE	 			VARCHAR(64) NOT NULL,
+	SYNC_PNC_APPLICATION_CODE	 		VARCHAR(128) NOT NULL,
+	SYNC_PNC_APPLICATION_VERSION			VARCHAR(128) NOT NULL,
+	SYNC_PNC_EMAIL 		 			VARCHAR(512),
+	SYNC_PNC_DEVICE_NAME 				VARCHAR(256),
+	SYNC_PNC_DEVICE_CODE 				VARCHAR(256),
+	SYNC_PNC_APPLE_TOKEN 				VARCHAR(256),
+	SYNC_PNC_INVALIDATED_DATE			DATETIME,	
+	UNIQUE(SYNC_PNC_APPLICATION_CODE, SYNC_PNC_DEVICE_CODE, SYNC_PNC_APPLE_TOKEN, SYNC_PNC_INVALIDATED_DATE)
+)
+GO
+
+CREATE TABLE SYNC_PUSH_NOTIFICATIONS2CLIENT (
+	SYNC_PN2C_ID					INT IDENTITY(1,1) PRIMARY KEY,
+	SYNC_PN_ID						INT NOT NULL,
+	SYNC_PNC_ID						INT NOT NULL REFERENCES SYNC_PUSH_NOTIFICATIONS_CLIENTS(SYNC_PNC_ID),
+	SYNC_PNC_STATUS					VARCHAR(max) DEFAULT 'undefined'
+)
+GO
+
+
+CREATE PROCEDURE INSERT_PUSH_NOTIFICATION
+  @message_text  		VARCHAR(1024),
+  @bange_number			INT,
+  @sound_name  			VARCHAR(256),
+  @push_date			DATETIME,
+  @event_code			VARCHAR(20),
+  @custom_params		VARCHAR(512),
+  @title			VARCHAR(128)
+AS
+	 SET NOCOUNT ON
+	 INSERT INTO SYNC_PUSH_NOTIFICATIONS(SYNC_PN_MESSAGE_TEXT,SYNC_PN_BADGE_NUMBER,SYNC_PN_SOUND_NAME,SYNC_PN_EVENT_CODE,SYNC_PN_PUSH_DATE,SYNC_PN_PARAMETERS,SYNC_PN_TITLE) 
+	 values  (@message_text,@bange_number,@sound_name,@event_code,@push_date,@custom_params,@title)
+	 select @@IDENTITY ID
+GO
+
+CREATE PROCEDURE ADD_CLIENTS_TO_NOTIFICATION
+	@notification_id int,
+	@notification_client_id int
+AS
+ 	INSERT INTO SYNC_PUSH_NOTIFICATIONS2CLIENT(SYNC_PN_ID,SYNC_PNC_ID)
+	SELECT @notification_id,@notification_client_id
+GO
+
+CREATE PROCEDURE GET_CLIENTS_BY_NOTIFICATION
+	@notification_id int,
+	@from int,
+	@length int
+AS
+if (@length>=0) begin
+SELECT * FROM
+(
+	SELECT  [RANK] = ROW_NUMBER() OVER (ORDER BY C.SYNC_PNC_OS_CODE, C.SYNC_PNC_APPLICATION_CODE),
+			C.SYNC_PNC_ID, 
+			C.SYNC_PNC_OS_CODE, 
+			C.SYNC_PNC_APPLICATION_CODE, 
+			C.SYNC_PNC_APPLICATION_VERSION, 
+			C.SYNC_PNC_EMAIL, 
+			C.SYNC_PNC_DEVICE_NAME, 
+			C.SYNC_PNC_APPLE_TOKEN,
+			N2C.SYNC_PNC_STATUS
+	FROM
+		SYNC_PUSH_NOTIFICATIONS_CLIENTS C,
+		SYNC_PUSH_NOTIFICATIONS2CLIENT N2C
+	WHERE 
+		C.SYNC_PNC_ID = N2C.SYNC_PNC_ID AND
+		N2C.SYNC_PN_ID = @notification_id
+) A	WHERE A.[RANK] BETWEEN @from+1 AND @from+@length	
+end else begin
+	SELECT  
+			C.SYNC_PNC_ID, 
+			C.SYNC_PNC_OS_CODE, 
+			C.SYNC_PNC_APPLICATION_CODE, 
+			C.SYNC_PNC_APPLICATION_VERSION, 
+			C.SYNC_PNC_EMAIL, 
+			C.SYNC_PNC_DEVICE_NAME, 
+			C.SYNC_PNC_APPLE_TOKEN,
+			N2C.SYNC_PNC_STATUS
+	FROM
+		SYNC_PUSH_NOTIFICATIONS_CLIENTS C,
+		SYNC_PUSH_NOTIFICATIONS2CLIENT N2C
+	WHERE 
+		C.SYNC_PNC_ID = N2C.SYNC_PNC_ID AND
+		C.SYNC_PNC_APPLE_TOKEN is not NULL AND
+		N2C.SYNC_PN_ID = @notification_id
+	ORDER BY C.SYNC_PNC_OS_CODE, C.SYNC_PNC_APPLICATION_CODE
+end
+GO
+
+
+CREATE PROCEDURE SELECT_NOTIFICATION_CLIENTS
+	@os_code  				VARCHAR(256),
+	@application_code		VARCHAR(1024),
+	@application_version	VARCHAR(256),
+	@emails					VARCHAR(max),
+	@devices				VARCHAR(max)
+AS
+    SET NOCOUNT ON;
+    declare @sql nvarchar(max)
+
+    set @sql = '
+		 SELECT 
+			SYNC_PNC_ID, 
+			SYNC_PNC_OS_CODE, 
+			SYNC_PNC_APPLICATION_CODE, 
+			SYNC_PNC_APPLICATION_VERSION, 
+			SYNC_PNC_EMAIL, 
+			SYNC_PNC_DEVICE_NAME, 
+			SYNC_PNC_APPLE_TOKEN
+		 FROM
+		   SYNC_PUSH_NOTIFICATIONS_CLIENTS where (SYNC_PNC_APPLE_TOKEN is not NULL)'
+	if (@os_code is not null and @os_code != '') 
+		set @sql = @sql + 'AND SYNC_PNC_OS_CODE IN (' + @os_code + ')'
+	if (@application_code is not null and @application_code != '') 
+		set @sql = @sql + 'AND SYNC_PNC_APPLICATION_CODE IN (' + @application_code + ')'
+	if (@application_version is not null and @application_version != '') 
+		set @sql = @sql + 'AND SYNC_PNC_APPLICATION_VERSION IN (' + @application_version + ')'
+	if (@emails is not null and @emails != '') 
+		SET @sql = @sql + 'AND SYNC_PNC_EMAIL IN (' + @emails + ')'
+	if (@devices is not null and @devices != '') 
+		set @sql = @sql + 'AND SYNC_PNC_DEVICE_CODE IN (' + @devices + ')'
+	set @sql = @sql + ' AND SYNC_PNC_EMAIL != ''TOPIC'' ORDER BY SYNC_PNC_OS_CODE DESC, SYNC_PNC_APPLICATION_CODE'
+
+    execute sp_executesql @sql
+GO
+
+CREATE PROCEDURE SELECT_PUSH_NOTIFICATIONS
+	@maxAmt integer
+AS
+  -- Creating temp table
+  set nocount on
+  if object_id('tempdb..#push_list') is not null drop table #push_list
+  create table #push_list(
+    notification_id		INT,
+	source_id			INT null,
+	message_text	  	VARCHAR(1024),
+	badge_number	  	INT,
+	sound_name	  		VARCHAR(256), 
+	event_code	  		VARCHAR(20),  
+	custom_parameters	VARCHAR(512),
+	title				VARCHAR(128)
+  )
+	begin tran
+  	  -- Copy notifications to archive 
+	   INSERT INTO SYNC_PUSH_NOTIFICATIONS_ARCHIVE
+		(SYNC_PNA_ID,
+		SYNC_SOURCE_PN_ID,
+		SYNC_PNA_MESSAGE_TEXT,
+		SYNC_PN_PARAMETERS,
+		SYNC_PNA_BADGE_NUMBER,
+		SYNC_PNA_SOUND_NAME,
+		SYNC_PNA_EVENT_CODE,
+		SYNC_PNA_PUSH_DATE,
+		SYNC_PNA_LOCK_TIME,
+		SYNC_PNA_NOTIFY_TIME,
+		SYNC_PNA_TITLE) 
+	   SELECT 
+		SYNC_PN_ID,
+		SYNC_SOURCE_PN_ID,
+		SYNC_PN_MESSAGE_TEXT,
+		SYNC_PN_PARAMETERS,
+		SYNC_PN_BADGE_NUMBER,
+		SYNC_PN_SOUND_NAME,
+		SYNC_PN_EVENT_CODE,
+		SYNC_PN_PUSH_DATE,
+		SYNC_PN_LOCK_TIME,
+		SYNC_PN_NOTIFY_TIME,
+		SYNC_PN_TITLE
+		FROM SYNC_PUSH_NOTIFICATIONS WHERE SYNC_PN_NOTIFY_TIME IS NOT NULL
+   
+	  -- delete notifications copied to archive
+	  DELETE FROM SYNC_PUSH_NOTIFICATIONS WHERE SYNC_PN_ID IN (SELECT SYNC_PNA_ID FROM SYNC_PUSH_NOTIFICATIONS_ARCHIVE)
+	commit  
+	  
+	  -- Select notifications
+	  if (@maxAmt > 0) begin
+		INSERT INTO #push_list(notification_id,message_text,badge_number,sound_name,event_code,custom_parameters,source_id,title)
+		select 	Top (select @maxAmt)		
+			N.SYNC_PN_ID,
+			N.SYNC_PN_MESSAGE_TEXT,
+			N.SYNC_PN_BADGE_NUMBER,
+			N.SYNC_PN_SOUND_NAME, 
+			N.SYNC_PN_EVENT_CODE,
+			N.SYNC_PN_PARAMETERS,
+			N.SYNC_SOURCE_PN_ID,
+			N.SYNC_PN_TITLE
+	    FROM 
+			SYNC_PUSH_NOTIFICATIONS N
+		WHERE 
+			(N.SYNC_PN_PUSH_DATE < getdate()) AND (N.SYNC_PN_LOCK_TIME IS NULL OR N.SYNC_PN_LOCK_TIME < dateadd(second,-300,getdate()))
+		ORDER BY N.SYNC_PN_ID asc
+	end else begin
+		INSERT INTO #push_list(notification_id,message_text,badge_number,sound_name,event_code,custom_parameters,source_id,title)
+		select
+			N.SYNC_PN_ID,
+			N.SYNC_PN_MESSAGE_TEXT,
+			N.SYNC_PN_BADGE_NUMBER,
+			N.SYNC_PN_SOUND_NAME, 
+			N.SYNC_PN_EVENT_CODE,
+			N.SYNC_PN_PARAMETERS,
+			N.SYNC_SOURCE_PN_ID,
+			N.SYNC_PN_TITLE
+	    FROM 
+			SYNC_PUSH_NOTIFICATIONS N
+		WHERE 
+			(N.SYNC_PN_PUSH_DATE < getdate()) AND (N.SYNC_PN_LOCK_TIME IS NULL OR N.SYNC_PN_LOCK_TIME < dateadd(second,-300,getdate()))
+		ORDER BY N.SYNC_PN_ID asc
+	end
+
+ 
+	  -- Mark notifications
+	  UPDATE SYNC_PUSH_NOTIFICATIONS SET SYNC_PN_LOCK_TIME = getdate() 
+	   WHERE SYNC_PN_ID IN (SELECT notification_id from #push_list)
+ 
+	  -- select resulted notifications
+	  select * from #push_list
+GO
+ 
+CREATE PROCEDURE SEND_NOTIFICATION 
+	@notification_id int
+AS
+	UPDATE SYNC_PUSH_NOTIFICATIONS SET SYNC_PN_NOTIFY_TIME = getdate() WHERE SYNC_PN_ID = @notification_id
+GO
+
+CREATE PROCEDURE INSERT_PUSH_NOTIFICATIONS_CLIENT
+  @os_code  			VARCHAR(256),
+  @application_code  	VARCHAR(256),
+  @application_version	VARCHAR(256),
+  @email		  		VARCHAR(256),
+  @device_code			VARCHAR(256),
+  @device_name			VARCHAR(256),
+  @apple_token 			VARCHAR(256)
+AS
+	IF EXISTS (SELECT 1 FROM SYNC_PUSH_NOTIFICATIONS_CLIENTS WHERE SYNC_PNC_APPLE_TOKEN = @apple_token) BEGIN
+		UPDATE SYNC_PUSH_NOTIFICATIONS_CLIENTS SET
+			SYNC_PNC_OS_CODE = @os_code,
+			SYNC_PNC_APPLICATION_CODE = @application_code,
+			SYNC_PNC_APPLICATION_VERSION = @application_version,
+			SYNC_PNC_EMAIL = @email,
+			SYNC_PNC_DEVICE_CODE = @device_code,
+			SYNC_PNC_DEVICE_NAME = @device_name
+		WHERE SYNC_PNC_APPLE_TOKEN = @apple_token
+	END ELSE BEGIN
+		DECLARE @client_id INT;
+		SELECT @client_id = SYNC_PNC_ID FROM SYNC_PUSH_NOTIFICATIONS_CLIENTS
+			WHERE
+				SYNC_PNC_OS_CODE = @os_code AND
+				SYNC_PNC_APPLICATION_CODE = @application_code AND
+				SYNC_PNC_EMAIL = @email AND
+				SYNC_PNC_DEVICE_CODE = @device_code
+
+		IF @client_id is not null 
+			UPDATE SYNC_PUSH_NOTIFICATIONS_CLIENTS SET SYNC_PNC_DEVICE_NAME = @device_name, 
+								   SYNC_PNC_APPLE_TOKEN = @apple_token, 
+								   SYNC_PNC_APPLICATION_VERSION = @application_version,
+								   SYNC_PNC_INVALIDATED_DATE = NULL
+			WHERE SYNC_PNC_ID = @client_id
+		else
+			INSERT INTO SYNC_PUSH_NOTIFICATIONS_CLIENTS(SYNC_PNC_OS_CODE, SYNC_PNC_APPLICATION_CODE, SYNC_PNC_APPLICATION_VERSION, SYNC_PNC_EMAIL, SYNC_PNC_DEVICE_NAME,SYNC_PNC_DEVICE_CODE, SYNC_PNC_APPLE_TOKEN) 
+		 		values  (@os_code,@application_code,@application_version,@email,@device_name,@device_code,@apple_token)
+	END
+GO
+
+-- Get operations system codes
+CREATE PROCEDURE GET_OS_CODES
+AS
+	SELECT DISTINCT SYNC_PNC_OS_CODE ITEM_CODE FROM SYNC_PUSH_NOTIFICATIONS_CLIENTS WHERE SYNC_PNC_APPLE_TOKEN is not NULL
+GO
+
+-- get applications by os code
+CREATE PROCEDURE GET_APPLICATIONS
+	@os_code varchar(256)
+AS
+	SELECT DISTINCT SYNC_PNC_APPLICATION_CODE ITEM_CODE FROM SYNC_PUSH_NOTIFICATIONS_CLIENTS WHERE SYNC_PNC_OS_CODE = @os_code AND SYNC_PNC_APPLE_TOKEN is not NULL
+GO
+
+-- get application versions by os code and app_code
+CREATE PROCEDURE GET_APPLICATION_VERSIONS
+	@os_code varchar(256),
+	@application_code varchar(256)
+AS
+	SELECT DISTINCT SYNC_PNC_APPLICATION_VERSION ITEM_CODE FROM SYNC_PUSH_NOTIFICATIONS_CLIENTS WHERE SYNC_PNC_OS_CODE = @os_code AND SYNC_PNC_APPLICATION_CODE = @application_code AND SYNC_PNC_APPLE_TOKEN is not NULL
+GO
+
+CREATE PROCEDURE GET_EMAILS
+	@email varchar(256)
+AS
+	SELECT DISTINCT SYNC_PNC_EMAIL ITEM_CODE FROM SYNC_PUSH_NOTIFICATIONS_CLIENTS WHERE SYNC_PNC_APPLE_TOKEN is not NULL
+GO
+
+CREATE PROCEDURE GET_DEVICES
+	@email varchar(8000)
+AS
+    SET NOCOUNT ON;
+    declare @sql nvarchar(MAX)
+
+    set @sql = 'SELECT DISTINCT SYNC_PNC_DEVICE_NAME ITEM_NAME,SYNC_PNC_DEVICE_CODE ITEM_CODE FROM SYNC_PUSH_NOTIFICATIONS_CLIENTS WHERE SYNC_PNC_EMAIL in (' + @email + ') AND SYNC_PNC_APPLE_TOKEN is not NULL'
+    execute sp_executesql @sql
+GO
+
+CREATE PROCEDURE SET_NOTIFICATION_2_CLIENT_STATUS
+	@pnid INT,
+	@clid INT,
+	@status varchar(128)
+AS
+	update SYNC_PUSH_NOTIFICATIONS2CLIENT set SYNC_PNC_STATUS = @status WHERE SYNC_PN_ID = @pnid AND SYNC_PNC_ID = @clid
+GO
+
+CREATE PROCEDURE GET_NOTIFICATIONS
+	@from INT,
+	@count INT
+AS
+	SELECT * FROM (
+		SELECT [RANK] = ROW_NUMBER() OVER (ORDER BY SYNC_PNA_ID DESC), SYNC_PNA_ID, SYNC_PNA_MESSAGE_TEXT,SYNC_PNA_NOTIFY_TIME FROM SYNC_PUSH_NOTIFICATIONS_ARCHIVE
+	) A	WHERE A.[RANK] BETWEEN @from+1 AND @from+@count	
+GO
+
+if object_id('ADD_PUSH_NOTIFICATION_TO_QUEUE') is not null DROP PROCEDURE ADD_PUSH_NOTIFICATION_TO_QUEUE
+GO
+
+CREATE PROCEDURE ADD_PUSH_NOTIFICATION_TO_QUEUE
+  @source_id			INT,
+  @message_text  		VARCHAR(1024),
+  @bange_number			INT,
+  @sound_name  			VARCHAR(256),
+  @push_date			DATETIME,
+  @event_code			VARCHAR(20),
+  @custom_params		VARCHAR(512),
+  @title				VARCHAR(128),
+  
+  @os_code  			VARCHAR(256),
+  @application_code		VARCHAR(1024),
+  @application_version	VARCHAR(256),
+  @emails				VARCHAR(max),
+  @devices				VARCHAR(max)
+
+AS
+	SET NOCOUNT ON
+	declare @notification_id INT
+
+	--if object_id('tempdb..#push_clients') is not null drop table #push_clients
+	create table #push_clients(
+			SYNC_PNC_ID int, 
+			SYNC_PNC_OS_CODE VARCHAR(256), 
+			SYNC_PNC_APPLICATION_CODE VARCHAR(256), 
+			SYNC_PNC_APPLICATION_VERSION VARCHAR(256), 
+			SYNC_PNC_EMAIL VARCHAR(512), 
+			SYNC_PNC_DEVICE_NAME VARCHAR(512), 
+			SYNC_PNC_APPLE_TOKEN VARCHAR(512)
+	)
+
+	insert into #push_clients EXEC SELECT_NOTIFICATION_CLIENTS @os_code, @application_code, @application_version, @emails, @devices
+	if (@@ROWCOUNT > 0) begin
+		begin tran
+			INSERT INTO SYNC_PUSH_NOTIFICATIONS(SYNC_SOURCE_PN_ID,SYNC_PN_MESSAGE_TEXT,SYNC_PN_BADGE_NUMBER,SYNC_PN_SOUND_NAME,SYNC_PN_EVENT_CODE,SYNC_PN_PUSH_DATE,SYNC_PN_PARAMETERS,SYNC_PN_TITLE) 
+				values  (@source_id,@message_text,@bange_number,@sound_name,@event_code,@push_date,@custom_params,@title)
+			set @notification_id = @@IDENTITY
+		
+			declare @notification_client_id int = 0
+
+			SELECT TOP 1 @notification_client_id = SYNC_PNC_ID
+			FROM #push_clients
+			WHERE SYNC_PNC_ID > @notification_client_id 
+			ORDER BY SYNC_PNC_ID
+
+			while (@@ROWCOUNT != 0)
+			begin
+				INSERT INTO SYNC_PUSH_NOTIFICATIONS2CLIENT(SYNC_PN_ID,SYNC_PNC_ID) values (@notification_id,@notification_client_id)
+
+				SELECT TOP 1 @notification_client_id = SYNC_PNC_ID
+				FROM #push_clients
+				WHERE SYNC_PNC_ID > @notification_client_id 
+				ORDER BY SYNC_PNC_ID
+			end					
+		commit tran
+	end
+
+	SELECT @notification_id id, COUNT(*) push_count from #push_clients
+	
+	drop table #push_clients	 
+GO
+
+-- RUNTIME TABLE
+if object_id('RUNTIME') is not null DROP TABLE RUNTIME
+GO
+CREATE TABLE RUNTIME(
+	PROPERTY_KEY    VARCHAR(256) NOT NULL UNIQUE,
+	PROPERTY_VALUE  INT NOT NULL
+)
+insert into RUNTIME values('PUSH_UPDATE_STATE_POINT',0)
+
+if object_id('GET_NOTIFICATIONS_FOR_UPDATE_STATUS') is not null DROP PROCEDURE GET_NOTIFICATIONS_FOR_UPDATE_STATUS
+GO
+CREATE PROCEDURE GET_NOTIFICATIONS_FOR_UPDATE_STATUS
+AS
+	SET NOCOUNT ON
+	declare @start int
+	declare @end int 
+	select @start = PROPERTY_VALUE from RUNTIME where PROPERTY_KEY = 'PUSH_UPDATE_STATE_POINT'
+	select @end = COALESCE(MAX(SYNC_PNA_ID),0) from SYNC_PUSH_NOTIFICATIONS_ARCHIVE
+	update RUNTIME set PROPERTY_VALUE = @end where PROPERTY_KEY = 'PUSH_UPDATE_STATE_POINT'
+	select	arch.SYNC_PNA_ID,
+			arch.SYNC_SOURCE_PN_ID,
+			COUNT(n2c.SYNC_PNC_STATUS) SUCCESS
+	from SYNC_PUSH_NOTIFICATIONS_ARCHIVE arch 
+	left join (select SYNC_PN_ID, SYNC_PNC_STATUS from 
+				SYNC_PUSH_NOTIFICATIONS2CLIENT where SYNC_PNC_STATUS = 'OK') n2c 
+		on n2c.SYNC_PN_ID = arch.SYNC_PNA_ID 
+	where arch.SYNC_SOURCE_PN_ID is not null AND arch.SYNC_PNA_ID > @start AND arch.SYNC_PNA_ID <= @end
+	group by SYNC_PNA_ID, SYNC_SOURCE_PN_ID
+	order by arch.SYNC_PNA_ID
+GO

@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="request">
+        <xs:complexType>
+            <xs:sequence>
+                
+                <xs:element name="stored-procedure" type="xs:string" minOccurs="0" />
+
+                <xs:element name="sql-template" type="xs:string" minOccurs="0" />
+                
+                <xs:element minOccurs="0" name="arguments">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="argument">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="index">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:integer">
+                                                    <xs:minInclusive value="1"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="type">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="DATE"/>
+                                                    <xs:enumeration value="NUMBER"/>
+                                                    <xs:enumeration value="STRING"/>
+                                                    <xs:enumeration value="BLOB"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="value">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="4000000"/>
+                                                    <xs:pattern value="[0-9A-Za-z_,.&amp;\&lt;\&gt;&quot;&apos;@\?!\/\\=\[\]\s\S\t\v\n\r]*"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element maxOccurs="1" minOccurs="0" name="Fields">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="Field">
+                                <xs:complexType>
+                                    <xs:attribute name="Name" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="64"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="Type" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="DATE"/>
+                                                <xs:enumeration value="NUMBER"/>
+                                                <xs:enumeration value="STRING"/>
+                                                <xs:enumeration value="BLOB"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element maxOccurs="1" minOccurs="0" name="TextSubstitutes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="TextSubstitute">
+                                <xs:complexType>
+                                        <xs:attribute name="substituteVarName" use="required"> 
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="100"/>
+                                                    <xs:pattern value="[0-9A-Za-z_.]*"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                    
+                                        <xs:attribute name="substituteCode" use="required"> 
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="100"/>
+                                                    <xs:pattern value="[0-9A-Za-z_.]*"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                    
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element maxOccurs="1" name="provider" type="xs:string" minOccurs="0" />
+                
+                <xs:element maxOccurs="1" minOccurs="0" name="alpha-web-host">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="64"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                
+                <xs:element maxOccurs="1" minOccurs="0" name="alpha-db-host">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="64"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="service" type="xs:string" minOccurs="0" />
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

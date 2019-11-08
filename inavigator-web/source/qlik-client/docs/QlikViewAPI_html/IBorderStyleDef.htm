@@ -1,0 +1,47 @@
+<html>
+<head><title>IBorderStyleDef</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IBorderStyleDef</h1><br/>
+General border style description object for one specific cell border (borders between cells in text based sheet objects)
+used when rendering a cell on screen. Border styles are calculated based upon the object, its current layout and cell
+variations. The border styles cannot be changed by the user. In order to change the appearane of a cell, the
+CellVariation must be used.<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>Color</b></font> (<a href="IColorDef.htm">IColorDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Border color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Border color as ARGB</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ExtraBorderSpace16</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Extra spacing after cell in 16th of line height. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>LineStyle</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Line style for border. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Line style for border<br/>0 = none<br/>32 = single <br/>64 = double <br/>96 = two single lines with space
+        inbetween<br/>127 = triple</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

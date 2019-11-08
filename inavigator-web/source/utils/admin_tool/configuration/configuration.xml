@@ -1,0 +1,6 @@
+<configuration>
+	<applications>
+		<application url="http://10.21.137.27:9080/confserver/adminconsole/request.do" category="confserver" name="name1" main="true" />
+		<application url="http://10.21.137.27:9080/syncserver/adminconsole/request.do" category="syncserver" name="name2"  />
+	</applications>
+</configuration>

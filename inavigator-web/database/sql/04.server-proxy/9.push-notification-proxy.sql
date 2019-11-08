@@ -1,0 +1,70 @@
+IF OBJECT_ID('SELECT_NOTIFICATION_HISTORY') IS NOT NULL DROP PROCEDURE SELECT_NOTIFICATION_HISTORY
+IF OBJECT_ID('SELECT_NOTIFICATIONS_FOR_MONITOR') IS NOT NULL DROP PROCEDURE SELECT_NOTIFICATIONS_FOR_MONITOR
+IF OBJECT_ID('SELECT_NOTIFICATIONS_FOR_SEND') IS NOT NULL DROP PROCEDURE SELECT_NOTIFICATIONS_FOR_SEND
+IF OBJECT_ID('SELECT_USER_NOTIFICATION') IS NOT NULL DROP PROCEDURE SELECT_USER_NOTIFICATION
+IF OBJECT_ID('UPDATE_NOTIFICATION_READ_STATUS') IS NOT NULL DROP PROCEDURE UPDATE_NOTIFICATION_READ_STATUS
+IF OBJECT_ID('UPDATE_NOTIFICATION_SEND_STATUS') IS NOT NULL DROP PROCEDURE UPDATE_NOTIFICATION_SEND_STATUS
+GO
+
+CREATE procedure SELECT_NOTIFICATION_HISTORY
+       @notificationId bigint
+AS 
+BEGIN
+-- use db_name() as parameter
+declare @dbname nvarchar(20);
+set @dbname = db_name()
+exec MIS_NAVIGATOR_KPI_20.dbo.SELECT_NOTIFICATION_HISTORY @notificationId, @dbname
+END
+GO
+          
+CREATE PROCEDURE SELECT_NOTIFICATIONS_FOR_MONITOR
+AS
+BEGIN
+declare @dbname nvarchar(20);
+set @dbname = db_name()
+exec MIS_NAVIGATOR_KPI_20.dbo.SELECT_NOTIFICATIONS_FOR_MONITOR @dbname
+END
+GO
+
+CREATE PROCEDURE SELECT_NOTIFICATIONS_FOR_SEND
+	@nTest BIT=NULL
+AS
+BEGIN
+declare @dbname nvarchar(20);
+set @dbname = db_name()
+exec MIS_NAVIGATOR_KPI_20.dbo.SELECT_NOTIFICATIONS_FOR_SEND @dbname, @nTest
+END
+GO
+
+CREATE PROCEDURE [dbo].[SELECT_USER_NOTIFICATION]
+                           @sUserEmail nVARCHAR(256)
+AS
+BEGIN
+declare @dbname nvarchar(20);
+set @dbname = db_name()
+exec MIS_NAVIGATOR_KPI_20.dbo.SELECT_USER_NOTIFICATION @sUserEmail, @dbname
+END
+GO
+
+CREATE PROCEDURE [dbo].[UPDATE_NOTIFICATION_READ_STATUS]
+                                  @nNotificationId BIGINT,
+                                  @nReadStatus BIT,
+                                  @sUserEmail VARCHAR(250)
+AS
+BEGIN
+-- use db_name() as parameter
+exec MIS_NAVIGATOR_KPI_20.dbo.UPDATE_NOTIFICATION_READ_STATUS @nNotificationId, @nReadStatus, @sUserEmail
+END
+
+
+GO
+CREATE PROCEDURE [dbo].[UPDATE_NOTIFICATION_SEND_STATUS]
+                                  @nNotificationId BIGINT,
+                                  @nMsgStatus TINYINT,
+                                  @sUserIP nVARCHAR(MAX),
+				  @nTest BIT=NULL
+AS
+BEGIN
+-- use db_name() as parameter
+exec MIS_NAVIGATOR_KPI_20.dbo.UPDATE_NOTIFICATION_SEND_STATUS @nNotificationId, @nMsgStatus, @sUserIP, @nTest
+END

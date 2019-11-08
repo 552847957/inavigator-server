@@ -1,0 +1,81 @@
+<html>
+<head><title>IColorAreaDef</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IColorAreaDef</h1><br/>
+Color area definition object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>Alpha</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Sets the transparency of a color area. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Transparency (0-255)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FillDirection</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Gradient direction. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Gradient direction<br/>0 = horizontal<br/>1 = vertical<br/>2 = diagonal down<br/>3 = diagonal up<br/>4 =
+        from corner<br/>5 = from center</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>FillPattern</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Gradient pattern. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Gradient pattern<br/>0 = upper left dialog option<br/>1 = upper right dialog option<br/>2 = lower left
+        dialog option<br/>3 = lower right dialog option</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Luminosity</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>Luminosity for complementary color in one-color gradients. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Luminosity for complementary color in one-color gradients<br/>0 is black<br/>255 is white</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>Mode</b></font> (short, <i>read-write</i>)
+<dl>
+    <dd>Color area mode. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color area mode<br/>0 = solid color<br/>1 = one color gradient<br/>2 = two color gradient</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>PrimaryCol</b></font> (<a href="IColorDef.htm">IColorDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Primary color. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>SecondaryCol</b></font> (<a href="IColorDef.htm">IColorDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Secondary color for two-color gradients. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

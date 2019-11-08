@@ -1,0 +1,265 @@
+<html>
+<head><title>IGaugeSettingsDef</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>IGaugeSettingsDef</h1><br/>
+Gauge chart definition object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Property Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<br/><font size="4"><b>AutoSegmentWidth</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for auto-width segments. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeCenterAngle</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Center angle for circular gauges. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Center angle for circular gauges in degrees (0 is up)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeCylinderSize</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Middle cylinder size for circular gauges. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeFillToValue</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if fill to value indication should be used. Has prescedence over GaugeSingleLed in traffic light gauge<p/>
+    </dd>
+</dl>
+<dl>
+    <dd><code>True if fill to value indication should be used (has prescedence over GaugeSingleLed in traffic light
+        gauge)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeIndicatorColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Indicator color. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeIndicatorStyle</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Indicator style. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Gauge Indicator Style in Circular gauge mode<br/>0 = Speedometer<br/>1 = Classic<br/>2 = Arrow<br/>3 =
+        Thin<br/>4 = Line<br/> <br/>Gauge Indicator Style in Straight gauge mode<br/>0 = Arrow<br/>1 = Short arrow<br/>2
+        = Radio tuner<br/>3 = Radio tuner 2<br/>4 = Line</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeIndicatorWidth</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Indicator width. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeLEDColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>LED gauge segment color. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeLEDCount</b></font> (Byte, <i>read-write</i>)
+<dl>
+    <dd>LED gauge number of digits. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeLEDStyle</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>LED gauge style. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Not used</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeLogscale</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for logarithmic scale. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeMax</b></font> (<a href="IValueExpr.htm">IValueExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Max value for gauge. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeMin</b></font> (<a href="IValueExpr.htm">IValueExpr</a>, <i>objectref.</i>)
+<dl>
+    <dd>Min value for gauge. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeMiniTickCount</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Number of minor tick units per major unit. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeSegments</b></font> (<a href="IArrayOfGaugeSegmentDef.htm">IArrayOfGaugeSegmentDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Segment definitions. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Array of segment definitions</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeShowIndicator</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if indicator to be shown. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeSingleLed</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if single light mode should be used in traffic light gauge. GaugeFillToValue has prescedence over
+        GaugeSingleLed if used<p/></dd>
+</dl>
+<dl>
+    <dd><code>True if single light mode should be used in traffic light gauge (GaugeFillToValue has prescedence over
+        GaugeSingleLed if used)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeSpan</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Angle span for circular gauges. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Angle span for circular gauges in degrees (1-360)</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeTickCount</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Number of major tick units. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>GaugeTickLabels</b></font> (Integer, <i>read-write</i>)
+<dl>
+    <dd>Number of labels to show. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Number of labels to show<br/>0 = no labels<br/>n = show labels on every n major tick</code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HideBoundaries</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if segment boundaries to be hidden. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>HideOutlines</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if gauge outlines to be hidden. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>RelativeSegmentWidths</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True for automatic uni-sized segments between min and max. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ReverseDirection</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if traffic light gauge direction is to be reversed. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowGaugeLabels</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if scale labels to be shown. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>ShowGaugeScale</b></font> (Boolean, <i>read-write</i>)
+<dl>
+    <dd>True if scale tick marks to be shown. <p/></dd>
+</dl>
+<dl>
+    <dd><code></code>
+        <p/></dd>
+</dl>
+<hr>
+<br/><font size="4"><b>TestTubeColor</b></font> (<a href="IColorAreaDef.htm">IColorAreaDef</a>, <i>objectref.</i>)
+<dl>
+    <dd>Test tube gauge color. <p/></dd>
+</dl>
+<dl>
+    <dd><code>Color Area definition object</code>
+        <p/></dd>
+</dl>
+<hr>
+</body>
+</html>

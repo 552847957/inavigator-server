@@ -1,0 +1,71 @@
+<project name="syncserver" default="deploy" basedir=".">
+    <property name="working.directory"  value="../output/fpd/repository" />
+    <property name="sync.src"           value="${working.directory}/syncserver" />
+    <property name="distrib.target"     value="../output/fpd/distrib" />
+    <property name="sync.target"        value="${distrib.target}/syncserver" />
+    <property name="hg.syncserver.url" value="../" />
+    <property name="hg.syncserver.branch" value="Release 02.007.00" />
+
+    <target name="deploy" depends="prepare,version" />
+	 
+    <target name="prepare">
+        <delete dir="${working.directory}" /> 
+        <delete dir="${ditrib.target}" /> 
+
+        <mkdir dir="${sync.target}"/>
+        <mkdir dir="${distrib.target}/sources"/>
+        <mkdir dir="${sync.target}/database"/>
+        <mkdir dir="${sync.target}/source"/>
+        <mkdir dir="${sync.target}/docs"/>
+        <mkdir dir="${working.directory}"/>
+
+        <exec executable="hg">
+           <arg line="clone --insecure &quot;${hg.syncserver.url}&quot; &quot;${sync.src}&quot;"/>
+        </exec>
+
+        <exec executable="hg">
+           <arg line="update -r &quot;${hg.syncserver.branch}&quot; -R &quot;${sync.src}&quot;"/>
+        </exec>
+
+        <copy todir="${sync.target}/database">
+            <fileset dir="${sync.src}/database" />
+        </copy>
+
+        <copy todir="${sync.target}/docs">
+            <fileset dir="${sync.src}/docs" />
+        </copy>
+
+        <copy todir="${sync.target}/source">                                             
+            <fileset dir="${sync.src}/source"/>
+        </copy>
+
+        <copy todir="${distrib.target}">                                             
+            <fileset dir="scripts"/>
+        </copy>
+		
+        <copy todir="${sync.target}/_fpd">                                             
+            <fileset dir="${sync.src}/_fpd"/>
+        </copy>
+
+    </target>
+
+    <target name="version">
+	       <exec  executable="hg" dir="${sync.src}" outputproperty="mercurial.changeset.hash" failonerror="true" failifexecutionfails="false">
+        	    <arg line="id -i" />
+	       </exec>
+	       <exec  executable="hg" dir="${sync.src}" outputproperty="mercurial.changeset.number" failonerror="true" failifexecutionfails="false">
+	            <arg line="id -n" />
+	       </exec>
+	       <property name="mercurial.url" value="https://i-navigator.sbrf.ru/hg/inavigator" />
+
+	       <echo message = "Mercurial revision: ${mercurial.changeset.hash}" />
+	       <echo message = "Mercurial changeset: ${mercurial.changeset.number}" />
+	       <echo message = "Mercurial url:${mercurial.url}" />
+
+
+	       <echo file="${sync.target}/source/web-common/web-resources/src/main/webapp/WEB-INF/hg.info" encoding="utf-8">mercurial.changeset.hash:${mercurial.changeset.hash}${line.separator}</echo>
+	       <echo file="${sync.target}/source/web-common/web-resources/src/main/webapp/WEB-INF/hg.info" encoding="utf-8" append="true">mercurial.changeset.number:${mercurial.changeset.number}${line.separator}</echo>
+	       <echo file="${sync.target}/source/web-common/web-resources/src/main/webapp/WEB-INF/hg.info" encoding="utf-8" append="true">mercurial.url:${mercurial.url}${line.separator}</echo>
+    </target>
+
+</project>

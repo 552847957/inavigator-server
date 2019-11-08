@@ -1,0 +1,1955 @@
+<html>
+<head><title>GraphBasics</title></head>
+<script src="./scripts.js"></script>
+<script>        document.addEventListener("DOMContentLoaded", methodsList);    </script>
+<body><div id="navigation"></div>
+<h1>GraphBasics</h1><br/>
+The QlikView chart, a superset of the QlikView sheet object<br/><br/><br/>
+<table width="100%" border="1" cellpadding="3" cellspacing="0">
+    <tbody>
+    <tr class="TableHeadingColor" bgcolor="#ccccff">
+        <td colspan="1"><font size="+2"><b>Method Detail</b></font></td>
+    </tr>
+    </tbody>
+</table>
+<h3>Activate</h3>
+<pre> <b>Activate</b>()</pre>
+<dl>
+    <dd>Makes the sheet object the active sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ActivateAlso</h3>
+<pre> <b>ActivateAlso</b>()</pre>
+<dl>
+    <dd>Adds the sheet object to the active sheet objects. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddBarOffsetExpression</h3>
+<pre>Integer <b>AddBarOffsetExpression</b>(String Definition, Integer ParentExp)</pre>
+<dl>
+    <dd>Sets the Bar Offset attribute expression. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Definition</code></b> (String) : Expression definition as string</dd>
+            <dd><b><code>ParentExp</code></b> (Integer) : Number of base expression on which to add sub-expression</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Total # of expressions after add or -1 if operation failed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>Graph.AddBarOffsetExpression&nbsp;"if(sum(Amount)>10,&nbsp;2,&nbsp;0)",0</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddBkgColorExpression</h3>
+<pre>Integer <b>AddBkgColorExpression</b>(String Definition, Integer ParentExp)</pre>
+<dl>
+    <dd>Adds a color expression to an existing base expression. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Definition</code></b> (String) : Expression definition as string</dd>
+            <dd><b><code>ParentExp</code></b> (Integer) : Number of base expression on which to add sub-expression</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Total # of expressions after add or -1 if operation failed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateBarChart<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/>Graph.AddBkgColorExpression&nbsp;"if(sum(Amount)>10,green(),red())",0<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddDimension</h3>
+<pre>Integer <b>AddDimension</b>(String Name)</pre>
+<dl>
+    <dd>Adds a dimension to the chart. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Field name</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Dimension number returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreatePieChart<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddErrorExpression</h3>
+<pre>Integer <b>AddErrorExpression</b>(String Definition, Integer Type, Integer ParentExp)</pre>
+<dl>
+    <dd>Adds an error bar expression to an existing base expression. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Definition</code></b> (String) : Expression definition as string</dd>
+            <dd><b><code>Type</code></b> (Integer) : Type of sub-expression<br/>0 = symmetric<br/>1 = assymmetric, below<br/>2
+                = assymmetric, above
+            </dd>
+            <dd><b><code>ParentExp</code></b> (Integer) : Number of base expression on which to add sub-expression</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Total # of expressions after add or -1 if operation failed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateLineChart<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/>Graph.AddErrorExpression&nbsp;"stdev(Amount)",0,0&nbsp;&nbsp;'symmetric&nbsp;error&nbsp;expression<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddExpression</h3>
+<pre>Integer <b>AddExpression</b>(String Definition)</pre>
+<dl>
+    <dd>Adds a base expression to the chart. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Definition</code></b> (String) : Expression definition as string</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Expression number returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateLineChart<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddExpressionGaugeSegment</h3>
+<pre>Integer <b>AddExpressionGaugeSegment</b>(Integer ExpNo, String Name, String Value, IColorAreaDef Color)</pre>
+<dl>
+    <dd>Adds a gauge segment for gauge in table cell. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>ExpNo</code></b> (Integer) : Expression number (0 based)</dd>
+            <dd><b><code>Name</code></b> (String) : Segment label</dd>
+            <dd><b><code>Value</code></b> (String) : Segment lower bound</dd>
+            <dd><b><code>Color</code></b> (<a href="IColorAreaDef.htm">IColorAreaDef</a>) : Color definition object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Number of gauge segments after addition</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateStraightTable<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/>set&nbsp;p&nbsp;=&nbsp;Graph.GetProperties<br/>set&nbsp;expr&nbsp;=&nbsp;p.Expressions.Item(0).Item(0).Data.ExpressionVisual<br/>expr.GaugeSettings.GaugeMax.v&nbsp;=&nbsp;20<br/>expr.ImageRepresentation.Presentation&nbsp;=&nbsp;4&nbsp;&nbsp;'linear&nbsp;gauge<br/>Graph.SetProperties&nbsp;p<br/>col&nbsp;=&nbsp;ActiveDocument.GetPalette(3)<br/>Graph.AddExpressionGaugeSegment&nbsp;0,"Segment3",0.75,col<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddGaugeSegment</h3>
+<pre>Integer <b>AddGaugeSegment</b>(String Name, String Value, IColorAreaDef Color)</pre>
+<dl>
+    <dd>Adds a gauge segment for pure gauge chart. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Segment label</dd>
+            <dd><b><code>Value</code></b> (String) : Segment lower bound</dd>
+            <dd><b><code>Color</code></b> (<a href="IColorAreaDef.htm">IColorAreaDef</a>) : Color definition object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Expression number (0 based)</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateGaugeChart<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/>col&nbsp;=&nbsp;ActiveDocument.GetPalette(3)<br/>Graph.AddGaugeSegment&nbsp;"Segment3",0.75,col<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddGroupDimension</h3>
+<pre>Integer <b>AddGroupDimension</b>(String Group)</pre>
+<dl>
+    <dd>Adds a group as a dimension in chart. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Group</code></b> (String) : Group name</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Dimension number returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreatePieChart<br/>Graph.AddGroupDimension&nbsp;"Group1"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddLineStyleExpression</h3>
+<pre>Integer <b>AddLineStyleExpression</b>(String Definition, Integer ParentExp)</pre>
+<dl>
+    <dd>Sets the Line Style attribute expression. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Definition</code></b> (String) : Expression definition as string</dd>
+            <dd><b><code>ParentExp</code></b> (Integer) : Number of base expression on which to add sub-expression</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Total # of expressions after add or -1 if operation failed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH02")<br/>Graph.AddLineStyleExpression&nbsp;"'
+                <S2>'",0&nbsp;'Dashed
+            </code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddPiePopoutExpression</h3>
+<pre>Integer <b>AddPiePopoutExpression</b>(String Definition, Integer ParentExp)</pre>
+<dl>
+    <dd>Sets the Pie Popout attribute expression. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Definition</code></b> (String) : Expression definition as string</dd>
+            <dd><b><code>ParentExp</code></b> (Integer) : Number of base expression on which to add sub-expression</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Total # of expressions after add or -1 if operation failed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH02")<br/>Graph.AddPiePopoutExpression&nbsp;"if(sum(Amount)>10,&nbsp;1,&nbsp;0)",0&nbsp;'0=false</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddShowValueExpression</h3>
+<pre>Integer <b>AddShowValueExpression</b>(String Definition, Integer ParentExp)</pre>
+<dl>
+    <dd>Sets the Show Value attribute expression. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Definition</code></b> (String) : Expression definition as string</dd>
+            <dd><b><code>ParentExp</code></b> (Integer) : Number of base expression on which to add sub-expression</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Total # of expressions after add or -1 if operation failed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>Graph.AddShowValueExpression&nbsp;"if(sum(Amount)>10,&nbsp;1,&nbsp;0)",0&nbsp;'0=false</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddStockExpression</h3>
+<pre>Integer <b>AddStockExpression</b>(String Definition, Integer Type, Integer ParentExp)</pre>
+<dl>
+    <dd>Adds a stock plot expression. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Definition</code></b> (String) : Expression definition as string</dd>
+            <dd><b><code>Type</code></b> (Integer) : Type of sub-expression<br/>0 = lo<br/>1 = hi<br/>2 = close<br/>3 =
+                open
+            </dd>
+            <dd><b><code>ParentExp</code></b> (Integer) : Number of base expression on which to add sub-expression</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Total # of expressions after add or -1 if operation failed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateComboChart<br/>Graph.AddDimension&nbsp;"Date"<br/>Graph.AddExpression&nbsp;"0"&nbsp;&nbsp;'dummy&nbsp;placeholder&nbsp;expression<br/>Graph.AddStockExpression&nbsp;"Lo",0,0&nbsp;&nbsp;'Lo&nbsp;expression<br/>Graph.AddStockExpression&nbsp;"Hi",1,0&nbsp;&nbsp;'Hi&nbsp;expression<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddTextColorExpression</h3>
+<pre>Integer <b>AddTextColorExpression</b>(String Definition, Integer ParentExp)</pre>
+<dl>
+    <dd>Adds a text color expression to an existing base expression. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Definition</code></b> (String) : Expression definition as string</dd>
+            <dd><b><code>ParentExp</code></b> (Integer) : Number of base expression on which to add sub-expression</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Total # of expressions after add or -1 if operation failed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateStraightTable<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/>Graph.AddTextColorExpression&nbsp;"if(sum(Amount)>10,green(),red())",0<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddTextFormatExpression</h3>
+<pre>Integer <b>AddTextFormatExpression</b>(String Definition, Integer ParentExp)</pre>
+<dl>
+    <dd>Adds a text format expression to an existing base expression. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Definition</code></b> (String) : Expression definition as string</dd>
+            <dd><b><code>ParentExp</code></b> (Integer) : Number of base expression on which to add sub-expression</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Total # of expressions after add or -1 if operation failed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateStraightTable<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/>Graph.AddTextFormatExpression&nbsp;"if(sum(Amount)>10,'<B>')",0<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>AddVariable</h3>
+<pre>Integer <b>AddVariable</b>(String Name)</pre>
+<dl>
+    <dd>Obsolete method. Superceded by AddDimension<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Name</code></b> (String) : Field name</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Dimension number returned</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreatePieChart<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ApplyTheme</h3>
+<pre> <b>ApplyTheme</b>(String FileName)</pre>
+<dl>
+    <dd>Apply theme to sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : Theme file name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Attach</h3>
+<pre> <b>Attach</b>()</pre>
+<dl>
+    <dd>Attaches detached chart. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject("CH01").Attach<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CanPrint</h3>
+<pre>Boolean <b>CanPrint</b>()</pre>
+<dl>
+    <dd>Returns true if sheet object is printable. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ClearMemberFields</h3>
+<pre>Boolean <b>ClearMemberFields</b>(Boolean SoftLock)</pre>
+<dl>
+    <dd>Clears the chart's dimension fields. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SoftLock</code></b> (Boolean) : Currently not in use</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject("CH01").ClearMemberFields<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Close</h3>
+<pre> <b>Close</b>()</pre>
+<dl>
+    <dd>Removes the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyBitmapToClipboard</h3>
+<pre>Boolean <b>CopyBitmapToClipboard</b>()</pre>
+<dl>
+    <dd>Copies a bitmap image of the sheet object to the clipboard. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyTableToClipboard</h3>
+<pre>Boolean <b>CopyTableToClipboard</b>(Boolean IncludeLabels)</pre>
+<dl>
+    <dd>Copies the cells of a table to clipboard (table objects only). <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>IncludeLabels</code></b> (Boolean) : True if labels are to be included</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if operation was successful</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyTextToClipboard</h3>
+<pre>Boolean <b>CopyTextToClipboard</b>()</pre>
+<dl>
+    <dd>Irrelevant for this type of sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>CopyValuesToClipboard</h3>
+<pre>Boolean <b>CopyValuesToClipboard</b>()</pre>
+<dl>
+    <dd>Copies the values of a chart object to clipboard (not available for pivot tables). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DbGetTableData</h3>
+<pre><a href="Ireturn%20object%20for%20SheetObject.DbGetTableData()%20and%20CustomDropDown.DbGetTableData()%20and%20GraphBasics.D....htm">Ireturn object for SheetObject.DbGetTableData() and CustomDropDown.DbGetTableData() and GraphBasics.D...</a> <b>DbGetTableData</b>(Variant (Array of Integer) Columns, Variant (Array of Boolean) ForceText, Integer StartRow, Integer NoOfRows)</pre>
+<dl>
+    <dd>Returns data from table for QV ODBC driver. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Columns</code></b> (Variant (Array of Integer)) : Array of column numbers to extract (0 based)
+            </dd>
+            <dd><b><code>ForceText</code></b> (Variant (Array of Boolean)) : Not implemented</dd>
+            <dd><b><code>StartRow</code></b> (Integer) : First row to extract</dd>
+            <dd><b><code>NoOfRows</code></b> (Integer) : Number of rows to extract</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns data from table for QV ODBC driver</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DbGetTableInfo</h3>
+<pre><a href="Ireturn%20object%20for%20SheetObject.DbGetTableInfo()%20and%20CustomDropDown.DbGetTableInfo()%20and%20GraphBasics.D....htm">Ireturn object for SheetObject.DbGetTableInfo() and CustomDropDown.DbGetTableInfo() and GraphBasics.D...</a> <b>DbGetTableInfo</b>()</pre>
+<dl>
+    <dd>Returns information about fields in table for QV ODBC driver. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DbIsTable</h3>
+<pre>Boolean <b>DbIsTable</b>()</pre>
+<dl>
+    <dd>Returns true if the object is a table box, straight table or bitmap chart (and thus can deliver data to QV ODBC
+        driver). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Deactivate</h3>
+<pre> <b>Deactivate</b>()</pre>
+<dl>
+    <dd>Removes the sheet object from the list of active sheet objects. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Detach</h3>
+<pre> <b>Detach</b>()</pre>
+<dl>
+    <dd>Detaches chart. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject("CH01").Detach<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogPrint</h3>
+<pre>Boolean <b>DialogPrint</b>()</pre>
+<dl>
+    <dd>Opens the Print dialog for the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>ActiveDocument.GetSheetObject(&nbsp;"CH01"&nbsp;).DialogPrint<br/></code></i></dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>DialogProperties</h3>
+<pre>Boolean <b>DialogProperties</b>(Integer Page)</pre>
+<dl>
+    <dd>Opens sheet object properties dialog. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Page</code></b> (Integer) : Property dialog page (0 based). -1 opens on last used page.</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Export</h3>
+<pre> <b>Export</b>(String Filename, String Separator, Integer CodePage, Boolean Append)</pre>
+<dl>
+    <dd>Exports the chart. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Filename</code></b> (String) : File name with path</dd>
+            <dd><b><code>Separator</code></b> (String) : Separator to be used between values in record</dd>
+            <dd><b><code>CodePage</code></b> (Integer) : Codepage number, e.g. :<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001
+                = UTF-8
+            </dd>
+            <dd><b><code>Append</code></b> (Boolean) : True if export to be appended to existing file</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateStraightTable<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/>Graph.Export&nbsp;"C:\test.skv",";"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportBitmapToFile</h3>
+<pre>Boolean <b>ExportBitmapToFile</b>(String Filename)</pre>
+<dl>
+    <dd>Exports a bitmap image of the sheet object to a file. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Filename</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if export succeeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportEx</h3>
+<pre>Boolean <b>ExportEx</b>(String Filename, Integer Mode, Boolean Append, String Separator, Integer CodePage)</pre>
+<dl>
+    <dd>Exports the chart data. New method with more format options.. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Filename</code></b> (String) : File name with path</dd>
+            <dd><b><code>Mode</code></b> (Integer) : Export format<br/>0 = HTML<br/>1 = Text delimited<br/>2 = bitmap
+                image<br/>3 = XML<br/>4 = QVD<br/>5 = BIFF (Excel)
+            </dd>
+            <dd><b><code>Append</code></b> (Boolean) : True for append export (where applicaple)</dd>
+            <dd><b><code>Separator</code></b> (String) : Separator to be used between values in record</dd>
+            <dd><b><code>CodePage</code></b> (Integer) : Codepage number, e.g. :<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001
+                = UTF-8
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if export succeeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>8.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;obj&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>obj.ExportEx&nbsp;"C:\test.qvd",&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ExportHtml</h3>
+<pre> <b>ExportHtml</b>(String Filename)</pre>
+<dl>
+    <dd>Exports chart values to file in HTML format. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Filename</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;Graph&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateStraightTable<br/>Graph.AddDimension&nbsp;"ProductType"<br/>Graph.AddExpression&nbsp;"sum(Amount)"<br/>Graph.ExportHtml&nbsp;"C:\test.htm"<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetCaption</h3>
+<pre><a href="ICaption.htm">ICaption</a> <b>GetCaption</b>()</pre>
+<dl>
+    <dd>Returns sheet object caption. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetDoc</h3>
+<pre><a href="Document.htm">Document</a> <b>GetDoc</b>()</pre>
+<dl>
+    <dd>Returns the document. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetFrameDef</h3>
+<pre><a href="IFrame.htm">IFrame</a> <b>GetFrameDef</b>()</pre>
+<dl>
+    <dd>Returns frame, border and caption settings for the sheet object with position rectangles in docunits. Replaces
+        GetFrame from QV5<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectCalcTime</h3>
+<pre>Integer <b>GetObjectCalcTime</b>()</pre>
+<dl>
+    <dd>Returns latest object calculation time. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectId</h3>
+<pre>String <b>GetObjectId</b>()</pre>
+<dl>
+    <dd>Returns th e unique ID for the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectMemoryUsage</h3>
+<pre>Integer <b>GetObjectMemoryUsage</b>()</pre>
+<dl>
+    <dd>Returns latest object calculation memory usage. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetObjectType</h3>
+<pre>short <b>GetObjectType</b>()</pre>
+<dl>
+    <dd>Returns code for sheet object type. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetPalette</h3>
+<pre><a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a> <b>GetPalette</b>()</pre>
+<dl>
+    <dd>Returns chart color map. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;set&nbsp;entire&nbsp;doc&nbsp;default&nbsp;color&nbsp;map&nbsp;for&nbsp;chart&nbsp;to&nbsp;red&nbsp;(brain-dead!)<br/>set&nbsp;cm&nbsp;=&nbsp;ActiveDocument.GetPalette<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;cm.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;cm.Item(i).PrimaryCol.Col&nbsp;=&nbsp;RGB(255,0,0)<br/>next<br/>ActiveDocument.GetSheetObject("CH01").SetPalette&nbsp;cm<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetPrintOptions</h3>
+<pre><a href="IPrinterOptions.htm">IPrinterOptions</a> <b>GetPrintOptions</b>()</pre>
+<dl>
+    <dd>Returns printer settings for the sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetProperties</h3>
+<pre><a href="IGraphProperties.htm">IGraphProperties</a> <b>GetProperties</b>()</pre>
+<dl>
+    <dd>Returns chart object properties. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;chart&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateBarChart<br/>chart.AddDimension&nbsp;"ProductType"<br/>chart.AddDimension&nbsp;"Customer"<br/>chart.AddExpression&nbsp;"sum(Amount)"<br/>set&nbsp;p&nbsp;=&nbsp;chart.GetProperties<br/>p.ChartProperties.BarModeStacked&nbsp;=&nbsp;true&nbsp;<br/>chart.SetProperties&nbsp;p<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetRect</h3>
+<pre><a href="IRect.htm">IRect</a> <b>GetRect</b>()</pre>
+<dl>
+    <dd>Returns sheet object position/size rectangle (pixels). <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetRelevantSelections</h3>
+<pre>Variant (Array of String) <b>GetRelevantSelections</b>()</pre>
+<dl>
+    <dd>Returns the current selections relevant for the object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetReplacementObject</h3>
+<pre>LPDISPATCH <b>GetReplacementObject</b>()</pre>
+<dl>
+    <dd>Returns pointer to OCX replacement object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetSheet</h3>
+<pre><a href="Sheet.htm">Sheet</a> <b>GetSheet</b>()</pre>
+<dl>
+    <dd>Returns the sheet where the sheet object resides. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetStatus</h3>
+<pre>Integer <b>GetStatus</b>()</pre>
+<dl>
+    <dd>Returns sheet object state. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetTableAsText</h3>
+<pre>String <b>GetTableAsText</b>(Boolean IncludeLabels)</pre>
+<dl>
+    <dd>Returns table data as text for chart. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>IncludeLabels</code></b> (Boolean) : True if labels are to be included</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Table or chart's underlying data table as text</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>GetZedLevel</h3>
+<pre>Integer <b>GetZedLevel</b>()</pre>
+<dl>
+    <dd>Returns z layer for sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>IsActive</h3>
+<pre>Boolean <b>IsActive</b>()</pre>
+<dl>
+    <dd>Returns true if the sheet object is active. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>IsMaximized</h3>
+<pre>Boolean <b>IsMaximized</b>()</pre>
+<dl>
+    <dd>Returns true if sheet object is maximized. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>IsMinimized</h3>
+<pre>Boolean <b>IsMinimized</b>()</pre>
+<dl>
+    <dd>Returns true if the sheet object is minimized. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Maximize</h3>
+<pre> <b>Maximize</b>()</pre>
+<dl>
+    <dd>Maximizes sheet object. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Minimize</h3>
+<pre> <b>Minimize</b>()</pre>
+<dl>
+    <dd>Minimizes the sheet object as an icon if minimizable. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>MoveToSheet</h3>
+<pre>Boolean <b>MoveToSheet</b>(String SheetId)</pre>
+<dl>
+    <dd>Moves the sheet object to a specified sheet. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>SheetId</code></b> (String) : Sheet ID of target sheet</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True if operation succeeded</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Print</h3>
+<pre>Boolean <b>Print</b>()</pre>
+<dl>
+    <dd>Prints the sheet object. Use PrintOut method from VB to avoid conflicts with the VB keyword Print<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintEx</h3>
+<pre>Boolean <b>PrintEx</b>(String PrinterName, Boolean ShowPrinterDlg)</pre>
+<dl>
+    <dd>Prints the sheet object to a named printer. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>PrinterName</code></b> (String) : Name of printer. If omitted default printer will be used</dd>
+            <dd><b><code>ShowPrinterDlg</code></b> (Boolean) : True if Print dialog should be shown</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns true if object is printable</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>PrintOut</h3>
+<pre>Boolean <b>PrintOut</b>()</pre>
+<dl>
+    <dd>Prints the sheet object. Same as Print method but to be used from VB where the Print keyword may otherwise cause
+        problems<p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveDimension</h3>
+<pre>Integer <b>RemoveDimension</b>(Integer index)</pre>
+<dl>
+    <dd>Removes a specified dimension from the chart. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>index</code></b> (Integer) : Dimension variable number (0 based) to be removed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns the number of variable dimensions remaining in the chart after removal or -1 if remove failed
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;delete&nbsp;second&nbsp;dimension&nbsp;from&nbsp;chart&nbsp;CH01&nbsp;<br/>set&nbsp;chart&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>chart.RemoveDimension&nbsp;1<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveExpression</h3>
+<pre>Integer <b>RemoveExpression</b>(Integer index)</pre>
+<dl>
+    <dd>Removes a specified expression from the chart. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>index</code></b> (Integer) : Expression number (0 based) to be removed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns the number of expressions remaining in the chart after removal or -1 if remove failed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;delete&nbsp;second&nbsp;expression&nbsp;from&nbsp;chart&nbsp;CH01&nbsp;**<br/>set&nbsp;chart&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>chart.RemoveExpression&nbsp;1<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>RemoveVariable</h3>
+<pre>Integer <b>RemoveVariable</b>(Integer index)</pre>
+<dl>
+    <dd>Obsolete method. Superceded by RemoveDimension<p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>index</code></b> (Integer) : Dimension variable number (0 based) to be removed</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>Returns the number of variable dimensions remaining in the chart after removal or -1 if remove failed
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;**&nbsp;delete&nbsp;second&nbsp;dimension&nbsp;from&nbsp;chart&nbsp;CH01<br/>set&nbsp;chart&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>chart.RemoveDimension&nbsp;1<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>Restore</h3>
+<pre> <b>Restore</b>()</pre>
+<dl>
+    <dd>Restores the minimized sheet object if minimized. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SendToExcel</h3>
+<pre>Integer <b>SendToExcel</b>()</pre>
+<dl>
+    <dd>Exports table chart data to Excel. <p/></dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ServerSideExport</h3>
+<pre> <b>ServerSideExport</b>(String Path, String Separator, Integer CodePage, Boolean Append)</pre>
+<dl>
+    <dd>Exports object table data to a file in a directory on QlikView Web Server. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : File name with path</dd>
+            <dd><b><code>Separator</code></b> (String) : Separator to be used between values in record</dd>
+            <dd><b><code>CodePage</code></b> (Integer) : Codepage number, e.g. :<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001
+                = UTF-8
+            </dd>
+            <dd><b><code>Append</code></b> (Boolean) : True if export to be appended to existing file</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;tb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>tb.ServerSideExport&nbsp;"C:\test.skv"&nbsp;,&nbsp;";"&nbsp;,&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'ANSI<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>ServerSideExportEx</h3>
+<pre> <b>ServerSideExportEx</b>(String Path, String Separator, Integer Mode, Integer CodePage, Boolean Append)</pre>
+<dl>
+    <dd>Exports object table data to file in QlikView Server. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Path</code></b> (String) : File name with path</dd>
+            <dd><b><code>Separator</code></b> (String) : Separator to be used between values in record</dd>
+            <dd><b><code>Mode</code></b> (Integer) : 0=HTML<br/>1=Text<br/>2=Bitmap<br/>3=XML<br/>4=QVD<br/>5=BIFF</dd>
+            <dd><b><code>CodePage</code></b> (Integer) : Codepage number, e.g. :<br/>0 = current ANSI<br/>1200 = Unicode<br/>65001
+                = UTF-8
+            </dd>
+            <dd><b><code>Append</code></b> (Boolean) : True if export to be appended to existing file</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd></dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>9.00</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;tb&nbsp;=&nbsp;ActiveDocument.GetSheetObject("CH01")<br/>tb.ServerSideExportEx&nbsp;"C:\test.xml"&nbsp;,&nbsp;";"&nbsp;,&nbsp;3&nbsp;'0=HTML,&nbsp;1=Text,&nbsp;2=Bitmap,&nbsp;3=XML,&nbsp;4=QVD,&nbsp;5=BIFF</code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetBorder</h3>
+<pre> <b>SetBorder</b>(IFrame Frame)</pre>
+<dl>
+    <dd>Sets border settings for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Frame</code></b> (<a href="IFrame.htm">IFrame</a>) : Frame (border) object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetChartType</h3>
+<pre>Boolean <b>SetChartType</b>(Integer ChartType)</pre>
+<dl>
+    <dd>Sets chart type without going via chart properties. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>ChartType</code></b> (Integer) : Type of chart <br/>(must be enabled for fast type change)<br/>0
+                = bar chart<br/>1 = pie chart<br/>2 = pivot table<br/>3 = scatter chart<br/>4 = line chart<br/>5 =
+                straight table<br/>6 = combo chart<br/>7 = radar chart<br/>8 = gauge chart<br/>9 = grid chart
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>True returned if operation succesful</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;chart&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateBarChart<br/>chart.AddDimension&nbsp;"ProductType"<br/>chart.AddExpression&nbsp;"sum(Amount)"<br/>set&nbsp;p&nbsp;=&nbsp;chart.GetProperties<br/>p.GraphLayout.FastChange.Bar&nbsp;=&nbsp;true<br/>p.GraphLayout.FastChange.Line&nbsp;=&nbsp;true<br/>p.GraphLayout.FastChange.Combo&nbsp;=&nbsp;true<br/>p.GraphLayout.FastChange.Pie&nbsp;=&nbsp;true<br/>p.GraphLayout.FastChange.Scatter&nbsp;=&nbsp;false<br/>p.GraphLayout.FastChange.Straight&nbsp;=&nbsp;false<br/>p.GraphLayout.FastChange.Pivot&nbsp;=&nbsp;false<br/>p.ChartProperties.FastChangeInChart&nbsp;=&nbsp;true<br/>chart.SetProperties&nbsp;p<br/>chart.SetChartType&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'line<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetFont</h3>
+<pre> <b>SetFont</b>(IBaseFont Font)</pre>
+<dl>
+    <dd>Sets font for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Font</code></b> (<a href="IBaseFont.htm">IBaseFont</a>) : Font object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetFrame</h3>
+<pre> <b>SetFrame</b>(IFrame Frame, Boolean RectsAlso, Variant (Array of short) Parts)</pre>
+<dl>
+    <dd>Sets frame, border and caption settings for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Frame</code></b> (<a href="IFrame.htm">IFrame</a>) : Sheet object frame</dd>
+            <dd><b><code>RectsAlso</code></b> (Boolean) : True if position/size rectangles to be included</dd>
+            <dd><b><code>Parts</code></b> (Variant (Array of short)) : Parts of frame to be set.<br/>Should either be
+                empty (all parts set) <br/>or contain an array containing one element for<br/>each part of the frame to
+                be set. The element <br/>should contain one of the numbers below:<br/>0 BORDER_CHANGE, <br/>1
+                CAPTION_ON_OFF,<br/>2 LAYER_CHANGE, <br/>3 ALLOWMINIM_CHANGE,<br/>4 ALLOWMAXIM_CHANGE, <br/>5
+                ALLOWINFO_CHANGE, <br/>6 AUTOMIN_CHANGE,<br/>7 ALLOWMOVESIZE_CHANGE, <br/>8 CONDSHOW_CHANGE, <br/>9
+                FONT_CHANGE, <br/>10 ADVANCEDCAPTION_CHANGE,<br/>11 MACRO_TRIGGER_CHANGE, <br/>The order of the elements
+                is arbitrary.
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetFrameDef</h3>
+<pre> <b>SetFrameDef</b>(IFrame Frame)</pre>
+<dl>
+    <dd>Sets sheet object frame with position/size rectangle in docunits. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Frame</code></b> (<a href="IFrame.htm">IFrame</a>) : Sheet object frame with position/size
+                rectangle in docunits
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetLayer</h3>
+<pre> <b>SetLayer</b>(Integer Level)</pre>
+<dl>
+    <dd>Sets layer for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Level</code></b> (Integer) : -1 is Bottom, 0 is Normal, 1 is Top ; -127 to 127 accepted</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetPalette</h3>
+<pre> <b>SetPalette</b>(IArrayOfColorAreaDef Pal)</pre>
+<dl>
+    <dd>Sets chart color map. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Pal</code></b> (<a href="IArrayOfColorAreaDef.htm">IArrayOfColorAreaDef</a>) : Array of colors
+                as RGB in three least significant bytes (compatible with VB RGB function)
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>5.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>rem&nbsp;set&nbsp;entire&nbsp;doc&nbsp;default&nbsp;color&nbsp;map&nbsp;for&nbsp;chart&nbsp;to&nbsp;red&nbsp;(brain-dead!)<br/>set&nbsp;cm&nbsp;=&nbsp;ActiveDocument.GetPalette<br/>for&nbsp;i&nbsp;=&nbsp;0&nbsp;to&nbsp;cm.Count-1<br/>&nbsp;&nbsp;&nbsp;&nbsp;cm.Item(i).PrimaryCol.Col&nbsp;=&nbsp;RGB(255,0,0)<br/>next<br/>ActiveDocument.GetSheetObject("CH01").SetPalette&nbsp;cm<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetPrintOptions</h3>
+<pre> <b>SetPrintOptions</b>(IPrinterOptions Opt)</pre>
+<dl>
+    <dd>Sets printer settings for the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Opt</code></b> (<a href="IPrinterOptions.htm">IPrinterOptions</a>) : Printer settings object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>6.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetProperties</h3>
+<pre> <b>SetProperties</b>(IGraphProperties Properties)</pre>
+<dl>
+    <dd>Sets chart object properties. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>Properties</code></b> (<a href="IGraphProperties.htm">IGraphProperties</a>) : Chart properties
+                object
+            </dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Example:</b></dt>
+            <dd><i><code>set&nbsp;chart&nbsp;=&nbsp;ActiveDocument.Sheets("Main").CreateBarChart<br/>chart.AddDimension&nbsp;"ProductType"<br/>chart.AddDimension&nbsp;"Customer"<br/>chart.AddExpression&nbsp;"sum(Amount)"<br/>set&nbsp;p&nbsp;=&nbsp;chart.GetProperties<br/>p.ChartProperties.BarModeStacked&nbsp;=&nbsp;true&nbsp;<br/>chart.SetProperties&nbsp;p<br/></code></i>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>SetRect</h3>
+<pre> <b>SetRect</b>(IRect WinRect,  )</pre>
+<dl>
+    <dd>Sets the position rectangle for the sheet object. Rectangle must be in pixels. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>WinRect</code></b> (<a href="IRect.htm">IRect</a>) : True if rect is for minimized icon</dd>
+            <dd><b><code></code></b> () : Position rectangle object</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>4.0x</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+<h3>WriteXmlPropertiesFile</h3>
+<pre> <b>WriteXmlPropertiesFile</b>(String FileName)</pre>
+<dl>
+    <dd>Writes an xml file with properties describing the sheet object. <p/></dd>
+    <dd>
+        <dl>
+            <dt><b>Parameters:</b></dt>
+            <dd><b><code>FileName</code></b> (String) : File name with path</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Returns:</b></dt>
+            <dd>No return value</dd>
+        </dl>
+    </dd>
+    <br/>
+    <dd>
+        <dl>
+            <dt><b>Earliest version:</b></dt>
+            <dd>7.00</dd>
+        </dl>
+    </dd>
+</dl>
+<hr>
+</body>
+</html>
